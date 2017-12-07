@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/alexstuckey/durham-volunteering/issues"
   },
-  "homepage": "https://github.com/alexstuckey/durham-volunteering#readme"
+  "homepage": "https://github.com/alexstuckey/durham-volunteering#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
