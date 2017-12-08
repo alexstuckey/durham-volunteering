@@ -18,6 +18,7 @@
   "homepage": "https://github.com/alexstuckey/durham-volunteering",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1"
   }
 }
