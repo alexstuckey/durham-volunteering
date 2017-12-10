@@ -19,3 +19,10 @@ gulp.task('js', function() {
 });
 
 gulp.task('default', ['sass', 'js']);
+
+// Watches project resouce directory for changes
+gulp.task('serve', ['sass', 'js'], function() {
+
+  gulp.watch('./src/sass/**/*.scss', ['sass'])
+  gulp.watch('./src/js/**/*.js', ['js'])
+})
