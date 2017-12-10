@@ -7,8 +7,8 @@ gulp.task('sass', function () {
   .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('./static/css'));
-});
+  .pipe(gulp.dest('./static/css'))
+})
 
 // Move JS Files to ./static/js
 gulp.task('js', function() {
@@ -16,9 +16,9 @@ gulp.task('js', function() {
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest("./static/js"))
-});
+})
 
-gulp.task('default', ['sass', 'js']);
+gulp.task('default', ['sass', 'js'])
 
 // Watches project resouce directory for changes
 gulp.task('serve', ['sass', 'js'], function() {
