@@ -2,24 +2,25 @@ body {
     background-color: #F4F4F4;
     padding-top: 50px;
     margin: 0 auto;
-    max-width: 1440px
+    max-width: 1440px;
 }
 
 #jumbo {
     color: white;
 }
 
+#jumbo h1 {
+    text-shadow: 1px 0 0 #470544, 0 -1px 0 #470544, 0 1px 0 #470544, -1px 0 0 #470544;
+}
+
 .jumbotron {
     background-color: #7E317B;
 }
 
-h1, h3, h4 {
+h1, h3, h4, h5 {
     font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 
-#jumbo h1 {
-    text-shadow: 1px 0 0 #470544, 0 -1px 0 #470544, 0 1px 0 #470544, -1px 0 0 #470544;
-}
 
 p {
     font-family: "Trade Gothic Lt", Arial,"Times New Roman", serif;
@@ -42,12 +43,6 @@ table td {
     word-wrap:break-word;
 }
 
-.scrollable-menu {
-    height: auto;
-    max-height: 200px;
-    overflow-x: hidden;
-}
-
 .table tbody tr:hover td, .table tbody tr:hover th {
     background-color: #FFFFFF;
 }
@@ -57,7 +52,6 @@ table td {
     margin-bottom: 0;
     border-radius: 0;
 }
-
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
@@ -74,23 +68,25 @@ table td {
 }
 
 /* set characteristics for the sidebars */
-#leftSide div {
-    position:relative;
-    z-index:1;
+#leftSide {
+    max-height: 800px;
+    position: relative;
+    overflow-y: scroll;
 }
-
-#rightSide div {
-    position:relative;
-    z-index:1;
+#centre {
+    max-height: 800px;
+    position: relative;
+    overflow-y: scroll;
+}
+#rightSide {
+    max-height: 800px;
+    position: relative;
+    overflow-y: scroll;
 }
 /* end of characteristics for sidebars */
 
 .well {
     background-color: white;
-}
-
-#dismissBtn {
-    float: right;
 }
 
 /* Set black background color, white text and some padding */
