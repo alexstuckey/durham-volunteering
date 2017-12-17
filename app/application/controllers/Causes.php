@@ -18,8 +18,8 @@ class Causes extends CI_Controller {
 		echo 'Hello World!';
 	}
 
-	public function get()
+	public function get($causeID)
 	{
-		echo 'Hello World!';
+		echo 'Hello cause, ' . $causeID . '!';
 	}
 }
