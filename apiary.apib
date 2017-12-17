@@ -1,0 +1,166 @@
+FORMAT: 1A
+
+# durham-volunteering
+
+A simple API for the frontend.
+
+## Causes Collection [/causes]
+
+### List All Causes [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "causeID": 1,
+                "name": "RSPB",
+                "contactName": "James Smith",
+                "contactEmail": "james.smith@rspb.org.uk",
+                "contactPhone": "+44837746352",
+                "notes": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+                "type": "animals"
+            }
+        ]
+
+### Create a New Cause [POST]
+
+You may create your own cause using this action. It takes a JSON
+object containing a complete cause description. No ID, that is generated.
+
++ Request (application/json)
+
+        {
+            "name": "RSPB",
+            "contactName": "James Smith",
+            "contactEmail": "james.smith@rspb.org.uk",
+            "contactPhone": "+44837746352",
+            "notes": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+            "type": "animals"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /cause/2
+
+    + Body
+
+            {
+                "causeID": 1,
+                "name": "RSPB",
+                "contactName": "James Smith",
+                "contactEmail": "james.smith@rspb.org.uk",
+                "contactPhone": "+44837746352",
+                "notes": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+                "type": "animals"
+            }
+
+      
+## Cause [/cause/{cause_id}]
+
++ Parameters
+    + cause_id (number) - ID of the Cause in the form of an integer
+
+### View a Cause Detail [GET]
+
++ Response 200 (application/json)
+
+        {
+            "causeID": 1,
+            "name": "RSPB",
+            "contactName": "James Smith",
+            "contactEmail": "james.smith@rspb.org.uk",
+            "contactPhone": "+44837746352",
+            "notes": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+            "type": "animals"
+        }
+
+
+
+
+
+## Time Collection [/times]
+
+### List All Times [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "timeID": 1,
+                "performedBy": "jdns65",
+                "start": "2015-08-05T08:40:51.620Z",
+                "end": "2015-08-05T08:40:51.620Z",
+                "forCause": 5
+            }
+        ]
+
+### Create a New Time for a User and Cause [POST]
+
+You may create your own cause using this action. It takes a JSON
+object containing a complete cause description. No ID, that is generated.
+
++ Request (application/json)
+
+        {
+            "perform": "RSPB",
+            "performedBy": "jdns65",
+            "start": "2015-08-05T08:40:51.620Z",
+            "end": "2015-08-05T08:40:51.620Z",
+            "forCause": 5
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /time/5
+
+    + Body
+
+            {
+                "timeID": 1,
+                "performedBy": "jdns65",
+                "start": "2015-08-05T08:40:51.620Z",
+                "end": "2015-08-05T08:40:51.620Z",
+                "forCause": 5
+            }
+
+## Time [/time/{time_id}]
+
++ Parameters
+    + time_id (number) - ID of the Time in the form of an integer
+
+### View a Time Detail [GET]
+
++ Response 200 (application/json)
+
+        {
+            "timeID": 1,
+                "performedBy": "jdns65",
+                "start": "2015-08-05T08:40:51.620Z",
+                "end": "2015-08-05T08:40:51.620Z",
+                "forCause": 5
+        }
+        
+        
+
+
+## User [/user/{user_cisid}]
+
++ Parameters
+    + user_cisid (string) - CIS ID of the User in the form of an string
+
+### View a User Detail [GET]
+
++ Response 200 (application/json)
+
+        {
+            "cisID": "jdns65",
+            "firstName": "James",
+            "lastName": "Smith",
+            "onboardingStatus": 0,
+            "isManager": False,
+            "isAdmin": False
+        }
