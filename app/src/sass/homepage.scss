@@ -1,6 +1,5 @@
 body {
     background-color: #F4F4F4;
-    padding-top: 50px;
     margin: 0 auto;
     max-width: 1440px;
 }
@@ -14,11 +13,20 @@ body {
 }
 
 .jumbotron {
+    margin-top:0;
     background-color: #7E317B;
+}
+
+.card {
+    margin-bottom: 20px;
 }
 
 h1, h3, h4, h5 {
     font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+h4 {
+    margin-bottom: 0px;
 }
 
 
@@ -26,6 +34,7 @@ p {
     font-family: "Trade Gothic Lt", Arial,"Times New Roman", serif;
 
 }
+
 
 hr {
     border-color: #bbb;
@@ -47,12 +56,6 @@ table td {
     background-color: #FFFFFF;
 }
 
-/* Remove the navbar's default margin-bottom and rounded borders */
-.navbar {
-    margin-bottom: 0;
-    border-radius: 0;
-}
-
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
     height: auto;
@@ -60,10 +63,6 @@ table td {
 
 /* Set gray background color and 100% height */
 .sidenav {
-    padding-top: 20px;
-    /*
-    background-color: #f1f1f1;
-     */
     height: 100%;
 }
 
@@ -85,17 +84,13 @@ table td {
 }
 /* end of characteristics for sidebars */
 
-.well {
-    background-color: white;
+.card-block, .card-footer {
+    padding:10px
 }
 
 /* Set black background color, white text and some padding */
 footer {
-    /*
-    background-color: #555;
-    color: white;
-    */
-    padding: 15px;
+    padding:15px;
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
