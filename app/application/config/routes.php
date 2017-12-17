@@ -62,6 +62,6 @@ $route['cause/(:num)']['GET'] = 'causes/get/'
 $route['times']['GET'] = 'times/list'
 $route['times']['POST'] = 'times/create'
 
-$route['time/(:num)']['GET'] = 'times/get/'
+$route['time/(:num)']['GET'] = 'times/get'
 
 $route['user/(:any)'] = 'user/get'
