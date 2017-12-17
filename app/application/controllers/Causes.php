@@ -7,4 +7,19 @@ class Causes extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+
+	public function list()
+	{
+		echo 'Hello World!';
+	}
+
+	public function create()
+	{
+		echo 'Hello World!';
+	}
+
+	public function get()
+	{
+		echo 'Hello World!';
+	}
 }
