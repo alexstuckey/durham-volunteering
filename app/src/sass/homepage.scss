@@ -1,7 +1,24 @@
 body {
+    padding: 51px 0 0;
     background-color: #F4F4F4;
     margin: 0 auto;
     max-width: 1440px;
+}
+
+/* Override Bootstrap Responsive CSS fixed navbar */
+@media (max-width: 1440px) {
+    .navbar-fixed-top, .navbar-fixed-bottom {
+        position: fixed;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+#content {
+    position:relative;
+}
+#centre {
+    position:relative;
 }
 
 #jumbo {
@@ -26,15 +43,13 @@ h1, h3, h4, h5 {
 }
 
 h4 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
-
 
 p {
     font-family: "Trade Gothic Lt", Arial,"Times New Roman", serif;
 
 }
-
 
 hr {
     border-color: #bbb;
@@ -68,29 +83,35 @@ table td {
 
 /* set characteristics for the sidebars */
 #leftSide {
-    max-height: 800px;
+    max-height: 730px;
     position: relative;
     overflow-y: scroll;
 }
 #centre {
-    max-height: 800px;
+    max-height: 730px;
     position: relative;
     overflow-y: scroll;
 }
 #rightSide {
-    max-height: 800px;
+    max-height: 730px;
     position: relative;
     overflow-y: scroll;
 }
-/* end of characteristics for sidebars */
 
-.card-block, .card-footer {
-    padding:10px
+#notifications, #volunteering, #otherSection {
+    min-height: 730px;
+}
+/* end of characteristics for sidebars */
+.card-block {
+    padding: 20px;
+}
+.card-footer {
+    padding: 10px;
 }
 
-/* Set black background color, white text and some padding */
+/* Set footer padding */
 footer {
-    padding:15px;
+    padding: 15px;
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
