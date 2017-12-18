@@ -1,8 +1,24 @@
 body {
+    padding: 51px 0 0;
     background-color: #F4F4F4;
-    padding-top: 50px;
     margin: 0 auto;
     max-width: 1440px;
+}
+
+/* Override Bootstrap Responsive CSS fixed navbar */
+@media (max-width: 1440px) {
+    .navbar-fixed-top, .navbar-fixed-bottom {
+        position: fixed;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+#content {
+    position:relative;
+}
+#centre {
+    position:relative;
 }
 
 #jumbo {
@@ -14,13 +30,21 @@ body {
 }
 
 .jumbotron {
+    margin-top:0;
     background-color: #7E317B;
+}
+
+.card {
+    margin-bottom: 20px;
 }
 
 h1, h3, h4, h5 {
     font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 
+h4 {
+    margin-bottom: 0;
+}
 
 p {
     font-family: "Trade Gothic Lt", Arial,"Times New Roman", serif;
@@ -47,12 +71,6 @@ table td {
     background-color: #FFFFFF;
 }
 
-/* Remove the navbar's default margin-bottom and rounded borders */
-.navbar {
-    margin-bottom: 0;
-    border-radius: 0;
-}
-
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
     height: auto;
@@ -60,41 +78,39 @@ table td {
 
 /* Set gray background color and 100% height */
 .sidenav {
-    padding-top: 20px;
-    /*
-    background-color: #f1f1f1;
-     */
     height: 100%;
 }
 
 /* set characteristics for the sidebars */
 #leftSide {
-    max-height: 800px;
+    max-height: 730px;
     position: relative;
     overflow-y: scroll;
 }
 #centre {
-    max-height: 800px;
+    max-height: 730px;
     position: relative;
     overflow-y: scroll;
 }
 #rightSide {
-    max-height: 800px;
+    max-height: 730px;
     position: relative;
     overflow-y: scroll;
 }
-/* end of characteristics for sidebars */
 
-.well {
-    background-color: white;
+#notifications, #volunteering, #otherSection {
+    min-height: 730px;
+}
+/* end of characteristics for sidebars */
+.card-block {
+    padding: 20px;
+}
+.card-footer {
+    padding: 10px;
 }
 
-/* Set black background color, white text and some padding */
+/* Set footer padding */
 footer {
-    /*
-    background-color: #555;
-    color: white;
-    */
     padding: 15px;
 }
 
