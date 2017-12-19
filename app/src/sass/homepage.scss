@@ -76,11 +76,6 @@ table td {
     height: auto;
 }
 
-/* Set gray background color and 100% height */
-.sidenav {
-    height: 100%;
-}
-
 /* set characteristics for the sidebars */
 #leftSide {
     max-height: 730px;
@@ -123,5 +118,13 @@ footer {
 
     .row.content {
         height:auto;
+    }
+
+}
+
+@media screen and (max-width: 1023px) {
+    #leftSide, #rightSide, #notifications, #volunteering, #otherSection {
+        padding-top:70px;
+        min-height: 80%;
     }
 }
