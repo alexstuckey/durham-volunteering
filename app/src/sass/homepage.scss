@@ -14,10 +14,7 @@ body {
     }
 }
 
-#content {
-    position:relative;
-}
-#centre {
+#content, #centre {
     position:relative;
 }
 
@@ -48,7 +45,6 @@ h4 {
 
 p {
     font-family: "Trade Gothic Lt", Arial,"Times New Roman", serif;
-
 }
 
 hr {
@@ -77,23 +73,14 @@ table td {
 }
 
 /* set characteristics for the sidebars */
-#leftSide {
-    max-height: 730px;
-    position: relative;
-    overflow-y: scroll;
-}
-#centre {
-    max-height: 730px;
-    position: relative;
-    overflow-y: scroll;
-}
-#rightSide {
+#leftSide, #centre, #rightSide {
     max-height: 730px;
     position: relative;
     overflow-y: scroll;
 }
 
-#notifications, #volunteering, #otherSection {
+/* set characteristics for sections in scrollspy */
+#notifications, #volunteering, #otherSection, #managerShiftResponse {
     min-height: 730px;
 }
 /* end of characteristics for sidebars */
@@ -123,7 +110,7 @@ footer {
 }
 
 @media screen and (max-width: 1023px) {
-    #leftSide, #rightSide, #notifications, #volunteering, #otherSection {
+    #leftSide, #rightSide, #notifications, #volunteering, #otherSection, #managerShiftResponse {
         padding-top:70px;
         min-height: 80%;
     }
