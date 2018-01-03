@@ -8,7 +8,7 @@ class Causes extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
-	public function list()
+	public function listAll()
 	{
 		echo 'Hello World!';
 	}

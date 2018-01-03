@@ -53,7 +53,7 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['causes']['GET'] = 'causes/list';
+$route['causes']['GET'] = 'causes/listAll';
 $route['causes']['POST'] = 'causes/create';
 
 $route['cause/(:num)']['GET'] = 'causes/get/';
