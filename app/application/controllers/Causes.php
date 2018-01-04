@@ -25,7 +25,8 @@ class Causes extends CI_Controller {
 			// Checking for errors in parsing
 			if ($requestPayload === null
 			    && json_last_error() !== JSON_ERROR_NONE) {
-			    echo "incorrect JSON input";
+				$response = array('error' => "incorrect JSON input" );
+				print(json_encode($response));
 			}
 
 			if (array_key_exists("name", $requestPayload)
