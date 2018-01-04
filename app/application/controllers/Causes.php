@@ -37,7 +37,8 @@ class Causes extends CI_Controller {
 			) {
 				var_dump($requestPayload);
 			} else {
-				echo('parameters incomplete');
+				$response = array('error' => "parameters incomplete" );
+				print(json_encode($response));
 			}
 
 		} else {
