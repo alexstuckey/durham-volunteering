@@ -29,12 +29,12 @@ class Causes extends CI_Controller {
 				print(json_encode($response));
 			}
 
-			if (array_key_exists("name", $requestPayload)
+			if (array_key_exists("organisation", $requestPayload)
+			 && array_key_exists("typeID", $requestPayload)
 			 && array_key_exists("contactName", $requestPayload)
 			 && array_key_exists("contactEmail", $requestPayload)
 			 && array_key_exists("contactPhone", $requestPayload)
 			 && array_key_exists("notes", $requestPayload)
-			 && array_key_exists("type", $requestPayload)
 			) {
 				var_dump($requestPayload);
 			} else {
