@@ -53,6 +53,15 @@ class Causes extends CI_Controller {
 
 	public function get($causeID)
 	{
-		echo 'Hello cause, ' . $causeID . '!';
+		if (!is_int($causeID)) {
+			// Fail
+			$response = array('error' => "causeID was not an int" );
+			print(json_encode($response));
+		} else {
+			$this->load->model('Cause_model');
+			$fetchedCause = $this->cause_model->getCauseByID($causeID);
+
+			print(json_encode($fetchedCause))
+		}
 	}
 }
