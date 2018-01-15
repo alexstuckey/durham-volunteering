@@ -37,6 +37,8 @@ class Causes extends CI_Controller {
 			 && array_key_exists("notes", $requestPayload)
 			) {
 				var_dump($requestPayload);
+				$this->load->model('Cause_model');
+				$this->cause_model->createCause($requestPayload);
 			} else {
 				$response = array('error' => "parameters incomplete" );
 				print(json_encode($response));
