@@ -19,3 +19,7 @@ npm i
 ```shell
 gulp
 ```
+
+3. Access a page using something like:
+
+http://127.0.0.1/durham-volunteering/app/index.php/Causes/list
