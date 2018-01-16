@@ -39,14 +39,30 @@ class Cause_model extends CI_Model {
     //Returns an array of cause rows which match the typeID given in the argument
     public function getCausesByType($type)
     {
+        $this->db->where('name', $type);
 
+        $this->db->join('causes','causes.typeID=causeType.typeID');
 
-        $this->db->where('typeID', $type);
+        $query = $this->db->get('causeType');
 
-        $query = $this->db->get('causes');
+        $result=$query->result_array();
 
-        return $query->result_array();
+        foreach ($result[0] as $value){
+            echo $value;
+        }
 
+    }
+
+    //Returns an array of cause rows which match the typeID given in the argument
+    public function getAllCauses()
+    {
+
+        $this->db->join('causes','causes.typeID=causeType.typeID');
+
+        $query = $this->db->get('causeType');
+
+        $result=$query->result_array();
+        
 
     }
 
