@@ -54,14 +54,15 @@ body {
 }
 
 @font-face {
-+  font-family: 'alternate_gothic_fs_no_3Rg';
-+  src: url('../../system/fonts/AlternateGothicNo3-webfont.woff');
-+  src: url('../../system/fonts/AlternateGothicNo3-webfont.woff?#iefix') format('embedded-opentype'), url('../../system/fonts/AlternateGothicNo3-webfont.woff') format('woff'), url('../../system/fonts/AlternateGothicNo3-webfont.ttf') format('truetype'), url('../../system/fonts/AlternateGothicNo3-webfont.svg#alternate_gothic_fs_no_3Rg') format('svg');
-+  font-weight: normal;
-+  font-style: normal
+    font-family: 'alternate_gothic_fs_no_3Rg';
+    src: url('../../system/fonts/AlternateGothicNo3-webfont.woff');
+    src: url('../../system/fonts/AlternateGothicNo3-webfont.woff?#iefix') format('embedded-opentype'), url('../../system/fonts/AlternateGothicNo3-webfont.woff') format('woff'), url('../../system/fonts/AlternateGothicNo3-webfont.ttf') format('truetype'), url('../../system/fonts/AlternateGothicNo3-webfont.svg#alternate_gothic_fs_no_3Rg') format('svg');
+    font-weight: normal;
+    font-style: normal
  }
-+h1{
-+  font-family: "alternate_gothic_fs_no_3Rg", "Arial", sans-serif; }
+
+h1{
+    font-family: "alternate_gothic_fs_no_3Rg", "Arial", sans-serif; }
 
 h4 {
     margin-bottom: 0;
@@ -69,7 +70,6 @@ h4 {
 
 p {
     font-family: "Trade Gothic Lt", Arial,"Times New Roman", serif;
-
 }
 
 hr {
@@ -122,6 +122,7 @@ table td {
 #notifications, #volunteering, #otherSection {
     min-height: 730px;
 }
+
 /* end of characteristics for sidebars */
 .card-block {
     padding: 20px;
