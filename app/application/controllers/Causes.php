@@ -61,7 +61,7 @@ class Causes extends CI_Controller {
 			$this->load->model('Cause_model');
 			$fetchedCause = $this->cause_model->getCauseByID($causeID);
 
-			print(json_encode($fetchedCause))
+			print(json_encode($fetchedCause));
 		}
 	}
 }
