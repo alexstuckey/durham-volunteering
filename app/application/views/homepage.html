@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Index page</title>
+        <title>Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Vendor JS -->
@@ -23,32 +23,31 @@
     <body>
         <!-- Webpage -->
         <div id="page">
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-                <a class="navbar-brand" href="#">Volunteering & Outreach</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#notifications">Notifications</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#volunteering">Volunteering</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#otherSection">Other Section</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <div class="jumbotron jumbotron-fluid" id="jumbo">
-                <div class="container text-center">
-                    <h1>Volunteering and Outreach</h1>
-                    <h3>Homepage</h3>
-                </div>
+            <div id="nav">
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+                    <a class="navbar-brand" href="#">Volunteering & Outreach</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#notifications">Notifications</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#volunteering">Volunteering</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#managerShiftResponse">Respond to Applications</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#otherSection">Other Section</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
+
 
             <div class="container-fluid text-center" id="content">
                 <div class="row content">
@@ -58,12 +57,8 @@
                                 <h4>Shortcuts</h4>
                             </div>
                             <div class="list-group">
-                                <a href="#" class="list-group-item">First item</a>
-                                <a href="#" class="list-group-item">Second item</a>
-                                <a href="#" class="list-group-item">Third item</a>
-                                <a href="#" class="list-group-item">Fourth item</a>
-                                <a href="#" class="list-group-item">Fifth item</a>
-                                <a href="#" class="list-group-item">Sixth item</a>
+                                <a href="#" class="list-group-item">DUO</a>
+                                <a href="#" class="list-group-item">University Email</a>
                             </div>
                         </div>
 
@@ -72,14 +67,17 @@
                                 <h4>Get Involved with Causes</h4>
                             </div>
                             <div class="list-group">
-                                <a href="#" class="list-group-item">First item</a>
-                                <a href="#" class="list-group-item">Second item</a>
-                                <a href="#" class="list-group-item">Third item</a>
+                                <a href="#" class="list-group-item">RSPB</a>
+                                <a href="#" class="list-group-item">Barnardo's</a>
+                                <a href="#" class="list-group-item">Mencap</a>
+                                <a href="#" class="list-group-item">Oxfam</a>
+                                <a href="#" class="list-group-item">Samaritans</a>
+                                <a href="#" class="list-group-item">WaterAid</a>
                             </div>
                         </div>
                     </div>
 
-                    <div data-spy="scroll" data-target=".navbar" data-offset="70" class="col-sm-6 text-left" id="centre">
+                    <div data-spy="scroll" data-target=".navbar" class="col-sm-6 text-left" id="centre">
 
                         <!-- Notifications Div -->
                         <div id="notifications">
@@ -95,13 +93,13 @@
                                     <h4>Notification Title</h4>
                                 </div>
                                 <div class="card-block">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt, ante sit amet imperdiet sollicitudin.</p>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-outline-secondary archive">
-                                            <span class="glyphicon glyphicon-inbox"></span> Archive
+                                        <button type="button" class="btn btn-outline-success archive">
+                                            Archive
                                         </button>
-                                        <button type="button" class="btn btn-outline-secondary dismiss">
-                                            <span class="glyphicon glyphicon-remove"></span> Dismiss
+                                        <button type="button" class="btn btn-outline-warning dismiss">
+                                            Dismiss
                                         </button>
                                     </div>
                                 </div>
@@ -115,13 +113,13 @@
                                     <h4>Notification Title</h4>
                                 </div>
                                 <div class="card-block">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt, ante sit amet imperdiet sollicitudin.</p>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-outline-secondary archive">
-                                            <span class="glyphicon glyphicon-inbox"></span> Archive
+                                        <button type="button" class="btn btn-outline-success archive">
+                                            Archive
                                         </button>
-                                        <button type="button" class="btn btn-outline-secondary dismiss">
-                                            <span class="glyphicon glyphicon-remove"></span> Dismiss
+                                        <button type="button" class="btn btn-outline-warning dismiss">
+                                            Dismiss
                                         </button>
                                     </div>
                                 </div>
@@ -135,13 +133,13 @@
                                     <h4>Notification Title</h4>
                                 </div>
                                 <div class="card-block">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt, ante sit amet imperdiet sollicitudin.</p>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-outline-secondary archive">
-                                            <span class="glyphicon glyphicon-inbox"></span> Archive
+                                        <button type="button" class="btn btn-outline-success archive">
+                                            Archive
                                         </button>
-                                        <button type="button" class="btn btn-outline-secondary dismiss">
-                                            <span class="glyphicon glyphicon-remove"></span> Dismiss
+                                        <button type="button" class="btn btn-outline-warning dismiss">
+                                            Dismiss
                                         </button>
                                     </div>
                                 </div>
@@ -155,73 +153,13 @@
                                     <h4>Notification Title</h4>
                                 </div>
                                 <div class="card-block">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt, ante sit amet imperdiet sollicitudin.</p>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-outline-secondary archive">
-                                            <span class="glyphicon glyphicon-inbox"></span> Archive
+                                        <button type="button" class="btn btn-outline-success archive">
+                                            Archive
                                         </button>
-                                        <button type="button" class="btn btn-outline-secondary dismiss">
-                                            <span class="glyphicon glyphicon-remove"></span> Dismiss
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">Last updated: Time</small>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4>Notification Title</h4>
-                                </div>
-                                <div class="card-block">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-outline-secondary archive">
-                                            <span class="glyphicon glyphicon-inbox"></span> Archive
-                                        </button>
-                                        <button type="button" class="btn btn-outline-secondary dismiss">
-                                            <span class="glyphicon glyphicon-remove"></span> Dismiss
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">Last updated: Time</small>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4>Notification Title</h4>
-                                </div>
-                                <div class="card-block">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-outline-secondary archive">
-                                            <span class="glyphicon glyphicon-inbox"></span> Archive
-                                        </button>
-                                        <button type="button" class="btn btn-outline-secondary dismiss">
-                                            <span class="glyphicon glyphicon-remove"></span> Dismiss
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">Last updated: Time</small>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4>Notification Title</h4>
-                                </div>
-                                <div class="card-block">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-outline-secondary archive">
-                                            <span class="glyphicon glyphicon-inbox"></span> Archive
-                                        </button>
-                                        <button type="button" class="btn btn-outline-secondary dismiss">
-                                            <span class="glyphicon glyphicon-remove"></span> Dismiss
+                                        <button type="button" class="btn btn-outline-warning dismiss">
+                                            Dismiss
                                         </button>
                                     </div>
                                 </div>
@@ -249,23 +187,24 @@
                                     <h4>New Shift</h4>
                                 </div>
                                 <div class="card-block">
-                                    <form>
+                                    <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
+                                    <form method="POST" action="" id="shiftApplicationForm">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                            <label for="shiftApplicationEmail">Email address</label>
+                                            <input type="email" class="form-control" id="shiftApplicationEmail" aria-describedby="emailHelp" placeholder="Enter email" name="shiftApplicationEmail" required>
                                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                         </div>
                                         <div class="form-group">
-                                            <label for="start-datetime-local-input">Start Date and time</label>
-                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="start-datetime-local-input">
+                                            <label for="shiftApplicationDateTimeStart">Start Date and time</label>
+                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="shiftApplicationDateTimeStart" name="shiftApplicationDateTimeStart"required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="end-datetime-local-input">End Date and time</label>
-                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="end-datetime-local-input">
+                                            <label for="shiftApplicationDateTimeEnd">End Date and time</label>
+                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="shiftApplicationDateTimeEnd" name="shiftApplicationDateTimeEnd"required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleSelect1">Select Cause</label>
-                                            <select class="form-control" id="exampleSelect1">
+                                            <label for="shiftApplicationSelect">Select Cause</label>
+                                            <select class="form-control" id="shiftApplicationSelect" name="shiftApplicationSelect">
                                                 <option>Cause 1</option>
                                                 <option>Cause 2</option>
                                                 <option>Cause 3</option>
@@ -274,10 +213,10 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleTextarea">Comment</label>
-                                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                            <label for="shiftApplicationComment">Comment (Optional)</label>
+                                            <textarea class="form-control" id="shiftApplicationComment" rows="3" name="shiftApplicationComment"></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-outline-primary" id="shiftApplicationButton">Submit</button>
                                     </form>
                                 </div>
                             </div>
@@ -287,10 +226,11 @@
                                     <h4>Cancel Shift</h4>
                                 </div>
                                 <div class="card-block">
-                                    <form>
+                                    <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
+                                    <form  method="POST" action="" id="shiftCancelForm">
                                         <div class="form-group">
-                                            <label for="selectShift">Select Shift</label>
-                                            <select class="form-control form-control-success" id="selectShift">
+                                            <label for="shiftCancelSelect">Select Shift</label>
+                                            <select class="form-control" id="shiftCancelSelect" name="shiftCancelSelect">
                                                 <option>Shift 1</option>
                                                 <option>Shift 2</option>
                                                 <option>Shift 3</option>
@@ -299,15 +239,67 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="commentArea">Comment</label>
-                                            <textarea class="form-control" id="commentArea" rows="3"></textarea>
+                                            <label for="shiftCancelComment">Comment (Optional)</label>
+                                            <textarea class="form-control" id="shiftCancelComment" rows="3" name="shiftCancelComment"></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-outline-primary" id="shiftCancelButton">Submit</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                        <!-- End if Volunteering Div -->
+                        <!-- End of Volunteering Div -->
+
+                        <!-- Horizontal Break -->
+                        <hr>
+
+                        <!-- Manager can Approve/Deny Shifts Div -->
+                        <div id="managerShiftResponse">
+                            <h1>Respond to Applications</h1>
+
+                            <div class="alert alert-success alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Success!</strong> This alert box could indicate a successful or positive action.
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Approve Shift Requests</h4>
+                                </div>
+                                <div class="card-block">
+                                    <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
+                                    <form method="POST" action="" id="shiftResponseForm">
+                                        <div class="form-group">
+                                            <label for="shiftResponseSelect">Select Shift</label>
+                                            <select class="form-control" id="shiftResponseSelect" name="shiftResponseSelect">
+                                                <option>Shift 1</option>
+                                                <option>Shift 2</option>
+                                                <option>Shift 3</option>
+                                                <option>Shift 4</option>
+                                                <option>Shift 5</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="shiftResponseRadios" id="shiftResponseRadio1" value="option1" checked>
+                                                Permit
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="shiftResponseRadios" id="shiftResponseRadio2" value="option2">
+                                                Deny
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="shiftResponseComment">Comment (Optional)</label>
+                                            <textarea class="form-control" id="shiftResponseComment" rows="3" name="shiftResponseComment"></textarea>
+                                        </div>
+                                        <button type="button" class="btn btn-outline-primary" id="shiftResponseButton">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Manager can Approve/Deny Shifts Div -->
 
                         <!-- Horizontal Break -->
                         <hr>
@@ -328,6 +320,8 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- End of Other Section -->
+
                     </div>
 
                     <div class="col-sm-3 sidenav" id="rightSide">
@@ -344,46 +338,6 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4>Previous Activity</h4>
-                            </div>
-                            <ul class="list-group">
-                                <li class="list-group-item">First item</li>
-                                <li class="list-group-item">Second item</li>
-                                <li class="list-group-item">Third item</li>
-                            </ul>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Extra Info Box</h4>
-                            </div>
-                            <ul class="list-group">
-                                <li class="list-group-item">First item</li>
-                                <li class="list-group-item">Second item</li>
-                                <li class="list-group-item">Third item</li>
-                            </ul>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Extra Info Box</h4>
-                            </div>
-                            <ul class="list-group">
-                                <li class="list-group-item">First item</li>
-                                <li class="list-group-item">Second item</li>
-                                <li class="list-group-item">Third item</li>
-                            </ul>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Extra Info Box</h4>
-                            </div>
-                            <ul class="list-group">
-                                <li class="list-group-item">First item</li>
-                                <li class="list-group-item">Second item</li>
-                                <li class="list-group-item">Third item</li>
-                            </ul>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Extra Info Box</h4>
                             </div>
                             <ul class="list-group">
                                 <li class="list-group-item">First item</li>

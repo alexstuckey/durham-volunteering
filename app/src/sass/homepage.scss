@@ -1,5 +1,5 @@
 body {
-    padding: 51px 0 0;
+    padding: 70px 0 0;
     background-color: #F4F4F4;
     margin: 0 auto;
     max-width: 1440px;
@@ -14,10 +14,22 @@ body {
     }
 }
 
-#content {
-    position:relative;
-}
-#centre {
+.btn-primary {
+    background-color: #470544;
+    border-color: #470544; }
+.btn-primary:hover {
+    background-color: #470544;
+    border-color: #470544; }
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: #470544;
+    border-color: #470544; }
+.btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+    background-color: #470544; }
+.bg-dark {
+    background-color: #470544 !important; }
+
+#content, #centre {
     position:relative;
 }
 
@@ -38,9 +50,16 @@ body {
     margin-bottom: 20px;
 }
 
-h1, h3, h4, h5 {
-    font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+@font-face {
+    font-family: 'alternate_gothic_fs_no_3Rg';
+    src: url('../../system/fonts/AlternateGothicNo3-webfont.woff');
+    src: url('../../system/fonts/AlternateGothicNo3-webfont.woff?#iefix') format('embedded-opentype'), url('../../system/fonts/AlternateGothicNo3-webfont.woff') format('woff'), url('../../system/fonts/AlternateGothicNo3-webfont.ttf') format('truetype'), url('../../system/fonts/AlternateGothicNo3-webfont.svg#alternate_gothic_fs_no_3Rg') format('svg');
+    font-weight: normal;
+    font-style: normal
 }
+
+h1{
+    font-family: "alternate_gothic_fs_no_3Rg", "Arial", sans-serif; }
 
 h4 {
     margin-bottom: 0;
@@ -48,7 +67,6 @@ h4 {
 
 p {
     font-family: "Trade Gothic Lt", Arial,"Times New Roman", serif;
-
 }
 
 hr {
@@ -76,31 +94,18 @@ table td {
     height: auto;
 }
 
-/* Set gray background color and 100% height */
-.sidenav {
-    height: 100%;
-}
-
 /* set characteristics for the sidebars */
-#leftSide {
-    max-height: 730px;
-    position: relative;
-    overflow-y: scroll;
-}
-#centre {
-    max-height: 730px;
-    position: relative;
-    overflow-y: scroll;
-}
-#rightSide {
+#leftSide, #centre, #rightSide {
     max-height: 730px;
     position: relative;
     overflow-y: scroll;
 }
 
-#notifications, #volunteering, #otherSection {
+/* set characteristics for sections in scrollspy */
+#notifications, #volunteering, #otherSection, #managerShiftResponse {
     min-height: 730px;
 }
+
 /* end of characteristics for sidebars */
 .card-block {
     padding: 20px;
@@ -123,5 +128,13 @@ footer {
 
     .row.content {
         height:auto;
+    }
+
+}
+
+@media screen and (max-width: 1023px) {
+    #leftSide, #rightSide, #notifications, #volunteering, #otherSection, #managerShiftResponse {
+        padding-top:70px;
+        min-height: 80%;
     }
 }
