@@ -1,10 +1,21 @@
 body {
+    font-size: 0.9rem;
     padding: 70px 0 0;
     background-color: #F4F4F4;
     margin: 0 auto;
     max-width: 1440px;
 }
-
+pre,
+code,
+kbd,
+samp,
+.form-control,
+.col-form-legend,
+.btn {
+  font-size: 0.9rem; }
+.navbar-brand {
+  font-family: Baskerville;
+}
 /* Override Bootstrap Responsive CSS fixed navbar */
 @media (max-width: 1440px) {
     .navbar-fixed-top, .navbar-fixed-bottom {
