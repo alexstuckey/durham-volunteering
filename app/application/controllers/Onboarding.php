@@ -15,4 +15,10 @@ class Onboarding extends CI_Controller {
 		$data['active'] = 'enter_details';
 		$this->load->view('onboarding_steps', $data);
 	}
+
+	public function enter_details_form()
+	{
+		$data['cis_username'] = 'xxxx99';
+		$this->load->view('onboarding_3_enter_details_form', $data);
+	}
 }

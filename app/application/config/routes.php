@@ -55,6 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['onboard/welcome'] = 'onboarding/welcome';
 $route['onboard/steps_details'] = 'onboarding/flow';
+$route['onboard/enter_details'] = 'onboarding/enter_details_form';
 
 $route['causes']['GET'] = 'causes/listAll';
 $route['causes']['POST'] = 'causes/create';
