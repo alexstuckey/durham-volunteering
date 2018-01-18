@@ -35,57 +35,53 @@
 
             <div style="text-align:center;">
                 <h1>Onboarding Process</h1>
-                <h4><br /></h4>
-                <p>Thank you for signing up to Durham University's Volunteering Project. With this account you can organize and track your volunteering activities.</p>
-                <h4><br /></h4>
+                <br>
+                <p>Thank you for signing up to Durham University's Volunteering Project.
+                <br>
+                With this account you can organize and track your volunteering activities.</p>
+                <br>
             </div>
             <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-4">
+                <div class="col-lg-4 mb-4" <?php if ($active !== "enter_details") { echo "style='opacity: 0.5; pointer-events: none;'"; } ?>>
                     <div class="card h-100">
                         <div class="card-header">
-                            <h4>Personal Details</h4>
+                            <h4>Step 1</h4>
                         </div>
                         <div class="card-body">
+                            <h5>Personal Details</h5>
                             <p class="card-text">Enter or change your personal information.</p>
-                            <a href="onboarding_2_enter_details_info.html">
-                                <p class="card-text">Your personal details</p>
-                            </a>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Section completed</li>
+                            <a href="enter_details"><li class="list-group-item"><?php if ($active == "enter_details") { echo "&rarr; "; } ?> Enter your details</li></a>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
+                <div class="col-lg-4 mb-4" <?php if ($active !== "nominate_manager") { echo "style='opacity: 0.5; pointer-events: none;'"; } ?>>
                     <div class="card h-100">
                         <div class="card-header">
-                            <h4>Your Manager</h4>
+                            <h4>Step 2</h4>
                         </div>
                         <div class="card-body">
+                            <h5>Your Manager</h5>
                             <p class="card-text">Your manager gives you permission to use a specified time during working hours for volunteering.</p>
-                            <a href="onboarding_5_nominate_manager.html">
-                                <p class="card-text">Nominate a manager</p>
-                            </a>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Section incomplete</li>
+                            <a href="enter_nominate_manager"><li class="list-group-item"><?php if ($active == "nominate_manager") { echo "&rarr; "; } ?>Nominate a manager</li></a>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4" style="opacity: 0.5; pointer-events: none;">
+                <div class="col-lg-4 mb-4" <?php if ($active !== "get_started") { echo "style='opacity: 0.5; pointer-events: none;'"; } ?>>
                     <div class="card h-100">
                         <div class="card-header">
-                            <h4>Get Started</h4>
+                            <h4>Step 3</h4>
                         </div>
                         <div class="card-body">
+                            <h5>Get Started</h5>
                             <p class="card-text">Go to your personal homepage to start organizing and tracking your volunteering activities.</p>
-                            <a href="homepage.html">
-                                <p class="card-text">Your Homepage</p>
-                            </a>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Onboarding not completed</li>
+                            <a href="home"><li class="list-group-item"><?php if ($active == "get_started") { echo "&rarr; "; } ?>Go to app</li></a>
                         </ul>
                     </div>
                 </div>
@@ -93,7 +89,7 @@
             </div>
 
             <!-- FOOTER -->
-            <h1><br /></h1>
+            <br>
 
             <div style="background:white">
                 <footer class="container text-center">

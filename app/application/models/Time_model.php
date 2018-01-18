@@ -29,7 +29,48 @@ class Time_model extends CI_Model {
     public function createTime($data)
     {
 
+        $valid_flag=True;
+
+        $causeExistsFlag=False;
+
+
+//        $this->load->helper(array('form', 'url'));
+//
+//        $this->load->library('form_validation');
+//
+//
+//        $this->form_validation->set_rules('cisID', 'Username', 'required');
+//        $this->form_validation->set_rules('start', 'StartTime', 'required');
+//        $this->form_validation->set_rules('finish', 'FinishTime', 'required');
+//        $this->form_validation->set_rules('causeID', 'CauseID', 'required');
+//
+//
+//        if ($this->form_validation->run() == TRUE)
+//        {
+//            $valid_flag=True;
+//        }
+
+        $this->db->where('causeID', $data['causeID']);
+
+        $query = $this->db->get('causes');
+
+        $result=$query->result_array();
+
+
+        if(sizeof($result)>=1)
+        {
+            $causeExistsFlag=True;
+        }
+
+        if($valid_flag and $causeExistsFlag){
+
             $this->db->insert('time', $data);
+
+
+            return True;
+        }
+
+        return False;
 
     }
 
