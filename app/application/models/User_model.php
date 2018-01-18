@@ -12,6 +12,7 @@ class User_model extends CI_Model {
     //Queries database with SQL query where the argument $CISID = cisID database column.
     //The results are stored in an array which can be accessed with $query[n]['column name']
     //Where n is the position in the array.
+
     public function getUserByCIS($CISID)
     {
             $this->db->where('cisID', $cisID);
@@ -43,8 +44,6 @@ class User_model extends CI_Model {
 
             return 0;
         }
-
-
     }
 
 
@@ -90,6 +89,8 @@ class User_model extends CI_Model {
     public function getManagees($CISID)
     {
         $this->db->where('managersCisID', $CISID);
+
+        $this->db->join('users','users.cisID=management.cisID');
 
         $query = $this->db->get('management');
 
