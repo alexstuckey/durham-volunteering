@@ -46,7 +46,7 @@
 
                             <div class="card">
                                 <div class="card-block">
-                                    <form>
+                                    <form action="send_nominate_manager" method="post">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Email address</label>
                                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -57,9 +57,7 @@
                                             <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
                                         </div>
 
-                                        <a href="onboarding_6.html">
-                                            <button type="button" class="btn btn-primary">Submit</button>
-                                        </a>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
                                 </div>
                             </div>
