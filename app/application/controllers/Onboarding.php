@@ -8,4 +8,11 @@ class Onboarding extends CI_Controller {
 		$data['cis_username'] = 'xxxx99';
 		$this->load->view('onboarding_1_welcome', $data);
 	}
+
+	public function flow()
+	{
+		$data['cis_username'] = 'xxxx99';
+		$data['active'] = 'enter_details';
+		$this->load->view('onboarding_steps', $data);
+	}
 }
