@@ -54,6 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['onboard/welcome'] = 'onboarding/welcome';
+$route['onboard/steps_details'] = 'onboarding/flow';
 
 $route['causes']['GET'] = 'causes/listAll';
 $route['causes']['POST'] = 'causes/create';
