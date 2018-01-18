@@ -49,13 +49,11 @@
                             <h4>Step 1</h4>
                         </div>
                         <div class="card-body">
+                            <h5>Personal Details</h5>
                             <p class="card-text">Enter or change your personal information.</p>
-                            <a href="enter_details.html">
-                                <p class="card-text">Your personal details</p>
-                            </a>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Vestibulum at eros</li>
+                            <a href=""><li class="list-group-item">&rarr; Enter your details</li></a>
                         </ul>
                     </div>
                 </div>
@@ -65,13 +63,11 @@
                             <h4>Step 2</h4>
                         </div>
                         <div class="card-body">
+                            <h5>Your Manager</h5>
                             <p class="card-text">Your manager gives you permission to use a specified time during working hours for volunteering.</p>
-                            <a href="nominate_manager.html">
-                                <p class="card-text">Nominate a manager</p>
-                            </a>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Vestibulum at eros</li>
+                            <a href=""><li class="list-group-item">Nominate a manager</li></a>
                         </ul>
                     </div>
                 </div>
@@ -81,13 +77,11 @@
                             <h4>Step 3</h4>
                         </div>
                         <div class="card-body">
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt.</p>
-                            <a href="homepage.html">
-                                <p class="card-text">Your Homepage</p>
-                            </a>
+                            <h5>Get Started</h5>
+                            <p class="card-text">Go to your personal homepage to start organizing and tracking your volunteering activities.</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Vestibulum at eros</li>
+                            <a href=""><li class="list-group-item">Go to app</li></a>
                         </ul>
                     </div>
                 </div>
