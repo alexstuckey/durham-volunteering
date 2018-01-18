@@ -35,11 +35,11 @@
 
             <div style="text-align:center;">
                 <h1>Onboarding Process</h1>
-                <h4><br /></h4>
+                <br>
                 <p>Thank you for signing up to Durham University's Volunteering Project.
                 <br>
                 With this account you can organize and track your volunteering activities.</p>
-                <h4><br /></h4>
+                <br>
             </div>
             <div class="container">
             <div class="row">
