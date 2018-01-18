@@ -32,7 +32,7 @@ class Onboarding extends CI_Controller {
 	public function enter_nominate_manager_form()
 	{
 		$data['cis_username'] = 'xxxx99';
-		$this->load->view('onboarding_3_enter_nominate_manager_form', $data);
+		$this->load->view('onboarding_5_nominate_manager_form', $data);
 	}
 
 	public function send_nominate_manager()
