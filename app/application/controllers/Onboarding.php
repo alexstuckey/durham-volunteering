@@ -21,4 +21,11 @@ class Onboarding extends CI_Controller {
 		$data['cis_username'] = 'xxxx99';
 		$this->load->view('onboarding_3_enter_details_form', $data);
 	}
+
+	public function send_details()
+	{
+		$data['cis_username'] = 'xxxx99';
+		$data['active'] = 'nominate_manager';
+		$this->load->view('onboarding_steps', $data);
+	}
 }
