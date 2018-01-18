@@ -32,20 +32,68 @@ class Cause_model extends CI_Model {
     public function createCause($data)
     {
 
-        $this->db->insert('causes', $data);
+        $valid_flag = True;
+
+        $typeIDExistsFlag = False;
+
+//        $this->load->helper(array('form', 'url'));
+//
+//        $this->load->library('form_validation');
+//
+//        $this->form_validation->set_rules('cisID', 'Username', 'trim|required');
+//        $this->form_validation->set_rules('start', 'StartTime', 'trim|required');
+//        $this->form_validation->set_rules('finish', 'FinishTime', 'trim|required');
+//        $this->form_validation->set_rules('causeID', 'CauseID', 'trim|required');
+//
+//        if ($this->form_validation->run() == TRUE)
+//        {
+//            $valid_flag=True;
+//        }
+
+
+        $this->db->where('typeID', $data['typeID']);
+
+        $query = $this->db->get('causeType');
+
+        $result = $query->result_array();
+
+
+        if (sizeof($result) >= 1) {
+            $typeIDExistsFlag = True;
+        }
+
+        if ($valid_flag and $typeIDExistsFlag) {
+            $this->db->insert('causes', $data);
+            return True;
+        }
+        return False;
 
     }
 
     //Returns an array of cause rows which match the typeID given in the argument
     public function getCausesByType($type)
     {
+        $this->db->where('name', $type);
 
+        $this->db->join('causes','causes.typeID=causeType.typeID');
 
-        $this->db->where('typeID', $type);
+        $query = $this->db->get('causeType');
 
-        $query = $this->db->get('causes');
+        $result=$query->result_array();
 
-        return $query->result_array();
+        }
+
+    }
+
+    //Returns an array of cause rows for every cause in the database, this is joined with the type ID
+    public function getAllCauses()
+    {
+
+        $this->db->join('causes','causes.typeID=causeType.typeID');
+
+        $query = $this->db->get('causeType');
+
+        $result=$query->result_array();
 
 
     }
