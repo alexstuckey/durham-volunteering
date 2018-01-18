@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Personal Details</title>
+        <title>Welcome</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Vendor JS -->
@@ -41,37 +41,16 @@
                     <div data-spy="scroll" data-target=".navbar" data-offset="70" class="col-sm-6 text-left" id="centre">
 
                         <!-- Volunteering Div -->
-                        <div id="volunteering">
-                            <h1>Enter Your Details</h1>
-
-                            <div class="card">
-
-                                <div class="card-block">
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Given Name</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter given name">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Surname</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter surname">
-                                        </div>
-
-                                        <a href="onboarding_4_nominate_info.html">
-                                            <button type="button" class="btn btn-primary">Submit</button>
-                                        </a>
-                                    </form>
-                                </div>
-                            </div>
+                        <div style="text-align:center;">
+                            <h1>Welcome!</h1>
+                            <h6>You are registering as username <?php echo $cis_username ?>.</h6>
+                            <p><br />Thank you for signing up to Durham University's Volunteering Project. With this account you can organize and track your volunteering activities.</p>
+                            <a href="steps_details">
+                                <button class="btn btn-primary">Continue</button>
+                            </a>
                         </div>
                         <!-- End if Volunteering Div -->
+
                     </div>
 
                     <div class="col-sm-3 sidenav" id="rightSide">

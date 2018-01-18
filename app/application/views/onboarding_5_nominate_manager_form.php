@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Welcome</title>
+        <title>Manager Nomination</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Vendor JS -->
@@ -41,15 +41,26 @@
                     <div data-spy="scroll" data-target=".navbar" data-offset="70" class="col-sm-6 text-left" id="centre">
 
                         <!-- Volunteering Div -->
-                        <div style="text-align:center;">
-                            <h1>Welcome!</h1>
-                            <h4><br /></h4>
-                            <h6>Your registered E-Mail Address is name.surname@durham.ac.uk.</h6>
-                            <p><br />Thank you for signing up to Durham University's Volunteering Project. With this account you can organize and track your volunteering activities.</p>
-                            <h4><br /></h4>
-                            <a href="onboarding_2_enter_details_info.html">
-                                <button type="submit" class="btn btn-primary">Continue</button>
-                            </a>
+                        <div id="volunteering">
+                            <h1>Nominate Your Manager</h1>
+
+                            <div class="card">
+                                <div class="card-block">
+                                    <form action="send_nominate_manager" method="post">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Email address</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleTextarea">Comment</label>
+                                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <!-- End if Volunteering Div -->
 

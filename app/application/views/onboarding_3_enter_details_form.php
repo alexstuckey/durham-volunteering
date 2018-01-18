@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Manager Nomination</title>
+        <title>Personal Details</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Vendor JS -->
@@ -42,40 +42,29 @@
 
                         <!-- Volunteering Div -->
                         <div id="volunteering">
-                            <h1>Nominate Your Manager</h1>
+                            <h1>Enter Your Details</h1>
 
                             <div class="card">
+
                                 <div class="card-block">
-                                    <form>
+                                    <form action="send_details" method="post">
+
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                            <label for="exampleInputEmail1">First Name</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter first name">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Given Name</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter given name">
+                                            <label for="exampleInputEmail1">Last Name</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter last name">
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Surname</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter surname">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleTextarea">Comment</label>
-                                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                                        </div>
-
-                                        <a href="onboarding_6.html">
-                                            <button type="button" class="btn btn-primary">Submit</button>
-                                        </a>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <!-- End if Volunteering Div -->
-
                     </div>
 
                     <div class="col-sm-3 sidenav" id="rightSide">
