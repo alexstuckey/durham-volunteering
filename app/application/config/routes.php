@@ -60,6 +60,8 @@ $route['onboard/send_details'] = 'onboarding/send_details';
 $route['onboard/enter_nominate_manager'] = 'onboarding/enter_nominate_manager_form';
 $route['onboard/send_nominate_manager'] = 'onboarding/send_nominate_manager';
 
+$route['home'] = 'home/home';
+
 $route['causes']['GET'] = 'causes/listAll';
 $route['causes']['POST'] = 'causes/create';
 
