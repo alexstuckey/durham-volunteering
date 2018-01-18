@@ -43,7 +43,7 @@
                         <!-- Volunteering Div -->
                         <div style="text-align:center;">
                             <h1>Welcome!</h1>
-                            <h6>Your registered E-Mail Address is name.surname@durham.ac.uk.</h6>
+                            <h6>You are registering as username .</h6>
                             <p><br />Thank you for signing up to Durham University's Volunteering Project. With this account you can organize and track your volunteering activities.</p>
                             <a href="onboarding_2_enter_details_info.html">
                                 <button type="submit" class="btn btn-primary">Continue</button>
