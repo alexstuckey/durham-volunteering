@@ -81,7 +81,7 @@
                             <p class="card-text">Go to your personal homepage to start organizing and tracking your volunteering activities.</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <a href=""><li class="list-group-item"><?php if ($active == "get_started") { echo "&rarr; "; } ?>Go to app</li></a>
+                            <a href="home"><li class="list-group-item"><?php if ($active == "get_started") { echo "&rarr; "; } ?>Go to app</li></a>
                         </ul>
                     </div>
                 </div>
