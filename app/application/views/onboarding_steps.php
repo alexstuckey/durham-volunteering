@@ -53,7 +53,7 @@
                             <p class="card-text">Enter or change your personal information.</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <a href=""><li class="list-group-item">&rarr; Enter your details</li></a>
+                            <a href="enter_details"><li class="list-group-item">&rarr; Enter your details</li></a>
                         </ul>
                     </div>
                 </div>
