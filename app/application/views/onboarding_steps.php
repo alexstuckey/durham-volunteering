@@ -53,7 +53,7 @@
                             <p class="card-text">Enter or change your personal information.</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <a href="enter_details"><li class="list-group-item">&rarr; Enter your details</li></a>
+                            <a href="enter_details"><li class="list-group-item"><?php if ($active == "enter_details") { echo "&rarr; "; } ?> Enter your details</li></a>
                         </ul>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                             <p class="card-text">Your manager gives you permission to use a specified time during working hours for volunteering.</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <a href=""><li class="list-group-item">Nominate a manager</li></a>
+                            <a href=""><li class="list-group-item"><?php if ($active == "nominate_manager") { echo "&rarr; "; } ?>Nominate a manager</li></a>
                         </ul>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                             <p class="card-text">Go to your personal homepage to start organizing and tracking your volunteering activities.</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <a href=""><li class="list-group-item">Go to app</li></a>
+                            <a href=""><li class="list-group-item"><?php if ($active == "get_started") { echo "&rarr; "; } ?>Go to app</li></a>
                         </ul>
                     </div>
                 </div>
