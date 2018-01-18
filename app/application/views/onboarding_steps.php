@@ -67,7 +67,7 @@
                             <p class="card-text">Your manager gives you permission to use a specified time during working hours for volunteering.</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <a href=""><li class="list-group-item"><?php if ($active == "nominate_manager") { echo "&rarr; "; } ?>Nominate a manager</li></a>
+                            <a href="enter_nominate_manager"><li class="list-group-item"><?php if ($active == "nominate_manager") { echo "&rarr; "; } ?>Nominate a manager</li></a>
                         </ul>
                     </div>
                 </div>
