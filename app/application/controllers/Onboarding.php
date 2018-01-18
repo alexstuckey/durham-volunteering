@@ -5,6 +5,7 @@ class Onboarding extends CI_Controller {
 
 	public function welcome()
 	{
-		$this->load->view('onboarding_1_welcome');
+		$data['cis_username'] = 'xxxx99';
+		$this->load->view('onboarding_1_welcome', $data);
 	}
 }
