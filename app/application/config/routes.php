@@ -57,6 +57,8 @@ $route['onboard/welcome'] = 'onboarding/welcome';
 $route['onboard/steps_details'] = 'onboarding/flow';
 $route['onboard/enter_details'] = 'onboarding/enter_details_form';
 $route['onboard/send_details'] = 'onboarding/send_details';
+$route['onboard/nominate_manager'] = 'onboarding/nominate_manager_form';
+$route['onboard/send_nominate_manager'] = 'onboarding/send_nominate_manager';
 
 $route['causes']['GET'] = 'causes/listAll';
 $route['causes']['POST'] = 'causes/create';
