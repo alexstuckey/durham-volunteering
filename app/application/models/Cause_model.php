@@ -32,7 +32,41 @@ class Cause_model extends CI_Model {
     public function createCause($data)
     {
 
-        $this->db->insert('causes', $data);
+        $valid_flag = True;
+
+        $typeIDExistsFlag = False;
+
+//        $this->load->helper(array('form', 'url'));
+//
+//        $this->load->library('form_validation');
+//
+//        $this->form_validation->set_rules('cisID', 'Username', 'trim|required');
+//        $this->form_validation->set_rules('start', 'StartTime', 'trim|required');
+//        $this->form_validation->set_rules('finish', 'FinishTime', 'trim|required');
+//        $this->form_validation->set_rules('causeID', 'CauseID', 'trim|required');
+//
+//        if ($this->form_validation->run() == TRUE)
+//        {
+//            $valid_flag=True;
+//        }
+
+
+        $this->db->where('typeID', $data['typeID']);
+
+        $query = $this->db->get('causeType');
+
+        $result = $query->result_array();
+
+
+        if (sizeof($result) >= 1) {
+            $typeIDExistsFlag = True;
+        }
+
+        if ($valid_flag and $typeIDExistsFlag) {
+            $this->db->insert('causes', $data);
+            return True;
+        }
+        return False;
 
     }
 
