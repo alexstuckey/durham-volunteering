@@ -43,7 +43,7 @@
             </div>
             <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-4">
+                <div class="col-lg-4 mb-4" <?php if ($active !== "enter_details") { echo "style='opacity: 0.5; pointer-events: none;'"; } ?>>
                     <div class="card h-100">
                         <div class="card-header">
                             <h4>Step 1</h4>
@@ -57,7 +57,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4" style="opacity: 0.5; pointer-events: none;">
+                <div class="col-lg-4 mb-4" <?php if ($active !== "nominate_manager") { echo "style='opacity: 0.5; pointer-events: none;'"; } ?>>
                     <div class="card h-100">
                         <div class="card-header">
                             <h4>Step 2</h4>
@@ -71,7 +71,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4" style="opacity: 0.5; pointer-events: none;">
+                <div class="col-lg-4 mb-4" <?php if ($active !== "get_started") { echo "style='opacity: 0.5; pointer-events: none;'"; } ?>>
                     <div class="card h-100">
                         <div class="card-header">
                             <h4>Step 3</h4>
