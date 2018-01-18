@@ -53,16 +53,6 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Given Name</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter given name">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Surname</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter surname">
-                                        </div>
-
-                                        <div class="form-group">
                                             <label for="exampleTextarea">Comment</label>
                                             <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
                                         </div>

@@ -48,23 +48,18 @@
 
                                 <div class="card-block">
                                     <form action="send_details" method="post">
+
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                            <label for="exampleInputEmail1">First Name</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter first name">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Given Name</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter given name">
+                                            <label for="exampleInputEmail1">Last Name</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter last name">
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Surname</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter surname">
-                                        </div>
-
-                                        <button type="submite" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
                                 </div>
                             </div>
