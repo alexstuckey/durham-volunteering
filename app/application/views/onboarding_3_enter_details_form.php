@@ -75,20 +75,20 @@
             <!-- FOOTER -->
             <h1><br /></h1>
 
-            <div style="background:white">
+            <div id="footer">
                 <footer class="container text-center">
                     <h4><br /></h4>
-                    <h1>We'd love to hear from you</h1>
+                    <h2>We'd love to hear from you</h2>
                     <h4><br /></h4>
                     <p><b>Staff Volunteering & Outreach Team</b></p>
                     <a href="mailto:community.engagement@durham.ac.uk">
-                        <img style="margin:20px;" src="../../src/images/mail.png" width="30px">
+                        <img class="contact_icon" src="../../src/images/mail.png" width="25px">
                     </a>
                     <a href="https://www.facebook.com/SVODurham/">
-                        <img style="margin:20px;" src="../../src/images/FB-f-Logo.png" width="30px">
+                        <img class="contact_icon" src="../../src/images/FB-f-Logo.png" width="25px">
                     </a>
                     <a href="tel:0191 334 2199">
-                        <img style="margin:20px;" src="../../src/images/telephone.png" width="30px">
+                        <img class="contact_icon" src="../../src/images/telephone.png" width="25px">
                     </a>
                 </footer>
 
