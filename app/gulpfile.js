@@ -18,11 +18,23 @@ gulp.task('js', function() {
     .pipe(gulp.dest("./static/js"))
 })
 
-gulp.task('default', ['sass', 'js'])
+gulp.task('fonts', function() {
+  return gulp.src('./src/fonts/**/*')
+    .pipe(gulp.dest('./static/fonts'))
+})
+
+gulp.task('images', function() {
+  return gulp.src('./src/images/**/*.+(png|jpg|jpeg|gif|svg)')
+    .pipe(gulp.dest('./static/images'))
+})
+
+gulp.task('default', ['sass', 'js', 'fonts', 'images'])
 
 // Watches project resouce directory for changes
-gulp.task('serve', ['sass', 'js'], function() {
+gulp.task('serve', ['sass', 'js', 'fonts'], function() {
 
   gulp.watch('./src/sass/**/*.scss', ['sass'])
   gulp.watch('./src/js/**/*.js', ['js'])
+  gulp.watch('./src/fonts/**/*', ['fonts'])
+  gulp.watch('./src/images/**/*.+(png|jpg|jpeg|gif|svg)', ['images'])
 })
