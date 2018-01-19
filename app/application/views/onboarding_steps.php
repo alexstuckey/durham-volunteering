@@ -31,7 +31,6 @@
                 </button>
             </nav>
 
-            <h1><br /></h1>
 
             <div class="text-center">
                 <h1>Onboarding Process</h1>

@@ -31,7 +31,6 @@
                 </button>
             </nav>
 
-            <h1><br /></h1>
 
             <div class="container-fluid text-center" id="content">
                 <div class="row content">
