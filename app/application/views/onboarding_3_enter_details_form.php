@@ -44,6 +44,9 @@
                         <div id="volunteering">
                             <h1>Enter Your Details</h1>
 
+                            <h4><br /></h4>
+                            <p>Please provide further information about yourself that will be added to your profile. We will use the name provided for contacting you and interacting with your manager.<br /></p>
+
                             <div class="card">
 
                                 <div class="card-block">
