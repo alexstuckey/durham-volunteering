@@ -29,14 +29,16 @@ class Causes extends CI_Controller {
 				print(json_encode($response));
 			}
 
-			if (array_key_exists("name", $requestPayload)
+			if (array_key_exists("organisation", $requestPayload)
+			 && array_key_exists("typeID", $requestPayload)
 			 && array_key_exists("contactName", $requestPayload)
 			 && array_key_exists("contactEmail", $requestPayload)
 			 && array_key_exists("contactPhone", $requestPayload)
 			 && array_key_exists("notes", $requestPayload)
-			 && array_key_exists("type", $requestPayload)
 			) {
 				var_dump($requestPayload);
+				$this->load->model('Cause_model');
+				$this->cause_model->createCause($requestPayload);
 			} else {
 				$response = array('error' => "parameters incomplete" );
 				print(json_encode($response));
@@ -51,6 +53,15 @@ class Causes extends CI_Controller {
 
 	public function get($causeID)
 	{
-		echo 'Hello cause, ' . $causeID . '!';
+		if (!is_int($causeID)) {
+			// Fail
+			$response = array('error' => "causeID was not an int" );
+			print(json_encode($response));
+		} else {
+			$this->load->model('Cause_model');
+			$fetchedCause = $this->cause_model->getCauseByID($causeID);
+
+			print(json_encode($fetchedCause));
+		}
 	}
 }

@@ -6,20 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Popper JS -->
-        <script src="../../static/js/popper.min.js"></script>
+        <script src="../static/js/popper.min.js"></script>
         
         <!-- Vendor JS -->
-        <script src="../../static/js/jquery.min.js"></script>
-        <script src="../../static/js/bootstrap.min.js"></script>
+        <script src="../static/js/jquery.min.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
         
         <!-- App JS -->
-        <script src="../../static/js/homepage.js"></script>
+        <script src="../static/js/homepage.js"></script>
 
         <!-- Vendor CSS -->
-        <link rel="stylesheet" href="../../static/css/bootstrap.css">
+        <link rel="stylesheet" href="../static/css/bootstrap.css">
 
         <!-- App CSS -->
-        <link rel="stylesheet" href="../../static/css/homepage.css" type="text/css">
+        <link rel="stylesheet" href="../static/css/homepage.css" type="text/css">
 
     </head>
 
