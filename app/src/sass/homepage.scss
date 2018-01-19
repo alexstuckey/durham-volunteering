@@ -39,7 +39,12 @@ samp,
     background-color: #470544; }
 .bg-dark {
     background-color: #470544 !important; }
-
+#footer{
+    background-color: white;
+}
+.contact_icon{
+    margin: 25px;
+}
 #content, #centre {
     position:relative;
 }
@@ -63,13 +68,19 @@ samp,
 
 @font-face {
     font-family: 'alternate_gothic_fs_no_3Rg';
-    src: url('../../system/fonts/AlternateGothicNo3-webfont.woff');
-    src: url('../../system/fonts/AlternateGothicNo3-webfont.woff?#iefix') format('embedded-opentype'), url('../../system/fonts/AlternateGothicNo3-webfont.woff') format('woff'), url('../../system/fonts/AlternateGothicNo3-webfont.ttf') format('truetype'), url('../../system/fonts/AlternateGothicNo3-webfont.svg#alternate_gothic_fs_no_3Rg') format('svg');
+    src: url('../../src/fonts/AlternateGothicNo3-webfont.woff');
+    src: url('../../src/fonts/AlternateGothicNo3-webfont.woff?#iefix') format('embedded-opentype'), url('../../src/fonts/AlternateGothicNo3-webfont.woff') format('woff'), url('../../src/fonts/AlternateGothicNo3-webfont.ttf') format('truetype'), url('../../src/fonts/AlternateGothicNo3-webfont.svg#alternate_gothic_fs_no_3Rg') format('svg');
     font-weight: normal;
     font-style: normal
 }
-
-h1{
+h1 {
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+#page-heading{
+    margin-bottom: 30px;
+}
+h1, h2{
     font-family: "alternate_gothic_fs_no_3Rg", "Arial", sans-serif; }
 
 h4 {
