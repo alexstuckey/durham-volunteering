@@ -5,21 +5,23 @@
         <title>Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
+        <?php $this->load->helper('url'); ?>
+        
         <!-- Popper JS -->
-        <script src="../static/js/popper.min.js"></script>
+        <script src="<?php echo base_url('/static/js/popper.min.js'); ?>"></script>
         
         <!-- Vendor JS -->
-        <script src="../static/js/jquery.min.js"></script>
-        <script src="../static/js/bootstrap.min.js"></script>
+        <script src="<?php echo base_url('/static/js/jquery.min.js'); ?>"></script>
+        <script src="<?php echo base_url('/static/js/bootstrap.min.js'); ?>"></script>
         
         <!-- App JS -->
-        <script src="../static/js/homepage.js"></script>
+        <script src="<?php echo base_url('/static/js/homepage.js'); ?>"></script>
 
         <!-- Vendor CSS -->
-        <link rel="stylesheet" href="../static/css/bootstrap.css">
+        <link rel="stylesheet" href="<?php echo base_url('/static/css/bootstrap.css'); ?>">
 
         <!-- App CSS -->
-        <link rel="stylesheet" href="../static/css/homepage.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo base_url('/static/css/homepage.css'); ?>" type="text/css">
 
     </head>
 

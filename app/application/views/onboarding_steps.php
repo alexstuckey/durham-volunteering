@@ -5,18 +5,20 @@
         <title>Onboarding</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <!-- Vendor JS -->
-        <script src="../../static/js/jquery.min.js"></script>
-        <script src="../../static/js/bootstrap.min.js"></script>
+        <?php $this->load->helper('url'); ?>
 
+        <!-- Vendor JS -->
+        <script src="<?php echo base_url('/static/js/jquery.min.js'); ?>"></script>
+        <script src="<?php echo base_url('/static/js/bootstrap.min.js'); ?>"></script>
+        
         <!-- App JS -->
-        <script src="../../static/js/homepage.js"></script>
+        <script src="<?php echo base_url('/static/js/homepage.js'); ?>"></script>
 
         <!-- Vendor CSS -->
-        <link rel="stylesheet" href="../../static/css/bootstrap.css">
+        <link rel="stylesheet" href="<?php echo base_url('/static/css/bootstrap.css'); ?>">
 
         <!-- App CSS -->
-        <link rel="stylesheet" href="../../static/css/homepage.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo base_url('/static/css/homepage.css'); ?>" type="text/css">
 
     </head>
 
@@ -52,7 +54,7 @@
                             <p class="card-text">Enter or change your personal information.</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <a href="enter_details"><li class="list-group-item"><?php if ($active == "enter_details") { echo "&rarr; "; } ?> Enter your details</li></a>
+                            <a href="<?php echo site_url('/onboard/enter_details'); ?>"><li class="list-group-item"><?php if ($active == "enter_details") { echo "&rarr; "; } ?> Enter your details</li></a>
                         </ul>
                     </div>
                 </div>
@@ -66,7 +68,7 @@
                             <p class="card-text">Your manager gives you permission to use a specified time during working hours for volunteering.</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <a href="enter_nominate_manager"><li class="list-group-item"><?php if ($active == "nominate_manager") { echo "&rarr; "; } ?>Nominate a manager</li></a>
+                            <a href="<?php echo site_url('/onboard/enter_nominate_manager'); ?>"><li class="list-group-item"><?php if ($active == "nominate_manager") { echo "&rarr; "; } ?>Nominate a manager</li></a>
                         </ul>
                     </div>
                 </div>
@@ -80,7 +82,7 @@
                             <p class="card-text">Go to your personal homepage to start organizing and tracking your volunteering activities.</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <a href="home"><li class="list-group-item"><?php if ($active == "get_started") { echo "&rarr; "; } ?>Go to app</li></a>
+                            <a href="<?php echo site_url('/home'); ?>"><li class="list-group-item"><?php if ($active == "get_started") { echo "&rarr; "; } ?>Go to app</li></a>
                         </ul>
                     </div>
                 </div>
