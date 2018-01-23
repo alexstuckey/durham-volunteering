@@ -38,7 +38,7 @@
                     <div class="collapse navbar-collapse" id="collapsibleNavbar">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#notifications">Notifications</a>
+                                <a class="nav-link" href="#notifications">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#volunteering">Volunteering</a>
@@ -83,7 +83,7 @@
                         </div>
                     </div>
 
-                    <div data-spy="scroll" data-target=".navbar" data-offset="70" class="col-sm-6 text-left" id="centre">
+                    <div data-spy="scroll" data-target=".navbar" class="col-sm-6 text-left" id="centre">
 
                         <!-- Notifications Div -->
                         <div id="notifications">
