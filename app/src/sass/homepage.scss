@@ -116,13 +116,6 @@ table td {
     height: auto;
 }
 
-/* set characteristics for the sidebars */
-#leftSide, #centre, #rightSide {
-    max-height: 730px;
-    position: relative;
-    overflow-y: scroll;
-}
-
 /* set characteristics for sections in scrollspy */
 #notifications, #volunteering, #otherSection, #managerShiftResponse {
     min-height: 730px;
