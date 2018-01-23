@@ -13,6 +13,7 @@
         <!-- Vendor JS -->
         <script src="<?php echo base_url('/static/js/jquery.min.js'); ?>"></script>
         <script src="<?php echo base_url('/static/js/bootstrap.min.js'); ?>"></script>
+        <script src="<?php echo base_url('/static/js/Chart.min.js'); ?>"></script>
         
         <!-- App JS -->
         <script src="<?php echo base_url('/static/js/homepage.js'); ?>"></script>
@@ -327,13 +328,24 @@
                     <div class="col-sm-3 sidenav" id="rightSide">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Upcoming Activity</h4>
+                                <h4>Hours by Department</h4>
                             </div>
-                            <ul class="list-group">
-                                <li class="list-group-item">First item</li>
-                                <li class="list-group-item">Second item</li>
-                                <li class="list-group-item">Third item</li>
-                            </ul>
+                            <canvas id="myChart" width="400" height="400"></canvas>
+                            <script>
+                            var ctx = document.getElementById("myChart").getContext('2d');
+                            var myDoughnutChart = new Chart(ctx, {
+                                type: 'doughnut',
+                                data: {
+                                    labels: ["Orange", "Teal", "Navy", "Olive", "Yellow"],
+                                    datasets: [{
+                                        data: [10, 20, 30, 15, 25],
+                                        backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00"]   
+                                    }]
+                                },
+                                options: {
+                                }
+                            });
+                            </script>
                         </div>
                         <div class="card">
                             <div class="card-header">
