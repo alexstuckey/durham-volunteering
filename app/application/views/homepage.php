@@ -89,12 +89,14 @@
                         <div id="notifications">
                             <h1>Notifications</h1>
 
-                            <div class="alert alert-success alert-dismissable">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Success!</strong> Notification deleted!
+                            <div id="notification_popups">
+                                <div class="alert alert-success alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <strong>Success!</strong> Notification deleted!
+                                </div>
                             </div>
 
-                            <div class="card">
+                            <div class="card" id="notification1">
                                 <div class="card-header">
                                     <h4>Shift Approved</h4>
                                 </div>
