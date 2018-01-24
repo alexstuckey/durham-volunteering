@@ -208,11 +208,11 @@
                                         <div class="form-group">
                                             <label for="shiftApplicationSelect">Select Cause</label>
                                             <select class="form-control" id="shiftApplicationSelect" name="shiftApplicationSelect">
-                                                <option>Cause 1</option>
-                                                <option>Cause 2</option>
-                                                <option>Cause 3</option>
-                                                <option>Cause 4</option>
-                                                <option>Cause 5</option>
+                                                <option>RSPB</option>
+                                                <option>Barnardo's</option>
+                                                <option>Mencap</option>
+                                                <option>Oxfam</option>
+                                                <option>Samaritans</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -234,11 +234,9 @@
                                         <div class="form-group">
                                             <label for="shiftCancelSelect">Select Shift</label>
                                             <select class="form-control" id="shiftCancelSelect" name="shiftCancelSelect">
-                                                <option>Shift 1</option>
-                                                <option>Shift 2</option>
-                                                <option>Shift 3</option>
-                                                <option>Shift 4</option>
-                                                <option>Shift 5</option>
+                                                <option>jdns89 @ 2pm tomorrow</option>
+                                                <option>dhan35 @ 4pm Monday 29</option>
+                                                <option>djsh99 @ 9am Tuesday 30</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
