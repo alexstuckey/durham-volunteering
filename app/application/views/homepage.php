@@ -60,7 +60,7 @@
                     <div class="col-sm-3 sidenav" id="leftSide">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Shortcuts</h4>
+                                <h5>Shortcuts</h5>
                             </div>
                             <div class="list-group">
                                 <a href="#" class="list-group-item">DUO</a>
@@ -70,7 +70,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <h4>Get Involved with Causes</h4>
+                                <h5>Get Involved with Causes</h5>
                             </div>
                             <div class="list-group">
                                 <a href="#" class="list-group-item">RSPB</a>
@@ -158,7 +158,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Get Involved!</h4>
+                                    <h5>Get Involved!</h5>
                                 </div>
                                 <div class="card-block">
                                     <p class="card-text">You're all set up and ready - fill in the shift application form to get started with volunteering.</p>
@@ -330,7 +330,7 @@
                     <div class="col-sm-3 sidenav" id="rightSide">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Hours by Department</h4>
+                                <h5>Hours by Department</h5>
                             </div>
                             <canvas id="myDepartmentShareChart" width="400" height="400"></canvas>
                             <script>
@@ -351,7 +351,7 @@
                         </div>
                         <div class="card">
                             <div class="card-header">
-                                <h4>Department progress</h4>
+                                <h5>Department progress</h5>
                             </div>
                             <canvas id="myDepartmentRaceChart" width="200" height="200"></canvas>
                             <script>
@@ -385,7 +385,7 @@
                         </div>
                         <div class="card">
                             <div class="card-header">
-                                <h4>Extra Info Box</h4>
+                                <h5>Extra Info Box</h5>
                             </div>
                             <ul class="list-group">
                                 <li class="list-group-item">First item</li>
