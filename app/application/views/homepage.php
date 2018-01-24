@@ -338,7 +338,7 @@
                             var myDoughnutChart = new Chart(ctx, {
                                 type: 'doughnut',
                                 data: {
-                                    labels: ["Orange", "Teal", "Navy", "Olive", "Yellow"],
+                                    labels: ["Accounting", "Catering", "Careers", "Estates & Maintenance", "Porters"],
                                     datasets: [{
                                         data: [10, 20, 30, 15, 25],
                                         backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00"]   
@@ -359,7 +359,7 @@
                             var myDepartmentRaceChart = new Chart(ctx, {
                                 type: 'horizontalBar',
                                 data: {
-                                    labels: ["Orange", "Teal", "Navy", "Olive", "Yellow"],
+                                    labels: ["Accounting", "Catering", "Careers", "Estates & Maintenance", "Porters"],
                                     datasets: [{
                                         data: [10, 20, 30, 15, 25],
                                         fill: false,
