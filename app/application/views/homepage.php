@@ -393,8 +393,6 @@
             </div>
 
             <!-- FOOTER -->
-            <h1><br /></h1>
-
             <div id="footer">
                 <footer class="container text-center">
                     <h4><br /></h4>
