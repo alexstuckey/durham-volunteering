@@ -89,6 +89,10 @@
                         <div id="notifications">
                             <h1>Notifications</h1>
 
+                            <div id="notification_popups">
+                                
+                            </div>
+
                             <div class="card" id="notification1">
                                 <div class="card-header">
                                     <h4>Shift Approved</h4>
