@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End if Volunteering Div -->
+                        <!-- End of Volunteering Div -->
 
                     </div>
 

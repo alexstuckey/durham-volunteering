@@ -80,15 +80,19 @@ samp,
     font-weight: normal;
     font-style: normal
 }
-h1 {
+
+.onboardh1 {
     margin-top: 60px;
     margin-bottom: 30px;
 }
+
 #page-heading{
     margin-bottom: 30px;
 }
-h1, h2{
-    font-family: "alternate_gothic_fs_no_3Rg", "Arial", sans-serif; }
+
+h1, h2 {
+    font-family: "alternate_gothic_fs_no_3Rg", "Arial", sans-serif;
+}
 
 h4 {
     margin-bottom: 0;
@@ -141,7 +145,7 @@ footer {
 }
 
 @media screen and (max-width: 1023px) {
-    #leftSide, #rightSide, #notifications, #volunteering, #otherSection, #managerShiftResponse {
+    #notifications, #volunteering, #otherSection, #managerShiftResponse {
         padding-top:70px;
         min-height: 80%;
     }
