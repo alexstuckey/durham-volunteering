@@ -75,8 +75,8 @@ samp,
 
 @font-face {
     font-family: 'alternate_gothic_fs_no_3Rg';
-    src: url('../../src/fonts/AlternateGothicNo3-webfont.woff');
-    src: url('../../src/fonts/AlternateGothicNo3-webfont.woff?#iefix') format('embedded-opentype'), url('../../src/fonts/AlternateGothicNo3-webfont.woff') format('woff'), url('../../src/fonts/AlternateGothicNo3-webfont.ttf') format('truetype'), url('../../src/fonts/AlternateGothicNo3-webfont.svg#alternate_gothic_fs_no_3Rg') format('svg');
+    src: url('../fonts/AlternateGothicNo3-webfont.woff');
+    src: url('../fonts/AlternateGothicNo3-webfont.woff?#iefix') format('embedded-opentype'), url('../fonts/AlternateGothicNo3-webfont.woff') format('woff'), url('../fonts/AlternateGothicNo3-webfont.ttf') format('truetype'), url('../fonts/AlternateGothicNo3-webfont.svg#alternate_gothic_fs_no_3Rg') format('svg');
     font-weight: normal;
     font-style: normal
 }
