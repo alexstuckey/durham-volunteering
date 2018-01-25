@@ -2,6 +2,90 @@ function foo() {
     return 'bar';
 }
 
+/* Retrieve and populate causes box
+$(document).ready(function() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            console.log(xhttp.responseText);
+            //fill cause box with cause names
+            let contentString = '';
+            const $causeNameBox = $('#causeNameBox');
+            const response = JSON.parse(xhttp.responseText);
+            for (let i = 0; i < response.size; i++) {
+                contentString += '<a href="#" class="list-group-item">' + i.name + '</a>'
+            }
+            //$causeNameBox.innerHTML = contentString;
+        }
+    };
+    xhttp.open('GET', 'https://private-anon-fc3adc6135-durhamvolunteering.apiary-mock.com/causes', true);
+    xhttp.send();
+});*/
+
+//shift Application Form variables
+/*
+let shiftApplicationForm;
+let shiftApplicationEmail;
+let shiftApplicationDateTimeStart;
+let shiftApplicationDateTimeEnd;
+let shiftApplicationSelect;
+let shiftApplicationComment;
+let shiftApplicationButton;
+*/
+$('#shiftApplicationButton').click(function() {
+    const $shiftApplicationEmail = $('#shiftApplicationEmail');
+    const $shiftApplicationDateTimeStart = $('#shiftApplicationDateTimeStart');
+    const $shiftApplicationDateTimeEnd = $('#shiftApplicationDateTimeEnd');
+    const $shiftApplicationSelect = $('#shiftApplicationSelect');
+    const $shiftApplicationComment = $('#shiftApplicationComment');
+    let shiftApplicationEmail = $shiftApplicationEmail.val();
+    let shiftApplicationDateTimeStart = $shiftApplicationDateTimeStart.val();
+    let shiftApplicationDateTimeEnd = $shiftApplicationDateTimeEnd.val();
+    let shiftApplicationSelect = $shiftApplicationSelect.val();
+    let shiftApplicationComment = $shiftApplicationComment.val();
+
+
+    /* <<TODO add URL link, Details, Response Handling */
+    const http = new XMLHttpRequest();
+    const url = "URL";
+    const details = '';
+    console.log(details);
+    http.onreadystatechange = function () { //Function when the state changes.
+        if (http.readyState === 4 && http.status === 200) {
+            alert('200 OK - response from server: ' + http.responseText);
+            // if response is good
+
+        } else if (http.readyState === 4 && http.status === 400) {
+            alert('400 Bad Request - response from server: ' + http.responseText);
+            if (http.responseText === '') {
+                // bad response 1
+                console.log('bad response 1');
+            } else if (http.responseText === ''){
+                // bad response 2
+                console.log('bad response 2');
+            }
+        }
+    };
+    http.open("POST", url, true);
+    // http.setRequestHeader("Authorization", 'Bearer ' + getCookie('token'));
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(details);
+});
+
+
+//shift Cancel Form variables
+let shiftCancelForm;
+let shiftCancelSelect;
+let shiftCancelComment;
+let shiftCancelButton;
+
+//shift Response Form variables
+let shiftResponseForm;
+let shiftResponseRadio1;
+let shiftResponseRadio2;
+let shiftResponseComment;
+let shiftResponseButton;
+
 
 
 // access Notification card elements using the id of the element in the 'card' div class (using this applies to all notification elements)
@@ -35,6 +119,36 @@ function foo() {
 // perhaps a separate or less cluttered section for the audit log in the case of an admin being logged in
 // alternatively, set the audit log to be emailed regularly to users who have permission to view it
 
+$(document).ready(function() {
+    $('.dismiss').on('click', (function() {
+        console.log('dismiss button clicked')
+        createNotificationPopupDismiss();
+        removeNotificationDiv();
+    }));
+    $('.archive').on('click', (function() {
+        console.log('archive button clicked')
+        createNotificationPopupArchive();
+        removeNotificationDiv();
+    }));
+});
+
+function createNotificationPopupDismiss(){
+    console.log('creating dismiss popup');
+    $("#notification_popups").append('<div id="notification_popups"><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>Success!</strong> Notification dismissed!</div></div>');
+}
+
+function createNotificationPopupArchive(){
+    console.log('creating archive popup');
+    $("#notification_popups").append('<div id="notification_popups"><div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>Success!</strong> Notification archived!</div></div>');
+
+}
+
+function removeNotificationDiv() {
+    $(".archive, .dismiss").click(function(event) {
+        event.preventDefault();
+        $(this).parents('.card').remove();
+    });
+}
 
 console.log(foo());
 console.log('javascript is functional');

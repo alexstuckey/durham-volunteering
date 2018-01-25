@@ -5,6 +5,7 @@ body {
     margin: 0 auto;
     max-width: 1440px;
 }
+
 pre,
 code,
 kbd,
@@ -12,10 +13,13 @@ samp,
 .form-control,
 .col-form-legend,
 .btn {
-  font-size: 0.9rem; }
+  font-size: 0.9rem;
+}
+
 .navbar-brand {
   font-family: Baskerville;
 }
+
 /* Override Bootstrap Responsive CSS fixed navbar */
 @media (max-width: 1440px) {
     .navbar-fixed-top, .navbar-fixed-bottom {
@@ -27,19 +31,29 @@ samp,
 
 .btn-primary {
     background-color: #470544;
-    border-color: #470544; }
+    border-color: #470544;
+}
+
 .btn-primary:hover {
     background-color: #470544;
-    border-color: #470544; }
+    border-color: #470544;
+}
+
 .btn-primary.disabled, .btn-primary:disabled {
     background-color: #470544;
-    border-color: #470544; }
+    border-color: #470544;
+}
+
 .btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
-    background-color: #470544; }
+    background-color: #470544;
+}
+
 .bg-dark {
-    background-color: #470544 !important; }
-#footer{
+    background-color: #470544 !important;
+}
+
+#footer {
     background-color: white;
     margin-top: 140px;
 }
@@ -47,24 +61,12 @@ samp,
     margin-top: 40px;
     margin-bottom: 40px;
 }
-.contact_icon{
+.contact_icon {
     margin: 25px;
 }
+
 #content, #centre {
     position:relative;
-}
-
-#jumbo {
-    color: white;
-}
-
-#jumbo h1 {
-    text-shadow: 1px 0 0 #470544, 0 -1px 0 #470544, 0 1px 0 #470544, -1px 0 0 #470544;
-}
-
-.jumbotron {
-    margin-top:0;
-    background-color: #7E317B;
 }
 
 .card {
@@ -78,13 +80,7 @@ samp,
     font-weight: normal;
     font-style: normal
 }
-h1 {
-    margin-top: 60px;
-    margin-bottom: 30px;
-}
-#page-heading{
-    margin-bottom: 30px;
-}
+
 h1, h2{
     font-family: "alternate_gothic_fs_no_3Rg", "Arial", sans-serif; }
 
@@ -100,22 +96,6 @@ hr {
     border-color: #bbb;
 }
 
-table {
-    border-collapse:collapse;
-    table-layout:fixed;
-    width:310px;
-}
-
-table td {
-    border:solid 1px #fab;
-    width:100px;
-    word-wrap:break-word;
-}
-
-.table tbody tr:hover td, .table tbody tr:hover th {
-    background-color: #FFFFFF;
-}
-
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
     height: auto;
@@ -126,11 +106,6 @@ table td {
     max-height: 730px;
     position: relative;
     overflow-y: scroll;
-}
-
-/* set characteristics for sections in scrollspy */
-#notifications, #volunteering, #otherSection, #managerShiftResponse {
-    min-height: 730px;
 }
 
 /* end of characteristics for sidebars */
