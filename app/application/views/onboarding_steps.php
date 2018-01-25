@@ -34,13 +34,9 @@
             </nav>
 
 
-            <div class="text-center">
+            <div class="text-center" id="page-heading">
                 <h1>Onboarding Process</h1>
-                <br>
-                <p>Thank you for signing up to Durham University's Volunteering Project.
-                <br>
-                With this account you can organize and track your volunteering activities.</p>
-                <br>
+                <p>Thank you for signing up to Durham University's Volunteering Project. With this account you can organize and track your volunteering activities.</p>
             </div>
             <div class="container">
             <div class="row">
@@ -90,13 +86,10 @@
             </div>
 
             <!-- FOOTER -->
-            <br>
 
             <div id="footer">
                 <footer class="container text-center">
-                    <h4><br /></h4>
-                    <h2>We'd love to hear from you</h2>
-                    <h4><br /></h4>
+                    <h2 id="footer-heading">We'd love to hear from you</h2>
                     <p><b>Staff Volunteering & Outreach Team</b></p>
                     <a href="mailto:community.engagement@durham.ac.uk">
                         <img class="contact_icon" src="<?php echo base_url('/static/images/mail.png'); ?>" width="25px">
