@@ -43,7 +43,7 @@
 
                         <!-- Volunteering Div -->
                         <div id="volunteering">
-                            <h1>Enter Your Details</h1>
+                            <h1 class="onboardh1">Enter Your Details</h1>
 
                             <h4><br /></h4>
                             <p>Please provide further information about yourself that will be added to your profile. We will use the name provided for contacting you and interacting with your manager.<br /></p>
@@ -77,22 +77,19 @@
             </div>
 
             <!-- FOOTER -->
-            <h1><br /></h1>
 
             <div id="footer">
                 <footer class="container text-center">
-                    <h4><br /></h4>
-                    <h2>We'd love to hear from you</h2>
-                    <h4><br /></h4>
+                    <h2 id="footer-heading">We'd love to hear from you</h2>
                     <p><b>Staff Volunteering & Outreach Team</b></p>
                     <a href="mailto:community.engagement@durham.ac.uk">
-                        <img class="contact_icon" src="../../src/images/mail.png" width="25px">
+                        <img class="contact_icon" src="<?php echo base_url('/static/images/mail.png'); ?>" width="25px">
                     </a>
                     <a href="https://www.facebook.com/SVODurham/">
-                        <img class="contact_icon" src="../../src/images/FB-f-Logo.png" width="25px">
+                        <img class="contact_icon" src="<?php echo base_url('/static/images/FB-f-Logo.png'); ?>" width="25px">
                     </a>
                     <a href="tel:0191 334 2199">
-                        <img class="contact_icon" src="../../src/images/telephone.png" width="25px">
+                        <img class="contact_icon" src="<?php echo base_url('/static/images/telephone.png'); ?>" width="25px">
                     </a>
                 </footer>
 

@@ -34,13 +34,9 @@
             </nav>
 
 
-            <div class="text-center">
-                <h1>Onboarding Process</h1>
-                <br>
-                <p>Thank you for signing up to Durham University's Volunteering Project.
-                <br>
-                With this account you can organize and track your volunteering activities.</p>
-                <br>
+            <div class="text-center" id="page-heading">
+                <h1 class="onboardh1">Onboarding Process</h1>
+                <p>Thank you for signing up to Durham University's Volunteering Project. With this account you can organize and track your volunteering activities.</p>
             </div>
             <div class="container">
             <div class="row">
@@ -90,22 +86,19 @@
             </div>
 
             <!-- FOOTER -->
-            <br>
 
             <div id="footer">
                 <footer class="container text-center">
-                    <h4><br /></h4>
-                    <h2>We'd love to hear from you</h2>
-                    <h4><br /></h4>
+                    <h2 id="footer-heading">We'd love to hear from you</h2>
                     <p><b>Staff Volunteering & Outreach Team</b></p>
                     <a href="mailto:community.engagement@durham.ac.uk">
-                        <img class="contact_icon" src="../../src/images/mail.png" width="25px">
+                        <img class="contact_icon" src="<?php echo base_url('/static/images/mail.png'); ?>" width="25px">
                     </a>
                     <a href="https://www.facebook.com/SVODurham/">
-                        <img class="contact_icon" src="../../src/images/FB-f-Logo.png" width="25px">
+                        <img class="contact_icon" src="<?php echo base_url('/static/images/FB-f-Logo.png'); ?>" width="25px">
                     </a>
                     <a href="tel:0191 334 2199">
-                        <img class="contact_icon" src="../../src/images/telephone.png" width="25px">
+                        <img class="contact_icon" src="<?php echo base_url('/static/images/telephone.png'); ?>" width="25px">
                     </a>
                 </footer>
 

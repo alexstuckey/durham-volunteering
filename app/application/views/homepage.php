@@ -13,6 +13,7 @@
         <!-- Vendor JS -->
         <script src="<?php echo base_url('/static/js/jquery.min.js'); ?>"></script>
         <script src="<?php echo base_url('/static/js/bootstrap.min.js'); ?>"></script>
+        <script src="<?php echo base_url('/static/js/Chart.min.js'); ?>"></script>
         
         <!-- App JS -->
         <script src="<?php echo base_url('/static/js/homepage.js'); ?>"></script>
@@ -37,7 +38,7 @@
                     <div class="collapse navbar-collapse" id="collapsibleNavbar">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#notifications">Notifications</a>
+                                <a class="nav-link" href="#notifications">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#volunteering">Volunteering</a>
@@ -59,7 +60,7 @@
                     <div class="col-sm-3 sidenav" id="leftSide">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Shortcuts</h4>
+                                <h5>Shortcuts</h5>
                             </div>
                             <div class="list-group">
                                 <a href="#" class="list-group-item">DUO</a>
@@ -69,7 +70,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <h4>Get Involved with Causes</h4>
+                                <h5>Get Involved with Causes</h5>
                             </div>
                             <div class="list-group">
                                 <a href="#" class="list-group-item">RSPB</a>
@@ -82,18 +83,17 @@
                         </div>
                     </div>
 
-                    <div data-spy="scroll" data-target=".navbar" data-offset="70" class="col-sm-6 text-left" id="centre">
+                    <div data-spy="scroll" data-target=".navbar" class="col-sm-6 text-left" id="centre">
 
                         <!-- Notifications Div -->
                         <div id="notifications">
                             <h1>Notifications</h1>
 
-                            <div class="alert alert-success alert-dismissable">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Success!</strong> Notification deleted!
+                            <div id="notification_popups">
+                                
                             </div>
 
-                            <div class="card">
+                            <div class="card" id="notification1">
                                 <div class="card-header">
                                     <h4>Shift Approved</h4>
                                 </div>
@@ -155,7 +155,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Get Involved!</h4>
+                                    <h5>Get Involved!</h5>
                                 </div>
                                 <div class="card-block">
                                     <p class="card-text">You're all set up and ready - fill in the shift application form to get started with volunteering.</p>
@@ -205,11 +205,11 @@
                                         <div class="form-group">
                                             <label for="shiftApplicationSelect">Select Cause</label>
                                             <select class="form-control" id="shiftApplicationSelect" name="shiftApplicationSelect">
-                                                <option>Cause 1</option>
-                                                <option>Cause 2</option>
-                                                <option>Cause 3</option>
-                                                <option>Cause 4</option>
-                                                <option>Cause 5</option>
+                                                <option>RSPB</option>
+                                                <option>Barnardo's</option>
+                                                <option>Mencap</option>
+                                                <option>Oxfam</option>
+                                                <option>Samaritans</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -231,11 +231,9 @@
                                         <div class="form-group">
                                             <label for="shiftCancelSelect">Select Shift</label>
                                             <select class="form-control" id="shiftCancelSelect" name="shiftCancelSelect">
-                                                <option>Shift 1</option>
-                                                <option>Shift 2</option>
-                                                <option>Shift 3</option>
-                                                <option>Shift 4</option>
-                                                <option>Shift 5</option>
+                                                <option>jdns89 @ 2pm tomorrow</option>
+                                                <option>dhan35 @ 4pm Monday 29</option>
+                                                <option>djsh99 @ 9am Tuesday 30</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -327,27 +325,62 @@
                     <div class="col-sm-3 sidenav" id="rightSide">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Upcoming Activity</h4>
+                                <h5>Hours by Department</h5>
                             </div>
-                            <ul class="list-group">
-                                <li class="list-group-item">First item</li>
-                                <li class="list-group-item">Second item</li>
-                                <li class="list-group-item">Third item</li>
-                            </ul>
+                            <canvas id="myDepartmentShareChart" width="400" height="400"></canvas>
+                            <script>
+                            var ctx = document.getElementById("myDepartmentShareChart").getContext('2d');
+                            var myDoughnutChart = new Chart(ctx, {
+                                type: 'doughnut',
+                                data: {
+                                    labels: ["Accounting", "Catering", "Careers", "Estates", "Porters"],
+                                    datasets: [{
+                                        data: [10, 20, 30, 15, 25],
+                                        backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00"]   
+                                    }]
+                                },
+                                options: {
+                                }
+                            });
+                            </script>
                         </div>
                         <div class="card">
                             <div class="card-header">
-                                <h4>Previous Activity</h4>
+                                <h5>Department progress</h5>
                             </div>
-                            <ul class="list-group">
-                                <li class="list-group-item">First item</li>
-                                <li class="list-group-item">Second item</li>
-                                <li class="list-group-item">Third item</li>
-                            </ul>
+                            <canvas id="myDepartmentRaceChart" width="200" height="200"></canvas>
+                            <script>
+                            var ctx = document.getElementById("myDepartmentRaceChart").getContext('2d');
+                            var myDepartmentRaceChart = new Chart(ctx, {
+                                type: 'horizontalBar',
+                                data: {
+                                    labels: ["Accounting", "Catering", "Careers", "Estates", "Porters"],
+                                    datasets: [{
+                                        data: [10, 20, 30, 15, 25],
+                                        fill: false,
+                                        backgroundColor: ["rgba(255,133,27,0.2)", "rgba(57,204,204,0.2)", "rgba(0,31,63,0.2)", "rgba(61,153,112,0.2)", "rgba(255,220,0,0.2)"],
+                                        borderColor: ["rgb(255,133,27)", "rgb(57,204,204)", "rgb(0,31,63)", "rgb(61,153,112)", "rgb(255,220,0)"],
+                                        borderWidth: 1  
+                                    }]
+                                },
+                                options: {
+                                    "scales": {
+                                        "xAxes": [{
+                                            ticks: {
+                                                beginAtZero: true
+                                            }
+                                        }]
+                                    },
+                                    "legend": {
+                                        display: false
+                                    }
+                                }
+                            });
+                            </script>
                         </div>
                         <div class="card">
                             <div class="card-header">
-                                <h4>Extra Info Box</h4>
+                                <h5>Extra Info Box</h5>
                             </div>
                             <ul class="list-group">
                                 <li class="list-group-item">First item</li>
@@ -360,8 +393,6 @@
             </div>
 
             <!-- FOOTER -->
-            <h1><br /></h1>
-
             <div id="footer">
                 <footer class="container text-center">
                     <h4><br /></h4>
@@ -369,13 +400,13 @@
                     <h4><br /></h4>
                     <p><b>Staff Volunteering & Outreach Team</b></p>
                     <a href="mailto:community.engagement@durham.ac.uk">
-                        <img class="contact_icon" src="../../src/images/mail.png" width="25px">
+                        <img class="contact_icon" src="<?php echo base_url('/static/images/mail.png'); ?>" width="25px">
                     </a>
                     <a href="https://www.facebook.com/SVODurham/">
-                        <img class="contact_icon" src="../../src/images/FB-f-Logo.png" width="25px">
+                        <img class="contact_icon" src="<?php echo base_url('/static/images/FB-f-Logo.png'); ?>" width="25px">
                     </a>
                     <a href="tel:0191 334 2199">
-                        <img class="contact_icon" src="../../src/images/telephone.png" width="25px">
+                        <img class="contact_icon" src="<?php echo base_url('/static/images/telephone.png'); ?>" width="25px">
                     </a>
                 </footer>
 
