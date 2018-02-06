@@ -1,5 +1,8 @@
+<!-- Content Block (Contains Sidebars and central columns) -->
 <div class="container-fluid text-center" id="content">
     <div class="row content">
+
+        <!-- Left Sidebar in Content Block -->
         <div class="col-sm-3 sidenav" id="leftSide">
             <div class="card">
                 <div class="card-header">
@@ -26,12 +29,16 @@
             </div>
         </div>
 
+
+        <!-- ScrollSpy set up in HEADER.PHP File -->
+        <!-- Central content column containing forms -->
         <div data-spy="scroll" data-target=".navbar" class="col-sm-6 text-left" id="centre">
 
             <!-- Notifications Div -->
             <div id="notifications">
                 <h1>Notifications</h1>
 
+                <!-- Auto-Generated notification dismiss/archive popups appear in this div -->
                 <div id="notification_popups">
                     
                 </div>
@@ -265,6 +272,7 @@
 
         </div>
 
+        <!-- Right hand sidebar containing charts and extra info -->
         <div class="col-sm-3 sidenav" id="rightSide">
             <div class="card">
                 <div class="card-header">

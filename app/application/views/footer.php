@@ -1,9 +1,9 @@
             <!-- FOOTER -->
             <div id="footer">
                 <footer class="container text-center">
-                    <h4><br /></h4>
+                    <br>
                     <h2>We'd love to hear from you</h2>
-                    <h4><br /></h4>
+                    <br>
                     <p><b>Staff Volunteering & Outreach Team</b></p>
                     <a href="mailto:community.engagement@durham.ac.uk">
                         <img class="contact_icon" src="<?php echo base_url('/static/images/mail.png'); ?>" width="25px">
