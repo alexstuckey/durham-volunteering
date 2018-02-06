@@ -15,7 +15,7 @@ class User_model extends CI_Model {
 
     public function getUserByCIS($CISID)
     {
-            $this->db->where('cisID', $cisID);
+            $this->db->where('cisID', $CISID);
 
             $query = $this->db->get('users');
 
