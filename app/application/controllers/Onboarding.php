@@ -5,7 +5,10 @@ class Onboarding extends CI_Controller {
 
 	public function welcome()
 	{
-		$data['cis_username'] = $_SERVER['REMOTE_USER'];
+		$this->load->model('user_model');
+
+		$data['user'] = $this->user_model->getUserByCIS($_SERVER['REMOTE_USER']);
+
 		$this->load->view('onboarding_1_welcome', $data);
 	}
 
