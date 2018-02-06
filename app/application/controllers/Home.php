@@ -6,7 +6,9 @@ class Home extends CI_Controller {
 	public function homepage()
 	{
 		$data['cis_username'] = 'xxxx99';
+		$this->load->view('header', $data);
 		$this->load->view('homepage', $data);
+		$this->load->view('footer', $data);
 	}
 
 }
