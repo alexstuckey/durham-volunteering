@@ -40,6 +40,13 @@ class User_model extends CI_Model {
         }
     }
 
+    // Inserts a new entry into the users column for a new user record.
+    // Should also insert into other normalised tables for completeness.
+    public function createUser($CISID, $firstName, $secondname)
+    {
+
+    }
+
 
     // Queries the database with SQL query where the argument $CISID = cisID database column.
     // Checks if the value in the isAdmin field = 1, if so returns 1. If not, returns 0.
