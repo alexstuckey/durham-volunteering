@@ -5,6 +5,10 @@ class Onboarding extends CI_Controller {
 
 	public function welcome()
 	{
+		if (!$this->user_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+			// First access by user, normally redirect, but already there.
+			// redirect
+		}
 
 		$data['user'] = $this->user_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
