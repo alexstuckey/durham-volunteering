@@ -117,5 +117,11 @@ class User_model extends CI_Model {
         return $result;
     }
 
+    // Updates the onboarding status for a particular user
+    public function setOnboardingStatus($CISID, $newStatus) {
+
+
+    }
+
 
 }
