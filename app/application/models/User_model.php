@@ -23,6 +23,23 @@ class User_model extends CI_Model {
         return $query->result_array();
     }
 
+    public function doesUserExist($CISID)
+    {
+        $this->db->where('cisID', $CISID);
+
+        $query = $this->db->get('users');
+        $queryCount = count($query->result_array());
+
+        if ($queryCount == 1) {
+            return TRUE;
+        } else if ($queryCount == 0) {
+            return FALSE;
+        } else {
+            // Also, this should never happen, maybe throw an error
+            return FALSE;
+        }
+    }
+
 
     // Queries the database with SQL query where the argument $CISID = cisID database column.
     // Checks if the value in the isAdmin field = 1, if so returns 1. If not, returns 0.
