@@ -10,7 +10,8 @@ class Onboarding extends CI_Controller {
 			// redirect
 		}
 
-		$data['user'] = $this->user_model->getUserByCIS($_SERVER['REMOTE_USER']);
+		$user_fetch = $this->user_model->getUserByCIS($_SERVER['REMOTE_USER']);
+		$data['user'] = $user_fetch[0];
 
 		$this->load->view('onboarding_1_welcome', $data);
 
