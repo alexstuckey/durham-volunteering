@@ -15,7 +15,7 @@ class Onboarding extends CI_Controller {
 		$this->load->view('onboarding_1_welcome', $data);
 	}
 
-	public function flow()
+	public function step_details()
 	{
 		$data['cis_username'] = 'xxxx99';
 		$data['active'] = 'enter_details';
