@@ -4,22 +4,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class User_model extends CI_Model {
 
 
-    //Loads the database using the ../config/database.php file
-    public function __construct()	{
+    // Loads the database using the ../config/database.php file
+    public function __construct()
+    {
         $this->load->database();
     }
 
-    //Queries database with SQL query where the argument $CISID = cisID database column.
-    //The results are stored in an array which can be accessed with $query[n]['column name']
-    //Where n is the position in the array.
+    // Queries database with SQL query where the argument $CISID = cisID database column.
+    // The results are stored in an array which can be accessed with $query[n]['column name']
+    // Where n is the position in the array.
 
     public function getUserByCIS($CISID)
     {
-            $this->db->where('cisID', $CISID);
+        $this->db->where('cisID', $CISID);
 
-            $query = $this->db->get('users');
+        $query = $this->db->get('users');
 
-            return $query->result_array();
+        return $query->result_array();
     }
 
 
