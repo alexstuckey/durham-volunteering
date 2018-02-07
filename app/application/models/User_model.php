@@ -103,7 +103,7 @@ class User_model extends CI_Model {
         return $managersCisID;
     }
 
-    //Returns an array of CisIDs of whom the $CISID is the manager.
+    // Returns an array of CisIDs of whom the $CISID is the manager.
     public function getManagees($CISID)
     {
         $this->db->where('managersCisID', $CISID);
@@ -118,7 +118,8 @@ class User_model extends CI_Model {
     }
 
     // Updates the onboarding status for a particular user
-    public function setOnboardingStatus($CISID, $newStatus) {
+    public function setOnboardingStatus($CISID, $newStatus)
+    {
 
 
     }
