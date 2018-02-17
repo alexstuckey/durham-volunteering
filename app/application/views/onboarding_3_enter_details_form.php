@@ -45,7 +45,7 @@
                         <div id="volunteering">
                             <h1 class="onboardh1">Enter Your Details</h1>
 
-                            <?php echo validation_errors(); ?>
+                            <?php echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>'); ?>
 
                             <p>Please provide further information about yourself that will be added to your profile. We will use the name provided for contacting you and interacting with your manager.<br /></p>
 
