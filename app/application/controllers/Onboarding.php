@@ -62,11 +62,24 @@ class Onboarding extends CI_Controller {
 
 		$user_fetch = $this->user_model->getUserByCIS($_SERVER['REMOTE_USER']);
 		$data['user'] = $user_fetch[0];
-		
-		$data['active'] = 'nominate_manager';
-		$this->load->view('onboarding_steps', $data);
 
-		$this->user_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 4);
+		// Form logic
+		// Validate
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('inputFirstName', 'First Name', 'required');
+		$this->form_validation->set_rules('inputLastName', 'Last Name', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('onboarding_3_enter_details_form', $data);
+		} else {
+
+			$data['active'] = 'nominate_manager';
+			$this->load->view('onboarding_steps', $data);
+
+			$this->user_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 4);
+		}
+		
 	}
 
 	public function enter_nominate_manager_form()
