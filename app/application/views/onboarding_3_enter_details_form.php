@@ -45,6 +45,8 @@
                         <div id="volunteering">
                             <h1 class="onboardh1">Enter Your Details</h1>
 
+                            <?php echo validation_errors(); ?>
+
                             <p>Please provide further information about yourself that will be added to your profile. We will use the name provided for contacting you and interacting with your manager.<br /></p>
 
                             <div class="card">
@@ -54,12 +56,12 @@
 
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">First Name</label>
-                                            <input type="text" autocomplete="given-name" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="Enter first name">
+                                            <input type="text" autocomplete="given-name" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="Enter first name" value="<?php echo set_value('inputFirstName'); ?>">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Last Name</label>
-                                            <input type="text" autocomplete="family-name" class="form-control" name="inputLastName" id="inputLastName" placeholder="Enter last name">
+                                            <input type="text" autocomplete="family-name" class="form-control" name="inputLastName" id="inputLastName" placeholder="Enter last name" value="<?php echo set_value('inputLastName'); ?>">
                                         </div>
 
                                         <button type="submit" class="btn btn-primary">Submit</button>
