@@ -9,17 +9,33 @@ class User_model extends CI_Model {
         $this->load->database();
     }
 
-    //Queries database with SQL query where the argument $CISID = cisID database column.
-    //The results are stored in an array which can be accessed with $query[n]['column name']
-    //Where n is the position in the array.
+    //Returns an associative array with all the data associated with a given user
 
-    public function getUserByCIS($CISID)
+    public function getUserByCIS($cisID)
     {
-            $this->db->where('cisID', $cisID);
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where('users.cisID', $cisID);
 
-            $query = $this->db->get('users');
+        $this->db->join('admins','admins.cisID=users.cisID');
+        $this->db->join('onBoardingProcess','onBoardingProcess.cisID=users.cisID');
+        $this->db->join('management','management.cisID=users.cisID');
 
-            return $query->result_array();
+
+        $query = $this->db->get();
+
+        $data=$query->result_array();
+
+
+
+//        foreach ($data[0] as $key => $value)
+//        {
+//            print("Key: $key; Value: $value");
+//        }
+
+
+
+
     }
 
 
