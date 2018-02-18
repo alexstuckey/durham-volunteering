@@ -26,6 +26,8 @@ class User_model extends CI_Model {
 
         $data=$query->result_array();
 
+        return $data
+
 
 
 //        foreach ($data[0] as $key => $value)
