@@ -11,7 +11,7 @@ class User_model extends CI_Model {
 
     //Returns an associative array with all the data associated with a given user
 
-    public function getUserObjectByCIS($cisID)
+    public function getUserByCIS($cisID)
     {
         $this->db->select('*');
         $this->db->from('users');
