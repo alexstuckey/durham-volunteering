@@ -10,40 +10,36 @@ class User_model extends CI_Model {
         $this->load->database();
     }
 
-    // Queries database with SQL query where the argument $CISID = cisID database column.
-    // The results are stored in an array which can be accessed with $query[n]['column name']
-    // Where n is the position in the array.
 
-    public function getUserByCIS($CISID)
+    //Returns an associative array with all the data associated with a given user
+
+
+    public function getUserByCIS($cisID)
     {
-        $this->db->where('cisID', $CISID);
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where('users.cisID', $cisID);
 
-        $query = $this->db->get('users');
+        $this->db->join('admins','admins.cisID=users.cisID');
+        $this->db->join('onBoardingProcess','onBoardingProcess.cisID=users.cisID');
+        $this->db->join('management','management.cisID=users.cisID');
 
-        return $query->result_array();
-    }
 
-    public function doesUserExist($CISID)
-    {
-        $this->db->where('cisID', $CISID);
+        $query = $this->db->get();
 
-        $query = $this->db->get('users');
-        $queryCount = count($query->result_array());
+        $data=$query->result_array();
 
-        if ($queryCount == 1) {
-            return TRUE;
-        } else if ($queryCount == 0) {
-            return FALSE;
-        } else {
-            // Also, this should never happen, maybe throw an error
-            return FALSE;
-        }
-    }
+        return $data
 
-    // Inserts a new entry into the users column for a new user record.
-    // Should also insert into other normalised tables for completeness.
-    public function createUser($CISID, $firstName, $secondname)
-    {
+
+
+//        foreach ($data[0] as $key => $value)
+//        {
+//            print("Key: $key; Value: $value");
+//        }
+
+
+
 
     }
 
