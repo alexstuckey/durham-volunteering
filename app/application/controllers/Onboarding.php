@@ -47,6 +47,8 @@ class Onboarding extends CI_Controller {
 		$user_fetch = $this->user_model->getUserByCIS($_SERVER['REMOTE_USER']);
 		$data['user'] = $user_fetch[0];
 
+		$this->load->helper('form');
+
 		$this->load->view('onboarding_3_enter_details_form', $data);
 
 		$this->user_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 3);
@@ -93,6 +95,8 @@ class Onboarding extends CI_Controller {
 		$user_fetch = $this->user_model->getUserByCIS($_SERVER['REMOTE_USER']);
 		$data['user'] = $user_fetch[0];
 
+		$this->load->helper('form');
+
 		$this->load->view('onboarding_5_nominate_manager_form', $data);
 
 		$this->user_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 5);
@@ -109,9 +113,22 @@ class Onboarding extends CI_Controller {
 		$user_fetch = $this->user_model->getUserByCIS($_SERVER['REMOTE_USER']);
 		$data['user'] = $user_fetch[0];
 
-		$data['active'] = 'get_started';
-		$this->load->view('onboarding_steps', $data);
+		// Form logic
+		// Validate
+		$this->load->library('form_validation');
 
-		$this->user_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 6);
+		$this->form_validation->set_rules('inputEmailAddress', 'Email address', 'required');
+		$this->form_validation->set_rules('inputComment', 'Comment', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('onboarding_5_nominate_manager_form', $data);
+		} else {
+
+			$data['active'] = 'get_started';
+			$this->load->view('onboarding_steps', $data);
+
+			$this->user_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 6);
+		}
+
 	}
 }
