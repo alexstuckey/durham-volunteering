@@ -2,23 +2,17 @@
             <div id="footer">
                 <footer class="container text-center">
                     <br>
-                    <h2>We'd love to hear from you</h2>
+                    <h2>Contact us/h2>
                     <br>
-                    <p><b>Staff Volunteering & Outreach Team</b></p>
-                    <a href="mailto:community.engagement@durham.ac.uk">
-                        <img class="contact_icon" src="<?php echo base_url('/static/images/mail.png'); ?>" width="25px">
-                    </a>
-                    <a href="https://www.facebook.com/SVODurham/">
-                        <img class="contact_icon" src="<?php echo base_url('/static/images/FB-f-Logo.png'); ?>" width="25px">
-                    </a>
-                    <a href="tel:0191 334 2199">
-                        <img class="contact_icon" src="<?php echo base_url('/static/images/telephone.png'); ?>" width="25px">
-                    </a>
+
+                    /*TODO DO EMAIL LINK INSERT*/
+                    <p><a href="CONTACT: INSERT EMAIL LINK HERE"</a></p>
+
                 </footer>
 
                 <footer class="container text-center">
                     <hr>
-                    <p><br /><b>design & programming</b><br />software engineering team</p>
+                    <br><p><b>design and development</b><p><br><p>software engineering team</p>
                 </footer>
 
             </div>
