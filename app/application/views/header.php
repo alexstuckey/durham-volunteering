@@ -39,16 +39,17 @@
                     <div class="collapse navbar-collapse" id="collapsibleNavbar">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#notifications">Home</a>
+                                /* REPLACE LINK TO REMOVE SCROLLSPY EFFECTS */
+                                <a class="nav-link" href="">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#volunteering">Volunteering</a>
+                                <a class="nav-link" href="">Volunteering</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#managerShiftResponse">Respond to Applications</a>
+                                <a class="nav-link" href="">Respond to Applications</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#otherSection">Other Section</a>
+                                <a class="nav-link" href="">Other Section</a>
                             </li>
                         </ul>
                     </div>

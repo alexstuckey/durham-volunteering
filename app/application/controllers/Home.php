@@ -13,6 +13,7 @@ class Home extends CI_Controller {
         $this->load->view('leftside', $data);
 
         /* place central column html form chunks within centre_column_open and center_column_close */
+        /* all chunks are loaded in at the moment */
         $this->load->view('center_column_open', $data);
         $this->load->view('notifications', $data);
         $this->load->view('volunteering', $data);
