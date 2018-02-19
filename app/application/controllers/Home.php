@@ -6,6 +6,7 @@ class Home extends CI_Controller {
 	public function homepage()
 	{
 		$data['cis_username'] = 'xxxx99';
+                $data['active'] = 'home';
 		$this->load->view('header', $data);
 
 		/* place content body chunks within content_open and content_close */
