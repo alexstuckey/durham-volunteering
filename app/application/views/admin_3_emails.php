@@ -83,6 +83,7 @@
                                         <div class="card-block">
                                             <div id="textbox">
                                                 <?php echo $welcomeVolunteer ?>
+                                                <p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -99,6 +100,7 @@
                                         <div class="card-block">
                                             <div id="textbox">
                                                 <?php echo $onBoardingComplete ?>
+                                                <p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -115,6 +117,7 @@
                                         <div class="card-block">
                                             <div id="textbox">
                                                 <?php echo $volunteerShiftRequest ?>
+                                                <p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -131,6 +134,7 @@
                                         <div class="card-block">
                                             <div id="textbox">
                                                 <?php echo $volunteerShiftReminder ?>
+                                                <p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -147,6 +151,7 @@
                                         <div class="card-block">
                                             <div id="textbox">
                                                 <?php echo $volunteerShiftApproval ?>
+                                                <p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -163,6 +168,7 @@
                                         <div class="card-block">
                                             <div id="textbox">
                                                 <?php echo $volunteerShiftDenial ?>
+                                                <p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -179,6 +185,7 @@
                                         <div class="card-block">
                                             <div id="textbox">
                                                 <?php echo $managerNomination ?>
+                                                <p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -194,6 +201,7 @@
                                         <div class="card-block">
                                             <div id="textbox">
                                                 <?php echo $managerShiftRequest ?>
+                                                <p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>
                                             </div>
                                         </div>
                                     </div>
