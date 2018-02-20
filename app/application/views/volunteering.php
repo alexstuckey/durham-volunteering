@@ -2,11 +2,16 @@
 <div id="volunteering">
     <h1>Volunteering</h1>
 
-    <a class="nav-link" href="<?php echo base_url('index.php/my_volunteering'); ?>">Back to Your Volunteering</a>
-
     <div class="alert alert-success alert-dismissable">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <strong>Success!</strong> Shift application sent!
+    </div>
+
+    <!-- Link back to My_Volunteering -->
+    <div class="card">
+        <div class="card-block">
+            <a class="nav-link" href="<?php echo base_url('index.php/my_volunteering'); ?>">Back to Your Volunteering</a>
+        </div>
     </div>
 
     <div class="card">
