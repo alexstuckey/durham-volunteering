@@ -5,7 +5,8 @@
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+    <?php $this->load->helper('url'); ?>
+    
     <!-- Popper JS -->
     <script src="https://community.dur.ac.uk/alexander.e.stuckey/password/durham-volunteering/app/static/js/popper.min.js"></script>
 
@@ -24,7 +25,7 @@
     <link rel="stylesheet" href="https://community.dur.ac.uk/alexander.e.stuckey/password/durham-volunteering/app/static/css/homepage.css" type="text/css">
 
     <!-- Admin CSS -->
-    <link rel="stylesheet" href="admin.css" type="text/css">
+    <link rel="stylesheet" href="https://community.dur.ac.uk/alexander.e.stuckey/password/durham-volunteering/app/static/css/admin.css" type="text/css">
 
 </head>
 
@@ -54,10 +55,11 @@
                                 <h5>Functions</h5>
                             </div>
                             <div class="list-group">
-                                <a href="admin_1_departments.html" class="list-group-item">Departments</a>
-                                <a href="admin_2_notification.html" class="list-group-item">Notification</a>
-                                <a href="admin_3_emails.html" class="list-group-item">Email Templates</a>
-                                <a href="admin_4_settings.html" class="list-group-item">Settings</a>
+                                <a href="<?php echo base_url('index.php/admin/departments'); ?>" class="list-group-item">Departments</a>
+                                <a href="<?php echo base_url('index.php/admin/notification'); ?>" class="list-group-item">Notification</a>
+                                <a href="<?php echo base_url('index.php/admin/emails'); ?>" class="list-group-item">Email Templates</a>
+                                <a href="<?php echo base_url('index.php/admin/settings'); ?>" class="list-group-item">Settings</a>
+                                <a href="<?php echo base_url('index.php/admin/edit_email'); ?>" class="list-group-item active">Edit Email</a>
                             </div>
                         </div>
                     </div>
