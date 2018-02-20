@@ -71,6 +71,8 @@ $route['admin/emails'] = 'admin/emails';
 $route['admin/settings'] = 'admin/settings';
 $route['admin/edit_email'] = 'admin/edit_email';
 
+$route['cause/(:num)']['GET'] = 'causes/causeByID/';
+
 $route['api/causes']['GET'] = 'causes/listAll';
 $route['api/causes']['POST'] = 'causes/create';
 $route['api/cause/(:num)']['GET'] = 'causes/get/';
