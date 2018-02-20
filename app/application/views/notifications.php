@@ -89,5 +89,3 @@
 </div>
 <!-- End of Notifications Div -->
 
-<!-- Horizontal Break -->
-<hr>

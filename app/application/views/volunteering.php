@@ -1,6 +1,8 @@
-<!-- Volunteering Div -->
+<!-- Volunteering Forms Div -->
 <div id="volunteering">
     <h1>Volunteering</h1>
+
+    <a class="nav-link" href="<?php echo base_url('index.php/my_volunteering'); ?>">Back to Your Volunteering</a>
 
     <div class="alert alert-success alert-dismissable">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -9,7 +11,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h4>New Shift</h4>
+            <h4>New Activity</h4>
         </div>
         <div class="card-block">
             <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
@@ -43,7 +45,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h4>Cancel Shift</h4>
+            <h4>Cancel Activity</h4>
         </div>
         <div class="card-block">
             <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
@@ -66,6 +68,3 @@
     </div>
 </div>
 <!-- End of Volunteering Div -->
-
-<!-- Horizontal Break -->
-<hr>
