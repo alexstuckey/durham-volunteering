@@ -28,4 +28,29 @@ class Admin extends CI_Controller
 
 
     }
+
+    public function departments()
+    {
+        $this->load->view('admin_1_departments');
+    }
+
+    public function notifcation()
+    {
+        $this->load->view('admin_2_notifcation');
+    }
+
+    public function emails()
+    {
+        $this->load->view('admin_3_emails');
+    }
+
+    public function settings()
+    {
+        $this->load->view('admin_4_settings');
+    }
+
+    public function edit_email()
+    {
+        $this->load->view('admin_5_edit_email');
+    }
 }

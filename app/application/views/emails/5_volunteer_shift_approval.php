@@ -7,3 +7,5 @@ Organization: Volunteering Organization
 Description: Short project description/Cause
 
 Your Volunteering & Outreach Team
+
+<p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>
