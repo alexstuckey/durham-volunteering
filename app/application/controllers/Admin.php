@@ -34,9 +34,9 @@ class Admin extends CI_Controller
         $this->load->view('admin_1_departments');
     }
 
-    public function notifcation()
+    public function notification()
     {
-        $this->load->view('admin_2_notifcation');
+        $this->load->view('admin_2_notification');
     }
 
     public function emails()
