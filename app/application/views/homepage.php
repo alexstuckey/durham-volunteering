@@ -394,25 +394,11 @@
 
             <!-- FOOTER -->
             <div id="footer">
-                <footer class="container text-center">
-                    <h4><br /></h4>
-                    <h2>We'd love to hear from you</h2>
-                    <h4><br /></h4>
-                    <p><b>Staff Volunteering & Outreach Team</b></p>
-                    <a href="mailto:community.engagement@durham.ac.uk">
-                        <img class="contact_icon" src="<?php echo base_url('/static/images/mail.png'); ?>" width="25px">
-                    </a>
-                    <a href="https://www.facebook.com/SVODurham/">
-                        <img class="contact_icon" src="<?php echo base_url('/static/images/FB-f-Logo.png'); ?>" width="25px">
-                    </a>
-                    <a href="tel:0191 334 2199">
-                        <img class="contact_icon" src="<?php echo base_url('/static/images/telephone.png'); ?>" width="25px">
-                    </a>
-                </footer>
-
-                <footer class="container text-center">
-                    <hr>
-                    <p><br /><b>design & programming</b><br />software engineering team</p>
+                <!-- FOOTER -->
+                <footer class="container">
+                    <br>
+                    <p class="float-right"><a href="mailto:community.engagement@durham.ac.uk">Contact us</a> &middot; <a href="#">User Guide</a> &middot; <a href="https://www.dur.ac.uk/volunteer/">University Portal</a></p>
+                    <p><!--<img src="/static/images/Durham_University_logo.png" alt="uni logo">--> &middot; Software Engineering 2018 &middot; </p>
                 </footer>
 
             </div>
