@@ -16,6 +16,8 @@ class Causes extends CI_Controller {
 		$this->load->model('cause_model');
 		$data['cause'] = $this->cause_model->getCauseByID($causeID);
 
+		$data['page_title'] = 'Cause: ' . $data['cause']['organisation'];
+
 		$this->load->view('header', $data);
 
 		// place content body chunks within content_open and content_close */

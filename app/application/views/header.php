@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Home</title>
+        <title><?php if (isset($page_title)) { echo $page_title; } else { echo "No Title"; }; ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <?php $this->load->helper('url'); ?>
