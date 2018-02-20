@@ -8,6 +8,31 @@ class Causes extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
+	public function causeByID($causeID)
+	{
+		$data['cis_username'] = 'xxxx99';
+		$data['active'] = 'volunteering';
+
+		$this->load->model('cause_model');
+		$data['cause'] = $this->cause_model->getCauseByID($causeID);
+
+		$this->load->view('header', $data);
+
+		// place content body chunks within content_open and content_close */
+		$this->load->view('content_open', $data);
+		$this->load->view('leftside', $data);
+
+		// place central column html form chunks within centre_column_open and center_column_close 
+		$this->load->view('center_column_open', $data);
+		$this->load->view('single_cause', $data);
+		$this->load->view('center_column_close', $data);
+
+		$this->load->view('rightside', $data);
+		$this->load->view('content_close', $data);
+
+		$this->load->view('footer', $data);
+	}
+
 	public function listAll()
 	{
 		echo 'Hello World!';
