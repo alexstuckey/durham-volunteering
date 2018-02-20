@@ -16,7 +16,7 @@ class Cause_model extends CI_Model {
 
         $query = $this->db->get('causes');
 
-        return $query->result_array();
+        return $query->row_array();
     }
 
     //  Takes an array of the form
@@ -80,8 +80,6 @@ class Cause_model extends CI_Model {
         $query = $this->db->get('causeType');
 
         $result=$query->result_array();
-
-        }
 
     }
 

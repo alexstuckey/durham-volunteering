@@ -72,15 +72,12 @@ $route['admin/emails'] = 'admin/emails';
 $route['admin/settings'] = 'admin/settings';
 $route['admin/edit_email'] = 'admin/edit_email';
 
-$route['causes']['GET'] = 'causes/listAll';
-$route['causes']['POST'] = 'causes/create';
+$route['cause/(:num)']['GET'] = 'causes/causeByID/$1';
 
-$route['cause/(:num)']['GET'] = 'causes/get/';
-
-
-$route['times']['GET'] = 'times/list';
-$route['times']['POST'] = 'times/create';
-
-$route['time/(:num)']['GET'] = 'times/get';
-
-$route['user/(:any)'] = 'user/get';
+$route['api/causes']['GET'] = 'causes/listAll';
+$route['api/causes']['POST'] = 'causes/create';
+$route['api/cause/(:num)']['GET'] = 'causes/get/';
+$route['api/times']['GET'] = 'times/list';
+$route['api/times']['POST'] = 'times/create';
+$route['api/time/(:num)']['GET'] = 'times/get';
+$route['api/user/(:any)'] = 'user/get';
