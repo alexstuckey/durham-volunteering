@@ -65,6 +65,12 @@ $route['volunteering'] = 'home/volunteering';
 $route['manager'] = 'home/manager_approve_deny';
 $route['other'] = 'home/other_section';
 
+$route['admin/departments'] = 'admin/departments';
+$route['admin/notification'] = 'admin/notification';
+$route['admin/emails'] = 'admin/emails';
+$route['admin/settings'] = 'admin/settings';
+$route['admin/edit_email'] = 'admin/edit_email';
+
 $route['causes']['GET'] = 'causes/listAll';
 $route['causes']['POST'] = 'causes/create';
 
