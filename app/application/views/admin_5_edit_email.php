@@ -5,7 +5,8 @@
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+    <?php $this->load->helper('url'); ?>
+    
     <!-- Popper JS -->
     <script src="https://community.dur.ac.uk/alexander.e.stuckey/password/durham-volunteering/app/static/js/popper.min.js"></script>
 
