@@ -9,3 +9,5 @@ Just follow this link to complete your onboarding process.
 We cannot wait to add you to the program!
 
 Your Volunteering & Outreach Team
+
+<p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>

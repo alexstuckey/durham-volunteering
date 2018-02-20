@@ -10,3 +10,5 @@ http://
 
 No
 http://
+
+<p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>
