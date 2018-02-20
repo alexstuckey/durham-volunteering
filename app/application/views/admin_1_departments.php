@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://community.dur.ac.uk/alexander.e.stuckey/password/durham-volunteering/app/static/css/homepage.css" type="text/css">
 
     <!-- Admin CSS -->
-    <link rel="stylesheet" href="admin.css" type="text/css">
+    <link rel="stylesheet" href="https://community.dur.ac.uk/alexander.e.stuckey/password/durham-volunteering/app/static/css/admin.css" type="text/css">
 
 </head>
 
