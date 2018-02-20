@@ -8,3 +8,5 @@ Reach out to your manager if you have any questions.
 <?php echo $manager_email ?>
 
 Your Volunteering & Outreach Team
+
+<p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>
