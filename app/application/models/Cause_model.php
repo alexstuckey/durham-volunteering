@@ -81,8 +81,6 @@ class Cause_model extends CI_Model {
 
         $result=$query->result_array();
 
-        }
-
     }
 
     //Returns an array of cause rows for every cause in the database, this is joined with the type ID
