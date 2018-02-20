@@ -1,18 +1,10 @@
             <!-- FOOTER -->
             <div id="footer">
-                <footer class="container text-center">
+                 <!-- FOOTER -->
+                <footer class="container">
                     <br>
-                    <h2>Contact us/h2>
-                    <br>
-
-                    /*TODO DO EMAIL LINK INSERT*/
-                    <p><a href="CONTACT: INSERT EMAIL LINK HERE"</a></p>
-
-                </footer>
-
-                <footer class="container text-center">
-                    <hr>
-                    <br><p><b>design and development</b><p><br><p>software engineering team</p>
+                    <p class="float-right"><a href="mailto:community.engagement@durham.ac.uk">Contact us</a> &middot; <a href="#">User Guide</a> &middot; <a href="https://www.dur.ac.uk/volunteer/">University Portal</a></p>
+                    <p><!--<img src="/static/images/Durham_University_logo.png" alt="uni logo">--> &middot; Software Engineering 2018 &middot; </p>
                 </footer>
 
             </div>
