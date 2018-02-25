@@ -16,21 +16,17 @@ class Admin extends CI_Controller
     public function dashboard()
     {
 
-
         $this->load->model('Admin_model');
         $emailTemplates = $this->Admin_model->returnEmailTemplates();
         $disabled=$this->Admin_model->isDisabled();
         $data=array_merge($emailTemplates[0],$disabled);
 
-//        $this->load->view('adminpage', $data);
-
-
-
-
     }
 
     public function departments()
     {
+
+
         $this->load->view('admin_1_departments');
     }
 
@@ -49,8 +45,101 @@ class Admin extends CI_Controller
         $this->load->view('admin_4_settings');
     }
 
-    public function edit_email()
+    public function turnResultsIntoAssociative($results)
+
     {
-        $this->load->view('admin_5_edit_email');
+        $field_data=array();
+
+
+        foreach ($results as $arr){
+
+        foreach ($arr as $key => $value){
+
+            $field_data[$key]=$value;
+            
+        }
+
+        }
+
+        return $field_data;
+
     }
+
+
+    public function edit_email1()
+    {
+        $this->load->model('Admin_model');
+        $emailTemplates = $this->Admin_model->returnEmailTemplates();
+
+        $data=$this->turnResultsIntoAssociative($emailTemplates);
+
+        $this->load->view('admin_1_edit_email',$data);
+
+
+    }
+
+    public function edit_email2()
+    {
+        $this->load->model('Admin_model');
+        $emailTemplates = $this->Admin_model->returnEmailTemplates();
+
+        $data=$this->turnResultsIntoAssociative($emailTemplates);
+
+        $this->load->view('admin_5_edit_email',$data);
+
+
+    }
+
+    public function edit_email3()
+    {
+        $this->load->model('Admin_model');
+        $emailTemplates = $this->Admin_model->returnEmailTemplates();
+
+        $data=$this->turnResultsIntoAssociative($emailTemplates);
+
+        $this->load->view('admin_3_edit_email',$data);
+
+
+    }
+
+    public function edit_email4()
+    {
+        $this->load->model('Admin_model');
+        $emailTemplates = $this->Admin_model->returnEmailTemplates();
+
+        $data=$this->turnResultsIntoAssociative($emailTemplates);
+
+        $this->load->view('admin_4_edit_email',$data);
+
+
+    }
+
+    public function edit_email5()
+    {
+        $this->load->model('Admin_model');
+        $emailTemplates = $this->Admin_model->returnEmailTemplates();
+
+        $data=$this->turnResultsIntoAssociative($emailTemplates);
+
+        $this->load->view('admin_5_edit_email',$data);
+
+
+    }
+
+
+    public function update_email()
+
+    {
+
+        $this->load->model('Admin_model');
+
+        $editedEmail = $this->input->post('completed');
+
+        $emailName=$editedEmail['emailName'];
+        $emailContent=$editedEmail['emailContent'];
+
+        $this->Admin_model->updateEmailTemplates($emailName,$emailContent);
+
+    }
+
 }
