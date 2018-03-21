@@ -29,7 +29,7 @@ class User_model extends CI_Model {
 
         $data=$query->result_array();
 
-        return $data
+        return $data;
 
 
 
@@ -125,6 +125,11 @@ class User_model extends CI_Model {
     {
 
 
+    }
+
+    public function doesUserExist($username)
+    {
+        return true;
     }
 
 
