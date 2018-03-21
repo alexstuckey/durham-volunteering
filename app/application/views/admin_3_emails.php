@@ -55,10 +55,11 @@
                                 <h5>Functions</h5>
                             </div>
                             <div class="list-group">
-                                <a href="admin_1_departments.php" class="list-group-item">Departments</a>
-                                <a href="admin_2_notification.php" class="list-group-item">Notification</a>
-                                <a href="admin_3_emails.php" class="list-group-item">Email Templates</a>
-                                <a href="admin_4_settings.php" class="list-group-item">Settings</a>
+                                <a href="<?php echo base_url('index.php/admin/departments'); ?>" class="list-group-item">Departments</a>
+                                <a href="<?php echo base_url('index.php/admin/notification'); ?>" class="list-group-item">Notification</a>
+                                <a href="<?php echo base_url('index.php/admin/emails'); ?>" class="list-group-item active">Email Templates</a>
+                                <a href="<?php echo base_url('index.php/admin/settings'); ?>" class="list-group-item">Settings</a>
+                                <a href="<?php echo base_url('index.php/admin/edit_email'); ?>" class="list-group-item">Edit Email</a>
                             </div>
                         </div>
                     </div>

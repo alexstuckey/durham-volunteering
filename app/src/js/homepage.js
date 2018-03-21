@@ -2,6 +2,16 @@ function foo() {
     return 'bar';
 }
 
+// SHOULD HOPEFULLY FIX THE RETARDED SCROLLSPY ISSUES
+var offset = 80;
+
+$('.navbar li a').click(function(event) {
+    event.preventDefault();
+    $($(this).attr('href'))[0].scrollIntoView();
+    scrollBy(0, -offset);
+});
+
+
 /* Retrieve and populate causes box
 $(document).ready(function() {
     const xhttp = new XMLHttpRequest();

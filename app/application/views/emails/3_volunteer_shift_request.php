@@ -9,3 +9,5 @@ Description: Short project description/Cause
 We have notified your manager and will let you know the decision once we have heard back from them.
 
 Your Volunteering & Outreach Team
+
+<p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>

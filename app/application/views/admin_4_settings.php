@@ -47,6 +47,7 @@
                     </div>
                 </nav>
             </div>
+
             <div class="container-fluid text-center" id="content">
                 <div class="row content">
                     <div class="col-sm-3 sidenav" id="leftSide">
@@ -55,15 +56,16 @@
                                 <h5>Functions</h5>
                             </div>
                             <div class="list-group">
-                                <a href="admin_1_departments.php" class="list-group-item">Departments</a>
-                                <a href="admin_2_notification.php" class="list-group-item">Notification</a>
-                                <a href="admin_3_emails.php" class="list-group-item">Email Templates</a>
-                                <a href="admin_4_settings.php" class="list-group-item">Settings</a>
+                                <a href="<?php echo base_url('index.php/admin/departments'); ?>" class="list-group-item">Departments</a>
+                                <a href="<?php echo base_url('index.php/admin/notification'); ?>" class="list-group-item">Notification</a>
+                                <a href="<?php echo base_url('index.php/admin/emails'); ?>" class="list-group-item">Email Templates</a>
+                                <a href="<?php echo base_url('index.php/admin/settings'); ?>" class="list-group-item active">Settings</a>
+                                <a href="<?php echo base_url('index.php/admin/edit_email'); ?>" class="list-group-item">Edit Email</a>
                             </div>
                         </div>
                     </div>
 
-                    <div data-spy="scroll" data-target=".navbar" class="col-sm-8 text-left" id="centre">
+                    <div class="col-sm-8 text-left" id="centre">
 
                         <!-- Settings Div -->
                         <div id="settings">
@@ -72,7 +74,7 @@
                                 <div class="card-block">
                                     <form action="admin_4_settings.php" method="post">
                                         <h4>Email Settings</h4>
-                                        <br />
+                                        <br>
                                         <form class="form-inline">
                                             <div class="form-group">
                                                 <p class="form-control-static"><b>Admin CIS usernames</b></p>
@@ -84,9 +86,9 @@
                                                 <button type="submit" class="btn btn-secondary">Rename</button>
                                             </div>
                                         </form>
-                                        <br />
+                                        <br>
                                         <h4>Edit Footer</h4>
-                                        <br />
+                                        <br>
                                         <div class="card">
                                             <ul class="list-group list-group-flush">
                                                 <li class="list-group-item">
@@ -150,18 +152,14 @@
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
+        </div>
 
-
-
-
-            <!-- FOOTER -->
-            <div id="footer">
+        <!-- FOOTER -->
+        <div id="footer">
             <footer class="container text-center">
                 <p><br /><b>design & programming</b><br />software engineering team</p>
             </footer>
-
         </div>
     </body>
 </html>

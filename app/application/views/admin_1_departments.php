@@ -55,10 +55,11 @@
                                 <h5>Functions</h5>
                             </div>
                             <div class="list-group">
-                                <a href="admin_1_departments.php" class="list-group-item">Departments</a>
-                                <a href="admin_2_notification.php" class="list-group-item">Notification</a>
-                                <a href="admin_3_emails.php" class="list-group-item">Email Templates</a>
-                                <a href="admin_4_settings.php" class="list-group-item">Settings</a>
+                                <a href="<?php echo base_url('index.php/admin/departments'); ?>" class="list-group-item active">Departments</a>
+                                <a href="<?php echo base_url('index.php/admin/notification'); ?>" class="list-group-item">Notification</a>
+                                <a href="<?php echo base_url('index.php/admin/emails'); ?>" class="list-group-item">Email Templates</a>
+                                <a href="<?php echo base_url('index.php/admin/settings'); ?>" class="list-group-item">Settings</a>
+                                <a href="<?php echo base_url('index.php/admin/edit_email'); ?>" class="list-group-item">Edit Email</a>
                             </div>
                         </div>
                     </div>
@@ -77,14 +78,14 @@
                                         </a>
                                     </p>
                                     <p class="mb-0 alignright">
-                                            10 volunteers
+                                            25 volunteers
                                     </p>
                                 </div>
                                 <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
                                     <div class="card-block">
                                         <div id="textboxOne">
                                             <p class="alignleft">Registered volunteers<br />Department members<br /><br /><a href="#">&rarr;  Edit</a></p>
-                                            <p class="alignright">10 volunteers<br />100 volunteers</p>
+                                            <p class="alignright">25 volunteers<br />150 members</p>
                                         </div>
                                     </div>
                                 </div>
@@ -113,14 +114,14 @@
                                         </a>
                                     </p>
                                     <p class="mb-0 alignright">
-                                        10 volunteers
+                                        20 volunteers
                                     </p>
                                 </div>
                                 <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
                                     <div class="card-block">
                                         <div id="textboxThree">
                                             <p class="alignleft">Registered volunteers<br />Department members<br /><br /><a href="#">&rarr;  Edit</a></p>
-                                            <p class="alignright">10 volunteers<br />100 volunteers</p>
+                                            <p class="alignright">20 volunteers<br />123 volunteers</p>
                                         </div>
                                     </div>
                                 </div>
@@ -131,7 +132,7 @@
                                         </a>
                                     </p>
                                     <p class="mb-0 alignright">
-                                        10 volunteers
+                                        28 volunteers
                                     </p>
                                 </div>
                                 <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
@@ -149,7 +150,7 @@
                                         </a>
                                     </p>
                                     <p class="mb-0 alignright">
-                                        10 volunteers
+                                        8 volunteers
                                     </p>
                                 </div>
                                 <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">

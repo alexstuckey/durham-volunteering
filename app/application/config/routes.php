@@ -61,16 +61,23 @@ $route['onboard/enter_nominate_manager'] = 'onboarding/enter_nominate_manager_fo
 $route['onboard/send_nominate_manager'] = 'onboarding/send_nominate_manager';
 
 $route['home'] = 'home/homepage';
+$route['my_volunteering'] = 'home/my_volunteering';
+$route['my_volunteering/activities'] = 'home/my_volunteering_activities';
+$route['manager'] = 'home/manager_approve_deny';
+$route['other'] = 'home/other_section';
 
-$route['causes']['GET'] = 'causes/listAll';
-$route['causes']['POST'] = 'causes/create';
+$route['admin/departments'] = 'admin/departments';
+$route['admin/notification'] = 'admin/notification';
+$route['admin/emails'] = 'admin/emails';
+$route['admin/settings'] = 'admin/settings';
+$route['admin/edit_email'] = 'admin/edit_email';
 
-$route['cause/(:num)']['GET'] = 'causes/get/';
+$route['cause/(:num)']['GET'] = 'causes/causeByID/$1';
 
-
-$route['times']['GET'] = 'times/list';
-$route['times']['POST'] = 'times/create';
-
-$route['time/(:num)']['GET'] = 'times/get';
-
-$route['user/(:any)'] = 'user/get';
+$route['api/causes']['GET'] = 'causes/listAll';
+$route['api/causes']['POST'] = 'causes/create';
+$route['api/cause/(:num)']['GET'] = 'causes/get/';
+$route['api/times']['GET'] = 'times/list';
+$route['api/times']['POST'] = 'times/create';
+$route['api/time/(:num)']['GET'] = 'times/get';
+$route['api/user/(:any)'] = 'user/get';
