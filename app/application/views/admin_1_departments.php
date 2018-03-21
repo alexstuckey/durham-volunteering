@@ -24,6 +24,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="card">
                 <div class="card-header" role="tab" id="headingTwo">
                     <p class="mb-0 alignleft">
                         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -42,6 +44,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="card">
                 <div class="card-header" role="tab" id="headingThree">
                     <p class="mb-0 alignleft">
                         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -60,6 +64,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="card">
                 <div class="card-header" role="tab" id="headingFour">
                     <p class="mb-0 alignleft">
                         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -78,6 +84,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="card">
                 <div class="card-header" role="tab" id="headingFive">
                     <p class="mb-0 alignleft">
                         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
@@ -97,6 +105,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
     </div>
