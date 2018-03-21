@@ -55,12 +55,12 @@
                                     <form action="<?php echo site_url('/onboard/send_details'); ?>" method="post">
 
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">First Name</label>
+                                            <label for="inputFirstName">First Name</label>
                                             <input type="text" autocomplete="given-name" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="Enter first name" value="<?php echo set_value('inputFirstName'); ?>">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Last Name</label>
+                                            <label for="inputLastName">Last Name</label>
                                             <input type="text" autocomplete="family-name" class="form-control" name="inputLastName" id="inputLastName" placeholder="Enter last name" value="<?php echo set_value('inputLastName'); ?>">
                                         </div>
 

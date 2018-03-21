@@ -119,15 +119,11 @@ class User_model extends CI_Model
 
     public function createUser($data)
     {
+
         $this->db->insert('users', $data);
+
     }
 
-    public function updateUser($data)
-    {
-
-        $this->db->where('cisID', $data['cisID']);
-        $this->db->update('users', $data);
-    }
 
     // Updates the onboarding status for a particular user
     public function setOnboardingStatus($CISID, $newStatus)
@@ -142,7 +138,27 @@ class User_model extends CI_Model
 
     }
 
-    function get_user_details($userEmail) {
+    public function doesUserExist($username)
+    {
+        return true;
+    }
+
+    public function setManager($CISID, $managerEmailAddress)
+    {
+
+        $managerData=$this->get_user_details($managerEmailAddress);
+        $managerUsername=$managerData['username'];
+
+        $this->db->where('cisID', $CISID);
+
+        $data = array(
+            'manager' => $managerUsername,
+        );
+        $this->db->update('users', $data);
+
+    }
+
+    private function get_user_details($userEmail) {
 
         mysql_connect("mysql.dur.ac.uk","nobody","");
 
@@ -163,22 +179,5 @@ class User_model extends CI_Model
         }
 
     }
-
-
-    public function setManager($CISID, $managerEmailAddress)
-    {
-
-        $managerData=$this->get_user_details($managerEmailAddress);
-        $managerUsername=$managerData['username'];
-
-        $this->db->where('cisID', $CISID);
-
-        $data = array(
-            'manager' => $managerUsername,
-        );
-        $this->db->update('users', $data);
-
-    }
-
 
 }
