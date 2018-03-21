@@ -137,6 +137,14 @@ class Admin extends CI_Controller
         $data['active'] = 'admin';
         $data['active_admin'] = 'email_templates';
         $data['page_title'] = 'Admin: email templates';
+
+        $this->load->model('Admin_model');
+        $data['email_templates'] = $this->Admin_model->returnEmailTemplates();
+
+        $this->load->library('form_validation');
+        $this->load->library('session');
+        $data['message'] = $this->session->flashdata('message');
+
         $this->load->view('header', $data);
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
@@ -147,6 +155,29 @@ class Admin extends CI_Controller
         $this->load->view('content_close', $data);
         $this->load->view('footer', $data);
 
+    }
+
+    public function emailsEdit()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('emailContent', 'Email Body', 'trim|required');
+        $this->form_validation->set_error_delimiters('<p class="alert alert-danger"><strong>Error: </strong>', '</p>');
+
+        $this->load->library('session');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+
+            $this->emails();
+        } else {
+            $this->load->model('Admin_model');
+
+            $this->Admin_model->updateEmailTemplates($this->input->post('emailName'), $this->input->post('emailContent'));
+
+            $this->session->set_flashdata('message', 'Email body updated!');
+
+            $this->emails();
+
+        }
     }
 
     public function settings()
@@ -183,77 +214,6 @@ class Admin extends CI_Controller
         return $field_data;
     }
 
-    public function edit_email1()
-    {
-        $this->load->model('Admin_model');
-        $emailTemplates = $this->Admin_model->returnEmailTemplates();
-
-        $data=$this->turnResultsIntoAssociative($emailTemplates);
-
-        $this->load->view('admin_1_edit_email',$data);
-
-
-    }
-
-    public function edit_email2()
-    {
-        $this->load->model('Admin_model');
-        $emailTemplates = $this->Admin_model->returnEmailTemplates();
-
-        $data=$this->turnResultsIntoAssociative($emailTemplates);
-
-        $this->load->view('admin_5_edit_email',$data);
-
-
-    }
-
-    public function edit_email3()
-    {
-        $this->load->model('Admin_model');
-        $emailTemplates = $this->Admin_model->returnEmailTemplates();
-
-        $data=$this->turnResultsIntoAssociative($emailTemplates);
-
-        $this->load->view('admin_3_edit_email',$data);
-
-
-    }
-
-    public function edit_email4()
-    {
-        $this->load->model('Admin_model');
-        $emailTemplates = $this->Admin_model->returnEmailTemplates();
-
-        $data=$this->turnResultsIntoAssociative($emailTemplates);
-
-        $this->load->view('admin_4_edit_email',$data);
-
-
-    }
-
-    public function edit_email5()
-    {
-        $this->load->model('Admin_model');
-        $emailTemplates = $this->Admin_model->returnEmailTemplates();
-
-        $data=$this->turnResultsIntoAssociative($emailTemplates);
-
-        $this->load->view('admin_5_edit_email',$data);
-
-
-    }
-
-
-    public function update_email()
-
-    {
-        $this->load->model('Admin_model');
-
-        $emailContent = $this->input->post('emailContent');
-        $emailName = $this->input->post('emailName');
-
-        $this->Admin_model->updateEmailTemplates($emailName,$emailContent);
-    }
 
     public function disableEnable()
     {

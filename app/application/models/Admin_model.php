@@ -29,16 +29,9 @@ class Admin_model extends CI_Model {
 
     public function updateEmailTemplates($emailName,$emailContent)
     {
-
-        $something = $this->input->post('something');
-
-        $data = array($emailName => $emailContent);
-
-
         $this->db->where('emailName', $emailName);
-
-        $this->db->replace('emailTemplates', $data);
-
+        $this->db->set('emailContent', $emailContent);
+        $this->db->update('emailTemplates');
     }
 
     public function updateWebsiteStatus($websiteEnabled){

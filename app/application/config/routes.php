@@ -71,8 +71,8 @@ $route['admin/departments/add']['POST'] = 'admin/departmentAdd';
 $route['admin/departments/edit']['POST'] = 'admin/departmentEdit';
 $route['admin/notification'] = 'admin/notification';
 $route['admin/emails'] = 'admin/emails';
+$route['admin/emails/edit']['POST'] = 'admin/emailsEdit';
 $route['admin/settings'] = 'admin/settings';
-$route['admin/edit_email'] = 'admin/edit_email';
 
 $route['cause/(:num)']['GET'] = 'causes/causeByID/$1';
 
