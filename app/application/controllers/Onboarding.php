@@ -89,8 +89,6 @@ class Onboarding extends CI_Controller {
 				'secondName' => $this->input->post('inputLastName')
 			);
 
-			print_r($userChanges);
-
             $this->User_model->updateUser($_SERVER['REMOTE_USER'], $userChanges);
 
 			$this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 4);
