@@ -23,7 +23,8 @@ class Time_model extends CI_Model {
 // 'cisID' => 'cisID',
 // 'start' => 'start Time',
 // 'finish' => 'finish Time',
-// 'causeID' => 'causeID'
+// 'causeID' => 'causeID',
+//groupEvent' => 'groupEvent'
 // );
 // Inserts into 'time' table in the database.
     public function createTime($data)
@@ -33,22 +34,6 @@ class Time_model extends CI_Model {
 
         $causeExistsFlag=False;
 
-
-//        $this->load->helper(array('form', 'url'));
-//
-//        $this->load->library('form_validation');
-//
-//
-//        $this->form_validation->set_rules('cisID', 'Username', 'required');
-//        $this->form_validation->set_rules('start', 'StartTime', 'required');
-//        $this->form_validation->set_rules('finish', 'FinishTime', 'required');
-//        $this->form_validation->set_rules('causeID', 'CauseID', 'required');
-//
-//
-//        if ($this->form_validation->run() == TRUE)
-//        {
-//            $valid_flag=True;
-//        }
 
         $this->db->where('causeID', $data['causeID']);
 
@@ -100,5 +85,20 @@ class Time_model extends CI_Model {
         return $query->result_array();
 
     }
+
+    public function getTeamChallenges()
+    {
+
+
+        $this->db->where('teamChallenge', 1);
+
+        $query = $this->db->get('time');
+
+        return $query->result_array();
+
+    }
+
+
+
 
 }

@@ -117,5 +117,13 @@ class User_model extends CI_Model {
         return $result;
     }
 
+//    public function update($data)
+//    {
+//
+//
+//    }
+
+
+
 
 }
