@@ -24,7 +24,7 @@ class Admin_model extends CI_Model {
     {
         $query = $this->db->get('disabled');
 
-        return $query->result_array()[0];
+        return $query->row_array();
     }
 
     public function updateEmailTemplates($emailName,$emailContent)
