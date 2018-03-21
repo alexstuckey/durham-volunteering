@@ -84,8 +84,14 @@ class Onboarding extends CI_Controller {
 			$data['active'] = 'nominate_manager';
 			$this->load->view('onboarding_steps', $data);
 
+			$userChanges = array(
+				'firstName' => $this->input->post('inputFirstName'),
+				'secondName' => $this->input->post('inputLastName')
+			);
 
-            $this->User_model->enterDetails($_SERVER['REMOTE_USER'], $data);
+			print_r($userChanges);
+
+            $this->User_model->updateUser($_SERVER['REMOTE_USER'], $userChanges);
 
 			$this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 4);
 		}
