@@ -22,8 +22,7 @@ class User_model extends CI_Model
         $this->db->where('users.cisID', $cisID);
 
         $this->db->join('admins', 'admins.cisID=users.cisID');
-
-
+        
         $query = $this->db->get();
 
         $data = $query->result_array();
