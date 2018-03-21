@@ -11,7 +11,7 @@
                     <div class="card-header" role="tab" id="DepListHeading-<?php echo $department['id'] ?>">
                         <p class="mb-0 alignleft">
                             <a data-toggle="collapse" data-parent="#accordion" href="#DepListCollapse-<?php echo $department['id'] ?>" aria-expanded="true" aria-controls="DepListCollapse-<?php echo $department['id'] ?>">
-                                <?php echo $department['name'] ?>
+                                <?php echo $department['departmentsName'] ?>
                             </a>
                         </p>
                         <span class="mb-0 alignright badge badge-primary badge-pill">
@@ -20,9 +20,14 @@
                     </div>
                     <div id="DepListCollapse-<?php echo $department['id'] ?>" class="collapse" role="tabpanel" aria-labelledby="DepListHeading-<?php echo $department['id'] ?>">
                         <div class="card-block">
-                            <div id="textboxOne">
-                                <p class="alignleft">Registered volunteers<br />Department members<br /><br /><a href="#">&rarr;  Edit</a></p>
-                                <p class="alignright">25 volunteers<br />150 members</p>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Name</span>
+                                </div>
+                                <input type="text" class="form-control" value="<?php echo $department['departmentsName'] ?>">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">Change</button>
+                                </div>
                             </div>
                         </div>
                     </div>
