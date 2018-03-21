@@ -10,7 +10,9 @@ class User extends CI_Controller {
 
 	public function get($userCISID)
 	{
-		echo 'Hello CIS, ' . $userCISID . '!';
+        $this->load->model('User_model');
+        $data = $this->User_model->getUserObjectByCIS($userCISID);
+
 	}
 
 }

@@ -55,7 +55,7 @@ samp,
 
 #footer {
     background-color: white;
-    margin-top: 140px;
+    margin-top: 10px;
 }
 #footer-heading {
     margin-top: 40px;
@@ -112,11 +112,11 @@ hr {
 }
 
 /* set characteristics for the sidebars */
-#leftSide, #centre, #rightSide {
+/*#leftSide, #centre, #rightSide {
     max-height: 730px;
     position: relative;
     overflow-y: scroll;
-}
+}*/
 
 /* end of characteristics for sidebars */
 .card-block {
@@ -128,7 +128,7 @@ hr {
 
 /* Set footer padding */
 footer {
-    padding: 15px;
+    padding: 10px;
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */

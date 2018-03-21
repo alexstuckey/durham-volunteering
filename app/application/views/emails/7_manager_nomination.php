@@ -17,3 +17,5 @@ http://
 Please contact us at community.engagement@durham.ac.uk if you have any questions.
 
 Your Volunteering & Outreach Team
+
+<p class="alignleft"><a href="admin_5_edit_email.php">&rarr;  Edit</a></p>
