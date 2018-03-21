@@ -29,13 +29,13 @@ class Departments_model extends CI_Model {
 
 
     {
-        $this->db->select('departmentsName, COUNT(departmentsName) as total');
-        $this->db->from('users');
+        $this->db->select('departments.id, departments.departmentsName, COUNT(users.departmentID) as total');
+        $this->db->from('departments');
 
-        $this->db->join('departments','departments.ID=users.departmentID');
+        $this->db->join('users','departments.id=users.departmentID', 'left');
 
         $this->db->group_by('departmentsName');
-        $this->db->order_by('total', 'desc');
+        $this->db->order_by('departments.departmentsName', 'asc');
 
 
         $query = $this->db->get();
