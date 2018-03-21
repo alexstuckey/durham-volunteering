@@ -47,16 +47,18 @@ class Departments_model extends CI_Model {
 
 
     // Makes a new department, with the given name
-    public function newDepartment($data)
+    public function newDepartment($name)
     {
+        $data = array('departmentsName' => $name);
 
-            $this->db->insert('departments', $data);
-
+        $this->db->insert('departments', $data);
     }
 
     // Edits a department, by an id to change it's name
-    public function editDepartment($id, $data)
+    public function editDepartment($id, $name)
     {
+        $data = array('departmentsName' => $name);
+
         $this->db->where('id', $id);
         $this->db->update('departments', $data);
     }

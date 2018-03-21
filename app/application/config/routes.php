@@ -67,6 +67,7 @@ $route['manager'] = 'home/manager_approve_deny';
 $route['other'] = 'home/other_section';
 
 $route['admin/departments'] = 'admin/departments';
+$route['admin/departments/add']['POST'] = 'admin/departmentAdd';
 $route['admin/notification'] = 'admin/notification';
 $route['admin/emails'] = 'admin/emails';
 $route['admin/settings'] = 'admin/settings';

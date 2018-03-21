@@ -15,7 +15,10 @@ class Admin extends CI_Controller
         $this->load->view('content_open', $data);
 
         $this->load->view('admin_sidebar', $data);
-        $this->load->view('admin_test', $data);
+        // $this->load->view('admin_test', $data);
+
+        $this->load->model('Departments_model');
+        print_r($this->Departments_model->getDepartmentsListWithCount());
 
         $this->load->view('content_close', $data);
         $this->load->view('footer', $data);
@@ -41,6 +44,14 @@ class Admin extends CI_Controller
         $data['active'] = 'admin';
         $data['active_admin'] = 'departments';
         $data['page_title'] = 'Admin: departments';
+
+        $this->load->library('form_validation');
+        $this->load->library('session');
+        $data['message'] = $this->session->flashdata('message');
+
+        $this->load->model('Departments_model');
+        $data['departments'] = $this->Departments_model->getDepartmentsListWithCount();
+
         $this->load->view('header', $data);
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
@@ -50,6 +61,31 @@ class Admin extends CI_Controller
 
         $this->load->view('content_close', $data);
         $this->load->view('footer', $data);
+    }
+
+    public function departmentAdd()
+    {
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('newName', 'Department Name', 'required');
+        $this->form_validation->set_error_delimiters('<p class="alert alert-danger"><strong>Error: </strong>', '</p>');
+
+        $this->load->library('session');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+
+            $this->departments();
+        } else {
+            $this->load->model('Departments_model');
+
+            $this->Departments_model->newDepartment($this->input->post('newName'));
+
+            $this->session->set_flashdata('message', 'New department created!');
+
+            $this->departments();
+
+        }
+
     }
 
     public function notification()
