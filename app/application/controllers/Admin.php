@@ -6,7 +6,18 @@ class Admin extends CI_Controller
 
     public function index()
     {
-        echo 'Found';
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'settings';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_test', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
     }
 
 
@@ -31,26 +42,85 @@ class Admin extends CI_Controller
 
     public function departments()
     {
-        $this->load->view('admin_1_departments');
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'departments';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_1_departments', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
     }
 
     public function notification()
     {
-        $this->load->view('admin_2_notification');
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'notification';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_2_notification', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
+
     }
 
     public function emails()
     {
-        $this->load->view('admin_3_emails');
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'email_templates';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_3_emails', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
+
     }
 
     public function settings()
     {
-        $this->load->view('admin_4_settings');
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'settings';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_4_settings', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
+
     }
 
     public function edit_email()
     {
-        $this->load->view('admin_5_edit_email');
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'edit_email';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_5_edit_email', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
+
     }
 }
