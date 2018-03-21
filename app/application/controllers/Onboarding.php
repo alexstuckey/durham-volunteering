@@ -47,6 +47,9 @@ class Onboarding extends CI_Controller {
 
 		$data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
+		$this->load->model('Departments_model');
+        $data['departments'] = $this->Departments_model->getDepartmentsListWithCount();
+
 		$this->load->helper('form');
 
 		$this->load->view('onboarding_3_enter_details_form', $data);
@@ -72,6 +75,7 @@ class Onboarding extends CI_Controller {
 
 		$this->form_validation->set_rules('inputFirstName', 'First Name', 'required');
 		$this->form_validation->set_rules('inputLastName', 'Last Name', 'required');
+		$this->form_validation->set_rules('inputDepartment', 'Department', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('onboarding_3_enter_details_form', $data);
@@ -82,7 +86,8 @@ class Onboarding extends CI_Controller {
 
 			$userChanges = array(
 				'firstName' => $this->input->post('inputFirstName'),
-				'secondName' => $this->input->post('inputLastName')
+				'secondName' => $this->input->post('inputLastName'),
+				'departmentID' => $this->input->post('inputDepartment')
 			);
 
             $this->User_model->updateUser($_SERVER['REMOTE_USER'], $userChanges);
