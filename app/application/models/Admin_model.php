@@ -41,9 +41,9 @@ class Admin_model extends CI_Model {
 
     }
 
-    public function updateWebsiteStatus($websiteStatus){
+    public function updateWebsiteStatus($websiteEnabled){
 
-        if($websiteStatus==True){
+        if($websiteEnabled==True){
 
             $data = array(
                 'id' => 1,
@@ -56,7 +56,7 @@ class Admin_model extends CI_Model {
 
         }
 
-        if($websiteStatus==False){
+        if($websiteEnabled==False){
 
             $data = array(
                 'id' => 1,

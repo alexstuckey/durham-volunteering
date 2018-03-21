@@ -196,10 +196,9 @@ class Admin extends CI_Controller
 
     public function disableEnable()
     {
-
         $this->load->model('Admin_model');
-        $websiteStatus = $this->input->post('websiteStatus');
-        $this->Admin_model->updateWebsiteStatus($websiteStatus);
+        $websiteEnabled = $this->input->post('websiteEnabled');
+        $this->Admin_model->updateWebsiteStatus($websiteEnabled);
 
 
         $data['cis_username'] = 'xxxx99';
@@ -215,6 +214,5 @@ class Admin extends CI_Controller
 
         $this->load->view('content_close', $data);
         $this->load->view('footer', $data);
-      
     }
 }
