@@ -17,18 +17,16 @@ class User_model extends CI_Model
 
     public function getUserByCIS($cisID)
     {
-        $this->db->select('*');
-        $this->db->from('users');
-        $this->db->where('users.cisID', $cisID);
+        $this->load->model('CIS_model');
 
-        $this->db->join('admins', 'admins.cisID=users.cisID');
-        
-        $query = $this->db->get();
+        return $this->CIS_model->get_user_details_by_cisID($cisID);
+    }
 
-        $data = $query->result_array();
+    public function getUserByEmail($email)
+    {
+        $this->load->model('CIS_model');
 
-        return $data;
-
+        return $this->CIS_model->get_user_details_by_email($email);
     }
 
 

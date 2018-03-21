@@ -11,8 +11,7 @@ class Onboarding extends CI_Controller {
 			// redirect
 		}
 
-		$user_fetch = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
-		$data['user'] = $user_fetch[0];
+		$data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
 		$this->load->view('onboarding_1_welcome', $data);
 
@@ -28,8 +27,7 @@ class Onboarding extends CI_Controller {
 			redirect('/onboard/welcome');
 		}
 
-		$user_fetch = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
-		$data['user'] = $user_fetch[0];
+		$data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
 		$data['active'] = 'enter_details';
 		
@@ -47,8 +45,7 @@ class Onboarding extends CI_Controller {
 			redirect('/onboard/welcome');
 		}
 
-		$user_fetch = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
-		$data['user'] = $user_fetch;
+		$data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
 		$this->load->helper('form');
 
@@ -67,8 +64,7 @@ class Onboarding extends CI_Controller {
 			redirect('/onboard/welcome');
 		}
 
-		$user_fetch = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
-		$data['user'] = $user_fetch;
+		$data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
 		// Form logic
 		// Validate
@@ -105,8 +101,7 @@ class Onboarding extends CI_Controller {
 			redirect('/onboard/welcome');
 		}
 
-		$user_fetch = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
-		$data['user'] = $user_fetch[0];
+		$data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
 		$this->load->helper('form');
 
@@ -124,8 +119,7 @@ class Onboarding extends CI_Controller {
 			redirect('/onboard/welcome');
 		}
 
-		$user_fetch = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
-		$data['user'] = $user_fetch[0];
+		$data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
 		// Form logic
 		// Validate
