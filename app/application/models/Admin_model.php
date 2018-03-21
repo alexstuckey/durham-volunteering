@@ -30,6 +30,8 @@ class Admin_model extends CI_Model {
     public function updateEmailTemplates($emailName,$emailContent)
     {
 
+        $something = $this->input->post('something');
+
         $data = array($emailName => $emailContent);
 
 
@@ -37,6 +39,35 @@ class Admin_model extends CI_Model {
 
         $this->db->replace('emailTemplates', $data);
 
+    }
+
+    public function updateWebsiteStatus($websiteStatus){
+
+        if($websiteStatus==True){
+
+            $data = array(
+                'id' => 1,
+                'disabled' => 0,
+            );
+
+
+            $this->db->where('id', 1);
+            $this->db->update('disabled', $data);
+
+        }
+
+        if($websiteStatus==False){
+
+            $data = array(
+                'id' => 1,
+                'disabled' => 1,
+            );
+
+
+            $this->db->where('id', 1);
+            $this->db->update('disabled', $data);
+
+        }
     }
 
 

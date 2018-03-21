@@ -26,7 +26,6 @@ class Admin extends CI_Controller
     public function departments()
     {
 
-
         $this->load->view('admin_1_departments');
     }
 
@@ -56,15 +55,10 @@ class Admin extends CI_Controller
         foreach ($arr as $key => $value){
 
             $field_data[$key]=$value;
-            
         }
-
         }
-
         return $field_data;
-
     }
-
 
     public function edit_email1()
     {
@@ -130,16 +124,22 @@ class Admin extends CI_Controller
     public function update_email()
 
     {
+        $this->load->model('Admin_model');
+
+        $emailContent = $this->input->post('emailContent');
+        $emailName = $this->input->post('emailName');
+
+        $this->Admin_model->updateEmailTemplates($emailName,$emailContent);
+    }
+
+    public function disableEnable()
+    {
 
         $this->load->model('Admin_model');
 
-        $editedEmail = $this->input->post('completed');
+        $websiteStatus = $this->input->post('websiteStatus');
 
-        $emailName=$editedEmail['emailName'];
-        $emailContent=$editedEmail['emailContent'];
-
-        $this->Admin_model->updateEmailTemplates($emailName,$emailContent);
+        $this->Admin_model->updateWebsiteStatus($websiteStatus);
 
     }
-
 }
