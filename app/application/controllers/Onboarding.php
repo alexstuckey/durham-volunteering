@@ -48,7 +48,7 @@ class Onboarding extends CI_Controller {
 		}
 
 		$user_fetch = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
-		$data['user'] = $user_fetch[0];
+		$data['user'] = $user_fetch;
 
 		$this->load->helper('form');
 
@@ -68,7 +68,7 @@ class Onboarding extends CI_Controller {
 		}
 
 		$user_fetch = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
-		$data['user'] = $user_fetch[0];
+		$data['user'] = $user_fetch;
 
 		// Form logic
 		// Validate
