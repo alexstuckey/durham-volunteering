@@ -56,12 +56,12 @@
 
                                         <div class="form-group">
                                             <label for="inputFirstName">First Name</label>
-                                            <input type="text" autocomplete="given-name" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="Enter first name" value="<?php echo set_value('inputFirstName'); ?>">
+                                            <input type="text" autocomplete="given-name" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="Enter first name" value="<?php list($firstnamesplit)=explode(',', $user['firstnames']); echo set_value('inputLastName', ucwords(strtolower($firstnamesplit))); ?>">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="inputLastName">Last Name</label>
-                                            <input type="text" autocomplete="family-name" class="form-control" name="inputLastName" id="inputLastName" placeholder="Enter last name" value="<?php echo set_value('inputLastName'); ?>">
+                                            <input type="text" autocomplete="family-name" class="form-control" name="inputLastName" id="inputLastName" placeholder="Enter last name" value="<?php echo set_value('inputFirstName', ucwords(strtolower($user['surname']))); ?>">
                                         </div>
 
                                         <button type="submit" class="btn btn-primary">Submit</button>
