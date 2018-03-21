@@ -13,7 +13,7 @@ class CIS_model extends CI_Model
     {
 
         $this->db->select('*');
-        $this->db->from('UserDetails ');
+        $this->db->from('UserDetails');
         $this->db->where('email', $userEmail);
 
         $query = $this->db->get();
