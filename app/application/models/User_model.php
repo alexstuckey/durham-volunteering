@@ -128,7 +128,7 @@ class User_model extends CI_Model
     {
 
         $this->db->where('cisID', $data['cisID']);
-        $this->db->update('user', $data);
+        $this->db->update('users', $data);
 
     }
 
