@@ -6,7 +6,19 @@ class Admin extends CI_Controller
 
     public function index()
     {
-        echo 'Found';
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'settings';
+        $data['page_title'] = 'Admin index';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_test', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
     }
 
 
@@ -25,23 +37,73 @@ class Admin extends CI_Controller
 
     public function departments()
     {
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'departments';
+        $data['page_title'] = 'Admin: departments';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
 
-        $this->load->view('admin_1_departments');
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_1_departments', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
     }
 
     public function notification()
     {
-        $this->load->view('admin_2_notification');
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'notification';
+        $data['page_title'] = 'Admin: notification';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_2_notification', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
+
     }
 
     public function emails()
     {
-        $this->load->view('admin_3_emails');
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'email_templates';
+        $data['page_title'] = 'Admin: email templates';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_3_emails', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
+
     }
 
     public function settings()
     {
-        $this->load->view('admin_4_settings');
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'settings';
+        $data['page_title'] = 'Admin: settings';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_4_settings', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
+
     }
 
     public function turnResultsIntoAssociative($results)
@@ -136,10 +198,23 @@ class Admin extends CI_Controller
     {
 
         $this->load->model('Admin_model');
-
         $websiteStatus = $this->input->post('websiteStatus');
-
         $this->Admin_model->updateWebsiteStatus($websiteStatus);
 
+
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'edit_email';
+        $data['page_title'] = 'Admin: edit email';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_5_edit_email', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
+      
     }
 }
