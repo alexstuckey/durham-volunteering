@@ -15,8 +15,6 @@ class Admin_model extends CI_Model {
 
     public function returnEmailTemplates()
     {
-        $this->db->where('EmailTemplates', 1);
-
         $query = $this->db->get('emailTemplates');
 
         return $query->result_array();
@@ -27,6 +25,49 @@ class Admin_model extends CI_Model {
         $query = $this->db->get('disabled');
 
         return $query->result_array()[0];
+    }
+
+    public function updateEmailTemplates($emailName,$emailContent)
+    {
+
+        $something = $this->input->post('something');
+
+        $data = array($emailName => $emailContent);
+
+
+        $this->db->where('emailName', $emailName);
+
+        $this->db->replace('emailTemplates', $data);
+
+    }
+
+    public function updateWebsiteStatus($websiteStatus){
+
+        if($websiteStatus==True){
+
+            $data = array(
+                'id' => 1,
+                'disabled' => 0,
+            );
+
+
+            $this->db->where('id', 1);
+            $this->db->update('disabled', $data);
+
+        }
+
+        if($websiteStatus==False){
+
+            $data = array(
+                'id' => 1,
+                'disabled' => 1,
+            );
+
+
+            $this->db->where('id', 1);
+            $this->db->update('disabled', $data);
+
+        }
     }
 
 

@@ -28,16 +28,10 @@ class Admin extends CI_Controller
     public function dashboard()
     {
 
-
         $this->load->model('Admin_model');
         $emailTemplates = $this->Admin_model->returnEmailTemplates();
         $disabled=$this->Admin_model->isDisabled();
         $data=array_merge($emailTemplates[0],$disabled);
-
-//        $this->load->view('adminpage', $data);
-
-
-
 
     }
 
@@ -112,8 +106,102 @@ class Admin extends CI_Controller
 
     }
 
-    public function edit_email()
+    public function turnResultsIntoAssociative($results)
+
     {
+        $field_data=array();
+
+
+        foreach ($results as $arr){
+
+        foreach ($arr as $key => $value){
+
+            $field_data[$key]=$value;
+        }
+        }
+        return $field_data;
+    }
+
+    public function edit_email1()
+    {
+        $this->load->model('Admin_model');
+        $emailTemplates = $this->Admin_model->returnEmailTemplates();
+
+        $data=$this->turnResultsIntoAssociative($emailTemplates);
+
+        $this->load->view('admin_1_edit_email',$data);
+
+
+    }
+
+    public function edit_email2()
+    {
+        $this->load->model('Admin_model');
+        $emailTemplates = $this->Admin_model->returnEmailTemplates();
+
+        $data=$this->turnResultsIntoAssociative($emailTemplates);
+
+        $this->load->view('admin_5_edit_email',$data);
+
+
+    }
+
+    public function edit_email3()
+    {
+        $this->load->model('Admin_model');
+        $emailTemplates = $this->Admin_model->returnEmailTemplates();
+
+        $data=$this->turnResultsIntoAssociative($emailTemplates);
+
+        $this->load->view('admin_3_edit_email',$data);
+
+
+    }
+
+    public function edit_email4()
+    {
+        $this->load->model('Admin_model');
+        $emailTemplates = $this->Admin_model->returnEmailTemplates();
+
+        $data=$this->turnResultsIntoAssociative($emailTemplates);
+
+        $this->load->view('admin_4_edit_email',$data);
+
+
+    }
+
+    public function edit_email5()
+    {
+        $this->load->model('Admin_model');
+        $emailTemplates = $this->Admin_model->returnEmailTemplates();
+
+        $data=$this->turnResultsIntoAssociative($emailTemplates);
+
+        $this->load->view('admin_5_edit_email',$data);
+
+
+    }
+
+
+    public function update_email()
+
+    {
+        $this->load->model('Admin_model');
+
+        $emailContent = $this->input->post('emailContent');
+        $emailName = $this->input->post('emailName');
+
+        $this->Admin_model->updateEmailTemplates($emailName,$emailContent);
+    }
+
+    public function disableEnable()
+    {
+
+        $this->load->model('Admin_model');
+        $websiteStatus = $this->input->post('websiteStatus');
+        $this->Admin_model->updateWebsiteStatus($websiteStatus);
+
+
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'edit_email';
@@ -127,6 +215,6 @@ class Admin extends CI_Controller
 
         $this->load->view('content_close', $data);
         $this->load->view('footer', $data);
-
+      
     }
 }
