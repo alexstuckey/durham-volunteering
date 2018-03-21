@@ -67,7 +67,7 @@ class Admin extends CI_Controller
     {
 
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('newName', 'Department Name', 'required');
+        $this->form_validation->set_rules('newName', 'Department Name', 'trim|required|max_length[45]');
         $this->form_validation->set_error_delimiters('<p class="alert alert-danger"><strong>Error: </strong>', '</p>');
 
         $this->load->library('session');
@@ -81,6 +81,31 @@ class Admin extends CI_Controller
             $this->Departments_model->newDepartment($this->input->post('newName'));
 
             $this->session->set_flashdata('message', 'New department created!');
+
+            $this->departments();
+
+        }
+
+    }
+
+    public function departmentEdit()
+    {
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('newName', 'Department Name', 'trim|required|max_length[45]');
+        $this->form_validation->set_error_delimiters('<p class="alert alert-danger"><strong>Error: </strong>', '</p>');
+
+        $this->load->library('session');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+
+            $this->departments();
+        } else {
+            $this->load->model('Departments_model');
+
+            $this->Departments_model->editDepartment($this->input->post('id'), $this->input->post('newName'));
+
+            $this->session->set_flashdata('message', 'Department renamed to ' . $this->input->post('newName') . '!');
 
             $this->departments();
 
