@@ -124,6 +124,14 @@ class User_model extends CI_Model
 
     }
 
+    public function updateUser ($data)
+    {
+
+        $this->db->where('cisID', $data['cisID']);
+        $this->db->update('user', $data);
+
+    }
+
 
     // Updates the onboarding status for a particular user
     public function setOnboardingStatus($CISID, $newStatus)
