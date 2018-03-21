@@ -22,8 +22,6 @@ class User_model extends CI_Model
         $this->db->where('users.cisID', $cisID);
 
         $this->db->join('admins', 'admins.cisID=users.cisID');
-        $this->db->join('onBoardingProcess', 'onBoardingProcess.cisID=users.cisID');
-        $this->db->join('management', 'management.cisID=users.cisID');
 
 
         $query = $this->db->get();
@@ -31,16 +29,6 @@ class User_model extends CI_Model
         $data = $query->result_array();
 
         return $data;
-
-
-
-//        foreach ($data[0] as $key => $value)
-//        {
-//            print("Key: $key; Value: $value");
-//        }
-
-
-
 
     }
 
@@ -163,28 +151,6 @@ class User_model extends CI_Model
             'manager' => $managerUsername,
         );
         $this->db->update('users', $data);
-
-    }
-
-    private function get_user_details($userEmail) {
-
-        mysql_connect("mysql.dur.ac.uk","nobody","");
-
-        mysql_select_db("Pdcl0www_userdata");
-
-        $getuserdata = mysql_query("SELECT * FROM UserDetails 
-
-                              WHERE email = '".addslashes($userEmail)."'");
-
-        if (mysql_num_rows($getuserdata) == 0) {
-
-            return false;
-
-        } else {
-
-            return mysql_fetch_assoc($getuserdata);
-
-        }
 
     }
 
