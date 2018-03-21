@@ -26,21 +26,23 @@ class Departments_model extends CI_Model {
 
     // Returns an array of deparments, with their id, name, and count of members
     public function getDepartmentsListWithCount()
+
+
     {
-        $this->db->select('departments, COUNT(departments) as total');
+        $this->db->select('departmentsName, COUNT(departmentsName) as total');
+        $this->db->from('users');
 
         $this->db->join('departments','departments.ID=users.departmentID');
 
-
-        $this->db->group_by('departments');
+        $this->db->group_by('departmentsName');
         $this->db->order_by('total', 'desc');
 
 
         $query = $this->db->get();
 
-        $data=$query->result_array();
+        $data = $query->result_array();
 
-        return $data
+        return $data;
     }
 
 
@@ -48,9 +50,7 @@ class Departments_model extends CI_Model {
     public function newDepartment($data)
     {
 
-
             $this->db->insert('departments', $data);
-
 
     }
 
