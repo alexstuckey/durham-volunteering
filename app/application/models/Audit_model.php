@@ -15,4 +15,9 @@ class Audit_model extends CI_Model {
         return $query->result_array();
     }
 
+    public function insertLog($data)
+    {
+        $this->db->insert('audit', $data);
+    }
+
 }
