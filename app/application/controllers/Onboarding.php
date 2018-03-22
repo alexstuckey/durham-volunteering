@@ -55,6 +55,9 @@ class Onboarding extends CI_Controller {
 
         $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
+        $this->load->model('Departments_model');
+        $data['departments'] = $this->Departments_model->getDepartmentsListWithCount();
+
         $this->load->helper('form');
 
         $this->load->view('onboarding_3_enter_details_form', $data);
