@@ -40,6 +40,7 @@ class Admin extends CI_Controller
 
     public function departments()
     {
+        $this->Audit_model->insertLog('ACCESS', 'Accessing admin: departments');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'departments';
@@ -115,6 +116,7 @@ class Admin extends CI_Controller
 
     public function notification()
     {
+        $this->Audit_model->insertLog('ACCESS', 'Accessing admin: notification');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'notification';
@@ -133,6 +135,7 @@ class Admin extends CI_Controller
 
     public function emails()
     {
+        $this->Audit_model->insertLog('ACCESS', 'Accessing admin: email templates');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'email_templates';
@@ -182,6 +185,7 @@ class Admin extends CI_Controller
 
     public function settings()
     {
+        $this->Audit_model->insertLog('ACCESS', 'Accessing admin: settings');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'settings';
@@ -200,6 +204,7 @@ class Admin extends CI_Controller
 
     public function audit()
     {
+        $this->Audit_model->insertLog('ACCESS', 'Accessing admin: audit');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'audit';
@@ -208,7 +213,6 @@ class Admin extends CI_Controller
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
 
-        $this->load->model('Audit_model');
         $data['trail'] = $this->Audit_model->getWholeAuditTrail();
 
         $this->load->view('admin_sidebar', $data);
