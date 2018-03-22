@@ -25,8 +25,8 @@ class Onboarding extends CI_Controller {
         $this->load->model('User_model');
         if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
             // First access by user, normally redirect, but already there.
-            $this->Audit_model->insertLog('ACCESS DENIED', 'Accessing Page Denied');
-            $this->Audit_model->insertLog('REDIRECT', 'Redirect to Welcome Page');
+            $this->Audit_model->insertLog('ACCESS DENIED', 'Onboarding: Accessing Page Denied');
+            $this->Audit_model->insertLog('REDIRECT', 'Onboarding: Redirect to Welcome Page');
 
             $this->load->helper('url');
             redirect('/onboard/welcome');
@@ -41,7 +41,7 @@ class Onboarding extends CI_Controller {
 
         $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 2);
 
-        $this->Audit_model->insertLog('ALTER', 'Onboarding status updated');
+        $this->Audit_model->insertLog('ALTER', 'Onboarding: status updated');
     }
 
     public function enter_details_form()
@@ -62,7 +62,7 @@ class Onboarding extends CI_Controller {
 
         $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 3);
 
-        $this->Audit_model->insertLog('ALTER', 'Onboarding status updated');
+        $this->Audit_model->insertLog('ALTER', 'Onboarding: status updated');
     }
 
     public function send_details()
@@ -120,7 +120,7 @@ class Onboarding extends CI_Controller {
         $this->load->view('onboarding_5_nominate_manager_form', $data);
 
         $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 5);
-        $this->Audit_model->insertLog('ALTER', 'Onboarding Status Updated');
+        $this->Audit_model->insertLog('ALTER', 'Onboarding: Status Updated');
 
     }
 
@@ -154,7 +154,7 @@ class Onboarding extends CI_Controller {
             $this->User_model->setManager($_SERVER['REMOTE_USER'], $data);
 
             $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 6);
-            $this->Audit_model->insertLog('ALTER', 'Manager Nominated');
+            $this->Audit_model->insertLog('ALTER', 'Onboarding: Manager Nominated');
 
         }
 
