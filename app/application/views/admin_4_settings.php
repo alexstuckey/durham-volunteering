@@ -11,11 +11,11 @@
                     <form class="form-inline">
                         <div class="form-group">
                             <p class="form-control-static"><b>Admin CIS usernames</b></p>
-                            <input style="width:100px; margin-right:10px;" type="text" class="form-control alignleft" id="inputPassword2" value="abcd11">
+                            <input style="width:100px; margin-right:10px;" type="text" class="form-control align-left" id="inputPassword2" value="abcd11">
                             <button type="submit" class="btn btn-secondary">Rename</button>
                         </div>
                         <div class="form-group">
-                            <input style="width:100px; margin-right:10px;" type="text" class="form-control alignleft" id="inputPassword2" value="abcd11">
+                            <input style="width:100px; margin-right:10px;" type="text" class="form-control align-left" id="inputPassword2" value="abcd11">
                             <button type="submit" class="btn btn-secondary">Rename</button>
                         </div>
                     </form>
@@ -32,7 +32,7 @@
                                         <br />
                                         Include a contact phone number in the footer.
                                         <label class="form-group row" style="margin-top:5px;margin-left:0;">
-                                                <input class="form-control alignleft" style="width:200px; margin-right:10px;" type="tel" value="1-(555)-555-5555" id="tel-input">
+                                                <input class="form-control align-left" style="width:200px; margin-right:10px;" type="tel" value="1-(555)-555-5555" id="tel-input">
                                                 <button type="submit" class="btn btn-secondary">Change</button>
                                         </label>
                                     </label>
@@ -46,7 +46,7 @@
                                         <br />
                                         Include email address in the footer.
                                         <label class="form-group row" style="margin-top:5px;margin-left:0;">
-                                            <input class="form-control alignleft" style="width:200px; margin-right:10px;" type="email" value="admin@durham.ac.uk" id="email-input">
+                                            <input class="form-control align-left" style="width:200px; margin-right:10px;" type="email" value="admin@durham.ac.uk" id="email-input">
                                             <button type="submit" class="btn btn-secondary">Change</button>
                                         </label>
                                     </label>
@@ -60,7 +60,7 @@
                                         <br />
                                         Include the link to Facebook page in the footer.
                                         <label class="form-group row" style="margin-top:5px;margin-left:0;">
-                                            <input class="form-control alignleft" style="width:200px; margin-right:10px;" type="url" value="facebook.com" id="facebook-input">
+                                            <input class="form-control align-left" style="width:200px; margin-right:10px;" type="url" value="facebook.com" id="facebook-input">
                                             <button type="submit" class="btn btn-secondary">Change</button>
                                         </label>
                                     </label>
@@ -76,7 +76,7 @@
                             <b>Temporarily disable the system</b>
                             <br />
                             This may be used for maintenance.
-                            <a href="admin_6_maintenance.html"><button type="button" class="btn btn-outline-danger alignright">Disable the system</button></a>
+                            <a href="admin_6_maintenance.html"><button type="button" class="btn btn-outline-danger align-right">Disable the system</button></a>
                         </div>
                     </div>
                 </form>
