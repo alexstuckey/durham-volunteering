@@ -82,6 +82,7 @@ class Admin extends CI_Controller
             $this->Departments_model->newDepartment($this->input->post('newName'));
 
             $this->session->set_flashdata('message', 'New department created!');
+            $this->Audit_model->insertLog('ALTER', 'New department created: ' . $this->input->post('newName'));
 
             $this->departments();
 
@@ -107,6 +108,7 @@ class Admin extends CI_Controller
             $this->Departments_model->editDepartment($this->input->post('id'), $this->input->post('newName'));
 
             $this->session->set_flashdata('message', 'Department renamed to ' . $this->input->post('newName') . '!');
+            $this->Audit_model->insertLog('ALTER', 'Department ' . $this->input->post('id') . ' renamed to: ' . $this->input->post('newName'));
 
             $this->departments();
 
@@ -177,6 +179,7 @@ class Admin extends CI_Controller
             $this->Admin_model->updateEmailTemplates($this->input->post('emailName'), $this->input->post('emailContent'));
 
             $this->session->set_flashdata('message', 'Email body updated!');
+            $this->Audit_model->insertLog('ALTER', 'Email body ' . $this->input->post('emailName') . ' edited.');
 
             $this->emails();
 
