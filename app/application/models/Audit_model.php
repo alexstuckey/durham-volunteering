@@ -15,8 +15,14 @@ class Audit_model extends CI_Model {
         return $query->result_array();
     }
 
-    public function insertLog($data)
+    public function insertLog($type, $message)
     {
+        $data = array(
+            'logType' => $type,
+            'logMessage' => $message,
+            'userResponsible' => $_SERVER['REMOTE_USER']
+        );
+
         $this->db->insert('audit', $data);
     }
 
