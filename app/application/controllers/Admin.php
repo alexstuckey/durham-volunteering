@@ -40,6 +40,7 @@ class Admin extends CI_Controller
 
     public function departments()
     {
+        $this->Audit_model->insertLog('ACCESS', 'Accessing admin: departments');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'departments';
@@ -81,6 +82,7 @@ class Admin extends CI_Controller
             $this->Departments_model->newDepartment($this->input->post('newName'));
 
             $this->session->set_flashdata('message', 'New department created!');
+            $this->Audit_model->insertLog('ALTER', 'New department created: ' . $this->input->post('newName'));
 
             $this->departments();
 
@@ -106,6 +108,7 @@ class Admin extends CI_Controller
             $this->Departments_model->editDepartment($this->input->post('id'), $this->input->post('newName'));
 
             $this->session->set_flashdata('message', 'Department renamed to ' . $this->input->post('newName') . '!');
+            $this->Audit_model->insertLog('ALTER', 'Department ' . $this->input->post('id') . ' renamed to: ' . $this->input->post('newName'));
 
             $this->departments();
 
@@ -115,6 +118,7 @@ class Admin extends CI_Controller
 
     public function notification()
     {
+        $this->Audit_model->insertLog('ACCESS', 'Accessing admin: notification');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'notification';
@@ -133,6 +137,7 @@ class Admin extends CI_Controller
 
     public function emails()
     {
+        $this->Audit_model->insertLog('ACCESS', 'Accessing admin: email templates');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'email_templates';
@@ -174,6 +179,7 @@ class Admin extends CI_Controller
             $this->Admin_model->updateEmailTemplates($this->input->post('emailName'), $this->input->post('emailContent'));
 
             $this->session->set_flashdata('message', 'Email body updated!');
+            $this->Audit_model->insertLog('ALTER', 'Email body ' . $this->input->post('emailName') . ' edited.');
 
             $this->emails();
 
@@ -182,6 +188,7 @@ class Admin extends CI_Controller
 
     public function settings()
     {
+        $this->Audit_model->insertLog('ACCESS', 'Accessing admin: settings');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'settings';
@@ -192,6 +199,27 @@ class Admin extends CI_Controller
 
         $this->load->view('admin_sidebar', $data);
         $this->load->view('admin_4_settings', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
+
+    }
+
+    public function audit()
+    {
+        $this->Audit_model->insertLog('ACCESS', 'Accessing admin: audit');
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'audit';
+        $data['page_title'] = 'Admin: audit';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $data['trail'] = $this->Audit_model->getWholeAuditTrail();
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_7_audit', $data);
 
         $this->load->view('content_close', $data);
         $this->load->view('footer', $data);

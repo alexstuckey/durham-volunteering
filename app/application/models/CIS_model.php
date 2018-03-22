@@ -5,22 +5,37 @@ class CIS_model extends CI_Model
 {
     public function __construct()
     {
-        $this->load->database('durhamNative', TRUE);
+        
     }
 
 
-    public function get_user_details($userEmail)
+    public function get_user_details_by_email($userEmail)
     {
+        $dbDurhamNative = $this->load->database('durhamNative', TRUE);
 
-        $this->db->select('*');
-        $this->db->from('UserDetails');
-        $this->db->where('email', $userEmail);
+        $dbDurhamNative->select('*');
+        $dbDurhamNative->from('UserDetails');
+        $dbDurhamNative->where('email', $userEmail);
 
-        $query = $this->db->get();
+        $query = $dbDurhamNative->get();
 
-        $data = $query->result_array();
+        $data = $query->row_array();
 
-        return $data['username'];
+        return $data;
+    }
 
+    public function get_user_details_by_cisID($cisID)
+    {
+        $dbDurhamNative = $this->load->database('durhamNative', TRUE);
+
+        $dbDurhamNative->select('*');
+        $dbDurhamNative->from('UserDetails');
+        $dbDurhamNative->where('username', $cisID);
+
+        $query = $dbDurhamNative->get();
+
+        $data = $query->row_array();
+
+        return $data;
     }
 }
