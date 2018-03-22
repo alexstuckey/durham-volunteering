@@ -198,6 +198,27 @@ class Admin extends CI_Controller
 
     }
 
+    public function audit()
+    {
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'audit';
+        $data['page_title'] = 'Admin: audit';
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $this->load->model('Audit_model');
+        $data['trail'] = $this->Audit_model->getWholeAuditTrail();
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_7_audit', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
+
+    }
+
     public function turnResultsIntoAssociative($results)
 
     {
