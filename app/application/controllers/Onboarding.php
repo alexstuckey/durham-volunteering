@@ -3,151 +3,162 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Onboarding extends CI_Controller {
 
-	public function welcome()
-	{
+    public function welcome()
+    {
         $this->load->model('User_model');
-		if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
-			// First access by user, normally redirect, but already there.
-			// redirect
-		}
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            // First access by user, normally redirect, but already there.
+            // redirect
+        }
 
-		$data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
+        $this->Audit_model->insertLog('ACCESS', 'Accessing Welcome Page');
 
-		$this->load->view('onboarding_1_welcome', $data);
+        $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
-		$this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 1);
-	}
+        $this->load->view('onboarding_1_welcome', $data);
 
-	public function step_details()
-	{
+        $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 1);
+    }
+
+    public function step_details()
+    {
         $this->load->model('User_model');
-		if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
-			// First access by user, normally redirect, but already there.
-			$this->load->helper('url');
-			redirect('/onboard/welcome');
-		}
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            // First access by user, normally redirect, but already there.
+            $this->Audit_model->insertLog('ACCESS DENIED', 'Accessing Page Denied');
+            $this->Audit_model->insertLog('REDIRECT', 'Redirect to Welcome Page');
 
-		$data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        }
 
-		$data['active'] = 'enter_details';
-		
-		$this->load->view('onboarding_steps', $data);
+        $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
-		$this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 2);
-	}
+        $data['active'] = 'enter_details';
+        
+        $this->load->view('onboarding_steps', $data);
 
-	public function enter_details_form()
-	{
+
+        $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 2);
+
+        $this->Audit_model->insertLog('ALTER', 'Onboarding status updated');
+    }
+
+    public function enter_details_form()
+    {
         $this->load->model('User_model');
-		if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
-			// First access by user, normally redirect, but already there.
-			$this->load->helper('url');
-			redirect('/onboard/welcome');
-		}
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            // First access by user, normally redirect, but already there.
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        }
 
-		$data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
+        $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
-		$this->load->model('Departments_model');
-        $data['departments'] = $this->Departments_model->getDepartmentsListWithCount();
+        $this->load->helper('form');
 
-		$this->load->helper('form');
-
-		$this->load->view('onboarding_3_enter_details_form', $data);
+        $this->load->view('onboarding_3_enter_details_form', $data);
 
 
-		$this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 3);
-	}
+        $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 3);
 
-	public function send_details()
-	{
+        $this->Audit_model->insertLog('ALTER', 'Onboarding status updated');
+    }
+
+    public function send_details()
+    {
         $this->load->model('User_model');
-		if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
-			// First access by user, normally redirect, but already there.
-			$this->load->helper('url');
-			redirect('/onboard/welcome');
-		}
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            // First access by user, normally redirect, but already there.
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        }
 
-		$data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
+        $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
-		// Form logic
-		// Validate
-		$this->load->library('form_validation');
+        // Form logic
+        // Validate
+        $this->load->library('form_validation');
 
-		$this->form_validation->set_rules('inputFirstName', 'First Name', 'required');
-		$this->form_validation->set_rules('inputLastName', 'Last Name', 'required');
-		$this->form_validation->set_rules('inputDepartment', 'Department', 'required');
+        $this->form_validation->set_rules('inputFirstName', 'First Name', 'required');
+        $this->form_validation->set_rules('inputLastName', 'Last Name', 'required');
 
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('onboarding_3_enter_details_form', $data);
-		} else {
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('onboarding_3_enter_details_form', $data);
+        } else {
 
-			$data['active'] = 'nominate_manager';
-			$this->load->view('onboarding_steps', $data);
+            $this->Audit_model->insertLog('ALTER', 'Details updated');
 
-			$userChanges = array(
-				'firstName' => $this->input->post('inputFirstName'),
-				'secondName' => $this->input->post('inputLastName'),
-				'departmentID' => $this->input->post('inputDepartment')
-			);
+            $data['active'] = 'nominate_manager';
+            $this->load->view('onboarding_steps', $data);
+
+            $userChanges = array(
+                'firstName' => $this->input->post('inputFirstName'),
+                'secondName' => $this->input->post('inputLastName')
+            );
 
             $this->User_model->updateUser($_SERVER['REMOTE_USER'], $userChanges);
 
-			$this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 4);
-		}
-		
-	}
+            $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 4);
+        }
+        
+    }
 
-	public function enter_nominate_manager_form()
-	{
+    public function enter_nominate_manager_form()
+    {
         $this->load->model('User_model');
-		if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
-			// First access by user, normally redirect, but already there.
-			$this->load->helper('url');
-			redirect('/onboard/welcome');
-		}
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            // First access by user, normally redirect, but already there.
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        }
 
-		$data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
+        $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
-		$this->load->helper('form');
+        $this->load->helper('form');
 
-		$this->load->view('onboarding_5_nominate_manager_form', $data);
+        $this->load->view('onboarding_5_nominate_manager_form', $data);
 
-		$this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 5);
-	}
+        $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 5);
+        $this->Audit_model->insertLog('ALTER', 'Onboarding Status Updated');
 
-	public function send_nominate_manager()
-	{
+    }
+
+    public function send_nominate_manager()
+    {
         $this->load->model('User_model');
-		if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
-			// First access by user, normally redirect, but already there.
-			$this->load->helper('url');
-			redirect('/onboard/welcome');
-		}
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            // First access by user, normally redirect, but already there.
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        }
 
-		$data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
+        $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
-		// Form logic
-		// Validate
-		$this->load->library('form_validation');
+        // Form logic
+        // Validate
+        $this->load->library('form_validation');
 
-		$this->form_validation->set_rules('inputEmailAddress', 'Email address', 'required');
-		$this->form_validation->set_rules('inputComment', 'Comment', 'required');
+        $this->form_validation->set_rules('inputEmailAddress', 'Email address', 'required');
+        $this->form_validation->set_rules('inputComment', 'Comment', 'required');
 
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('onboarding_5_nominate_manager_form', $data);
-		} else {
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('onboarding_5_nominate_manager_form', $data);
+        } else {
 
-			$data['active'] = 'get_started';
-			$this->load->view('onboarding_steps', $data);
+            $data['active'] = 'get_started';
+            $this->load->view('onboarding_steps', $data);
 
 
 
             $this->User_model->setManager($_SERVER['REMOTE_USER'], $data);
 
-			$this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 6);
-		}
+            $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 6);
+            $this->Audit_model->insertLog('ALTER', 'Manager Nominated');
 
-	}
+        }
+
+    }
 
 
 }
