@@ -17,7 +17,7 @@ samp,
 }
 
 .navbar-brand {
-  font-family: Baskerville;
+  font-family: Baskerville, serif;
 }
 
 /* Override Bootstrap Responsive CSS fixed navbar */
@@ -150,3 +150,25 @@ footer {
         min-height: 80%;
     }
 }
+
+.align-left {
+    float: left; }
+
+.align-right {
+    float: right;
+    text-align: right; }
+
+ul {
+    font-family: Arial, sans-serif; }
+.btn-secondary {
+    background-color: #F4F4F4;
+    color: #535353;
+    border-color: #EAEAEA; }
+
+.btn-secondary:hover {
+    background-color: #F0F0F0;
+    color: #535353;
+    border-color: #EAEAEA; }
+
+.nav-item {
+    color: #A07F9E; }

@@ -12,15 +12,17 @@
 
     <div class="card">
         <div class="card-header">
-            <h5>Get Involved with Causes</h5>
+            <h5>Open Challenges</h5>
         </div>
         <div class="list-group">
-            <a href="#" class="list-group-item">RSPB</a>
-            <a href="#" class="list-group-item">Barnardo's</a>
-            <a href="#" class="list-group-item">Mencap</a>
-            <a href="#" class="list-group-item">Oxfam</a>
-            <a href="#" class="list-group-item">Samaritans</a>
-            <a href="#" class="list-group-item">WaterAid</a>
+            <a href="#" class="list-group-item">Stockton Road Cemetery</a>
+            <a href="#" class="list-group-item">Durham Foodbank</a>
+            <a href="#" class="list-group-item">St Cuthbert's Hospice</a>
+            <a href="#" class="list-group-item">DASH</a>
+            <a href="#" class="list-group-item">Daisy Chain</a>
+            <a href="#" class="list-group-item">SHAID</a>
+            <a href="#" class="list-group-item">Tees Valley Wildlife Trust</a>
+            <a href="#" class="list-group-item">Ushaw College</a>
         </div>
     </div>
 </div>
