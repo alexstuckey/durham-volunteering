@@ -73,6 +73,7 @@ $route['admin/notification'] = 'admin/notification';
 $route['admin/emails'] = 'admin/emails';
 $route['admin/emails/edit']['POST'] = 'admin/emailsEdit';
 $route['admin/settings'] = 'admin/settings';
+$route['admin/audit'] = 'admin/audit';
 
 $route['cause/(:num)']['GET'] = 'causes/causeByID/$1';
 
