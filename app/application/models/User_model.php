@@ -88,6 +88,18 @@ class User_model extends CI_Model
         return $managersCisID;
     }
 
+
+    public function getManagerStatus($CISID)
+    {
+        $this->db->where('cisID', $CISID);
+
+        $query = $this->db->get('users');
+
+        $result = $query->row_array();
+
+        return $result['managerStatus'];
+    }
+
     // Returns an array of CisIDs of whom the $CISID is the manager.
     public function getManagees($CISID)
     {
@@ -136,18 +148,24 @@ class User_model extends CI_Model
         return true;
     }
 
-    public function setManager($CISID, $managerEmailAddress)
+    public function setManager($CISID, $managerEmailAddress, $status)
     {
 
-        $managerData=$this->get_user_details($managerEmailAddress);
-        $managerUsername=$managerData['username'];
+        $managerData = $this->getUserByEmail($managerEmailAddress);
+        if (!empty($managerData['username'])) {
+            $managerUsername = $managerData['username'];
 
-        $this->db->where('cisID', $CISID);
+            $this->db->where('cisID', $CISID);
 
-        $data = array(
-            'manager' => $managerUsername,
-        );
-        $this->db->update('users', $data);
+            $data = array(
+                'manager' => $managerUsername,
+                'managerStatus' => strtolower($status)
+            );
+            $this->db->update('users', $data);
+        } else {
+            // Manager doesn't exist
+            return FALSE;
+        }
 
     }
 
