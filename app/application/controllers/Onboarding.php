@@ -127,6 +127,18 @@ class Onboarding extends CI_Controller {
 
     }
 
+    public function email_check($str)
+    {
+        $this->load->model('User_model');
+        $account = $this->User_model->getUserByEmail($str);
+        if (empty($account)) {
+            $this->form_validation->set_message('email_check', 'The {field} must be a valid Durham address.');
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
+
     public function send_nominate_manager()
     {
         $this->load->model('User_model');
@@ -142,7 +154,7 @@ class Onboarding extends CI_Controller {
         // Validate
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('inputEmailAddress', 'Email address', 'required');
+        $this->form_validation->set_rules('inputEmailAddress', 'Email address', 'required|strtolower|valid_email|regex_match[/^[a-zA-Z0-9.!#$%&\'*+=?^_`{|}~-]+@dur(ham)?.ac.uk$/]|callback_email_check');
         $this->form_validation->set_rules('inputComment', 'Comment');
 
         if ($this->form_validation->run() == FALSE) {
