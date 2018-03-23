@@ -167,17 +167,16 @@ class Onboarding extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('onboarding_5_nominate_manager_form', $data);
         } else {
-
-            $data['active'] = 'get_started';
-            $this->load->view('onboarding_steps', $data);
-
-
-
-            $this->User_model->setManager($_SERVER['REMOTE_USER'], $data);
-
+            // Nominating the manager chosen
+            $this->User_model->setManager($_SERVER['REMOTE_USER'], $this->input->post('inputEmailAddress'), 'nominated');
             $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 6);
             $this->Audit_model->insertLog('ALTER', 'Onboarding: Manager Nominated');
 
+            // Then email that manager
+
+
+            $data['active'] = 'get_started';
+            $this->load->view('onboarding_steps', $data);
         }
 
     }
