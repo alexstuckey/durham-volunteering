@@ -47,8 +47,7 @@
 
                             <?php echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>'); ?>
                             
-                            <p>As a member of staff you have the opportunity to volunteer during your working hours. However this is subject to a line-manager approval.<br /><br />Please use the form provided below to nominate your manager. We will send them an email containing links for accepting or rejecting the nomination. If the nomination gets rejected you will be able to nominate someone else.<br /></p>
-
+                            <p>As a member of staff you have the opportunity to volunteer during your working hours. However this is subject to a line-manager approval.<br /><br />Please use the form provided below to nominate your manager. We will send them an email containing links for accepting or rejecting the nomination. If the nomination gets rejected you will be able to nominate someone else.</p>
 
                             <div class="card">
                                 <div class="card-block">
