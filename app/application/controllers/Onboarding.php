@@ -135,7 +135,14 @@ class Onboarding extends CI_Controller {
             $this->form_validation->set_message('email_check', 'The {field} must be a valid Durham address.');
             return FALSE;
         } else {
-            return TRUE;
+            // Check whether that is the user's email
+            if ($account['username'] == $_SERVER['REMOTE_USER']) {
+                // Trying to set oneself as manager
+                $this->form_validation->set_message('email_check', 'The {field} must not be your own.');
+                return FALSE;
+            } else {
+                return TRUE;
+            }
         }
     }
 
