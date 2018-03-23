@@ -19,8 +19,8 @@
                   <th scope="row"><?php echo $entries['id']; ?></th>
                   <td><?php echo $entries['datetime']; ?></td>
                   <td><?php echo $entries['logType']; ?></td>
-                  <td><?php echo $entries['logMessage']; ?></td>
                   <td><?php echo $entries['userResponsible']; ?></td>
+                  <td><?php echo $entries['logMessage']; ?></td>
                 </tr>
             <?php endforeach; ?>
           </tbody>
