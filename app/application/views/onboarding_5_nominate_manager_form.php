@@ -55,7 +55,7 @@
                                     <form action="<?php echo site_url('/onboard/send_nominate_manager'); ?>" method="post">
                                         <div class="form-group">
                                             <label for="inputEmailAddress">Email address</label>
-                                            <input type="email" autocomplete="email" class="form-control" name="inputEmailAddress" id="inputEmailAddress" placeholder="Enter email" value="<?php echo set_value('inputEmailAddress'); ?>">
+                                            <input type="email" autocomplete="email" class="form-control" name="inputEmailAddress" id="inputEmailAddress" placeholder="Enter email" pattern=".+@dur(ham)?.ac.uk" value="<?php echo set_value('inputEmailAddress'); ?>">
                                         </div>
 
                                         <div class="form-group">
