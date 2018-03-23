@@ -143,7 +143,7 @@ class Onboarding extends CI_Controller {
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('inputEmailAddress', 'Email address', 'required');
-        $this->form_validation->set_rules('inputComment', 'Comment', 'required');
+        $this->form_validation->set_rules('inputComment', 'Comment');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('onboarding_5_nominate_manager_form', $data);
