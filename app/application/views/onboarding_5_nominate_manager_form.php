@@ -45,21 +45,21 @@
                         <div id="volunteering">
                             <h1>Nominate Your Manager</h1>
 
-                            <h4><br /></h4>
-                            <p>As a member of staff you have the opportunity to volunteer during your working hours. However this is subject to a line-manager approval.<br /><br />Please use the form provided below to nominate your manager. We will send them an email containing links for accepting or rejecting the nomination. If the nomination gets rejected you will be able to nominate someone else.<br /></p>
-
+                            <?php echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>'); ?>
+                            
+                            <p>As a member of staff you have the opportunity to volunteer during your working hours. However this is subject to a line-manager approval.<br /><br />Please use the form provided below to nominate your manager. We will send them an email containing links for accepting or rejecting the nomination. If the nomination gets rejected you will be able to nominate someone else.</p>
 
                             <div class="card">
                                 <div class="card-block">
                                     <form action="<?php echo site_url('/onboard/send_nominate_manager'); ?>" method="post">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                            <label for="inputEmailAddress">Email address</label>
+                                            <input type="email" autocomplete="email" class="form-control" name="inputEmailAddress" id="inputEmailAddress" placeholder="Enter email" pattern=".+@dur(ham)?.ac.uk" value="<?php echo set_value('inputEmailAddress'); ?>">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="exampleTextarea">Comment</label>
-                                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                            <label for="inputComment">Comment</label>
+                                            <textarea class="form-control" name="inputComment" id="inputComment" value="<?php echo set_value('inputComment'); ?>" rows="3"></textarea>
                                         </div>
 
                                         <button type="submit" class="btn btn-primary">Submit</button>

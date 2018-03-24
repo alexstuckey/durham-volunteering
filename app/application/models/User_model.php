@@ -11,23 +11,33 @@ class User_model extends CI_Model
         $this->load->database();
     }
 
-    //Returns an associative array with all the data associated with a given user
 
-
+    // Returns the CIS user details
     public function getUserByCIS($cisID)
     {
-        $this->db->select('*');
-        $this->db->from('users');
-        $this->db->where('users.cisID', $cisID);
+        $this->load->model('CIS_model');
 
-        $this->db->join('admins', 'admins.cisID=users.cisID');
+        return $this->CIS_model->get_user_details_by_cisID($cisID);
+    }
 
-        $query = $this->db->get();
+    public function getUserByEmail($email)
+    {
+        $this->load->model('CIS_model');
 
-        $data = $query->result_array();
+        return $this->CIS_model->get_user_details_by_email($email);
+    }
 
-        return $data;
 
+
+    public function getFullnameByUsername($CISID)
+    {
+        $this->db->where('cisID', $CISID);
+
+        $query = $this->db->get('users');
+
+        $result = $query->row_array();
+
+        return ($result['firstName'] . ' ' . $result['secondName']);
     }
 
 
@@ -79,14 +89,24 @@ class User_model extends CI_Model
     public function getManager($CISID)
     {
         $this->db->where('cisID', $CISID);
+        $query = $this->db->get('users');
+        $user = $query->row_array();
 
-        $query = $this->db->get('management');
+        $manager = $this->getUserByCIS($user['manager']);
 
-        $result = $query->result_array();
+        return $manager;
+    }
 
-        $managersCisID = $result[0]['managersCisID'];
 
-        return $managersCisID;
+    public function getManagerStatus($CISID)
+    {
+        $this->db->where('cisID', $CISID);
+
+        $query = $this->db->get('users');
+
+        $result = $query->row_array();
+
+        return $result['managerStatus'];
     }
 
     // Returns an array of CisIDs of whom the $CISID is the manager.
@@ -137,18 +157,24 @@ class User_model extends CI_Model
         return true;
     }
 
-    public function setManager($CISID, $managerEmailAddress)
+    public function setManager($CISID, $managerEmailAddress, $status)
     {
 
-        $managerData=$this->get_user_details($managerEmailAddress);
-        $managerUsername=$managerData['username'];
+        $managerData = $this->getUserByEmail($managerEmailAddress);
+        if (!empty($managerData['username'])) {
+            $managerUsername = $managerData['username'];
 
-        $this->db->where('cisID', $CISID);
+            $this->db->where('cisID', $CISID);
 
-        $data = array(
-            'manager' => $managerUsername,
-        );
-        $this->db->update('users', $data);
+            $data = array(
+                'manager' => $managerUsername,
+                'managerStatus' => strtolower($status)
+            );
+            $this->db->update('users', $data);
+        } else {
+            // Manager doesn't exist
+            return FALSE;
+        }
 
     }
 
