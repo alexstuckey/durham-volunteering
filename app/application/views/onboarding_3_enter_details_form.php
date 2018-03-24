@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <title>Personal Details</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <?php $this->load->helper('url'); ?>
 
         <!-- Vendor JS -->
         <script src="<?php echo base_url('/static/js/jquery.min.js'); ?>"></script>
         <script src="<?php echo base_url('/static/js/bootstrap.min.js'); ?>"></script>
         <script src="<?php echo base_url('/static/js/select2.min.js'); ?>"></script>
-        
+
         <!-- App JS -->
         <script src="<?php echo base_url('/static/js/homepage.js'); ?>"></script>
         <script type="text/javascript">
@@ -78,7 +78,7 @@
                                             <label for="inputDepartment">Department</label>
                                             <select class="form-control" name="inputDepartment" id="inputDepartment">
                                                 <?php foreach ($departments as $department): ?>
-                                                <option value="<?php echo $department['id']; ?>"><?php echo $department['departmentsName'] ?></option>
+                                                    <option value="<?php echo $department['id']; ?>"><?php echo $department['departmentsName'] ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>

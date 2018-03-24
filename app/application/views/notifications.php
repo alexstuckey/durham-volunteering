@@ -14,9 +14,6 @@
         <div class="card-block">
             <p class="card-text">Your Manager approved your shift at Barnardo's on 23rd Feb, 3-6pm.</p>
             <div class="btn-group">
-                <button type="button" class="btn btn-outline-success archive">
-                    Archive
-                </button>
                 <button type="button" class="btn btn-outline-warning dismiss">
                     Dismiss
                 </button>
@@ -34,9 +31,6 @@
         <div class="card-block">
             <p class="card-text">Shift application at Mencap on 28th Feb 12-2pm is awaiting approval from your Manager.</p>
             <div class="btn-group">
-                <button type="button" class="btn btn-outline-success archive">
-                    Archive
-                </button>
                 <button type="button" class="btn btn-outline-warning dismiss">
                     Dismiss
                 </button>
@@ -54,9 +48,6 @@
         <div class="card-block">
             <p class="card-text">You've completed 48 hours of volunteering so far!</p>
             <div class="btn-group">
-                <button type="button" class="btn btn-outline-success archive">
-                    Archive
-                </button>
                 <button type="button" class="btn btn-outline-warning dismiss">
                     Dismiss
                 </button>
@@ -69,14 +60,11 @@
 
     <div class="card">
         <div class="card-header">
-            <h5>Get Involved!</h5>
+            <h4>Get Involved!</h4>
         </div>
         <div class="card-block">
             <p class="card-text">You're all set up and ready - fill in the shift application form to get started with volunteering.</p>
             <div class="btn-group">
-                <button type="button" class="btn btn-outline-success archive">
-                    Archive
-                </button>
                 <button type="button" class="btn btn-outline-warning dismiss">
                     Dismiss
                 </button>

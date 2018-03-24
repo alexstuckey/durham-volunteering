@@ -11,6 +11,13 @@ $('.navbar li a').click(function(event) {
     scrollBy(0, -offset);
 });
 
+// add select 2
+$(document).ready(function() {
+    $('#inputDepartment').select2({
+        theme: "bootstrap4"
+    });
+});
+
 
 /* Retrieve and populate causes box
 $(document).ready(function() {
@@ -135,11 +142,6 @@ $(document).ready(function() {
         createNotificationPopupDismiss();
         removeNotificationDiv();
     }));
-    $('.archive').on('click', (function() {
-        console.log('archive button clicked')
-        createNotificationPopupArchive();
-        removeNotificationDiv();
-    }));
 });
 
 function createNotificationPopupDismiss(){
@@ -147,14 +149,8 @@ function createNotificationPopupDismiss(){
     $("#notification_popups").append('<div id="notification_popups"><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>Success!</strong> Notification dismissed!</div></div>');
 }
 
-function createNotificationPopupArchive(){
-    console.log('creating archive popup');
-    $("#notification_popups").append('<div id="notification_popups"><div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>Success!</strong> Notification archived!</div></div>');
-
-}
-
 function removeNotificationDiv() {
-    $(".archive, .dismiss").click(function(event) {
+    $(".dismiss").click(function(event) {
         event.preventDefault();
         $(this).parents('.card').remove();
     });
