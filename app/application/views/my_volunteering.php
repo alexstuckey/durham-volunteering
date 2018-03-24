@@ -15,7 +15,7 @@
             <div class="card-header">
                 <h5>Upcoming Activities</h5>
             </div>
-            <div class="card-block">
+            <div class="card-block activityTable">
                 <table class="table">
                     <thead>
                     <tr>
@@ -49,7 +49,7 @@
             <div class="card-header">
                 <h5>Previous Activities</h5>
             </div>
-            <div class="card-block">
+            <div class="card-block activityTable">
                 <table class="table">
                     <thead>
                     <tr>
