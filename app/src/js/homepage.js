@@ -11,6 +11,13 @@ $('.navbar li a').click(function(event) {
     scrollBy(0, -offset);
 });
 
+// add select 2
+$(document).ready(function() {
+    $('#inputDepartment').select2({
+        theme: "bootstrap4"
+    });
+});
+
 
 /* Retrieve and populate causes box
 $(document).ready(function() {

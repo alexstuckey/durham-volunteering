@@ -19,13 +19,6 @@
 
         <!-- App JS -->
         <script src="<?php echo base_url('/static/js/homepage.js'); ?>"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('#inputDepartment').select2({
-                    theme: "bootstrap4"
-                });
-            });
-        </script>
 
         <!-- Vendor CSS -->
         <link rel="stylesheet" href="<?php echo base_url('/static/css/bootstrap.css'); ?>">
