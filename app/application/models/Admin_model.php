@@ -13,25 +13,11 @@ class Admin_model extends CI_Model {
     //The results are stored in an array which can be accessed with $query[n]['column name']
     //Where n is the position in the array.
 
-    public function returnEmailTemplates()
-    {
-        $query = $this->db->get('emailTemplates');
-
-        return $query->result_array();
-    }
-
     public function isDisabled()
     {
         $query = $this->db->get('disabled');
 
         return $query->row_array();
-    }
-
-    public function updateEmailTemplates($emailName,$emailContent)
-    {
-        $this->db->where('emailName', $emailName);
-        $this->db->set('emailContent', $emailContent);
-        $this->db->update('emailTemplates');
     }
 
     public function updateWebsiteStatus($websiteEnabled){

@@ -143,8 +143,8 @@ class Admin extends CI_Controller
         $data['active_admin'] = 'email_templates';
         $data['page_title'] = 'Admin: email templates';
 
-        $this->load->model('Admin_model');
-        $data['email_templates'] = $this->Admin_model->returnEmailTemplates();
+        $this->load->model('Email_model');
+        $data['email_templates'] = $this->Email_model->getAllEmailTemplates();
 
         $this->load->library('form_validation');
         $this->load->library('session');
@@ -165,6 +165,7 @@ class Admin extends CI_Controller
     public function emailsEdit()
     {
         $this->load->library('form_validation');
+        $this->form_validation->set_rules('emailSubject', 'Email Subject', 'trim|required|max_length[255]');
         $this->form_validation->set_rules('emailContent', 'Email Body', 'trim|required');
         $this->form_validation->set_error_delimiters('<p class="alert alert-danger"><strong>Error: </strong>', '</p>');
 
@@ -174,12 +175,12 @@ class Admin extends CI_Controller
 
             $this->emails();
         } else {
-            $this->load->model('Admin_model');
+            $this->load->model('Email_model');
 
-            $this->Admin_model->updateEmailTemplates($this->input->post('emailName'), $this->input->post('emailContent'));
+            $this->Email_model->updateEmailTemplate($this->input->post('emailName'), $this->input->post('emailSubject'), $this->input->post('emailContent'));
 
-            $this->session->set_flashdata('message', 'Email body updated!');
-            $this->Audit_model->insertLog('ALTER', 'Email body ' . $this->input->post('emailName') . ' edited.');
+            $this->session->set_flashdata('message', 'Email updated!');
+            $this->Audit_model->insertLog('ALTER', 'Email ' . $this->input->post('emailName') . ' edited.');
 
             $this->emails();
 
