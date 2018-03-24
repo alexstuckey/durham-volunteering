@@ -7,6 +7,9 @@
         <div class="list-group">
             <a href="#" class="list-group-item">DUO</a>
             <a href="#" class="list-group-item">University Email</a>
+            <!-- will link to page with select2 dropdown and the single cause html stub beneath
+            <a href="#" class="list-group-item">View Causes</a>
+
         </div>
     </div>
 
