@@ -11,7 +11,6 @@
 
     <!-- View Upcoming Activities -->
     <div>
-        <!-- DUMMY INFO -->
         <div class="card">
             <div class="card-header">
                 <h5>Upcoming Activities</h5>
@@ -20,31 +19,23 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Cause</th>
+                        <th scope="col">Start Time</th>
+                        <th scope="col">End Time</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                        <!-- Will show all audit entries as table entries, need to change to be upcoming activities using if statement if start time is in future -->
+                        <?php foreach ($trail as $entries): ?>
+                            <tr>
+                                <th scope="row"><?php echo $entries['id']; ?></th>
+                                <td><?php echo $entries['datetime']; ?></td>
+                                <td><?php echo $entries['logType']; ?></td>
+                                <td><?php echo $entries['userResponsible']; ?></td>
+                                <td><?php echo $entries['logMessage']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
@@ -53,7 +44,6 @@
 
     <!-- View Previous Activities -->
     <div>
-        <!-- DUMMY INFO -->
         <div class="card">
             <div class="card-header">
                 <h5>Previous Activities</h5>
@@ -62,31 +52,23 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Cause</th>
+                        <th scope="col">Start Time</th>
+                        <th scope="col">End Time</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                        <!-- Will show all audit entries as table entries, need to change to be previous activities using if statement if start time is in past -->
+                        <?php foreach ($trail as $entries): ?>
+                            <tr>
+                                <th scope="row"><?php echo $entries['id']; ?></th>
+                                <td><?php echo $entries['datetime']; ?></td>
+                                <td><?php echo $entries['logType']; ?></td>
+                                <td><?php echo $entries['userResponsible']; ?></td>
+                                <td><?php echo $entries['logMessage']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
