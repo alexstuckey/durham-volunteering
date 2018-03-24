@@ -21,7 +21,7 @@
         <div class="card-block">
             <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
 
-            <form method="<?php echo site_url('/api/times'); ?>" action="" id="shiftApplicationForm">
+            <form method="post" action="<?php echo site_url('/api/times'); ?>" id="shiftApplicationForm">
 
                 <div class="form-group">
                     <label for="shiftApplicationDateTimeStart">Start Date and time</label>
