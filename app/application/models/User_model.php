@@ -12,9 +12,7 @@ class User_model extends CI_Model
     }
 
 
-    //Returns an associative array with all the data associated with a given user
-
-
+    // Returns the CIS user details
     public function getUserByCIS($cisID)
     {
         $this->load->model('CIS_model');
@@ -27,6 +25,19 @@ class User_model extends CI_Model
         $this->load->model('CIS_model');
 
         return $this->CIS_model->get_user_details_by_email($email);
+    }
+
+
+
+    public function getFullnameByUsername($CISID)
+    {
+        $this->db->where('cisID', $CISID);
+
+        $query = $this->db->get('users');
+
+        $result = $query->row_array();
+
+        return ($result['firstName'] . ' ' . $result['secondName']);
     }
 
 
