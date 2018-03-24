@@ -23,17 +23,18 @@
                         <th scope="col">Cause</th>
                         <th scope="col">Start Time</th>
                         <th scope="col">End Time</th>
+                        <th scope="col">Team Challenge</th>
                     </tr>
                     </thead>
                     <tbody>
-                        <!-- Will show all audit entries as table entries, need to change to be upcoming activities using if statement if start time is in future -->
-                        <?php foreach ($trail as $entries): ?>
+                        <!-- upcoming activities using if statement if start time is in future -->
+                        <?php foreach ($times as $entries): ?>
                             <tr>
-                                <th scope="row"><?php echo $entries['id']; ?></th>
-                                <td><?php echo $entries['datetime']; ?></td>
-                                <td><?php echo $entries['logType']; ?></td>
-                                <td><?php echo $entries['userResponsible']; ?></td>
-                                <td><?php echo $entries['logMessage']; ?></td>
+                                <th scope="row"><?php echo $entries['timeID']; ?></th>
+                                <td><?php echo $entries['causeID']; ?></td>
+                                <td><?php echo $entries['start']; ?></td>
+                                <td><?php echo $entries['finish']; ?></td>
+                                <td><?php echo $entries['teamChallenge']; ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -56,17 +57,18 @@
                         <th scope="col">Cause</th>
                         <th scope="col">Start Time</th>
                         <th scope="col">End Time</th>
+                        <th scope="col">Team Challenge</th>
                     </tr>
                     </thead>
                     <tbody>
-                        <!-- Will show all audit entries as table entries, need to change to be previous activities using if statement if start time is in past -->
-                        <?php foreach ($trail as $entries): ?>
+                        <!-- previous activities using if statement if start time is in past -->
+                        <?php foreach ($times as $entries): ?>
                             <tr>
-                                <th scope="row"><?php echo $entries['id']; ?></th>
-                                <td><?php echo $entries['datetime']; ?></td>
-                                <td><?php echo $entries['logType']; ?></td>
-                                <td><?php echo $entries['userResponsible']; ?></td>
-                                <td><?php echo $entries['logMessage']; ?></td>
+                                <th scope="row"><?php echo $entries['timeID']; ?></th>
+                                <td><?php echo $entries['causeID']; ?></td>
+                                <td><?php echo $entries['start']; ?></td>
+                                <td><?php echo $entries['finish']; ?></td>
+                                <td><?php echo $entries['teamChallenge']; ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

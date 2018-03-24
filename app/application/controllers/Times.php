@@ -8,9 +8,13 @@ class Times extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
-	public function list()
+	public function getUserTimes()
 	{
-		echo 'Hello World!';
+//        $this->load->model('Time_model');
+//        $data['cis_username'] = 'xxxx99';
+//        $data['page_title'] = 'My Volunteering';
+//        // need to access the cis id of currently logged in user -- $_SERVER['REMOTE_USER']
+//        $data['times'] = $this->Time_model->getTimeForCIS('1');
 	}
 
 	public function create()

@@ -27,8 +27,16 @@ class Home extends CI_Controller {
 
     public function my_volunteering()
     {
+        // load time model
+        $this->load->model('Time_model');
+
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'volunteering';
+        $data['page_title'] = 'My Volunteering';
+
+        // populate times array with data accessed from database with time model for logged in user -- $_SERVER['REMOTE_USER']
+        $data['times'] = $this->Time_model->getTimeForCIS('1');
+
         $this->load->view('header', $data);
 
         /* place content body chunks within content_open and content_close */
