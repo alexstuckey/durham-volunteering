@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-header" role="tab" id="EmailListHeading-<?php echo $template['emailName'] ?>">
                         <p class="mb-0 alignleft">
-                            <?php echo $template['group'] ?>&nbsp;&nbsp;
+                            <strong><?php echo ucwords($template['group']) ?></strong>&nbsp;&nbsp;
                             <a data-toggle="collapse" data-parent="#accordion" href="#EmailListCollapse-<?php echo $template['emailName'] ?>" aria-expanded="true" aria-controls="EmailListCollapse-<?php echo $template['emailName'] ?>">
                                 <?php echo $template['emailName'] ?>
                             </a>
@@ -29,7 +29,19 @@
                                 <input type="hidden" class="form-control" name="emailName" value="<?php echo $template['emailName'] ?>">
 
                                 <div class="form-group">
-                                    <label for="emailContent"><h4>Email body</h4></label>
+                                    <label for="emailDescription"><h5>Description</h5></label>
+                                    <p><?php echo $template['emailDescription'] ?></p>
+                                </div>
+                                <br>
+
+                                <div class="form-group">
+                                    <label for="emailSubject"><h5>Subject</h5></label>
+                                    <input type="text" class="form-control" name="emailSubject" id="emailSubject" value="<?php echo $template['emailSubject'] ?>">
+                                </div>
+                                <br>
+
+                                <div class="form-group">
+                                    <label for="emailContent"><h5>Email body</h5></label>
                                     <textarea class="form-control" id="emailContent" rows="15" name="emailContent"><?php echo $template['emailContent'] ?></textarea>
                                 </div>
                                 <button class="btn btn-primary" type="submit">Edit</button>
