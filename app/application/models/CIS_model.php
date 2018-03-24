@@ -21,6 +21,9 @@ class CIS_model extends CI_Model
 
         $data = $query->row_array();
 
+        list($firstnamesplit)=explode(',', $data['firstnames']);
+        $data['fullname'] = ucwords(strtolower($firstnamesplit . ' ' . $data['surname']));
+
         return $data;
     }
 
@@ -35,6 +38,9 @@ class CIS_model extends CI_Model
         $query = $dbDurhamNative->get();
 
         $data = $query->row_array();
+
+        list($firstnamesplit)=explode(',', $data['firstnames']);
+        $data['fullname'] = ucwords(strtolower($firstnamesplit . ' ' . $data['surname']));
 
         return $data;
     }
