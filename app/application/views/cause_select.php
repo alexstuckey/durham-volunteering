@@ -8,7 +8,7 @@
         <!-- Select 2 dropdown to select cause. value should hyperlink to the single cause functionality to load in cause html stub -->
         <form>
             <div class="form-group">
-                <label for="shiftApplicationCause">Cause</label>
+                <label for="shiftApplicationCause">Select cause</label>
                 <select class="form-control" name="shiftApplicationCause" id="shiftApplicationCause">
                     <?php foreach ($causes as $cause): ?>
                         <option value="<?php echo $cause['causeID']; ?>"><a href="<?php echo base_url('index.php/cause/1'); ?>"><?php echo $cause['organisation'] ?></a></option>
