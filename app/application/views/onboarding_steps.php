@@ -37,6 +37,10 @@
             <div class="text-center" id="page-heading">
                 <h1 class="onboardh1">Onboarding Process</h1>
                 <p>Thank you for signing up to Durham University's Volunteering Project. With this account you can organize and track your volunteering activities.</p>
+                <?php if ($active == "wait_nominate_manager"): ?>
+                <br>
+                <p>Currently waiting for your nominating manager, <?php echo $manager['email']; ?>, to comfirm his status.</p>
+                <?php endif; ?>
             </div>
             <div class="container">
             <div class="row">

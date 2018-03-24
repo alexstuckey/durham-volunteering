@@ -78,14 +78,12 @@ class User_model extends CI_Model
     public function getManager($CISID)
     {
         $this->db->where('cisID', $CISID);
+        $query = $this->db->get('users');
+        $user = $query->row_array();
 
-        $query = $this->db->get('management');
+        $manager = $this->getUserByCIS($user['manager']);
 
-        $result = $query->result_array();
-
-        $managersCisID = $result[0]['managersCisID'];
-
-        return $managersCisID;
+        return $manager;
     }
 
 

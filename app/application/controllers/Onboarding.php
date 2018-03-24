@@ -175,10 +175,25 @@ class Onboarding extends CI_Controller {
             // Then email that manager
 
 
-            $data['active'] = 'get_started';
-            $this->load->view('onboarding_steps', $data);
+            // Load the waiting page
+            $this->wait_nominate_manager();
         }
 
+    }
+
+    public function wait_nominate_manager()
+    {
+        $this->load->model('User_model');
+        $data['manager'] = $this->User_model->getManager($_SERVER['REMOTE_USER']);
+
+        $data['active'] = 'wait_nominate_manager';
+        $this->load->view('onboarding_steps', $data);
+    }
+
+    public function success_nominate_manager()
+    {
+        $data['active'] = 'get_started';
+        $this->load->view('onboarding_steps', $data);
     }
 
 
