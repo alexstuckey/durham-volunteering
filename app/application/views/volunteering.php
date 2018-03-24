@@ -21,8 +21,6 @@
         <div class="card-block">
             <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
 
-            <?php echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>'); ?>
-
             <form method="<?php echo site_url('/api/times'); ?>" action="" id="shiftApplicationForm">
 
                 <div class="form-group">
