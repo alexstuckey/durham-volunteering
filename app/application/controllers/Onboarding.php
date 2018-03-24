@@ -172,7 +172,27 @@ class Onboarding extends CI_Controller {
             $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 6);
             $this->Audit_model->insertLog('ALTER', 'Onboarding: Manager Nominated');
 
+
+
             // Then email that manager
+            $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
+            $volunteer = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
+            $volunteerFullname = $this->User_model->getFullnameByUsername($_SERVER['REMOTE_USER']);
+
+            $emailBody = 'email body';
+            $emailBody = str_replace('{manager_fullname}', $manager['fullname'], $emailBody);
+            $emailBody = str_replace('{user_fullname}', $volunteerFullname, $emailBody);
+
+            $this->load->library('email');
+            $this->email->from('app@email.ac.uk', 'Durham Volunteering App');
+            $this->email->to($manager['email']);
+            $this->email->cc($volunteer['email']);
+
+            $this->email->subject('Nomination: ' . $volunteerFullname . ' nominated you as a manager');
+            $this->email->message($emailBody);
+
+            $this->email->send();
+
 
 
             // Load the waiting page
