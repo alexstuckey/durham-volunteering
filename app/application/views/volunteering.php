@@ -37,7 +37,7 @@
                     <label for="shiftApplicationCause">Cause</label>
                     <select class="form-control" name="shiftApplicationCause" id="shiftApplicationCause">
                         <?php foreach ($causes as $cause): ?>
-                            <option value="<?php echo $cause['id']; ?>"><?php echo $cause['organisation'] ?></option>
+                            <option value="<?php echo $cause['causeID']; ?>"><?php echo $cause['organisation'] ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
