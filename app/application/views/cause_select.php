@@ -1,7 +1,7 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: williamelias
- * Date: 24/03/2018
- * Time: 14:43
- */
+<!-- Cause select div -->
+
+<p> SELECT 2 DROPDOWN WITHIN CARD </p>
+
+<p> data of the single cause selected in above dropdown</p>
+
+<!-- End of cause select div -->

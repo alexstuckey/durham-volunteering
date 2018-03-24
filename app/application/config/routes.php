@@ -61,6 +61,7 @@ $route['onboard/enter_nominate_manager'] = 'onboarding/enter_nominate_manager_fo
 $route['onboard/send_nominate_manager'] = 'onboarding/send_nominate_manager';
 
 $route['home'] = 'home/homepage';
+$route['home/causes'] = 'home/single_cause';
 $route['my_volunteering'] = 'home/my_volunteering';
 $route['my_volunteering/activities'] = 'home/my_volunteering_activities';
 $route['manager'] = 'home/manager_approve_deny';
