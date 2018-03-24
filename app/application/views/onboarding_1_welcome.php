@@ -44,7 +44,7 @@
                         <!-- Volunteering Div -->
                         <div class="text-center">
                             <h1 class="onboardh1">Welcome!</h1>
-                            <h6>You are registering as username <?php echo $cis_username ?>.</h6>
+                            <h6>You are registering as username <?php echo $user['username'] ?>.</h6>
                             <p><br />Thank you for signing up to Durham University's Volunteering Project. With this account you can organize and track your volunteering activities.</p>
                             <a href="<?php echo site_url('/onboard/steps_details'); ?>">
                                 <button class="btn btn-primary">Continue</button>

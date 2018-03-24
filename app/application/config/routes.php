@@ -54,11 +54,12 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['onboard/welcome'] = 'onboarding/welcome';
-$route['onboard/steps_details'] = 'onboarding/flow';
+$route['onboard/steps_details'] = 'onboarding/step_details';
 $route['onboard/enter_details'] = 'onboarding/enter_details_form';
 $route['onboard/send_details'] = 'onboarding/send_details';
 $route['onboard/enter_nominate_manager'] = 'onboarding/enter_nominate_manager_form';
 $route['onboard/send_nominate_manager'] = 'onboarding/send_nominate_manager';
+$route['onboard/wait_nominate_manager'] = 'onboarding/wait_nominate_manager';
 
 $route['home'] = 'home/homepage';
 $route['my_volunteering'] = 'home/my_volunteering';
