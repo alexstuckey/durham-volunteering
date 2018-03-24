@@ -91,9 +91,9 @@ class Cause_model extends CI_Model {
 
         $query = $this->db->get('causeType');
 
-        $result=$query->result_array();
+        $result = $query->result_array();
 
-
+        return $result;
     }
 
 }
