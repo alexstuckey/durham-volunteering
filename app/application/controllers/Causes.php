@@ -26,7 +26,8 @@ class Causes extends CI_Controller {
 
 		// place central column html form chunks within centre_column_open and center_column_close 
 		$this->load->view('center_column_open', $data);
-		$this->load->view('single_cause', $data);
+        $this->load->view('cause_select', $data);
+        $this->load->view('single_cause', $data);
 		$this->load->view('center_column_close', $data);
 
 		$this->load->view('rightside', $data);
