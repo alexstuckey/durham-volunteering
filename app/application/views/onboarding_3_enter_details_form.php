@@ -4,18 +4,28 @@
         <meta charset="utf-8">
         <title>Personal Details</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <?php $this->load->helper('url'); ?>
 
         <!-- Vendor JS -->
         <script src="<?php echo base_url('/static/js/jquery.min.js'); ?>"></script>
         <script src="<?php echo base_url('/static/js/bootstrap.min.js'); ?>"></script>
-        
+        <script src="<?php echo base_url('/static/js/select2.min.js'); ?>"></script>
+
         <!-- App JS -->
         <script src="<?php echo base_url('/static/js/homepage.js'); ?>"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#inputDepartment').select2({
+                    theme: "bootstrap4"
+                });
+            });
+        </script>
 
         <!-- Vendor CSS -->
         <link rel="stylesheet" href="<?php echo base_url('/static/css/bootstrap.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('/static/css/select2.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('/static/css/select2-bootstrap4.min.css'); ?>">
 
         <!-- App CSS -->
         <link rel="stylesheet" href="<?php echo base_url('/static/css/homepage.css'); ?>" type="text/css">
@@ -45,7 +55,8 @@
                         <div id="volunteering">
                             <h1 class="onboardh1">Enter Your Details</h1>
 
-                            <h4><br /></h4>
+                            <?php echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>'); ?>
+
                             <p>Please provide further information about yourself that will be added to your profile. We will use the name provided for contacting you and interacting with your manager.<br /></p>
 
                             <div class="card">
@@ -54,13 +65,22 @@
                                     <form action="<?php echo site_url('/onboard/send_details'); ?>" method="post">
 
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">First Name</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter first name">
+                                            <label for="inputFirstName">First Name</label>
+                                            <input type="text" autocomplete="given-name" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="Enter first name" value="<?php list($firstnamesplit)=explode(',', $user['firstnames']); echo set_value('inputLastName', ucwords(strtolower($firstnamesplit))); ?>">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Last Name</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter last name">
+                                            <label for="inputLastName">Last Name</label>
+                                            <input type="text" autocomplete="family-name" class="form-control" name="inputLastName" id="inputLastName" placeholder="Enter last name" value="<?php echo set_value('inputFirstName', ucwords(strtolower($user['surname']))); ?>">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputDepartment">Department</label>
+                                            <select class="form-control" name="inputDepartment" id="inputDepartment">
+                                                <?php foreach ($departments as $department): ?>
+                                                    <option value="<?php echo $department['id']; ?>"><?php echo $department['departmentsName'] ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
                                         </div>
 
                                         <button type="submit" class="btn btn-primary">Submit</button>

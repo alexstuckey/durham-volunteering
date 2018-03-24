@@ -20,30 +20,37 @@
         </div>
         <div class="card-block">
             <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
-            <form method="POST" action="" id="shiftApplicationForm">
+
+            <?php echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>'); ?>
+
+            <form method="<?php echo site_url('/api/times'); ?>" action="" id="shiftApplicationForm">
+
                 <div class="form-group">
                     <label for="shiftApplicationDateTimeStart">Start Date and time</label>
                     <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="shiftApplicationDateTimeStart" name="shiftApplicationDateTimeStart"required>
                 </div>
+
                 <div class="form-group">
                     <label for="shiftApplicationDateTimeEnd">End Date and time</label>
                     <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="shiftApplicationDateTimeEnd" name="shiftApplicationDateTimeEnd"required>
                 </div>
+
                 <div class="form-group">
-                    <label for="shiftApplicationSelect">Select Cause</label>
-                    <select class="form-control" id="shiftApplicationSelect" name="shiftApplicationSelect">
-                        <option>RSPB</option>
-                        <option>Barnardo's</option>
-                        <option>Mencap</option>
-                        <option>Oxfam</option>
-                        <option>Samaritans</option>
+                    <label for="shiftApplicationCause">Cause</label>
+                    <select class="form-control" name="shiftApplicationCause" id="shiftApplicationCause">
+                        <?php foreach ($causes as $cause): ?>
+                            <option value="<?php echo $cause['id']; ?>"><?php echo $cause['organisation'] ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
+
                 <div class="form-group">
                     <label for="shiftApplicationComment">Comment (Optional)</label>
                     <textarea class="form-control" id="shiftApplicationComment" rows="3" name="shiftApplicationComment"></textarea>
                 </div>
+
                 <button type="submit" class="btn btn-outline-primary" id="shiftApplicationButton">Submit</button>
+
             </form>
         </div>
     </div>
