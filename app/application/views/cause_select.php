@@ -9,9 +9,9 @@
         <form>
             <div class="form-group">
                 <label for="shiftApplicationCause">Select cause</label>
-                <select class="form-control" name="shiftApplicationCause" id="shiftApplicationCause">
+                <select class="form-control" name="shiftApplicationCause" id="shiftApplicationCause" onChange="window.location.href=this.value">
                     <?php foreach ($causes as $cause): ?>
-                        <option value="<?php echo $cause['causeID']; ?>"><a href="<?php echo base_url('index.php/cause/1'); ?>"><?php echo $cause['organisation'] ?></a></option>
+                        <option value="<?php echo base_url('index.php/cause/' . $cause['causeID']); ?>"><?php echo $cause['organisation'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
