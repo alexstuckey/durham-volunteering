@@ -28,5 +28,13 @@ class Email_model extends CI_Model {
         $this->db->update('emailTemplates');
     }
 
+    public function getEmailByName($emailName)
+    {
+        $this->db->where('emailName', $emailName);
+        $query = $this->db->get('emailTemplates');
+
+        return $query->row_array();
+    }
+
 
 }
