@@ -11,7 +11,7 @@
             <div id="departmentStats">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Section Object</h4>
+                        <h4>Department</h4>
                     </div>
                     <div class="card-block">
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
@@ -33,7 +33,7 @@
             <div id="personalStats">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Section Object</h4>
+                        <h4>Personal</h4>
                     </div>
                     <div class="card-block">
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
@@ -49,7 +49,7 @@
             <div id="uniStats">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Section Object</h4>
+                        <h4>University</h4>
                     </div>
                     <div class="card-block">
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
