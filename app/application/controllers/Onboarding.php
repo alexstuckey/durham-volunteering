@@ -16,8 +16,7 @@ class Onboarding extends CI_Controller {
         $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
         $data['active'] = 'welcome';
-
-        $data['hide_links'] = true;
+        $data['hide_links'] = TRUE;
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_1_welcome', $data);
@@ -42,8 +41,7 @@ class Onboarding extends CI_Controller {
         $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
         $data['active'] = 'enter_details';
-
-        $data['hide_links'] = true;
+        $data['hide_links'] = TRUE;
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_steps', $data);
@@ -72,8 +70,7 @@ class Onboarding extends CI_Controller {
         $this->load->helper('form');
 
         $data['active'] = 'enter_details';
-
-        $data['hide_links'] = true;
+        $data['hide_links'] = TRUE;
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_3_enter_details_form', $data);
@@ -104,8 +101,7 @@ class Onboarding extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             $data['active'] = 'enter_details';
-
-            $data['hide_links'] = true;
+            $data['hide_links'] = TRUE;
 
             $this->load->view('header', $data);
             $this->load->view('onboarding_3_enter_details_form', $data);
@@ -115,8 +111,7 @@ class Onboarding extends CI_Controller {
             $this->Audit_model->insertLog('ALTER', 'Details updated');
 
             $data['active'] = 'nominate_manager';
-
-            $data['hide_links'] = true;
+            $data['hide_links'] = TRUE;
 
             $this->load->view('header', $data);
             $this->load->view('onboarding_steps', $data);
@@ -148,8 +143,7 @@ class Onboarding extends CI_Controller {
         $this->load->helper('form');
 
         $data['active'] = 'nominate_manager';
-
-        $data['hide_links'] = true;
+        $data['hide_links'] = TRUE;
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_5_nominate_manager_form', $data);
@@ -199,8 +193,7 @@ class Onboarding extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             $data['active'] = 'nominate_manager';
-
-            $data['hide_links'] = true;
+            $data['hide_links'] = TRUE;
 
             $this->load->view('header', $data);
             $this->load->view('onboarding_5_nominate_manager_form', $data);
@@ -246,8 +239,7 @@ class Onboarding extends CI_Controller {
         $data['manager'] = $this->User_model->getManager($_SERVER['REMOTE_USER']);
 
         $data['active'] = 'wait_nominate_manager';
-
-        $data['hide_links'] = true;
+        $data['hide_links'] = TRUE;
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_steps', $data);
@@ -257,8 +249,7 @@ class Onboarding extends CI_Controller {
     public function success_nominate_manager()
     {
         $data['active'] = 'get_started';
-
-        $data['hide_links'] = true;
+        $data['hide_links'] = TRUE;
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_steps', $data);
