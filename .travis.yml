@@ -15,4 +15,4 @@ script:
   - "gulp"
 after_success:
   - "export SSHPASS=$D_PASSWORD"
-  - "sshpass -e scp -r static/ $D_USERNAME@$D_SERVER:$D_PATH"
+  - "sshpass -e scp -r -o StrictHostKeyChecking=no static/ $D_USERNAME@$D_SERVER:$D_PATH -o StrictHostKeyChecking=no"
