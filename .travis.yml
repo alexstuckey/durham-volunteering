@@ -1,10 +1,16 @@
 language: node_js
-before_script:
-  - npm install -g gulp-cli
-script:
-  - "cd app"
-  - "gulp"
+addons:
+    apt:
+        packages:
+            - sshpass
+
 install:
   - "cd app"
   - "npm install"
-  
+before_script:
+  - npm install -g gulp-cli  
+script:
+  - "gulp"
+deploy:
+  - export SSHPASS=$d_ps
+  - sshpass -e scp -r static/ $d_u@$d_s:$d_p
