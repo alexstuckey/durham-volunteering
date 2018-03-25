@@ -48,6 +48,8 @@ $(document).ready(function() {
             progressBar1.setText(Math.round(progressBar1.value() * 100) + ' /100');
         }
     });
+    progressBar1.animate(80/100);  // this is the number it fills to
+
 
     let progressBar2 = new ProgressBar.Line(document.getElementById('progressBar2'), {
         strokeWidth: 4,
@@ -77,9 +79,40 @@ $(document).ready(function() {
             progressBar2.setText(Math.round(progressBar2.value() * 100) + ' /100');
         }
     });
-
-    progressBar1.animate(80/100);  // this is the number it fills to
     progressBar2.animate(38/100);  // this is the number it fills to
+
+    let progressBar3 = new ProgressBar.Circle(document.getElementById('progressBar3'), {
+        color: '#222',
+        // This has to be the same size as the maximum width to
+        // prevent clipping
+        strokeWidth: 4,
+        trailWidth: 1,
+        easing: 'easeInOut',
+        duration: 1400,
+        text: {
+            autoStyleContainer: false
+        },
+        from: { color: '#77DD77', width: 1 },
+        to: { color: '#77DD77', width: 4 },
+        // Set default step function for all animate calls
+        step: function(state, circle) {
+            circle.path.setAttribute('stroke', state.color);
+            circle.path.setAttribute('stroke-width', state.width);
+
+            var value = Math.round(circle.value() * 100);
+            if (value === 0) {
+                circle.setText('');
+            } else {
+                circle.setText(value+'/120 Hours');
+            }
+
+        }
+    });
+    progressBar3.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+    progressBar3.text.style.fontSize = '2rem';
+    progressBar3.animate(100/120);  // this is the number it fills to
+
+
 });
 
 function createNotificationPopupDismiss(){

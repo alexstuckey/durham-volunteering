@@ -56,7 +56,9 @@
                             <!-- Column 1 -->
                             <div class="col-sm-6">
                                 <h5>Total hours</h5>
-                                <h1>32</h1>
+                                <div id="progressBar3">
+
+                                </div>
                             </div>
 
                             <!-- Column 2 -->
