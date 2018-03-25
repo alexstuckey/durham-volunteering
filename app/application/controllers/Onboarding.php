@@ -15,7 +15,11 @@ class Onboarding extends CI_Controller {
 
         $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
+        $this->load->view('header', $data);
+
         $this->load->view('onboarding_1_welcome', $data);
+
+        $this->load->view('footer', $data);
 
         // Creates user, with a default onboarding status of 1
         $this->User_model->createUser($_SERVER['REMOTE_USER']);
