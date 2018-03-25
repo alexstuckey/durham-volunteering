@@ -153,31 +153,32 @@
 
                 <!-- Numbers Row -->
                 <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-deck">
 
-                    <div class="card-deck">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Total Hours</h4>
+                                </div>
+                                <div class="card-block">
+                                    <div id="progressBar3">
 
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Total Hours</h4>
-                            </div>
-                            <div class="card-block">
-                                <div id="progressBar3">
-
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Favourite cause</h4>
-                            </div>
-                            <div class="card-block">
-                                <div class="statHeading">
-                                    <h1>RNLI</h1>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Favourite cause</h4>
+                                </div>
+                                <div class="card-block">
+                                    <div class="statHeading">
+                                        <h1>RNLI</h1>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
 
                 </div>
