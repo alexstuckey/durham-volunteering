@@ -35,7 +35,7 @@ class Home extends CI_Controller {
         $data['page_title'] = 'My Volunteering';
 
         // populate times array with data accessed from database with time model for logged in user -- $_SERVER['REMOTE_USER']
-        $data['times'] = $this->Time_model->getTimeForCIS('1');
+        $data['times'] = $this->Time_model->getTimeForCIS($_SERVER['REMOTE_USER']);
 
         $this->load->view('header', $data);
 
