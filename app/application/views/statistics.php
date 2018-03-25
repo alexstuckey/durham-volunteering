@@ -154,40 +154,36 @@
                 <!-- Numbers Row -->
                 <div class="row">
 
-                    <div class="container">
+                    <!-- Column 1 -->
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Total Hours</h4>
+                            </div>
+                            <div class="card-block">
+                                <div id="progressBar3">
 
-                        <!-- Column 1 -->
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4>Total Hours</h4>
-                                </div>
-                                <div class="card-block">
-                                    <div id="progressBar3">
-
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- End of Column 1 -->
-
-
-                        <!-- Column 2 -->
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4>Favourite cause</h4>
-                                </div>
-                                <div class="card-block">
-                                    <div class="statHeading">
-                                        <h1>RNLI</h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Column 2 -->
-
                     </div>
+                    <!-- End of Column 1 -->
+
+
+                    <!-- Column 2 -->
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Favourite cause</h4>
+                            </div>
+                            <div class="card-block">
+                                <div class="statHeading">
+                                    <h1>RNLI</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Column 2 -->
 
                 </div>
                 <!-- End of Numbers Row -->
