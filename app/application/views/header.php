@@ -50,7 +50,7 @@
                                 <a class="nav-link" href="<?php echo base_url('index.php/manager'); ?>">Respond to Applications</a>
                             </li>
                             <li class="nav-item<?php if ($active == "other") { echo " active"; }; ?>">
-                                <a class="nav-link" href="<?php echo base_url('index.php/other'); ?>">Other Section</a>
+                                <a class="nav-link" href="<?php echo base_url('index.php/statistics'); ?>">Other Section</a>
                             </li>
                         </ul>
                         <?php $isAdmin = TRUE; ?>
