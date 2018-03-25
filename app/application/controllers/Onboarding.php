@@ -40,8 +40,12 @@ class Onboarding extends CI_Controller {
         $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
         $data['active'] = 'enter_details';
+
+        $this->load->view('header', $data);
         
         $this->load->view('onboarding_steps', $data);
+
+        $this->load->view('footer', $data);
 
 
         $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 2);
