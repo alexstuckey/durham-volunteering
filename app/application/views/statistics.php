@@ -43,19 +43,19 @@
                         </div>
 
                         <div id="milestone2">
-                            <p>progress bar 2</p>
+                            <h5>Milestone 2</h5>
                             <div id="progressBar2">
 
                             </div>
                         </div>
 
                         <div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-3">
                                 <h5>Total hours</h5>
                                 <h1>32</h1>
                             </div>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-3">
                                 <h5>Favourite cause</h5>
                                 <h1>RNLI</h1>
                             </div>

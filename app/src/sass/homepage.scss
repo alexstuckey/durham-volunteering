@@ -132,8 +132,12 @@ hr {
 }
 
 #progressBar1, #progressBar2 {
-    height: 8px;
+    height: 1em;
     position: relative;
+}
+
+.progressbar-text {
+    top: 10px;
 }
 
 /* Set footer padding */
