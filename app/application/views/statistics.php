@@ -9,13 +9,14 @@
 
             <!-- Department Stats div -->
             <div id="departmentStats">
+
+                <!-- Row 1 -->
                 <div class="card">
                     <div class="card-header">
                         <h4>Department</h4>
                     </div>
                     <div class="card-block">
 
-                        <!-- Row 1 -->
                         <div class="row">
                             <!-- Stat 1 -->
                             <div class="col-sm-6">
@@ -77,40 +78,64 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End of Row 1 -->
-
-                        <!-- Row 2 -->
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <h5>In the Department Leaderboard, your department is in position:</h5>
-                                <div class="statHeading">
-                                    <h1>
-                                        16/88
-                                    </h1>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <h5>For total volunteering hours within your department, you are in position:</h5>
-                                <div class="statHeading">
-                                    <h1>
-                                        4/23
-                                    </h1>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Row 2 -->
-
-                        <!-- Row 3 -->
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
-                            </div>
-                        </div>
-                        <!-- End of Row 3 -->
                     </div>
                 </div>
+                <!-- End of Row 1 -->
+
+                <!-- Row 2 -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-deck">
+
+                            <!-- Department Leaderboard card -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Department Leaderboard</h4>
+                                </div>
+                                <div class="card-block">
+                                    <h5>Your department is in position:</h5>
+                                    <div class="statHeading">
+                                        <h1>
+                                            16/88
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Department Leaderboard card -->
+
+                            <!-- Position within Department card -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Volunteering within Department</h4>
+                                </div>
+                                <div class="card-block">
+                                    <h5>Within your department, you are in position:</h5>
+                                    <div class="statHeading">
+                                        <h1>
+                                            4/23
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Position within Department card -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Row 2 -->
+
+                <!-- Row 3 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Other</h4>
+                    </div>
+                    <div class="card-block">
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
+                    </div>
+                </div>
+                <!-- End of Row 3 -->
+
             </div>
             <!-- End of Department Stats div -->
 
@@ -172,7 +197,7 @@
                                     <h4>Favourite cause</h4>
                                 </div>
                                 <div class="card-block">
-                                    <div class="statHeading">
+                                    <div class="singleStatBold">
                                         <h1>RNLI</h1>
                                     </div>
                                 </div>
