@@ -23,4 +23,4 @@ script:
   - sed -i "26s replace $D_URLFIRSTHALF$TRAVIS_PULL_REQUEST_BRANCH/app/ " config.php
 after_success:
   - export SSHPASS=$D_PASSWORD
-  - sshpass -e scp -o StrictHostKeyChecking=no -r static/ application/ system/ index.php $D_USERNAME@$D_SERVER:$D_PATH
+  - sshpass -e scp -o StrictHostKeyChecking=no -r static/ application/ system/ index.php $D_USERNAME@$D_SERVER:$D_PATH$TRAVIS_PULL_REQUEST_BRANCH/app/
