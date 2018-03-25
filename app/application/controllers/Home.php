@@ -108,6 +108,9 @@ class Home extends CI_Controller {
         $data['page_title'] = 'Causes';
         $this->load->view('header', $data);
 
+        $this->load->model('Cause_model');
+        $data['causes'] = $this->Cause_model->getAllCauses();
+
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
         $this->load->view('leftside', $data);
