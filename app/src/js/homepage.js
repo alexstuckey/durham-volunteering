@@ -21,7 +21,7 @@ $(document).ready(function() {
     });
 
     let progressBar1 = new ProgressBar.Line(document.getElementById('progressBar1'), {
-        strokeWidth: 4,
+        strokeWidth: 6,
         easing: 'easeInOut',
         duration: 1400,
         color: '#FFEA82',
@@ -52,7 +52,7 @@ $(document).ready(function() {
 
 
     let progressBar2 = new ProgressBar.Line(document.getElementById('progressBar2'), {
-        strokeWidth: 4,
+        strokeWidth: 6,
         easing: 'easeInOut',
         duration: 1400,
         color: '#FFEA82',
@@ -93,7 +93,7 @@ $(document).ready(function() {
             autoStyleContainer: false
         },
         from: { color: '#77DD77', width: 1 },
-        to: { color: '#77DD77', width: 4 },
+        to: { color: '#77DD77', width: 6 },
         // Set default step function for all animate calls
         step: function(state, circle) {
             circle.path.setAttribute('stroke', state.color);

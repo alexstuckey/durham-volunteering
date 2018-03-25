@@ -90,7 +90,7 @@
                         <div class="row">
                             <!-- Column 1 -->
                             <div class="col-sm-6">
-                                <h1 class="statHeading">UK Top 3...</h1>
+                                <h5>UK Top 3...</h5>
                                 <canvas id="uniStatsChart" width="200" height="200"></canvas>
                                 <script>
                                     let ctx = document.getElementById("uniStatsChart").getContext('2d');
