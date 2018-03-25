@@ -21,9 +21,7 @@
         <div class="card-block">
             <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
 
-            <?php echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>'); ?>
-
-            <form method="<?php echo site_url('/api/times'); ?>" action="" id="shiftApplicationForm">
+            <form method="post" action="<?php echo site_url('/api/times'); ?>" id="shiftApplicationForm">
 
                 <div class="form-group">
                     <label for="shiftApplicationDateTimeStart">Start Date and time</label>
@@ -39,7 +37,7 @@
                     <label for="shiftApplicationCause">Cause</label>
                     <select class="form-control" name="shiftApplicationCause" id="shiftApplicationCause">
                         <?php foreach ($causes as $cause): ?>
-                            <option value="<?php echo $cause['id']; ?>"><?php echo $cause['organisation'] ?></option>
+                            <option value="<?php echo $cause['causeID']; ?>"><?php echo $cause['organisation'] ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>

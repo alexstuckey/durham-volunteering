@@ -47,5 +47,3 @@
 </div>
 <!-- End of Manager can Approve/Deny Shifts Div -->
 
-<!-- Horizontal Break -->
-<hr>

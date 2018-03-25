@@ -28,6 +28,7 @@
                     </thead>
                     <tbody>
                         <!-- upcoming activities using if statement if start time is in future -->
+                        <!-- replace cause id with organisation relating to that cause id -->
                         <?php foreach ($times as $entries): ?>
                             <tr>
                                 <th scope="row"><?php echo $entries['timeID']; ?></th>
