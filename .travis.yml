@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "9"
+addons:
+    apt:
+        packages:
+            - sshpass
+
+install:
+  - "cd app"
+  - "npm install"
+before_script:
+  - npm install -g gulp-cli  
+script:
+  - "gulp"
+after_success:
+  - "export SSHPASS=$D_PASSWORD"
+  - "sshpass -e scp -o StrictHostKeyChecking=no -r static/ application/ $D_USERNAME@$D_SERVER:$D_PATH"
