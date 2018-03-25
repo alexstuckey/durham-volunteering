@@ -10,6 +10,7 @@
             <div class="form-group">
                 <label for="shiftApplicationCause">Select cause</label>
                 <select class="form-control" name="shiftApplicationCause" id="shiftApplicationCause" onChange="window.location.href=this.value">
+                    <option value="#">-</option>
                     <?php foreach ($causes as $cause): ?>
                         <option value="<?php echo base_url('index.php/cause/' . $cause['causeID']); ?>"><?php echo $cause['organisation'] ?></option>
                     <?php endforeach; ?>
@@ -18,7 +19,5 @@
         </form>
     </div>
 </div>
-
-<p> data of the single cause selected in above dropdown</p>
 
 <!-- End of cause select div -->
