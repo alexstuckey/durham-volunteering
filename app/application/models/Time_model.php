@@ -19,7 +19,7 @@ class Time_model extends CI_Model {
     }
 
 // Inserts into 'time' table in the database.
-    public function createTime($CISID, $start, $end, $causeID, $comment)
+    public function createTime($CISID, $start, $end, $causeID, $comment, $status)
     {
         $this->db->where('causeID', $causeID);
         $query = $this->db->get('causes');
@@ -39,6 +39,7 @@ class Time_model extends CI_Model {
                 'start' => $start,
                 'finish' => $end,
                 'causeID' => $causeID,
+                'status' => $status,
                 'comment' => $comment,
                 'teamChallenge' => False
             );
@@ -46,6 +47,15 @@ class Time_model extends CI_Model {
             $this->db->insert('time', $data);
         }
 
+    }
+
+    public function changeTimeStatus($timeID, $status)
+    {
+        $this->db->where('timeID', $timeID);
+        $data = array(
+            'status' => $status
+        );
+        $this->db->update('disabled', $data);
     }
 
     // Returns an array of Time Rows to which the CisID is associated
