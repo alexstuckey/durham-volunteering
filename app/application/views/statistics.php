@@ -16,7 +16,6 @@
                     <div class="card-block">
 
                         <!-- Row 1 -->
-
                         <div class="row">
                             <!-- Stat 1 -->
                             <div class="col-sm-6">
@@ -123,12 +122,14 @@
 
             <!-- Personal Stats div-->
             <div id="personalStats">
+
+                <!-- Milestones Card -->
                 <div class="card">
                     <div class="card-header">
                         <h4>Personal</h4>
                     </div>
-
                     <div class="card-block">
+
                         <!-- Milestone 1 -->
                         <div id="milestone1">
                             <h5>Milestone 1</h5>
@@ -148,9 +149,11 @@
                         <!-- End of Milestone 2 -->
                     </div>
                 </div>
+                <!-- End of Milestones Card -->
 
                 <!-- Numbers Row -->
                 <div class="row">
+
                     <!-- Column 1 -->
                     <div class="col-sm-6">
                         <div class="card">
@@ -175,9 +178,7 @@
                             </div>
                             <div class="card-block"
                                 <div class="statHeading">
-                                    <h1>
-                                        RNLI
-                                    </h1>
+                                    <h1>RNLI</h1>
                                 </div>
                         </div>
                     </div>
@@ -185,6 +186,7 @@
 
                 </div>
                 <!-- End of Numbers Row -->
+
             </div>
             <!-- End of Personal Stats div -->
 
