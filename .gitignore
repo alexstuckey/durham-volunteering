@@ -5,4 +5,4 @@ app/static/
 ### PhpStorm ###
 .idea/**/*
 
-app/sftp-config.json
+app/sftp-config*.json
