@@ -1,6 +1,6 @@
-<!-- Other Section -->
-<div id="otherSection">
-    <h1>Other Section</h1>
+<!-- Statistics Section -->
+<div id="statistics">
+    <h1>Statistics</h1>
 
     <div class="card">
         <div class="card-header">
@@ -14,4 +14,4 @@
         </div>
     </div>
 </div>
-<!-- End of Other Section -->
+<!-- End Statistics Section -->

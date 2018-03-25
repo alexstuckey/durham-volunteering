@@ -58,6 +58,7 @@ class Home extends CI_Controller {
     {
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'volunteering';
+        $data['page_title'] = 'Activities';
         $this->load->view('header', $data);
 
         $this->load->model('Cause_model');
@@ -82,6 +83,7 @@ class Home extends CI_Controller {
     {
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'manager';
+        $data['page_title'] = 'Activities';
         $this->load->view('header', $data);
 
         /* place content body chunks within content_open and content_close */
@@ -103,6 +105,7 @@ class Home extends CI_Controller {
     {
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'manager';
+        $data['page_title'] = 'Causes';
         $this->load->view('header', $data);
 
         /* place content body chunks within content_open and content_close */
@@ -120,10 +123,11 @@ class Home extends CI_Controller {
         $this->load->view('footer', $data);
     }
 
-    public function other_section()
+    public function statistics()
     {
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'other';
+        $data['page_title'] = 'Statistics';
         $this->load->view('header', $data);
 
         /* place content body chunks within content_open and content_close */
@@ -132,7 +136,7 @@ class Home extends CI_Controller {
 
         /* place central column html form chunks within centre_column_open and center_column_close */
         $this->load->view('center_column_open', $data);
-        $this->load->view('other_section', $data);
+        $this->load->view('statistics', $data);
         $this->load->view('center_column_close', $data);
 
         $this->load->view('rightside', $data);

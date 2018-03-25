@@ -66,7 +66,7 @@ $route['home/causes'] = 'home/single_cause';
 $route['my_volunteering'] = 'home/my_volunteering';
 $route['my_volunteering/activities'] = 'home/my_volunteering_activities';
 $route['manager'] = 'home/manager_approve_deny';
-$route['other'] = 'home/other_section';
+$route['statistics'] = 'home/statistics';
 
 $route['admin/departments'] = 'admin/departments';
 $route['admin/departments/add']['POST'] = 'admin/departmentAdd';
