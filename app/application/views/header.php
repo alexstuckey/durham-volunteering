@@ -15,12 +15,10 @@
         <script src="<?php echo base_url('/static/js/bootstrap.min.js'); ?>"></script>
         <script src="<?php echo base_url('/static/js/Chart.min.js'); ?>"></script>
         <script src="<?php echo base_url('/static/js/select2.min.js'); ?>"></script>
+        <script src="<?php echo base_url('/static/js/progressbar.min.js'); ?>"></script>
 
         <!-- App JS -->
         <script src="<?php echo base_url('/static/js/homepage.js'); ?>"></script>
-
-        <!-- progressbar js - to be moved to static -->
-        <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
 
         <!-- Vendor CSS -->
         <link rel="stylesheet" href="<?php echo base_url('/static/css/bootstrap.css'); ?>">
