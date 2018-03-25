@@ -1,6 +1,5 @@
 <!-- Cause Div -->
-<div id="volunteering">
-    <h1>Cause</h1>
+<div id="single_cause">
 
     <div class="card">
         <div class="card-header">
