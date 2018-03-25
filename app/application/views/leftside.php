@@ -8,7 +8,7 @@
             <a href="#" class="list-group-item">DUO</a>
             <a href="#" class="list-group-item">University Email</a>
             <!-- will link to page with select2 dropdown and the single cause html stub beneath-->
-            <a href="<?php echo base_url('index.php/home/cause/1'); ?>" class="list-group-item">View Causes</a>
+            <a href="<?php echo base_url('index.php/home/causes'); ?>" class="list-group-item">View Causes</a>
 
         </div>
     </div>
