@@ -14,63 +14,72 @@
                         <h4>Department</h4>
                     </div>
                     <div class="card-block">
-                        <!-- Stat 1 -->
-                        <div>
-                            <canvas id="myDepartmentShareChart" width="400" height="400"></canvas>
-                            <script>
-                                let ctx = document.getElementById("myDepartmentShareChart").getContext('2d');
-                                let myDoughnutChart = new Chart(ctx, {
-                                    type: 'doughnut',
-                                    data: {
-                                        labels: ["Accounting", "Catering", "Careers", "Estates", "Porters"],
-                                        datasets: [{
-                                            data: [10, 20, 30, 15, 25],
-                                            backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00"]
-                                        }]
-                                    },
-                                    options: {
-                                    }
-                                });
-                            </script>
-                        </div>
-                        <!-- End of Stat 1 -->
+                        <div class="row">
+                            <!-- Stat 1 -->
+                            <div class="col-sm-6">
+                                <div>
+                                    <canvas id="myDepartmentShareChart" width="400" height="400"></canvas>
+                                    <script>
+                                        let ctx1 = document.getElementById("myDepartmentShareChart").getContext('2d');
+                                        let myDoughnutChart = new Chart(ctx1, {
+                                            type: 'doughnut',
+                                            data: {
+                                                labels: ["Accounting", "Catering", "Careers", "Estates", "Porters"],
+                                                datasets: [{
+                                                    data: [10, 20, 30, 15, 25],
+                                                    backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00"]
+                                                }]
+                                            },
+                                            options: {
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                            <!-- End of Stat 1 -->
 
-                        <!-- Stat 2 -->
-                        <div>
-                            <canvas id="myDepartmentRaceChart" width="200" height="200"></canvas>
-                            <script>
-                                let ctx = document.getElementById("myDepartmentRaceChart").getContext('2d');
-                                let myDepartmentRaceChart = new Chart(ctx, {
-                                    type: 'horizontalBar',
-                                    data: {
-                                        labels: ["Accounting", "Catering", "Careers", "Estates", "Porters"],
-                                        datasets: [{
-                                            data: [10, 20, 30, 15, 25],
-                                            fill: false,
-                                            backgroundColor: ["rgba(255,133,27,0.2)", "rgba(57,204,204,0.2)", "rgba(0,31,63,0.2)", "rgba(61,153,112,0.2)", "rgba(255,220,0,0.2)"],
-                                            borderColor: ["rgb(255,133,27)", "rgb(57,204,204)", "rgb(0,31,63)", "rgb(61,153,112)", "rgb(255,220,0)"],
-                                            borderWidth: 1
-                                        }]
-                                    },
-                                    options: {
-                                        "scales": {
-                                            "xAxes": [{
-                                                ticks: {
-                                                    beginAtZero: true
+                            <!-- Stat 2 -->
+                            <div class="col-sm-6">
+                                <div>
+                                    <canvas id="myDepartmentRaceChart" width="200" height="200"></canvas>
+                                    <script>
+                                        let ctx2 = document.getElementById("myDepartmentRaceChart").getContext('2d');
+                                        let myDepartmentRaceChart = new Chart(ctx2, {
+                                            type: 'horizontalBar',
+                                            data: {
+                                                labels: ["Accounting", "Catering", "Careers", "Estates", "Porters"],
+                                                datasets: [{
+                                                    data: [10, 20, 30, 15, 25],
+                                                    fill: false,
+                                                    backgroundColor: ["rgba(255,133,27,0.2)", "rgba(57,204,204,0.2)", "rgba(0,31,63,0.2)", "rgba(61,153,112,0.2)", "rgba(255,220,0,0.2)"],
+                                                    borderColor: ["rgb(255,133,27)", "rgb(57,204,204)", "rgb(0,31,63)", "rgb(61,153,112)", "rgb(255,220,0)"],
+                                                    borderWidth: 1
+                                                }]
+                                            },
+                                            options: {
+                                                "scales": {
+                                                    "xAxes": [{
+                                                        ticks: {
+                                                            beginAtZero: true
+                                                        }
+                                                    }]
+                                                },
+                                                "legend": {
+                                                    display: false
                                                 }
-                                            }]
-                                        },
-                                        "legend": {
-                                            display: false
-                                        }
-                                    }
-                                });
-                            </script>
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                            </div>
                         </div>
 
-
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -152,8 +161,8 @@
                                 <h5>UK Top 3...</h5>
                                 <canvas id="uniStatsChart" width="200" height="200"></canvas>
                                 <script>
-                                    let ctx = document.getElementById("uniStatsChart").getContext('2d');
-                                    let uniStatsChart = new Chart(ctx, {
+                                    let ctx3 = document.getElementById("uniStatsChart").getContext('2d');
+                                    let uniStatsChart = new Chart(ctx3, {
                                         type: 'bar',
                                         data: {
                                             labels: ["2015", "2016", "2017"],
