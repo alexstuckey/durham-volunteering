@@ -34,6 +34,12 @@
                         <h4>Personal</h4>
                     </div>
                     <div class="card-block">
+                        <div id="progressBar1">
+
+                        </div>
+                        <div id="progressBar2">
+
+                        </div>
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
                     </div>
                 </div>
