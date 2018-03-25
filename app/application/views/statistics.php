@@ -42,6 +42,7 @@
 
                             </div>
                         </div>
+                        <!-- End of Milestone 1 -->
 
                         <!-- Milestone 2 -->
                         <div id="milestone2">
@@ -50,6 +51,7 @@
 
                             </div>
                         </div>
+                        <!-- End of Milestone 2 -->
 
                         <!-- Numbers Row -->
                         <div class="row">
@@ -60,13 +62,18 @@
 
                                 </div>
                             </div>
+                            <!-- End of Column 1 -->
+
 
                             <!-- Column 2 -->
                             <div class="col-sm-6">
                                 <h5>Favourite cause</h5>
                                 <h1>RNLI</h1>
                             </div>
+                            <!-- End of Column 2 -->
+
                         </div>
+                        <!-- End of Numbers Row -->
 
                     </div>
                 </div>
@@ -114,6 +121,7 @@
                                     });
                                 </script>
                             </div>
+                            <!-- End of Column 1 -->
 
                             <!-- Column 2 -->
                             <div class="col-sm-6">
@@ -129,8 +137,9 @@
                                     <h1>27,041</h1>
                                 </div>
                             </div>
+                            <!-- End of Column 2 -->
+
                         </div>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
                     </div>
                 </div>
             </div>
