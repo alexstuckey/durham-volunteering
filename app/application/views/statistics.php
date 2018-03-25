@@ -81,6 +81,7 @@
                         <div class="row">
                             <!-- Column 1 -->
                             <div class="col-sm-6">
+                                <h1>UK Top 3...</h1>
                                 <canvas id="uniStatsChart" width="200" height="200"></canvas>
                                 <script>
                                     var ctx = document.getElementById("uniStatsChart").getContext('2d');
