@@ -10,7 +10,7 @@
     <!-- Link back to My_Volunteering -->
     <div class="card">
         <div class="card-block">
-            <a class="nav-link" href="<?php echo base_url('index.php/my_volunteering'); ?>">Back to Your Volunteering</a>
+            <a class="nav-link" href="<?php echo site_url('/my_volunteering'); ?>">Back to Your Volunteering</a>
         </div>
     </div>
 
