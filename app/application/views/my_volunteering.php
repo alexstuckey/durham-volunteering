@@ -9,6 +9,13 @@
         </div>
     </div>
 
+    <?php if (isset($message)) {
+        echo '<p class="alert alert-info">'.$message.'</p>';
+    } elseif (isset($error)) {
+        // Equivalent to validation_errors(), but kept across a redirect
+        echo $error;
+    }?>
+
     <!-- View Upcoming Activities -->
     <div>
         <div class="card">

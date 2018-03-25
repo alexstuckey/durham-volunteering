@@ -2,17 +2,19 @@
 <div id="volunteering">
     <h1>Volunteering</h1>
 
-    <div class="alert alert-success alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Success!</strong> Shift application sent!
-    </div>
-
     <!-- Link back to My_Volunteering -->
     <div class="card">
         <div class="card-block">
             <a class="nav-link" href="<?php echo site_url('/my_volunteering'); ?>">Back to Your Volunteering</a>
         </div>
     </div>
+
+    <?php if (isset($message)) {
+        echo '<p class="alert alert-info">'.$message.'</p>';
+    } elseif (isset($error)) {
+        // Equivalent to validation_errors(), but kept across a redirect
+        echo $error;
+    }?>
 
     <div class="card">
         <div class="card-header">
