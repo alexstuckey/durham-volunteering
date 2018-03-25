@@ -14,6 +14,8 @@
                         <h4>Department</h4>
                     </div>
                     <div class="card-block">
+
+                        <!-- Row 1 -->
                         <div class="row">
                             <!-- Stat 1 -->
                             <div class="col-sm-6">
@@ -75,13 +77,38 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- End of Row 1 -->
 
+                        <!-- Row 2 -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h5>In the Department Leaderboard, your department is in position:</h5>
+                                <div class="statHeading">
+                                    <h1>
+                                        16/88
+                                    </h1>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <h5>Position within department for volunteering hours:</h5>
+                                <div class="statHeading">
+                                    <h1>
+                                        4/23
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Row 2 -->
+
+                        <!-- Row 3 -->
                         <div class="row">
                             <div class="col-sm-12">
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
                             </div>
                         </div>
+                        <!-- End of Row 3 -->
                     </div>
                 </div>
             </div>
