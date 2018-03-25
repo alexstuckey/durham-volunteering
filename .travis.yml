@@ -2,9 +2,9 @@ language: node_js
 node_js:
   - 9
 addons:
-    apt:
-        packages:
-            - sshpass
+  apt:
+    packages:
+      - sshpass
 
 install:
   - cd app
