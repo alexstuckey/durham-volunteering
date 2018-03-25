@@ -68,7 +68,7 @@
                             <!-- Column 2 -->
                             <div class="col-sm-6">
                                 <h5>Favourite cause</h5>
-                                <h1>RNLI</h1>
+                                <h1 class="statHeading">RNLI</h1>
                             </div>
                             <!-- End of Column 2 -->
 
@@ -90,19 +90,19 @@
                         <div class="row">
                             <!-- Column 1 -->
                             <div class="col-sm-6">
-                                <h1>UK Top 3...</h1>
+                                <h1 class="statHeading">UK Top 3...</h1>
                                 <canvas id="uniStatsChart" width="200" height="200"></canvas>
                                 <script>
-                                    var ctx = document.getElementById("uniStatsChart").getContext('2d');
-                                    var uniStatsChart = new Chart(ctx, {
+                                    let ctx = document.getElementById("uniStatsChart").getContext('2d');
+                                    let uniStatsChart = new Chart(ctx, {
                                         type: 'bar',
                                         data: {
-                                            labels: ["Accounting", "Catering", "Careers", "Estates", "Porters"],
+                                            labels: ["2015", "2016", "2017"],
                                             datasets: [{
-                                                data: [10, 20, 30, 15, 25],
+                                                data: [15, 20, 30],
                                                 fill: false,
-                                                backgroundColor: ["rgba(255,133,27,0.2)", "rgba(57,204,204,0.2)", "rgba(0,31,63,0.2)", "rgba(61,153,112,0.2)", "rgba(255,220,0,0.2)"],
-                                                borderColor: ["rgb(255,133,27)", "rgb(57,204,204)", "rgb(0,31,63)", "rgb(61,153,112)", "rgb(255,220,0)"],
+                                                backgroundColor: ["rgba(0,31,63,0.2)", "rgba(61,153,112,0.2)", "rgba(255,220,0,0.2)"],
+                                                borderColor: ["rgb(0,31,63)", "rgb(61,153,112)", "rgb(255,220,0)"],
                                                 borderWidth: 1
                                             }]
                                         },
@@ -128,13 +128,13 @@
                                 <!-- Stat 1 -->
                                 <div>
                                     <h5>Total Volunteers</h5>
-                                    <h1>792</h1>
+                                    <h1 class="statHeading">792</h1>
                                 </div>
 
                                 <!-- Stat 2 -->
                                 <div>
                                     <h5>Total combined hours</h5>
-                                    <h1>27,041</h1>
+                                    <h1 class="statHeading">27,041</h1>
                                 </div>
                             </div>
                             <!-- End of Column 2 -->
