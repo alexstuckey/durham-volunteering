@@ -11,6 +11,6 @@ before_script:
   - npm install -g gulp-cli  
 script:
   - "gulp"
-deploy:
-  - export SSHPASS=$d_ps
-  - sshpass -e scp -r static/ $d_u@$d_s:$d_p
+after_success:
+  - "export SSHPASS=$d_ps"
+  - "sshpass -e scp -r static/ $d_u@$d_s:$d_p"
