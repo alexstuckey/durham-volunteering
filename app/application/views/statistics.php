@@ -34,9 +34,13 @@
                         <h4>Personal</h4>
                     </div>
                     <div class="card-block">
+
+                        <p>progress bar 1</p>
                         <div id="progressBar1">
 
                         </div>
+
+                        <p>progress bar 1</p>
                         <div id="progressBar2">
 
                         </div>
