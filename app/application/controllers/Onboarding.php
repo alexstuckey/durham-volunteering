@@ -15,6 +15,8 @@ class Onboarding extends CI_Controller {
 
         $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
+        $data['active'] = 'welcome';
+
         $this->load->view('header', $data);
         $this->load->view('onboarding_1_welcome', $data);
         $this->load->view('footer', $data);
@@ -65,6 +67,8 @@ class Onboarding extends CI_Controller {
 
         $this->load->helper('form');
 
+        $data['active'] = 'enter_details';
+
         $this->load->view('header', $data);
         $this->load->view('onboarding_3_enter_details_form', $data);
         $this->load->view('footer', $data);
@@ -93,6 +97,8 @@ class Onboarding extends CI_Controller {
         $this->form_validation->set_rules('inputLastName', 'Last Name', 'required');
 
         if ($this->form_validation->run() == FALSE) {
+            $data['active'] = 'enter_details';
+
             $this->load->view('header', $data);
             $this->load->view('onboarding_3_enter_details_form', $data);
             $this->load->view('footer', $data);
@@ -130,6 +136,8 @@ class Onboarding extends CI_Controller {
         $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
         $this->load->helper('form');
+
+        $data['active'] = 'nominate_manager';
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_5_nominate_manager_form', $data);
@@ -178,6 +186,7 @@ class Onboarding extends CI_Controller {
         $this->form_validation->set_rules('inputComment', 'Comment');
 
         if ($this->form_validation->run() == FALSE) {
+            $data['active'] = 'nominate_manager';
             $this->load->view('header', $data);
             $this->load->view('onboarding_5_nominate_manager_form', $data);
             $this->load->view('footer', $data);
