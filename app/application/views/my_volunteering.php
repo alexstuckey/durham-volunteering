@@ -30,6 +30,7 @@
                         <th scope="col">Cause</th>
                         <th scope="col">Start Time</th>
                         <th scope="col">End Time</th>
+                        <th scope="col">Comment</th>
                         <th scope="col">Team Challenge</th>
                     </tr>
                     </thead>
@@ -42,6 +43,7 @@
                                 <td><?php echo $entries['causeID']; ?></td>
                                 <td><?php echo $entries['start']; ?></td>
                                 <td><?php echo $entries['finish']; ?></td>
+                                <td><?php echo $entries['comment']; ?></td>
                                 <td><?php echo $entries['teamChallenge']; ?></td>
                             </tr>
                         <?php endforeach; ?>
@@ -65,6 +67,7 @@
                         <th scope="col">Cause</th>
                         <th scope="col">Start Time</th>
                         <th scope="col">End Time</th>
+                        <th scope="col">Comment</th>
                         <th scope="col">Team Challenge</th>
                     </tr>
                     </thead>
@@ -76,6 +79,7 @@
                                 <td><?php echo $entries['causeID']; ?></td>
                                 <td><?php echo $entries['start']; ?></td>
                                 <td><?php echo $entries['finish']; ?></td>
+                                <td><?php echo $entries['comment']; ?></td>
                                 <td><?php echo $entries['teamChallenge']; ?></td>
                             </tr>
                         <?php endforeach; ?>
