@@ -15,12 +15,12 @@ script:
   - gulp
   - cd application/config
   - cp database.sample.php database.php
-  - sed -i .backup "78s 127.0.0.1 $D_DATABASESERVER " database.php
-  - sed -i .backup "79s usernametoreplace $D_USERNAME " database.php
-  - sed -i .backup "80s passwordtoreplace $D_DBPASSWORD " database.php
-  - sed -i .backup "81s databasetoreplace $D_DATABASE " database.php
+  - sed -i "78s 127.0.0.1 $D_DATABASESERVER " database.php
+  - sed -i "79s usernametoreplace $D_USERNAME " database.php
+  - sed -i "80s passwordtoreplace $D_DBPASSWORD " database.php
+  - sed -i "81s databasetoreplace $D_DATABASE " database.php
   - cp config.sample.php config.php
-  - sed -i .backup "26s replace $D_URLFIRSTHALF$TRAVIS_PULL_REQUEST_BRANCH/app/ " config.php
+  - sed -i "26s replace $D_URLFIRSTHALF$TRAVIS_PULL_REQUEST_BRANCH/app/ " config.php
 after_success:
   - export SSHPASS=$D_PASSWORD
   - sshpass -e scp -o StrictHostKeyChecking=no -r static/ application/ system/ index.php $D_USERNAME@$D_SERVER:$D_PATH
