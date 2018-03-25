@@ -58,7 +58,7 @@
                         </ul>
                         '; }; ?>
                         <?php $isAdmin = TRUE; ?>
-                        <?php if ($isAdmin == TRUE) { echo '
+                        <?php if (empty($hide_links) and $isAdmin == TRUE) { echo '
                         <ul class="navbar-nav">
                             <li class="nav-item'; if ($active == "admin") { echo " active"; } echo '">
                                 <a class="nav-link" href="'; echo base_url('index.php/admin/departments'); echo '">Admin</a>
