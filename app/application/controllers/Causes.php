@@ -14,6 +14,7 @@ class Causes extends CI_Controller {
 		$data['active'] = 'volunteering';
 
 		$this->load->model('cause_model');
+		$data['causes'] = $this->cause_model->getAllCauses();
 		$data['cause'] = $this->cause_model->getCauseByID($causeID);
 
 		$data['page_title'] = 'Cause: ' . $data['cause']['organisation'];
