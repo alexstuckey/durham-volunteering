@@ -176,10 +176,11 @@
                             <div class="card-header">
                                 <h4>Favourite cause</h4>
                             </div>
-                            <div class="card-block"
+                            <div class="card-block">
                                 <div class="statHeading">
                                     <h1>RNLI</h1>
                                 </div>
+                            </div>
                         </div>
                     </div>
                     <!-- End of Column 2 -->
