@@ -1,4 +1,6 @@
 language: node_js
+node_js:
+  - "9"
 addons:
     apt:
         packages:
@@ -12,5 +14,5 @@ before_script:
 script:
   - "gulp"
 after_success:
-  - "export SSHPASS=$d_ps"
-  - "sshpass -e scp -r static/ $d_u@$d_s:$d_p"
+  - "export SSHPASS=$D_PASSWORD"
+  - "sshpass -e scp -r static/ $D_USERNAME@$D_SERVER:$D_PATH"
