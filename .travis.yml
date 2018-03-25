@@ -6,15 +6,6 @@ addons:
     packages:
       - sshpass
 
-before_install:
-  - |
-    # Check commit matches expected commit (because of Travis bug)
-    ( set -euo pipefail
-      if [[ "${TRAVIS_COMMIT}" != "$(git rev-parse HEAD)" ]]; then
-        echo "Commit $(git rev-parse HEAD) doesn't match expected commit ${TRAVIS_COMMIT}"
-        git checkout "${TRAVIS_COMMIT}"
-      fi
-    )
 install:
   - cd app
   - npm install
