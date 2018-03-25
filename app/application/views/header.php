@@ -22,6 +22,8 @@
 
         <!-- Vendor CSS -->
         <link rel="stylesheet" href="<?php echo base_url('/static/css/bootstrap.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('/static/css/select2.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('/static/css/select2-bootstrap4.min.css'); ?>">
 
         <!-- App CSS -->
         <link rel="stylesheet" href="<?php echo base_url('/static/css/homepage.css'); ?>" type="text/css">
