@@ -108,7 +108,7 @@ $(document).ready(function() {
 
         }
     });
-    progressBar3.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+    progressBar3.text.style.fontFamily = '"alternate_gothic_fs_no_3Rg", "Arial", sans-serif';
     progressBar3.text.style.fontSize = '2rem';
     progressBar3.animate(100/120);  // this is the number it fills to
 
