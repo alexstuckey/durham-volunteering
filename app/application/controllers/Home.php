@@ -40,8 +40,8 @@ class Home extends CI_Controller {
         $this->load->view('header', $data);
 
         /* place content body chunks within content_open and content_close */
-        $this->load->view('content_open', $data);
-        $this->load->view('leftside', $data);
+        //$this->load->view('content_open', $data);
+        //$this->load->view('leftside', $data);
 
         $this->load->library('session');
         $data['message'] = $this->session->flashdata('message');
@@ -52,8 +52,8 @@ class Home extends CI_Controller {
         $this->load->view('my_volunteering', $data);
         $this->load->view('center_column_close', $data);
 
-        $this->load->view('rightside', $data);
-        $this->load->view('content_close', $data);
+        //$this->load->view('rightside', $data);
+        //$this->load->view('content_close', $data);
 
         $this->load->view('footer', $data);
     }
