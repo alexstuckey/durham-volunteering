@@ -55,14 +55,14 @@
             });
         </script>
     </div>
-    <div class="card">
-        <div class="card-header">
-            <h5>Extra Info Box</h5>
-        </div>
-        <ul class="list-group">
-            <li class="list-group-item">First item</li>
-            <li class="list-group-item">Second item</li>
-            <li class="list-group-item">Third item</li>
-        </ul>
-    </div>
+<!--    <div class="card">-->
+<!--        <div class="card-header">-->
+<!--            <h5>Extra Info Box</h5>-->
+<!--        </div>-->
+<!--        <ul class="list-group">-->
+<!--            <li class="list-group-item">First item</li>-->
+<!--            <li class="list-group-item">Second item</li>-->
+<!--            <li class="list-group-item">Third item</li>-->
+<!--        </ul>-->
+<!--    </div>-->
 </div>
