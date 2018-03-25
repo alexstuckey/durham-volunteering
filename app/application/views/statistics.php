@@ -86,7 +86,7 @@
                                 <script>
                                     var ctx = document.getElementById("uniStatsChart").getContext('2d');
                                     var uniStatsChart = new Chart(ctx, {
-                                        type: 'verticalBar',
+                                        type: 'bar',
                                         data: {
                                             labels: ["Accounting", "Catering", "Careers", "Estates", "Porters"],
                                             datasets: [{
