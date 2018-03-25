@@ -68,7 +68,11 @@
                             <!-- Column 2 -->
                             <div class="col-sm-6">
                                 <h5>Favourite cause</h5>
-                                <h1 class="statHeading">RNLI</h1>
+                                <div class="statHeading">
+                                    <h1>
+                                        RNLI
+                                    </h1>
+                                </div>
                             </div>
                             <!-- End of Column 2 -->
 
@@ -128,13 +132,17 @@
                                 <!-- Stat 1 -->
                                 <div>
                                     <h5>Total Volunteers</h5>
-                                    <h1 class="statHeading">792</h1>
+                                    <div class="statHeading">
+                                        <h1>792</h1>
+                                    </div>
                                 </div>
 
                                 <!-- Stat 2 -->
                                 <div>
                                     <h5>Total combined hours</h5>
-                                    <h1 class="statHeading">27,041</h1>
+                                    <div class="statHeading">
+                                        <h1>27,041</h1>
+                                    </div>
                                 </div>
                             </div>
                             <!-- End of Column 2 -->
