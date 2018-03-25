@@ -123,8 +123,14 @@ class User_model extends CI_Model
         return $result;
     }
 
-    public function createUser($data)
+    // Creates user, with a default onboarding status of 1
+    public function createUser($CISID)
     {
+        $data = array(
+            'cisID' => $CISID,
+            'onBoarding' => 1,
+            'managerStatus' => 'none'
+        );
 
         $this->db->insert('users', $data);
 

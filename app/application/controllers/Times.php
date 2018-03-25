@@ -32,7 +32,8 @@ class Times extends CI_Controller {
                 $this->input->post('shiftApplicationDateTimeStart'),
                 $this->input->post('shiftApplicationDateTimeEnd'),
                 $this->input->post('shiftApplicationCause'),
-                $this->input->post('shiftApplicationComment')
+                $this->input->post('shiftApplicationComment'),
+                'pending'
             );
 
             $this->session->set_flashdata('message', 'New time entered!');
