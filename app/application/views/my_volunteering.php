@@ -5,9 +5,16 @@
     <!-- Link to add/cancel Activities -->
     <div class="card">
         <div class="card-block">
-            <a class="nav-link" href="<?php echo base_url('index.php/my_volunteering/activities'); ?>">Add/ Cancel Activity</a>
+            <a class="nav-link" href="<?php echo site_url('/my_volunteering/activities'); ?>">Add/ Cancel Activity</a>
         </div>
     </div>
+
+    <?php if (isset($message)) {
+        echo '<p class="alert alert-info">'.$message.'</p>';
+    } elseif (isset($error)) {
+        // Equivalent to validation_errors(), but kept across a redirect
+        echo $error;
+    }?>
 
     <!-- View Upcoming Activities -->
     <div>
@@ -23,6 +30,7 @@
                         <th scope="col">Cause</th>
                         <th scope="col">Start Time</th>
                         <th scope="col">End Time</th>
+                        <th scope="col">Comment</th>
                         <th scope="col">Team Challenge</th>
                     </tr>
                     </thead>
@@ -35,6 +43,7 @@
                                 <td><?php echo $entries['causeID']; ?></td>
                                 <td><?php echo $entries['start']; ?></td>
                                 <td><?php echo $entries['finish']; ?></td>
+                                <td><?php echo $entries['comment']; ?></td>
                                 <td><?php echo $entries['teamChallenge']; ?></td>
                             </tr>
                         <?php endforeach; ?>
@@ -58,6 +67,7 @@
                         <th scope="col">Cause</th>
                         <th scope="col">Start Time</th>
                         <th scope="col">End Time</th>
+                        <th scope="col">Comment</th>
                         <th scope="col">Team Challenge</th>
                     </tr>
                     </thead>
@@ -69,6 +79,7 @@
                                 <td><?php echo $entries['causeID']; ?></td>
                                 <td><?php echo $entries['start']; ?></td>
                                 <td><?php echo $entries['finish']; ?></td>
+                                <td><?php echo $entries['comment']; ?></td>
                                 <td><?php echo $entries['teamChallenge']; ?></td>
                             </tr>
                         <?php endforeach; ?>

@@ -22,6 +22,8 @@
 
         <!-- Vendor CSS -->
         <link rel="stylesheet" href="<?php echo base_url('/static/css/bootstrap.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('/static/css/select2.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('/static/css/select2-bootstrap4.min.css'); ?>">
 
         <!-- App CSS -->
         <link rel="stylesheet" href="<?php echo base_url('/static/css/homepage.css'); ?>" type="text/css">
@@ -50,7 +52,7 @@
                                 <a class="nav-link" href="<?php echo base_url('index.php/manager'); ?>">Respond to Applications</a>
                             </li>
                             <li class="nav-item<?php if ($active == "other") { echo " active"; }; ?>">
-                                <a class="nav-link" href="<?php echo base_url('index.php/other'); ?>">Other Section</a>
+                                <a class="nav-link" href="<?php echo base_url('index.php/statistics'); ?>">Statistics</a>
                             </li>
                         </ul>
                         <?php $isAdmin = TRUE; ?>

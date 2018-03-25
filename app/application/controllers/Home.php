@@ -35,13 +35,17 @@ class Home extends CI_Controller {
         $data['page_title'] = 'My Volunteering';
 
         // populate times array with data accessed from database with time model for logged in user -- $_SERVER['REMOTE_USER']
-        $data['times'] = $this->Time_model->getTimeForCIS('1');
+        $data['times'] = $this->Time_model->getTimeForCIS($_SERVER['REMOTE_USER']);
 
         $this->load->view('header', $data);
 
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
         $this->load->view('leftside', $data);
+
+        $this->load->library('session');
+        $data['message'] = $this->session->flashdata('message');
+        $data['error'] = $this->session->flashdata('error');
 
         /* place central column html form chunks within centre_column_open and center_column_close */
         $this->load->view('center_column_open', $data);
@@ -67,6 +71,11 @@ class Home extends CI_Controller {
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
         $this->load->view('leftside', $data);
+
+        $this->load->library('form_validation');
+        $this->load->library('session');
+        $data['message'] = $this->session->flashdata('message');
+        $data['error'] = $this->session->flashdata('error');
 
         /* place central column html form chunks within centre_column_open and center_column_close */
         $this->load->view('center_column_open', $data);

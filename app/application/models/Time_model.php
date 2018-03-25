@@ -18,45 +18,44 @@ class Time_model extends CI_Model {
         return $query->result_array();
     }
 
-//  Takes an array of the form
-//  $data = array(
-// 'cisID' => 'cisID',
-// 'start' => 'start Time',
-// 'finish' => 'finish Time',
-// 'causeID' => 'causeID',
-//groupEvent' => 'groupEvent'
-// );
 // Inserts into 'time' table in the database.
-    public function createTime($data)
+    public function createTime($CISID, $start, $end, $causeID, $comment, $status)
     {
-
-        $valid_flag=True;
-
-        $causeExistsFlag=False;
-
-
-        $this->db->where('causeID', $data['causeID']);
-
+        $this->db->where('causeID', $causeID);
         $query = $this->db->get('causes');
+        $cause = $query->row_array();
 
-        $result=$query->result_array();
+        $causeExists = False;
 
-
-        if(sizeof($result)>=1)
+        if(!empty($cause))
         {
-            $causeExistsFlag=True;
+            $causeExists = True;
         }
 
-        if($valid_flag and $causeExistsFlag){
+
+        if ($causeExists) {
+            $data = array(
+                'cisID' => $CISID,
+                'start' => $start,
+                'finish' => $end,
+                'causeID' => $causeID,
+                'status' => $status,
+                'comment' => $comment,
+                'teamChallenge' => False
+            );
 
             $this->db->insert('time', $data);
-
-
-            return True;
         }
 
-        return False;
+    }
 
+    public function changeTimeStatus($timeID, $status)
+    {
+        $this->db->where('timeID', $timeID);
+        $data = array(
+            'status' => $status
+        );
+        $this->db->update('disabled', $data);
     }
 
     // Returns an array of Time Rows to which the CisID is associated

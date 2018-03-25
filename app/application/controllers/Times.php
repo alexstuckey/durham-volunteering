@@ -3,27 +3,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Times extends CI_Controller {
 
-	public function index()
-	{
-		$this->load->view('welcome_message');
-	}
+    public function index()
+    {
+        $this->load->view('welcome_message');
+    }
 
-	public function getUserTimes()
-	{
-//        $this->load->model('Time_model');
-//        $data['cis_username'] = 'xxxx99';
-//        $data['page_title'] = 'My Volunteering';
-//        // need to access the cis id of currently logged in user -- $_SERVER['REMOTE_USER']
-//        $data['times'] = $this->Time_model->getTimeForCIS('1');
-	}
+    public function createFormSubmit()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('shiftApplicationDateTimeStart', 'Shift Start Time', 'trim|required');
+        $this->form_validation->set_rules('shiftApplicationDateTimeEnd', 'Shift End Time', 'trim|required');
+        $this->form_validation->set_rules('shiftApplicationCause', 'Shift Cause', 'trim|required');
+        $this->form_validation->set_rules('shiftApplicationComment', 'Shift Comment', 'trim');
+        $this->form_validation->set_error_delimiters('<p class="alert alert-danger"><strong>Error: </strong>', '</p>');
 
-	public function create()
-	{
-		echo 'Hello World!';
-	}
+        $this->load->library('session');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
 
-	public function get($timeID)
-	{
-		echo 'Hello time, ' . $timeID . '!';
-	}
+            $this->load->helper('url');
+            redirect(site_url('/my_volunteering/activities'));
+        } else {
+
+            $this->load->model('Time_model');
+
+            $this->Time_model->createTime(
+                $_SERVER['REMOTE_USER'],
+                $this->input->post('shiftApplicationDateTimeStart'),
+                $this->input->post('shiftApplicationDateTimeEnd'),
+                $this->input->post('shiftApplicationCause'),
+                $this->input->post('shiftApplicationComment'),
+                'pending'
+            );
+
+            $this->session->set_flashdata('message', 'New time entered!');
+            $this->Audit_model->insertLog('ALTER', 'New time entered!');
+
+            $this->load->helper('url');
+            redirect(site_url('/my_volunteering'));
+        }
+    }
+
 }
