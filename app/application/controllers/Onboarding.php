@@ -41,6 +41,8 @@ class Onboarding extends CI_Controller {
 
         $data['active'] = 'enter_details';
 
+        $data['hide_links'] = true;
+
         $this->load->view('header', $data);
         $this->load->view('onboarding_steps', $data);
         $this->load->view('footer', $data);
