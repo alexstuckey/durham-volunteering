@@ -3,7 +3,7 @@ function foo() {
 }
 
 
-let progressBar1 = new ProgressBar.Line('#progressBar1', {
+let progressBar1 = new ProgressBar.Line(progressBar1, {
     strokeWidth: 4,
     easing: 'easeInOut',
     duration: 1400,
@@ -32,7 +32,7 @@ let progressBar1 = new ProgressBar.Line('#progressBar1', {
     }
 });
 
-let progressBar2 = new ProgressBar.Line('#progressBar2', {
+let progressBar2 = new ProgressBar.Line(progressBar2, {
     strokeWidth: 4,
     easing: 'easeInOut',
     duration: 1400,
