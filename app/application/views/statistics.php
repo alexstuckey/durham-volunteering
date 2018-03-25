@@ -18,16 +18,17 @@
                             <!-- Stat 1 -->
                             <div class="col-sm-6">
                                 <div>
+                                    <h5>Volunteering time proportion by cause</h5>
                                     <canvas id="myDepartmentShareChart" width="400" height="400"></canvas>
                                     <script>
                                         let ctx1 = document.getElementById("myDepartmentShareChart").getContext('2d');
                                         let myDoughnutChart = new Chart(ctx1, {
                                             type: 'doughnut',
                                             data: {
-                                                labels: ["Accounting", "Catering", "Careers", "Estates", "Porters"],
+                                                labels: ["RNLI", "NSPCC", "MENCAP", "RSPB", "RSPCA", "Other"],
                                                 datasets: [{
-                                                    data: [10, 20, 30, 15, 25],
-                                                    backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00"]
+                                                    data: [80, 60, 50, 35, 28, 16],
+                                                    backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00", "FFB0FF"]
                                                 }]
                                             },
                                             options: {
@@ -41,18 +42,19 @@
                             <!-- Stat 2 -->
                             <div class="col-sm-6">
                                 <div>
+                                    <h5>Top 3 Departments by Total Hours</h5>
                                     <canvas id="myDepartmentRaceChart" width="200" height="200"></canvas>
                                     <script>
                                         let ctx2 = document.getElementById("myDepartmentRaceChart").getContext('2d');
                                         let myDepartmentRaceChart = new Chart(ctx2, {
                                             type: 'horizontalBar',
                                             data: {
-                                                labels: ["Accounting", "Catering", "Careers", "Estates", "Porters"],
+                                                labels: ["Accounting", "Catering", "Careers"],
                                                 datasets: [{
-                                                    data: [10, 20, 30, 15, 25],
+                                                    data: [60, 40, 20],
                                                     fill: false,
-                                                    backgroundColor: ["rgba(255,133,27,0.2)", "rgba(57,204,204,0.2)", "rgba(0,31,63,0.2)", "rgba(61,153,112,0.2)", "rgba(255,220,0,0.2)"],
-                                                    borderColor: ["rgb(255,133,27)", "rgb(57,204,204)", "rgb(0,31,63)", "rgb(61,153,112)", "rgb(255,220,0)"],
+                                                    backgroundColor: ["rgba(255,133,27,0.2)", "rgba(57,204,204,0.2)", "rgba(0,31,63,0.2)"],
+                                                    borderColor: ["rgb(255,133,27)", "rgb(57,204,204)", "rgb(0,31,63)"],
                                                     borderWidth: 1
                                                 }]
                                             },
