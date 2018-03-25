@@ -16,6 +16,7 @@
                     <div class="card-block">
 
                         <!-- Row 1 -->
+
                         <div class="row">
                             <!-- Stat 1 -->
                             <div class="col-sm-6">
@@ -91,7 +92,7 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <h5>Position within department for volunteering hours:</h5>
+                                <h5>For total volunteering hours within your department, you are in position:</h5>
                                 <div class="statHeading">
                                     <h1>
                                         4/23
@@ -145,35 +146,45 @@
                             </div>
                         </div>
                         <!-- End of Milestone 2 -->
+                    </div>
+                </div>
 
-                        <!-- Numbers Row -->
-                        <div class="row">
-                            <!-- Column 1 -->
-                            <div class="col-sm-6">
-                                <h5>Total hours</h5>
+                <!-- Numbers Row -->
+                <div class="row">
+                    <!-- Column 1 -->
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Total Hours</h4>
+                            </div>
+                            <div class="card-block">
                                 <div id="progressBar3">
 
                                 </div>
                             </div>
-                            <!-- End of Column 1 -->
+                        </div>
+                    </div>
+                    <!-- End of Column 1 -->
 
 
-                            <!-- Column 2 -->
-                            <div class="col-sm-6">
-                                <h5>Favourite cause</h5>
+                    <!-- Column 2 -->
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Favourite cause</h4>
+                            </div>
+                            <div class="card-block"
                                 <div class="statHeading">
                                     <h1>
                                         RNLI
                                     </h1>
                                 </div>
-                            </div>
-                            <!-- End of Column 2 -->
-
                         </div>
-                        <!-- End of Numbers Row -->
-
                     </div>
+                    <!-- End of Column 2 -->
+
                 </div>
+                <!-- End of Numbers Row -->
             </div>
             <!-- End of Personal Stats div -->
 
