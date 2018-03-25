@@ -33,18 +33,34 @@
                     <div class="card-header">
                         <h4>Personal</h4>
                     </div>
+
                     <div class="card-block">
+                        <div id="milestone1">
+                            <h5>Milestone 1</h5>
+                            <div id="progressBar1">
 
-                        <p>progress bar 1</p>
-                        <div id="progressBar1">
-
+                            </div>
                         </div>
 
-                        <p>progress bar 2</p>
-                        <div id="progressBar2">
+                        <div id="milestone2">
+                            <p>progress bar 2</p>
+                            <div id="progressBar2">
 
+                            </div>
                         </div>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
+
+                        <div>
+                            <div class="col-sm-6">
+                                <h5>Total hours</h5>
+                                <h1>32</h1>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <h5>Favourite cause</h5>
+                                <h1>RNLI</h1>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
