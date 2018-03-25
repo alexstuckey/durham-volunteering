@@ -49,13 +49,13 @@
                             </div>
                         </div>
 
-                        <div>
-                            <div class="col-sm-3">
+                        <div class="row">
+                            <div class="col-sm-6">
                                 <h5>Total hours</h5>
                                 <h1>32</h1>
                             </div>
 
-                            <div class="col-sm-3">
+                            <div class="col-sm-6">
                                 <h5>Favourite cause</h5>
                                 <h1>RNLI</h1>
                             </div>
