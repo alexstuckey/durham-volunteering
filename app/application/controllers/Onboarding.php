@@ -17,6 +17,8 @@ class Onboarding extends CI_Controller {
 
         $data['active'] = 'welcome';
 
+        $data['hide_links'] = true;
+
         $this->load->view('header', $data);
         $this->load->view('onboarding_1_welcome', $data);
         $this->load->view('footer', $data);
@@ -71,6 +73,8 @@ class Onboarding extends CI_Controller {
 
         $data['active'] = 'enter_details';
 
+        $data['hide_links'] = true;
+
         $this->load->view('header', $data);
         $this->load->view('onboarding_3_enter_details_form', $data);
         $this->load->view('footer', $data);
@@ -101,6 +105,8 @@ class Onboarding extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $data['active'] = 'enter_details';
 
+            $data['hide_links'] = true;
+
             $this->load->view('header', $data);
             $this->load->view('onboarding_3_enter_details_form', $data);
             $this->load->view('footer', $data);
@@ -109,6 +115,8 @@ class Onboarding extends CI_Controller {
             $this->Audit_model->insertLog('ALTER', 'Details updated');
 
             $data['active'] = 'nominate_manager';
+
+            $data['hide_links'] = true;
 
             $this->load->view('header', $data);
             $this->load->view('onboarding_steps', $data);
@@ -140,6 +148,8 @@ class Onboarding extends CI_Controller {
         $this->load->helper('form');
 
         $data['active'] = 'nominate_manager';
+
+        $data['hide_links'] = true;
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_5_nominate_manager_form', $data);
@@ -189,6 +199,9 @@ class Onboarding extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             $data['active'] = 'nominate_manager';
+
+            $data['hide_links'] = true;
+
             $this->load->view('header', $data);
             $this->load->view('onboarding_5_nominate_manager_form', $data);
             $this->load->view('footer', $data);
@@ -234,6 +247,8 @@ class Onboarding extends CI_Controller {
 
         $data['active'] = 'wait_nominate_manager';
 
+        $data['hide_links'] = true;
+
         $this->load->view('header', $data);
         $this->load->view('onboarding_steps', $data);
         $this->load->view('footer', $data);
@@ -242,6 +257,8 @@ class Onboarding extends CI_Controller {
     public function success_nominate_manager()
     {
         $data['active'] = 'get_started';
+
+        $data['hide_links'] = true;
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_steps', $data);
