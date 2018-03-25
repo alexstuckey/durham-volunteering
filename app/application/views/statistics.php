@@ -40,7 +40,7 @@
 
                         </div>
 
-                        <p>progress bar 1</p>
+                        <p>progress bar 2</p>
                         <div id="progressBar2">
 
                         </div>
