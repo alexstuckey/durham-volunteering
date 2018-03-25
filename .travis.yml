@@ -25,5 +25,5 @@ after_success:
   - cd ../..
   - export SSHPASS=$D_PASSWORD
   - echo "Starting upload..."
-  - sshpass -e ssh $D_USERNAME@$D_SERVER 'mkdir -p $D_PATH$TRAVIS_PULL_REQUEST_BRANCH/app/'
+  - sshpass -e ssh $D_USERNAME@$D_SERVER "mkdir -p $D_PATH$TRAVIS_PULL_REQUEST_BRANCH/app/"
   - sshpass -e scp -o StrictHostKeyChecking=no -r static/ application/ system/ index.php $D_USERNAME@$D_SERVER:$D_PATH$TRAVIS_PULL_REQUEST_BRANCH/app/
