@@ -1,18 +1,26 @@
 language: node_js
 node_js:
-  - "9"
+  - 9
 addons:
     apt:
         packages:
             - sshpass
 
 install:
-  - "cd app"
-  - "npm install"
+  - cd app
+  - npm install
 before_script:
   - npm install -g gulp-cli  
 script:
-  - "gulp"
+  - gulp
+  - cd application/config
+  - cp database.sample.php database.php
+  - sed -i .backup "78s 127.0.0.1 $D_DATABASESERVER " database.php
+  - sed -i .backup "79s usernametoreplace $D_USERNAME " database.php
+  - sed -i .backup "80s passwordtoreplace $D_DBPASSWORD " database.php
+  - sed -i .backup "81s databasetoreplace $D_DATABASE " database.php
+  - cp config.sample.php config.php
+  - sed -i .backup "26s replace $D_URLFIRSTHALF$TRAVIS_PULL_REQUEST_BRANCH/app/ " config.php
 after_success:
-  - "export SSHPASS=$D_PASSWORD"
-  - "sshpass -e scp -o StrictHostKeyChecking=no -r static/ application/ $D_USERNAME@$D_SERVER:$D_PATH"
+  - export SSHPASS=$D_PASSWORD
+  - sshpass -e scp -o StrictHostKeyChecking=no -r static/ application/ system/ index.php $D_USERNAME@$D_SERVER:$D_PATH
