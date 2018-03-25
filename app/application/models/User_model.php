@@ -126,13 +126,15 @@ class User_model extends CI_Model
     // Creates user, with a default onboarding status of 1
     public function createUser($CISID)
     {
-        $data = array(
-            'cisID' => $CISID,
-            'onBoarding' => 1,
-            'managerStatus' => 'none'
-        );
+        if (!$this->doesUserExist($CISID)) {
+            $data = array(
+                'cisID' => $CISID,
+                'onBoarding' => 1,
+                'managerStatus' => 'none'
+            );
 
-        $this->db->insert('users', $data);
+            $this->db->insert('users', $data);
+        }
 
     }
 
@@ -160,7 +162,17 @@ class User_model extends CI_Model
 
     public function doesUserExist($username)
     {
-        return true;
+        $this->db->where('cisID', $username);
+
+        $query = $this->db->get('users');
+
+        $result = $query->row_array();
+
+        if (empty($result)) {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
     }
 
     public function setManager($CISID, $managerEmailAddress, $status)

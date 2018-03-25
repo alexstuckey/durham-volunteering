@@ -15,7 +15,12 @@ class Onboarding extends CI_Controller {
 
         $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
+        $data['active'] = 'welcome';
+        $data['hide_links'] = TRUE;
+
+        $this->load->view('header', $data);
         $this->load->view('onboarding_1_welcome', $data);
+        $this->load->view('footer', $data);
 
         // Creates user, with a default onboarding status of 1
         $this->User_model->createUser($_SERVER['REMOTE_USER']);
@@ -36,8 +41,11 @@ class Onboarding extends CI_Controller {
         $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
         $data['active'] = 'enter_details';
-        
+        $data['hide_links'] = TRUE;
+
+        $this->load->view('header', $data);
         $this->load->view('onboarding_steps', $data);
+        $this->load->view('footer', $data);
 
 
         $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 2);
@@ -61,8 +69,12 @@ class Onboarding extends CI_Controller {
 
         $this->load->helper('form');
 
-        $this->load->view('onboarding_3_enter_details_form', $data);
+        $data['active'] = 'enter_details';
+        $data['hide_links'] = TRUE;
 
+        $this->load->view('header', $data);
+        $this->load->view('onboarding_3_enter_details_form', $data);
+        $this->load->view('footer', $data);
 
         $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 3);
 
@@ -88,13 +100,22 @@ class Onboarding extends CI_Controller {
         $this->form_validation->set_rules('inputLastName', 'Last Name', 'required');
 
         if ($this->form_validation->run() == FALSE) {
+            $data['active'] = 'enter_details';
+            $data['hide_links'] = TRUE;
+
+            $this->load->view('header', $data);
             $this->load->view('onboarding_3_enter_details_form', $data);
+            $this->load->view('footer', $data);
         } else {
 
             $this->Audit_model->insertLog('ALTER', 'Details updated');
 
             $data['active'] = 'nominate_manager';
+            $data['hide_links'] = TRUE;
+
+            $this->load->view('header', $data);
             $this->load->view('onboarding_steps', $data);
+            $this->load->view('footer', $data);
 
             $userChanges = array(
                 'firstName' => $this->input->post('inputFirstName'),
@@ -121,7 +142,12 @@ class Onboarding extends CI_Controller {
 
         $this->load->helper('form');
 
+        $data['active'] = 'nominate_manager';
+        $data['hide_links'] = TRUE;
+
+        $this->load->view('header', $data);
         $this->load->view('onboarding_5_nominate_manager_form', $data);
+        $this->load->view('footer', $data);
 
         $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 5);
         $this->Audit_model->insertLog('ALTER', 'Onboarding: Status Updated');
@@ -166,7 +192,12 @@ class Onboarding extends CI_Controller {
         $this->form_validation->set_rules('inputComment', 'Comment');
 
         if ($this->form_validation->run() == FALSE) {
+            $data['active'] = 'nominate_manager';
+            $data['hide_links'] = TRUE;
+
+            $this->load->view('header', $data);
             $this->load->view('onboarding_5_nominate_manager_form', $data);
+            $this->load->view('footer', $data);
         } else {
             // Nominating the manager chosen
             $this->User_model->setManager($_SERVER['REMOTE_USER'], $this->input->post('inputEmailAddress'), 'nominated');
@@ -208,13 +239,21 @@ class Onboarding extends CI_Controller {
         $data['manager'] = $this->User_model->getManager($_SERVER['REMOTE_USER']);
 
         $data['active'] = 'wait_nominate_manager';
+        $data['hide_links'] = TRUE;
+
+        $this->load->view('header', $data);
         $this->load->view('onboarding_steps', $data);
+        $this->load->view('footer', $data);
     }
 
     public function success_nominate_manager()
     {
         $data['active'] = 'get_started';
+        $data['hide_links'] = TRUE;
+
+        $this->load->view('header', $data);
         $this->load->view('onboarding_steps', $data);
+        $this->load->view('footer', $data);
     }
 
 

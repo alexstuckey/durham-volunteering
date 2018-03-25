@@ -1,37 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Onboarding</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <?php $this->load->helper('url'); ?>
-
-        <!-- Vendor JS -->
-        <script src="<?php echo base_url('/static/js/jquery.min.js'); ?>"></script>
-        <script src="<?php echo base_url('/static/js/bootstrap.min.js'); ?>"></script>
-        
-        <!-- App JS -->
-        <script src="<?php echo base_url('/static/js/homepage.js'); ?>"></script>
-
-        <!-- Vendor CSS -->
-        <link rel="stylesheet" href="<?php echo base_url('/static/css/bootstrap.css'); ?>">
-
-        <!-- App CSS -->
-        <link rel="stylesheet" href="<?php echo base_url('/static/css/homepage.css'); ?>" type="text/css">
-
-    </head>
-
-    <body>
-
-        <!-- Webpage -->
-        <div id="page">
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-                <a class="navbar-brand" href="#">Staff Volunteering Programme</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </nav>
 
 
             <div class="text-center" id="page-heading">
@@ -89,29 +55,4 @@
             </div>
             </div>
 
-            <!-- FOOTER -->
 
-            <div id="footer">
-                <footer class="container text-center">
-                    <h2 id="footer-heading">We'd love to hear from you</h2>
-                    <p><b>Staff Volunteering & Outreach Team</b></p>
-                    <a href="mailto:community.engagement@durham.ac.uk">
-                        <img class="contact_icon" src="<?php echo base_url('/static/images/mail.png'); ?>" width="25px">
-                    </a>
-                    <a href="https://www.facebook.com/SVODurham/">
-                        <img class="contact_icon" src="<?php echo base_url('/static/images/FB-f-Logo.png'); ?>" width="25px">
-                    </a>
-                    <a href="tel:0191 334 2199">
-                        <img class="contact_icon" src="<?php echo base_url('/static/images/telephone.png'); ?>" width="25px">
-                    </a>
-                </footer>
-
-                <footer class="container text-center">
-                    <hr>
-                    <p><br /><b>design & programming</b><br />software engineering team</p>
-                </footer>
-
-            </div>
-        </div>
-    </body>
-</html>
