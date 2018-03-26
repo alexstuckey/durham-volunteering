@@ -74,6 +74,8 @@ $route['admin/departments/edit']['POST'] = 'admin/departmentEdit';
 $route['admin/notification'] = 'admin/notification';
 $route['admin/emails'] = 'admin/emails';
 $route['admin/emails/edit']['POST'] = 'admin/emailsEdit';
+$route['admin/declaration']['GET'] = 'admin/declaration';
+$route['admin/declaration']['POST'] = 'admin/declarationEdit';
 $route['admin/settings'] = 'admin/settings';
 $route['admin/audit'] = 'admin/audit';
 

@@ -187,6 +187,57 @@ class Admin extends CI_Controller
         }
     }
 
+    public function declaration()
+    {
+        $this->Audit_model->insertLog('ACCESS', 'Accessing admin: departments');
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'admin';
+        $data['active_admin'] = 'declaration';
+        $data['page_title'] = 'Admin: declaration';
+
+        $this->load->library('form_validation');
+        $this->load->library('session');
+        $data['message'] = $this->session->flashdata('message');
+
+        $this->load->model('Admin_model');
+        $data['declaration'] = $this->Admin_model->getPersonalDeclaration();
+
+        $this->load->view('header', $data);
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+
+        $this->load->view('admin_sidebar', $data);
+        $this->load->view('admin_8_declaration', $data);
+
+        $this->load->view('content_close', $data);
+        $this->load->view('footer', $data);
+    }
+
+    public function declarationEdit()
+    {
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('inputPersonalDeclaration', 'Personal Declaration', 'trim|required');
+        $this->form_validation->set_error_delimiters('<p class="alert alert-danger"><strong>Error: </strong>', '</p>');
+
+        $this->load->library('session');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+
+            $this->declaration();
+        } else {
+            $this->load->model('Admin_model');
+
+            $this->Admin_model->setPersonalDeclaration($this->input->post('inputPersonalDeclaration'));
+
+            $this->session->set_flashdata('message', 'Edited the Personal Declaration!');
+            $this->Audit_model->insertLog('ALTER', 'Edited the Personal Declaration.');
+
+            $this->declaration();
+        }
+
+    }
+
     public function settings()
     {
         $this->Audit_model->insertLog('ACCESS', 'Accessing admin: settings');
