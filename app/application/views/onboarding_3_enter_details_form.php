@@ -46,9 +46,9 @@
 
                                         <div class="form-group">
                                             <label for="inputPersonalDeclaration">Personal Declaration</label>
-                                            <small id="personalDeclaration" class="form-text text-muted">
+                                            <p id="personalDeclaration" class="form-text text-muted">
 <?php echo $declaration; ?>
-                                            </small>
+                                            </p>
                                             <label>I agree to the statement above and certify that all information given on this form is true and accurate.</label>
                                             <select class="form-control" name="inputPersonalDeclaration" id="inputPersonalDeclaration">
                                                 <option>Select an option</option>
@@ -59,12 +59,12 @@
 
                                         <div class="form-group">
                                             <label for="inputDataProtection">Data Protection</label>
-                                            <small id="dataProtection" class="form-text text-muted">
+                                            <p id="dataProtection" class="form-text text-muted">
                                                 The data submitted here will be treated as confidential and held securely by the Staff Volunteering team.
                                                 The data will be utilised only for the purposes of non personal statistical analysis and for the purposes of keeping you informed of volunteering activities.
                                                 We always strive to only collect data that is essential which will be held only for as long as is necessary.
                                                 Please confirm that you agree to your data being managed in this way.
-                                            </small>
+                                            </p>
                                             <select class="form-control" name="inputDataProtection" id="inputDataProtection">
                                                 <option>Select an option</option>
                                                 <option value="Yes">Yes</option>
