@@ -49,5 +49,25 @@ class Admin_model extends CI_Model {
         }
     }
 
+    public function getPersonalDeclaration()
+    {
+        $this->db->where('settingName', 'personalDeclaration');
+        $query = $this->db->get('settings');
+        $declaration = $query->row_array();
+
+        if (!empty($declaration)) {
+            return $declaration['settingValue'];
+        } else {
+            return NULL;
+        }
+    }
+
+    public function setPersonalDeclaration($declaration)
+    {
+        $this->db->where('settingName', 'personalDeclaration');
+        $this->db->set('settingValue', $declaration);
+        $this->db->update('settings');
+    }
+
 
 }
