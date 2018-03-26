@@ -94,10 +94,8 @@
                                 </div>
                                 <div class="card-block">
                                     <h5>Your department is in position:</h5>
-                                    <div class="statHeading">
-                                        <h1>
-                                            16/88
-                                        </h1>
+                                    <div class="singleStatBold">
+                                        <h1>16/88</h1>
                                     </div>
                                 </div>
                             </div>
@@ -110,10 +108,8 @@
                                 </div>
                                 <div class="card-block">
                                     <h5>Within your department, you are in position:</h5>
-                                    <div class="statHeading">
-                                        <h1>
-                                            4/23
-                                        </h1>
+                                    <div class="singleStatBold">
+                                        <h1>4/23</h1>
                                     </div>
                                 </div>
                             </div>
@@ -127,11 +123,17 @@
                 <!-- Row 3 -->
                 <div class="card">
                     <div class="card-header">
-                        <h4>Other</h4>
+                        <h4>Department Milestones</h4>
                     </div>
                     <div class="card-block">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat ac diam ultricies tincidunt. Maecenas venenatis finibus libero sed dapibus. Fusce sit amet nisl a risus commodo placerat. Nam venenatis suscipit orci nec porttitor. Nullam et dui et lacus semper volutpat. Fusce eleifend ornare est vel hendrerit. Etiam aliquet purus</p>
+                        <!-- Department Milestone 1 -->
+                        <div id="milestone1">
+                            <h5>Milestone 1</h5>
+                            <div id="progressBar4">
+
+                            </div>
+                        </div>
+                        <!-- End of Department Milestone 1 -->
                     </div>
                 </div>
                 <!-- End of Row 3 -->
@@ -151,7 +153,7 @@
                 <!-- Milestones Card -->
                 <div class="card">
                     <div class="card-header">
-                        <h4>Personal</h4>
+                        <h4>Personal Milestones</h4>
                     </div>
                     <div class="card-block">
 

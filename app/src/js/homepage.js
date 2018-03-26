@@ -113,6 +113,35 @@ $(document).ready(function() {
     progressBar3.animate(100/120);  // this is the number it fills to
 
 
+    let progressBar4 = new ProgressBar.Line(document.getElementById('progressBar4'), {
+        strokeWidth: 6,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {width: '100%', height: '100%'},
+        text: {
+            style: {
+                // Text color.
+                // Default: same as stroke color (options.color)
+                color: '#999',
+                position: 'absolute',
+                right: '0',
+                top: '30px',
+                padding: 0,
+                margin: 0,
+                transform: null
+            },
+            autoStyleContainer: false
+        },
+        from: {color: '#FFEA82'},
+        to: {color: '#ED6A5A'},
+        step: (state, progressBar2) => {
+            progressBar2.setText(Math.round(progressBar2.value() * 100) + ' /100');
+        }
+    });
+    progressBar4.animate(16/100);  // this is the number it fills to
 });
 
 function createNotificationPopupDismiss(){
