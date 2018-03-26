@@ -127,8 +127,12 @@ hr {
     padding: 20px;
 }
 
-.card-block .activityTable {
-    padding:0px;
+.activityTable .card-block {
+     padding:0;
+}
+
+.activityTable .card-block {
+    margin-bottom:0;
 }
 
 .card-footer {
