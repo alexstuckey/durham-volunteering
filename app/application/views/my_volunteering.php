@@ -24,7 +24,7 @@
                 <h5>Pending Activities</h5>
             </div>
             <div class="card-block activityTable">
-                <table class="table-warning">
+                <table class="table">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -39,7 +39,7 @@
                     <!-- previous activities using if statement if start time is in past -->
                     <?php foreach ($times as $entries): ?>
                         <?php if ($entries['status'] == 'pending'): ?>
-                            <tr>
+                            <tr class="table-warning">
                                 <th scope="row"><?php echo $entries['timeID']; ?></th>
                                 <td><?php echo $entries['causeID']; ?></td>
                                 <td><?php echo $entries['start']; ?></td>
@@ -95,6 +95,7 @@
         </div>
     </div>
 
+
     <!-- View Previous Activities -->
     <div>
         <div class="card">
@@ -141,7 +142,7 @@
                 <h5>Denied Activities</h5>
             </div>
             <div class="card-block activityTable">
-                <table class="table-danger">
+                <table class="table">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -153,10 +154,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <!-- pending activities using if statement - status is 'denied' -->
+                    <!-- denied activities using if statement - status is 'denied' -->
                     <?php foreach ($times as $entries): ?>
                         <?php if ($entries['status'] == 'denied'): ?>
-                            <tr>
+                            <tr class="table-danger">
                                 <th scope="row"><?php echo $entries['timeID']; ?></th>
                                 <td><?php echo $entries['causeID']; ?></td>
                                 <td><?php echo $entries['start']; ?></td>
