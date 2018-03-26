@@ -66,7 +66,7 @@
                     <select class="form-control" id="shiftCancelSelect" name="shiftCancelSelect">
                         <?php foreach ($times as $entries): ?>
                             <?php if ($entries['status'] == 'pending'): ?>
-                                <option value="<?php echo $entries['timeID']; ?>"><?php echo '' . $entries['start'] . ' to ' . $entries['finish'] . ' at cause ID ' . $entries['causeID']?></option>
+                                <option value="<?php echo $entries['timeID']; ?>"><?php echo '' . $entries['start'] . ' to ' . $entries['finish'] . ' at ';?> + <?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></option>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </select>
