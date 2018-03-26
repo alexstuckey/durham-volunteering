@@ -1,8 +1,3 @@
-function foo() {
-    return 'bar';
-}
-
-
 $(document).ready(function() {
     // notification dismiss button
     $('.dismiss').on('click', (function() {
@@ -12,14 +7,12 @@ $(document).ready(function() {
     }));
 
     // select2
-    $('#shiftApplicationCause').select2({
+    $('#shiftApplicationCause, #viewCause').select2({
         theme: "bootstrap4"
     });
 
-    $('#viewCause').select2({
-        theme: "bootstrap4"
-    });
 
+    // Personal milestone 1 options
     let progressBar1 = new ProgressBar.Line(document.getElementById('progressBar1'), {
         strokeWidth: 6,
         easing: 'easeInOut',
@@ -51,6 +44,7 @@ $(document).ready(function() {
     progressBar1.animate(80/100);  // this is the number it fills to
 
 
+    // Personal Milestone 2 options
     let progressBar2 = new ProgressBar.Line(document.getElementById('progressBar2'), {
         strokeWidth: 6,
         easing: 'easeInOut',
@@ -81,6 +75,8 @@ $(document).ready(function() {
     });
     progressBar2.animate(38/100);  // this is the number it fills to
 
+
+    // Progress Circle total hours options
     let progressBar3 = new ProgressBar.Circle(document.getElementById('progressBar3'), {
         color: '#222',
         // This has to be the same size as the maximum width to
@@ -113,6 +109,7 @@ $(document).ready(function() {
     progressBar3.animate(100/120);  // this is the number it fills to
 
 
+    // Department Milestone 4 Options
     let progressBar4 = new ProgressBar.Line(document.getElementById('progressBar4'), {
         strokeWidth: 6,
         easing: 'easeInOut',
@@ -156,5 +153,4 @@ function removeNotificationDiv() {
     });
 }
 
-console.log(foo());
 console.log('javascript is functional');
