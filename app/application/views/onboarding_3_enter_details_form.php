@@ -97,7 +97,7 @@
                                                 8. Any expenses claimed are reasonable and associated with the volunteering done within hours when I would otherwise be working
                                                 9. I will inform staff volunteering if my volunteering circumstances change at any time.
                                             </small>
-                                            <small>I agree to the statement above and certify that all information given on this form is true and accurate.</small>
+                                            <label>I agree to the statement above and certify that all information given on this form is true and accurate.</label>
                                             <select class="form-control" name="inputPersonalDeclaration" id="inputPersonalDeclaration">
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
