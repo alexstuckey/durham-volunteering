@@ -134,8 +134,8 @@ $(document).ready(function() {
         },
         from: {color: '#FFEA82'},
         to: {color: '#ED6A5A'},
-        step: (state, progressBar2) => {
-            progressBar2.setText(Math.round(progressBar2.value() * 100) + ' /100');
+        step: (state, progressBar4) => {
+            progressBar4.setText(Math.round(progressBar4.value() * 100) + ' /100');
         }
     });
     progressBar4.animate(16/100);  // this is the number it fills to

@@ -20,7 +20,7 @@
                         <?php foreach ($managees as $managee): ?>
                             <?php foreach ($times as $entries): ?>
                                 <?php if ($entries['cisID'] == $managee['cisID']): ?>
-                                    <option value="<?php echo $entries['timeID']; ?>"><?php echo $entries['cisID'] . ': ' . $entries['start'] . ' to ' . $entries['finish'] . ' at ';?> + <?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></option>
+                                    <option value="<?php echo $entries['timeID']; ?>"><?php echo $entries['cisID'] . ': ' . $entries['start'] . ' to ' . $entries['finish'] . ' at ';?><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></option>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         <?php endforeach; ?>
