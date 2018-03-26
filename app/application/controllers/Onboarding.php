@@ -100,14 +100,11 @@ class Onboarding extends CI_Controller {
 
         $this->form_validation->set_rules('inputFirstName', 'First Name', 'required');
         $this->form_validation->set_rules('inputLastName', 'Last Name', 'required');
+        $this->form_validation->set_rules('inputPersonalDeclaration', 'Personal Declaration acceptance', 'required|in_list[Yes]');
+        $this->form_validation->set_rules('inputDataProtection', 'Data Protection acceptance', 'required|in_list[Yes]');
 
         if ($this->form_validation->run() == FALSE) {
-            $data['active'] = 'enter_details';
-            $data['hide_links'] = TRUE;
-
-            $this->load->view('header', $data);
-            $this->load->view('onboarding_3_enter_details_form', $data);
-            $this->load->view('footer', $data);
+            $this->enter_details_form();
         } else {
 
             $this->Audit_model->insertLog('ALTER', 'Details updated');
