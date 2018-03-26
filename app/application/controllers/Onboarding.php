@@ -66,6 +66,8 @@ class Onboarding extends CI_Controller {
 
         $this->load->model('Departments_model');
         $data['departments'] = $this->Departments_model->getDepartmentsListWithCount();
+        $this->load->model('Admin_model');
+        $data['declaration'] = $this->Admin_model->getPersonalDeclaration();
 
         $this->load->helper('form');
 

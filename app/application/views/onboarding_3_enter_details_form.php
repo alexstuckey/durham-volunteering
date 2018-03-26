@@ -41,16 +41,7 @@
                                         <div class="form-group">
                                             <label for="inputPersonalDeclaration">Personal Declaration</label>
                                             <small id="personalDeclaration" class="form-text text-muted">
-                                                Whilst volunteering as part of the Durham University Staff Volunteering Scheme, I accept:
-                                                1. I am eligible to participate in the task e.g. not absent from work/signed off through sickness
-                                                2. My responsibility to actively understand the nature of both health and safety risks involved in the task
-                                                3. My duty to adopt suitable precautions in partnerships with the recipient organisation
-                                                4. I have disclosed any relevant medical information
-                                                5. I have checked with my own GP if in doubt about my health and fitness for the event
-                                                6. The purpose of my participation is for charitable purposes and I am not receiving payment of any form
-                                                7. I have the freedom to participate or withdraw (under supervision) at any stage without any criticism
-                                                8. Any expenses claimed are reasonable and associated with the volunteering done within hours when I would otherwise be working
-                                                9. I will inform staff volunteering if my volunteering circumstances change at any time.
+<?php echo $declaration; ?>
                                             </small>
                                             <label>I agree to the statement above and certify that all information given on this form is true and accurate.</label>
                                             <select class="form-control" name="inputPersonalDeclaration" id="inputPersonalDeclaration">
