@@ -69,7 +69,7 @@ samp,
     position:relative;
 }
 
-.card {
+.card, .card-deck {
     margin-bottom: 20px;
 }
 
@@ -94,6 +94,17 @@ h1, h2 {
     font-family: "alternate_gothic_fs_no_3Rg", "Arial", sans-serif;
 }
 
+.statHeading h1{
+    font-size: 6rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.singleStatBold h1 {
+    font-size: 6rem;
+    margin:0px auto;
+}
+
 h4 {
     margin-bottom: 0;
 }
@@ -111,13 +122,6 @@ hr {
     height: auto;
 }
 
-/* set characteristics for the sidebars */
-/*#leftSide, #centre, #rightSide {
-    max-height: 730px;
-    position: relative;
-    overflow-y: scroll;
-}*/
-
 /* end of characteristics for sidebars */
 .card-block {
     padding: 20px;
@@ -129,6 +133,26 @@ hr {
 
 .card-footer {
     padding: 10px;
+}
+
+#progressBar1, #progressBar2, #progressBar4 {
+    height: 1em;
+    position: relative;
+}
+
+#progressBar3 {
+    margin: 0px auto;
+    width: 180px;
+    height: 180px;
+    position: relative;
+}
+
+#milestone1, #milestone2 {
+    padding-bottom:40px;
+}
+
+.progressbar-text {
+    top: 10px;
 }
 
 /* Set footer padding */
