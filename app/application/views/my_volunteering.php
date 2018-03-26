@@ -42,7 +42,7 @@
                             <?php if ($entries['status'] == 'pending'): ?>
                                 <tr class="table-warning">
                                     <th scope="row"><?php echo $entries['timeID']; ?></th>
-                                    <td><?php echo $entries['causeID']; ?></td>
+                                    <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></td>
                                     <td><?php echo $entries['start']; ?></td>
                                     <td><?php echo $entries['finish']; ?></td>
                                     <td><?php echo $entries['comment']; ?></td>
@@ -84,7 +84,7 @@
                                 <?php if ($entries['status'] == 'confirmed'): ?>
                                     <tr>
                                         <th scope="row"><?php echo $entries['timeID']; ?></th>
-                                        <td><?php echo $entries['causeID']; ?></td>
+                                        <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></td>
                                         <td><?php echo $entries['start']; ?></td>
                                         <td><?php echo $entries['finish']; ?></td>
                                         <td><?php echo $entries['comment']; ?></td>
@@ -125,7 +125,7 @@
                                 <?php if ($entries['status'] == 'confirmed'): ?>
                                     <tr>
                                         <th scope="row"><?php echo $entries['timeID']; ?></th>
-                                        <td><?php echo $entries['causeID']; ?></td>
+                                        <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></td>
                                         <td><?php echo $entries['start']; ?></td>
                                         <td><?php echo $entries['finish']; ?></td>
                                         <td><?php echo $entries['comment']; ?></td>
@@ -166,7 +166,7 @@
                             <?php if ($entries['status'] == 'denied'): ?>
                                 <tr class="table-danger">
                                     <th scope="row"><?php echo $entries['timeID']; ?></th>
-                                    <td><?php echo $entries['causeID']; ?></td>
+                                    <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></td>
                                     <td><?php echo $entries['start']; ?></td>
                                     <td><?php echo $entries['finish']; ?></td>
                                     <td><?php echo $entries['comment']; ?></td>
