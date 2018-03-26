@@ -24,7 +24,7 @@
                 <h5>Pending Activities</h5>
             </div>
             <div class="card-block activityTable">
-                <table class="table">
+                <table class="table-warning">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -141,7 +141,7 @@
                 <h5>Denied Activities</h5>
             </div>
             <div class="card-block activityTable">
-                <table class="table">
+                <table class="table-danger">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
