@@ -7,7 +7,7 @@ $(document).ready(function() {
     }));
 
     // select2
-    $('#shiftApplicationCause, #viewCause, #shiftResponseSelect, #inputDepartment').select2({
+    $('#shiftApplicationCause, #viewCause, #shiftResponseSelect, #inputDepartment, #shiftCancelSelect').select2({
         theme: "bootstrap4"
     });
 
