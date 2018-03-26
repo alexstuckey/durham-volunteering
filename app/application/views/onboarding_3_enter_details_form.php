@@ -99,6 +99,7 @@
                                             </small>
                                             <label>I agree to the statement above and certify that all information given on this form is true and accurate.</label>
                                             <select class="form-control" name="inputPersonalDeclaration" id="inputPersonalDeclaration">
+                                                <option>Select an option</option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
                                             </select>
@@ -113,6 +114,7 @@
                                                 Please confirm that you agree to your data being managed in this way.
                                             </small>
                                             <select class="form-control" name="inputDataProtection" id="inputDataProtection">
+                                                <option>Select an option</option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
                                             </select>
