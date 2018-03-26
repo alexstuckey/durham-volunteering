@@ -64,9 +64,11 @@
                 <div class="form-group">
                     <label for="shiftCancelSelect">Select Shift</label>
                     <select class="form-control" id="shiftCancelSelect" name="shiftCancelSelect">
-                        <option>jdns89 @ 2pm tomorrow</option>
-                        <option>dhan35 @ 4pm Monday 29</option>
-                        <option>djsh99 @ 9am Tuesday 30</option>
+                        <?php foreach ($times as $entries): ?>
+                            <?php if ($entries['status'] == 'pending'): ?>
+                                <option value="<?php echo $entries['timeID']; ?>"><?php echo '' . $entries['start'] . ' to ' . $entries['finish'] . ' at cause ID ' . $entries['causeID']?></option>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                     </select>
                 </div>
                 <div class="form-group">

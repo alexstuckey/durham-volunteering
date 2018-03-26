@@ -68,6 +68,11 @@ class Home extends CI_Controller {
         $this->load->view('header', $data);
 
         $this->load->model('Cause_model');
+
+        // populate times array with data accessed from database with time model for logged in user -- $_SERVER['REMOTE_USER']
+        $data['times'] = $this->Time_model->getTimeForCIS($_SERVER['REMOTE_USER']);
+
+        // populate causes array with data from db
         $data['causes'] = $this->Cause_model->getAllCauses();
 
         /* place content body chunks within content_open and content_close */
