@@ -103,6 +103,13 @@ class Home extends CI_Controller {
         $data['page_title'] = 'Activities';
         $this->load->view('header', $data);
 
+        $this->load->model('User_model');
+        $this->load->model('Time_model');
+
+        $data['managees'] = $this->User_model->getManagees($_SERVER['REMOTE_USER']);
+        $data['times'] = $this->Time_model->getTimeForCIS($_SERVER['REMOTE_USER']);
+
+
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
         $this->load->view('leftside', $data);

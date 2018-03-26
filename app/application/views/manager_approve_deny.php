@@ -17,11 +17,14 @@
                 <div class="form-group">
                     <label for="shiftResponseSelect">Select Shift</label>
                     <select class="form-control" id="shiftResponseSelect" name="shiftResponseSelect">
-                        <option>Shift 1</option>
-                        <option>Shift 2</option>
-                        <option>Shift 3</option>
-                        <option>Shift 4</option>
-                        <option>Shift 5</option>
+                        <?php foreach ($managees as $managee): ?>
+                            <?php foreach ($times as $entries): ?>
+                                <?php if ($entries['cisID'] == $managee['cisID']): ?>
+                                    <option value="<?php echo $entries['timeID']; ?>"><?php echo $entries['cisID'] . ': ' . $entries['start'] . ' to ' . $entries['finish'] . ' at cause ID ' . $entries['causeID']?></option>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php endforeach; ?>
+
                     </select>
                 </div>
                 <div class="form-check">
