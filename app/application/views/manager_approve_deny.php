@@ -12,8 +12,7 @@
             <h4>Approve Shift Requests</h4>
         </div>
         <div class="card-block">
-            <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
-            <form method="POST" action="" id="shiftResponseForm">
+            <form method="POST" action="<?php echo site_url('/time/manager_response'); ?>" id="shiftResponseForm">
                 <div class="form-group">
                     <label for="shiftResponseSelect">Select Shift</label>
                     <select class="form-control" id="shiftResponseSelect" name="shiftResponseSelect">
@@ -27,18 +26,21 @@
 
                     </select>
                 </div>
+
                 <div class="form-check">
                     <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="shiftResponseRadios" id="shiftResponseRadio1" value="option1" checked>
                         Permit
                     </label>
                 </div>
+
                 <div class="form-check">
                     <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="shiftResponseRadios" id="shiftResponseRadio2" value="option2">
                         Deny
                     </label>
                 </div>
+
                 <div class="form-group">
                     <label for="shiftResponseComment">Comment (Optional)</label>
                     <textarea class="form-control" id="shiftResponseComment" rows="3" name="shiftResponseComment"></textarea>
