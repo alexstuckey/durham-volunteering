@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="icon" type="image/png" href="<?php echo base_url('/static/images/favicon-32x32.png'); ?>" sizes="32x32">
         <title><?php if (isset($page_title)) { echo $page_title; } else { echo "No Title"; }; ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
