@@ -7,8 +7,14 @@ class Home extends CI_Controller {
 	{
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'home';
+<<<<<<< HEAD
+=======
         $data['page_title'] = 'Home - Staff Volunteering Programme';
         $this->load->view('header', $data);
+>>>>>>> master
+        $data['page_title'] = 'Home';
+        $this->load->view('header', $data);
+
 
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
