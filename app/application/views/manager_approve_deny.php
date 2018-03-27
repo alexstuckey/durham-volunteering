@@ -29,14 +29,14 @@
 
                 <div class="form-check">
                     <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="shiftResponseRadios" id="shiftResponseRadio1" value="option1" checked>
+                        <input class="form-check-input" type="radio" name="shiftResponseRadios" id="shiftResponseRadio1" value="confirmed" checked>
                         Permit
                     </label>
                 </div>
 
                 <div class="form-check">
                     <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="shiftResponseRadios" id="shiftResponseRadio2" value="option2">
+                        <input class="form-check-input" type="radio" name="shiftResponseRadios" id="shiftResponseRadio2" value="denied">
                         Deny
                     </label>
                 </div>

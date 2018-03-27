@@ -59,21 +59,10 @@ class Time_model extends CI_Model {
     public function changeTimeStatus($timeID, $status)
     {
         $this->db->where('timeID', $timeID);
-        if ($status == 'option1') {
-            $data = array(
-                'status' => 'confirmed'
-            );
-        } else if ($status == 'option2') {
-            $data = array(
-                'status' => 'denied'
-            );
-        } else {
-            // error, leave status as pending
-            echo 'error';
-            $data = array(
-                'status' => 'pending'
-            );
-        }
+
+        $data = array(
+            'status' => $status
+        );
 
         $this->db->update('disabled', $data);
     }
