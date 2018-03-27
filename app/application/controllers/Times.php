@@ -44,4 +44,18 @@ class Times extends CI_Controller {
         }
     }
 
+    public function joinTeamChallenge($timeID,$joiningCisID)
+    {
+        $this->load->model('Time_model');
+        $this->Time_model->joinTeamChallenge($timeID,$joiningCisID);
+    }
+
+
+    public function getParticipantsOfTeamChallenge($timeID)
+    {
+        $this->load->model('Time_model');
+        $this->Time_model->getParticipantsOfTeamChallenge($timeID);
+    }
+
+
 }
