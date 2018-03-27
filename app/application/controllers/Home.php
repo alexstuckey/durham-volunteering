@@ -7,12 +7,7 @@ class Home extends CI_Controller {
 	{
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'home';
-<<<<<<< HEAD
-=======
         $data['page_title'] = 'Home - Staff Volunteering Programme';
-        $this->load->view('header', $data);
->>>>>>> master
-        $data['page_title'] = 'Home';
         $this->load->view('header', $data);
 
 
