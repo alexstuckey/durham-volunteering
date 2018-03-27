@@ -17,7 +17,7 @@ class Causes extends CI_Controller {
 		$data['causes'] = $this->cause_model->getAllCauses();
 		$data['cause'] = $this->cause_model->getCauseByID($causeID);
 
-		$data['page_title'] = 'Cause: ' . $data['cause']['organisation'];
+		$data['page_title'] = 'Cause: ' . $data['cause']['organisation'] . ' - Staff Volunteering Programme';
 
 		$this->load->view('header', $data);
 
