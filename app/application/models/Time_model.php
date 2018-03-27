@@ -174,6 +174,8 @@ class Time_model extends CI_Model {
 
         }
 
+        return $cisArray;
+
     }
 
 }
