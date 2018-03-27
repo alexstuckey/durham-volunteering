@@ -44,4 +44,31 @@ class Times extends CI_Controller {
         }
     }
 
+
+    public function deleteFormSubmit()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('shiftCancelSelect', 'Shift', 'required');
+        $this->form_validation->set_rules('shiftCancelComment', 'Shift', 'trim');
+        $this->form_validation->set_error_delimiters('<p class="alert alert-danger"><strong>Error: </strong>', '</p>');
+
+        $this->load->library('session');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+
+            $this->load->helper('url');
+            redirect(site_url('/my_volunteering/activities'));
+        } else {
+            $this->load->model('Time_model');
+
+            $this->Time_model->deleteTime('shiftCancelSelect');
+
+            $this->session->set_flashdata('message', 'Time cancelled!');
+            $this->Audit_model->insertLog('ALTER', 'Time cancelled!');
+
+            $this->load->helper('url');
+            redirect(site_url('/my_volunteering'));
+        }
+    }
+
 }

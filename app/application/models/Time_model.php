@@ -49,6 +49,13 @@ class Time_model extends CI_Model {
 
     }
 
+    // delete time row where row id = $TimeID
+    public function deleteTime($TimeID)
+    {
+        // skeleton function - to be implemented
+    }
+
+
     public function changeTimeStatus($timeID, $status)
     {
         $this->db->where('timeID', $timeID);

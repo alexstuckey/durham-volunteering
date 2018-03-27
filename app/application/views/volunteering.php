@@ -59,8 +59,8 @@
             <h4>Cancel Activity</h4>
         </div>
         <div class="card-block">
-            <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
-            <form  method="POST" action="" id="shiftCancelForm">
+            <form  method="POST" action="<?php echo site_url('/time/delete'); ?>" id="shiftCancelForm">
+
                 <div class="form-group">
                     <label for="shiftCancelSelect">Select Shift</label>
                     <select class="form-control" id="shiftCancelSelect" name="shiftCancelSelect">
@@ -71,11 +71,14 @@
                         <?php endforeach; ?>
                     </select>
                 </div>
+
                 <div class="form-group">
                     <label for="shiftCancelComment">Comment (Optional)</label>
                     <textarea class="form-control" id="shiftCancelComment" rows="3" name="shiftCancelComment"></textarea>
                 </div>
+
                 <button type="submit" class="btn btn-outline-primary" id="shiftCancelButton">Submit</button>
+
             </form>
         </div>
     </div>
