@@ -17,15 +17,15 @@ samp,
 }
 
 .navbar-brand {
-  font-family: Baskerville;
+  font-family: Baskerville, serif;
 }
 
 /* Override Bootstrap Responsive CSS fixed navbar */
 @media (max-width: 1440px) {
     .navbar-fixed-top, .navbar-fixed-bottom {
         position: fixed;
-        margin-left: 0px;
-        margin-right: 0px;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
@@ -76,7 +76,7 @@ samp,
 @font-face {
     font-family: 'alternate_gothic_fs_no_3Rg';
     src: url('../fonts/AlternateGothicNo3-webfont.woff');
-    src: url('../fonts/AlternateGothicNo3-webfont.woff?#iefix') format('embedded-opentype'), url('../fonts/AlternateGothicNo3-webfont.woff') format('woff'), url('../fonts/AlternateGothicNo3-webfont.ttf') format('truetype'), url('../fonts/AlternateGothicNo3-webfont.svg#alternate_gothic_fs_no_3Rg') format('svg');
+    src: url('../fonts/AlternateGothicNo3-webfont.woff?#iefix') format('embedded-opentype'), url('../fonts/AlternateGothicNo3-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal
 }
@@ -117,6 +117,27 @@ hr {
     border-color: #bbb;
 }
 
+.alignleft {
+    float: left;
+}
+
+.alignright {
+    float: right;
+    text-align: right;
+}
+
+.btn-secondary {
+    background-color: #F4F4F4;
+    color: #535353;
+    border-color: #EAEAEA;
+}
+.btn-secondary:hover {
+    background-color: #F0F0F0;
+    color: #535353;
+    border-color: #EAEAEA;
+}
+
+
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
     height: auto;
@@ -127,12 +148,17 @@ hr {
     padding: 20px;
 }
 
+<<<<<<< HEAD
 .activityTable .card-block {
      padding:0;
 }
 
 .activityTable .table {
     margin-bottom:0;
+=======
+.card-block .activityTable {
+    padding:0;
+>>>>>>> master
 }
 
 .card-footer {

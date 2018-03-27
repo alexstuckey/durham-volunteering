@@ -17,6 +17,7 @@ class Onboarding extends CI_Controller {
 
         $data['active'] = 'welcome';
         $data['hide_links'] = TRUE;
+        $data['page_title'] = 'Welcome - Staff Volunteering Programme';
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_1_welcome', $data);
@@ -42,6 +43,7 @@ class Onboarding extends CI_Controller {
 
         $data['active'] = 'enter_details';
         $data['hide_links'] = TRUE;
+        $data['page_title'] = 'Onboarding - Staff Volunteering Programme';
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_steps', $data);
@@ -71,6 +73,7 @@ class Onboarding extends CI_Controller {
 
         $data['active'] = 'enter_details';
         $data['hide_links'] = TRUE;
+        $data['page_title'] = 'Onboarding: Enter Details - Staff Volunteering Programme';
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_3_enter_details_form', $data);
@@ -102,6 +105,7 @@ class Onboarding extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $data['active'] = 'enter_details';
             $data['hide_links'] = TRUE;
+            $data['page_title'] = 'Onboarding: Enter Details - Staff Volunteering Programme';
 
             $this->load->view('header', $data);
             $this->load->view('onboarding_3_enter_details_form', $data);
@@ -112,6 +116,7 @@ class Onboarding extends CI_Controller {
 
             $data['active'] = 'nominate_manager';
             $data['hide_links'] = TRUE;
+            $data['page_title'] = 'Onboarding - Staff Volunteering Programme';
 
             $this->load->view('header', $data);
             $this->load->view('onboarding_steps', $data);
@@ -144,6 +149,7 @@ class Onboarding extends CI_Controller {
 
         $data['active'] = 'nominate_manager';
         $data['hide_links'] = TRUE;
+        $data['page_title'] = 'Onboarding: Nominate Manager - Staff Volunteering Programme';
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_5_nominate_manager_form', $data);
@@ -194,6 +200,7 @@ class Onboarding extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $data['active'] = 'nominate_manager';
             $data['hide_links'] = TRUE;
+            $data['page_title'] = 'Onboarding: Nominate Manager - Staff Volunteering Programme';
 
             $this->load->view('header', $data);
             $this->load->view('onboarding_5_nominate_manager_form', $data);
@@ -240,6 +247,7 @@ class Onboarding extends CI_Controller {
 
         $data['active'] = 'wait_nominate_manager';
         $data['hide_links'] = TRUE;
+        $data['page_title'] = 'Onboarding - Staff Volunteering Programme';
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_steps', $data);
@@ -250,6 +258,7 @@ class Onboarding extends CI_Controller {
     {
         $data['active'] = 'get_started';
         $data['hide_links'] = TRUE;
+        $data['page_title'] = 'Onboarding - Staff Volunteering Programme';
 
         $this->load->view('header', $data);
         $this->load->view('onboarding_steps', $data);

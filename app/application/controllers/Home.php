@@ -7,6 +7,11 @@ class Home extends CI_Controller {
 	{
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'home';
+<<<<<<< HEAD
+=======
+        $data['page_title'] = 'Home - Staff Volunteering Programme';
+        $this->load->view('header', $data);
+>>>>>>> master
         $data['page_title'] = 'Home';
         $this->load->view('header', $data);
 
@@ -35,7 +40,7 @@ class Home extends CI_Controller {
 
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'volunteering';
-        $data['page_title'] = 'My Volunteering';
+        $data['page_title'] = 'My Volunteering - Staff Volunteering Programme';
 
         $data['times'] = $this->Time_model->getTimeForCIS($_SERVER['REMOTE_USER']);
         $data['causes'] = $this->Cause_model->getAllCauses();
@@ -65,7 +70,7 @@ class Home extends CI_Controller {
     {
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'volunteering';
-        $data['page_title'] = 'Activities';
+        $data['page_title'] = 'Activities - Staff Volunteering Programme';
         $this->load->view('header', $data);
 
         $this->load->model('Time_model');
@@ -98,7 +103,7 @@ class Home extends CI_Controller {
     {
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'manager';
-        $data['page_title'] = 'Activities';
+        $data['page_title'] = 'Respond to Applications - Staff Volunteering Programme';
         $this->load->view('header', $data);
 
         $this->load->model('User_model');
@@ -128,7 +133,7 @@ class Home extends CI_Controller {
     {
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'manager';
-        $data['page_title'] = 'Causes';
+        $data['page_title'] = 'Causes - Staff Volunteering Programme';
         $this->load->view('header', $data);
 
         $this->load->model('Cause_model');
@@ -153,7 +158,7 @@ class Home extends CI_Controller {
     {
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'other';
-        $data['page_title'] = 'Statistics';
+        $data['page_title'] = 'Statistics - Staff Volunteering Programme';
         $this->load->view('header', $data);
 
         /* place content body chunks within content_open and content_close */
