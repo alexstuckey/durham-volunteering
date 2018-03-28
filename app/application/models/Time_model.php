@@ -50,9 +50,11 @@ class Time_model extends CI_Model {
     }
 
     // delete time row where row id = $TimeID
-    public function deleteTime($TimeID)
+    public function deleteTime($timeID)
     {
-        // skeleton function - to be implemented
+        $this->db->where('timeID', $timeID);
+        $this->db->delete('times');
+
     }
 
 
