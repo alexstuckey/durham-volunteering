@@ -53,7 +53,7 @@ class Time_model extends CI_Model {
     public function deleteTime($timeID)
     {
         $this->db->where('timeID', $timeID);
-        $this->db->delete('times');
+        $this->db->delete('time');
 
     }
 

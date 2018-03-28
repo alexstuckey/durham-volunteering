@@ -61,7 +61,7 @@ class Times extends CI_Controller {
         } else {
             $this->load->model('Time_model');
 
-            $this->Time_model->deleteTime('shiftCancelSelect');
+            $this->Time_model->deleteTime($this->input->post('shiftCancelSelect'));
 
             $this->session->set_flashdata('message', 'Time cancelled!');
             $this->Audit_model->insertLog('ALTER', 'Time cancelled!');
@@ -90,7 +90,7 @@ class Times extends CI_Controller {
         } else {
             $this->load->model('Time_model');
 
-            $this->Time_model->changeTimeStatus('shiftResponseSelect', 'shiftResponseRadios');
+            $this->Time_model->changeTimeStatus('shiftResponseSelect', $this->input->post('shiftResponseRadios'));
 
             $this->session->set_flashdata('message', 'Response sent!');
             $this->Audit_model->insertLog('ALTER', 'Activity response sent!');
