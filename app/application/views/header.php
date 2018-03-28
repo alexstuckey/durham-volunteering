@@ -21,6 +21,10 @@
 
         <!-- App JS -->
         <script src="<?php echo base_url('/static/js/homepage.js'); ?>"></script>
+        <?php if ($active == 'other'): ?>
+            <script src="<?php echo base_url('/static/js/statistics.js'); ?>"></script>
+        <?php endif; ?>
+
 
         <!-- Vendor CSS -->
         <link rel="stylesheet" href="<?php echo base_url('/static/css/bootstrap.css'); ?>">
