@@ -82,6 +82,8 @@ $route['admin/audit'] = 'admin/audit';
 $route['cause/(:num)']['GET'] = 'causes/causeByID/$1';
 
 $route['time/create']['POST'] = 'times/createFormSubmit';
+$route['time/delete']['POST'] = 'times/deleteFormSubmit';
+$route['time/manager_response']['POST'] = 'times/confirmDenyFormSubmit';
 
 $route['api/causes']['GET'] = 'causes/listAll';
 $route['api/causes']['POST'] = 'causes/create';
