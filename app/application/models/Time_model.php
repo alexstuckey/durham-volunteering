@@ -19,7 +19,7 @@ class Time_model extends CI_Model {
     }
 
 // Inserts into 'time' table in the database.
-    public function createTime($CISID, $start, $end, $causeID, $comment, $status)
+    public function createTime($CISID, $start, $end, $causeID, $comment, $status, $isTeamChallenge = FALSE)
     {
         $this->db->where('causeID', $causeID);
         $query = $this->db->get('causes');
@@ -32,6 +32,10 @@ class Time_model extends CI_Model {
             $causeExists = True;
         }
 
+        $teamChallenge = 'false';
+        if ($isTeamChallenge) {
+            $teamChallenge = 'true';
+        }
 
         if ($causeExists) {
             $data = array(
@@ -41,12 +45,17 @@ class Time_model extends CI_Model {
                 'causeID' => $causeID,
                 'status' => $status,
                 'comment' => $comment,
-                'teamChallenge' => False
+                'teamChallenge' => $teamChallenge
             );
 
             $this->db->insert('time', $data);
         }
 
+    }
+
+    public function joinTeamChallenge($CISID, $timeID)
+    {
+        
     }
 
     public function changeTimeStatus($timeID, $status)
@@ -87,9 +96,7 @@ class Time_model extends CI_Model {
 
     public function getTeamChallenges()
     {
-
-
-        $this->db->where('teamChallenge', 1);
+        $this->db->where('teamChallenge', 'true');
 
         $query = $this->db->get('time');
 
