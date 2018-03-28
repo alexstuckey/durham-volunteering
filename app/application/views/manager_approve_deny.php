@@ -2,11 +2,6 @@
 <div id="managerShiftResponse">
     <h1>Respond to Applications</h1>
 
-    <div class="alert alert-success alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Success!</strong> Permitted USER wgwq72 for shift at WaterAid on 16th March, 3-5pm.
-    </div>
-
     <div class="card">
         <div class="card-header">
             <h4>Approve Shift Requests</h4>
