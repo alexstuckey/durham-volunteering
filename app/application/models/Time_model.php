@@ -58,12 +58,23 @@ class Time_model extends CI_Model {
         
     }
 
+    // delete time row where row id = $TimeID
+    public function deleteTime($timeID)
+    {
+        $this->db->where('timeID', $timeID);
+        $this->db->delete('time');
+
+    }
+
+
     public function changeTimeStatus($timeID, $status)
     {
         $this->db->where('timeID', $timeID);
+
         $data = array(
             'status' => $status
         );
+
         $this->db->update('disabled', $data);
     }
 
