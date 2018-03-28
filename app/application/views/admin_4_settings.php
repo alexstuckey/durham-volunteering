@@ -42,11 +42,11 @@
                                 <div class="form-check">
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="checkbox" value="" checked>
-                                        <b>Email address</b>
+                                        <b>Contact us email address</b>
                                         <br />
-                                        Include email address in the footer.
+                                        Included email address in the footer.
                                         <label class="form-group row" style="margin-top:5px;margin-left:0;">
-                                            <input class="form-control alignleft" style="width:200px; margin-right:10px;" type="email" value="admin@durham.ac.uk" id="email-input">
+                                            <input class="form-control alignleft" style="width:200px; margin-right:10px;" type="email" value="community.engagement@durham.ac.uk" id="email-input">
                                             <button type="submit" class="btn btn-secondary">Change</button>
                                         </label>
                                     </label>
@@ -56,9 +56,9 @@
                                 <div class="form-check">
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="checkbox" value="" checked>
-                                        <b>Facebook page</b>
+                                        <b>University Portal Link</b>
                                         <br />
-                                        Include the link to Facebook page in the footer.
+                                        Include the link to the Staff Volunteering website in the footer.
                                         <label class="form-group row" style="margin-top:5px;margin-left:0;">
                                             <input class="form-control alignleft" style="width:200px; margin-right:10px;" type="url" value="facebook.com" id="facebook-input">
                                             <button type="submit" class="btn btn-secondary">Change</button>

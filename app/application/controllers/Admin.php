@@ -9,7 +9,7 @@ class Admin extends CI_Controller
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'settings';
-        $data['page_title'] = 'Admin index';
+        $data['page_title'] = 'Admin - Staff Volunteering Programme';
         $this->load->view('header', $data);
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
@@ -44,7 +44,7 @@ class Admin extends CI_Controller
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'departments';
-        $data['page_title'] = 'Admin: departments';
+        $data['page_title'] = 'Admin: Departments - Staff Volunteering Programme';
 
         $this->load->library('form_validation');
         $this->load->library('session');
@@ -122,7 +122,7 @@ class Admin extends CI_Controller
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'notification';
-        $data['page_title'] = 'Admin: notification';
+        $data['page_title'] = 'Admin: Notification - Staff Volunteering Programme';
         $this->load->view('header', $data);
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
@@ -141,7 +141,7 @@ class Admin extends CI_Controller
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'email_templates';
-        $data['page_title'] = 'Admin: email templates';
+        $data['page_title'] = 'Admin: Email Templates - Staff Volunteering Programme';
 
         $this->load->model('Email_model');
         $data['email_templates'] = $this->Email_model->getAllEmailTemplates();
@@ -244,7 +244,7 @@ class Admin extends CI_Controller
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'settings';
-        $data['page_title'] = 'Admin: settings';
+        $data['page_title'] = 'Admin: Settings - Staff Volunteering Programme';
         $this->load->view('header', $data);
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
@@ -263,7 +263,7 @@ class Admin extends CI_Controller
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'audit';
-        $data['page_title'] = 'Admin: audit';
+        $data['page_title'] = 'Admin: Audit - Staff Volunteering Programme';
         $this->load->view('header', $data);
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
@@ -305,7 +305,7 @@ class Admin extends CI_Controller
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'edit_email';
-        $data['page_title'] = 'Admin: edit email';
+        $data['page_title'] = 'Admin: Edit Email - Staff Volunteering Programme';
         $this->load->view('header', $data);
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
