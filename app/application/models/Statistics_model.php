@@ -18,56 +18,49 @@ class Statistics_model extends CI_Model {
 
     public function volunteeringTimebyDepartment()
     {
+        $query = $this->db->query("SELECT departmentsName, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM time join users ON time.cisID=users.cisID join departments ON users.departmentID=departments.ID WHERE status='completed' group by departmentsName");
 
-    $query = $this->db->query("SELECT departmentsName, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM time join users ON time.cisID=users.cisID join departments ON users.departmentID=departments.ID WHERE status='completed' group by departmentsName");
-
-    return $query->result_array();
-
+        return json_encode($query->result_array());
     }
 
     public function volunteeringTimePersonal($CISID)
-
     {
         $query = $this->db->query("SELECT cisID, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM time WHERE cisID=" . $CISID ."AND status='completed' ");
 
         $data= $query->result_array();
 
-        return $data;
-
+        return json_encode($data);
     }
 
     public function totalHoursVolunteered()
     {
         $query = $this->db->query("SELECT SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM Live_Outreach.time WHERE status='completed' ");
+
         $data= $query->row_array();
 
-
-        return $data;
-
+        return json_encode($data);
     }
 
     public function totalVolunteers()
     {
         $query = $this->db->query("SELECT count(*) FROM Live_Outreach.users");
+
         $data= $query->row_array();
 
-        return $data;
-
+        return json_encode($data);
     }
 
     public function getFavouriteCause($cisID)
     {
         $query = $this->db->query("SELECT cisID, organisation, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum  FROM Live_Outreach.time JOIN causes WHERE time.causeID=causes.causeID AND status='completed' AND ". $cisID . "=time.cisID  GROUP BY causes.organisation order by timeSum desc limit 1");
 
-
         $data= $query->row_array();
 
-        return $data;
+        return json_encode($data);
     }
 
     public function positionWithinDepartment($cisID)
     {
-
         $this->load->model('User_model');
 
         $department=$this->User_model->getDepartment($cisID);
@@ -76,6 +69,6 @@ class Statistics_model extends CI_Model {
 
         $data= $query->row_array();
 
-        return $data;
+        return json_encode($data);
     }
 }

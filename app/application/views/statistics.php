@@ -294,4 +294,10 @@
 
 <script type="text/javascript">
     let sumTimeByCause = <?php echo $sumTimeByCause ?>;
+    let volunteeringTimeByDepartment = <?php echo volunteeringTimeByDepartment ?>;
+    let volunteeringTimePersonal = <?php echo volunteeringTimePersonal ?>;
+    let totalHoursVolunteered = <?php echo totalHoursVolunteered ?>;
+    let totalVolunteers = <?php echo totalVolunteers ?>;
+    let getFavouriteCause = <?php echo getFavouriteCause ?>;
+    let positionWithinDepartment = <?php echo positionWithinDepartment ?>;
 </script>

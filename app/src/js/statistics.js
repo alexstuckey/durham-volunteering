@@ -2,7 +2,24 @@
 
 $(document).ready(function() {
 
-    console.log(JSON.stringify(sumTimeByCause));
+    // data variables extracted from statistics model after being fed to statistics view
+    console.log(JSON.stringify("sum of time by cause: " + sumTimeByCause));
+    console.log(JSON.stringify("total volunteering time by department: " + volunteeringTimeByDepartment));
+    console.log(JSON.stringify("total personal volunteering time: " + volunteeringTimePersonal));
+    console.log(JSON.stringify("total hours volunteered at university: " + totalHoursVolunteered));
+    console.log(JSON.stringify("total number of volunteers: " + totalVolunteers));
+    console.log(JSON.stringify("personal favourite cause: " + getFavouriteCause));
+    console.log(JSON.stringify("personal position within department: " + positionWithinDepartment));
+
+    // total time by cause:                 sumTimeByCause['timeSum']
+    //                                      sumTimeByCause['organisation']
+    // volunteering time by department:     volunteeringTimeByDepartment['departmentsName']
+    //                                      volunteeringTimeByDepartment['timeSum']
+    // personal volunteering time total:    volunteeringTimePersonal['timeSum']
+    // total hours volunteered:             totalHoursVolunteered['timeSum']
+    // total number of volunteers:
+    // favourite cause:                     getFavouriteCause['organisation']
+    // position within department:          positionWithinDepartment['departmentsName']
 
     // Personal milestone 1 options
     let progressBar1 = new ProgressBar.Line(document.getElementById('progressBar1'), {

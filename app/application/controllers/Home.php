@@ -161,6 +161,12 @@ class Home extends CI_Controller {
 
         $this->load->model('Statistics_model');
         $data['sumTimeByCause'] = $this->Statistics_model->sumTimeByCause();
+        $data['volunteeringTimeByDepartment'] = $this->Statistics_model->volunteeringTimebyDepartment();
+        $data['volunteeringTimePersonal'] = $this->Statistics_model->volunteeringTimePersonal($_SERVER['REMOTE_USER']);
+        $data['totalHoursVolunteered'] = $this->Statistics_model->totalHoursVolunteered();
+        $data['totalVolunteers'] = $this->Statistics_model->totalVolunteers();
+        $data['getFavouriteCause'] = $this->Statistics_model->getFavouriteCause($_SERVER['REMOTE_USER']);
+        $data['positionWithinDepartment'] = $this->Statistics_model->positionWithinDepartment($_SERVER['REMOTE_USER']);
 
         /* place content body chunks within content_open and content_close */
         //$this->load->view('content_open', $data);
