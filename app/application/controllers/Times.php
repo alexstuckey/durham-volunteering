@@ -45,8 +45,11 @@ class Times extends CI_Controller {
             $this->load->model('User_model');
             $this->load->model('Notification_model');
 
+            $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
+            $managerID = $manager['cisID'];
+
             $this->Notification_model->createNotification(
-                $this->User_model->getManager($_SERVER['REMOTE_USER']),
+                $managerID,
                 'New activity application',
                 'User ' . $_SERVER['REMOTE_USER'] . ' has requested a shift at ' . $this->input->post('shiftApplicationCause') . ' from ' . $this->input->post('shiftApplicationDateTimeStart') . ' to ' . $this->input->post('shiftApplicationDateTimeEnd') . '. They have commented: "' . $this->input->post('shiftApplicationComment') . '".' ,
                 mdate($format)
@@ -94,11 +97,19 @@ class Times extends CI_Controller {
             $this->load->model('Cause_model');
             $this->load->model('Notification_model');
 
+            // get time row of given time ID
             $time = $this->Time_model->getTimeByID($this->input->post('shiftCancelSelect'));
+
+            // get cause by its ID
             $cause = $this->Cause_model->getCauseByID($time['causeID']);
 
-                $this->Notification_model->createNotification(
-                $this->User_model->getManager($_SERVER['REMOTE_USER']),
+            // get cis id of manager of user
+            $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']),
+            $managerID = $manager['cisID'];
+
+            // create the notification
+            $this->Notification_model->createNotification(
+                $managerID,
                 'Activity cancelled',
                 'User ' . $_SERVER['REMOTE_USER'] . ' has cancelled a shift at ' . $cause . ' from ' . $time['start'] . ' to ' . $time['end'] . '.',
                 mdate($format)
