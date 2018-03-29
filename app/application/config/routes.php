@@ -86,12 +86,3 @@ $route['time/delete']['POST'] = 'times/deleteFormSubmit';
 $route['time/manager_response']['POST'] = 'times/confirmDenyFormSubmit';
 
 $route['notifications/delete']['POST'] = 'notifications/deleteNotificationSubmit';
-
-
-$route['api/causes']['GET'] = 'causes/listAll';
-$route['api/causes']['POST'] = 'causes/create';
-$route['api/cause/(:num)']['GET'] = 'causes/get/';
-$route['api/times']['GET'] = 'times/list';
-$route['api/times']['POST'] = 'times/create';
-$route['api/time/(:num)']['GET'] = 'times/get';
-$route['api/user/(:any)'] = 'user/get';
