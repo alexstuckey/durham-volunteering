@@ -75,7 +75,7 @@ class Statistics_model extends CI_Model {
 
         $department=$this->User_model->getDepartment($cisID);
 
-        $query = $this->db->query("SELECT users.cisID,departmentsName, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM Live_Outreach.time join users ON time.cisID=users.cisID join departments ON users.departmentID=departments.ID WHERE time.status='completed' AND departmentsName=\"" .$department."\" group by cisID,departmentsName");
+        $query = $this->db->query("SELECT users.cisID,departmentsName, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM Live_Outreach.time join users ON time.cisID=users.cisID join departments ON users.departmentID=departments.ID WHERE time.status='completed' AND departmentsName=\"" .$department."\" group by cisID,departmentsName ORDER BY timeSum desc");
 
         $data= $query->row_array();
 
