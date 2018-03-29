@@ -3,14 +3,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Causes extends CI_Controller {
 
+    public function allCauses()
+    {
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'volunteering';
+        $data['page_title'] = 'Causes';
+
+        $this->load->model('Cause_model');
+        $data['causes'] = $this->Cause_model->getAllCauses();
+
+        $this->load->view('header', $data);
+
+        $this->load->view('content_open', $data);
+        $this->load->view('leftside', $data);
+
+        $this->load->view('causes', $data);
+
+        $this->load->view('content_close', $data);
+
+        $this->load->view('footer', $data);
+    }
+
     public function causeByID($causeID)
     {
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'volunteering';
 
-        $this->load->model('cause_model');
-        $data['causes'] = $this->cause_model->getAllCauses();
-        $data['cause'] = $this->cause_model->getCauseByID($causeID);
+        $this->load->model('Cause_model');
+        $data['causes'] = $this->Cause_model->getAllCauses();
+        $data['cause'] = $this->Cause_model->getCauseByID($causeID);
 
         $data['page_title'] = 'Cause: ' . $data['cause']['organisation'] . ' - Staff Volunteering Programme';
 
