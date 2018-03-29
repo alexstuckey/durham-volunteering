@@ -13,7 +13,7 @@ class Time_model extends CI_Model {
     {
         $this->db->where('timeID', $timeID);
 
-        $query = $this->db->get('time');
+        $query = $this->db->get('times');
 
         return $query->result_array();
     }
@@ -44,7 +44,7 @@ class Time_model extends CI_Model {
                 'teamChallenge' => False
             );
 
-            $this->db->insert('time', $data);
+            $this->db->insert('times', $data);
         }
 
     }
@@ -53,7 +53,7 @@ class Time_model extends CI_Model {
     public function deleteTime($timeID)
     {
         $this->db->where('timeID', $timeID);
-        $this->db->delete('time');
+        $this->db->delete('times');
 
     }
 
@@ -76,7 +76,7 @@ class Time_model extends CI_Model {
 
         $this->db->where('cisID', $CISID);
 
-        $query = $this->db->get('time');
+        $query = $this->db->get('times');
 
         return $query->result_array();
 
@@ -90,7 +90,7 @@ class Time_model extends CI_Model {
 
         $this->db->where('causeID', $causeID);
 
-        $query = $this->db->get('time');
+        $query = $this->db->get('times');
 
         return $query->result_array();
 
@@ -102,7 +102,7 @@ class Time_model extends CI_Model {
 
         $this->db->where('teamChallenge', 1);
 
-        $query = $this->db->get('time');
+        $query = $this->db->get('times');
 
         return $query->result_array();
 

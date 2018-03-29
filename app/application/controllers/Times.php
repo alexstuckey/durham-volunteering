@@ -46,7 +46,7 @@ class Times extends CI_Controller {
             $this->load->model('Notification_model');
 
             $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
-            $managerID = $manager['cisID'];
+            $managerID = $manager['username'];
 
             $this->Notification_model->createNotification(
                 $managerID,
@@ -105,7 +105,7 @@ class Times extends CI_Controller {
 
             // get cis id of manager of user
             $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
-            $managerID = $manager['cisID'];
+            $managerID = $manager['username'];
 
             // create the notification
             $this->Notification_model->createNotification(
