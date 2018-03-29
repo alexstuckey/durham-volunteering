@@ -11,12 +11,9 @@ class Statistics_model extends CI_Model {
 
     public function sumTimeByCause()
     {
+        $query = $this->db->query("SELECT organisation, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum  FROM time JOIN causes WHERE time.causeID=causes.causeID AND status='completed' GROUP BY causes.organisation");
 
-
-    $query = $this->db->query("SELECT organisation, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum  FROM time JOIN causes WHERE time.causeID=causes.causeID AND status='completed' GROUP BY causes.organisation");
-
-    return $query->result_array();
-
+        return json_encode($query->result_array());
     }
 
     public function volunteeringTimebyDepartment()
