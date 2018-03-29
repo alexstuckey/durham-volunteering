@@ -25,6 +25,6 @@
     </div>
     <?php endforeach; ?>
 
-
+</div>
 <!-- End of Notifications Div -->
 
