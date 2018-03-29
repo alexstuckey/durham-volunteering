@@ -13,7 +13,7 @@ class Statistics_model extends CI_Model {
     {
 
 
-    $query = $this->db->query("SELECT organisation, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum  FROM time JOIN causes WHERE time.causeID=causes.causeID AND status='completed' GROUP BY causes.organisation");
+    $query = $this->db->query("SELECT organisation, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum  FROM Pnbsg97_Durham_Outreach_v1.1.time JOIN causes WHERE time.causeID=causes.causeID AND status='completed' GROUP BY causes.organisation");
 
     return $query->result_array();
 
@@ -22,7 +22,7 @@ class Statistics_model extends CI_Model {
     public function volunteeringTimebyDepartment()
     {
 
-    $query = $this->db->query("SELECT departmentsName, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM time join users ON time.cisID=users.cisID join departments ON users.departmentID=departments.ID WHERE status='completed' group by departmentsName");
+    $query = $this->db->query("SELECT departmentsName, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM Pnbsg97_Durham_Outreach_v1.1.time join users ON time.cisID=users.cisID join departments ON users.departmentID=departments.ID WHERE status='completed' group by departmentsName");
 
     return $query->result_array();
 
@@ -31,7 +31,7 @@ class Statistics_model extends CI_Model {
     public function volunteeringTimePersonal($CISID)
 
     {
-        $query = $this->db->query("SELECT cisID, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM time WHERE cisID=" . $CISID ."AND status='completed' ");
+        $query = $this->db->query("SELECT cisID, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM Pnbsg97_Durham_Outreach_v1.1.time WHERE cisID=" . $CISID ."AND status='completed' ");
 
         $data= $query->result_array();
 
@@ -41,7 +41,7 @@ class Statistics_model extends CI_Model {
 
     public function totalHoursVolunteered()
     {
-        $query = $this->db->query("SELECT SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM Live_Outreach.time WHERE status='completed' ");
+        $query = $this->db->query("SELECT SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM Pnbsg97_Durham_Outreach_v1.1.time WHERE status='completed' ");
         $data= $query->row_array();
 
 
@@ -51,7 +51,7 @@ class Statistics_model extends CI_Model {
 
     public function totalVolunteers()
     {
-        $query = $this->db->query("SELECT count(*) FROM Live_Outreach.users");
+        $query = $this->db->query("SELECT count(*) FROM Pnbsg97_Durham_Outreach_v1.1.users");
         $data= $query->row_array();
 
         return $data;
@@ -60,10 +60,9 @@ class Statistics_model extends CI_Model {
 
     public function getFavouriteCause($cisID)
     {
-        $query = $this->db->query("SELECT cisID, organisation, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum  FROM Live_Outreach.time JOIN causes WHERE time.causeID=causes.causeID AND status='completed' AND ". $cisID . "=time.cisID  GROUP BY causes.organisation order by timeSum desc limit 1");
+        $query = $this->db->query("SELECT cisID, organisation, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum  FROM Pnbsg97_Durham_Outreach_v1.1.time JOIN causes WHERE time.causeID=causes.causeID AND status='completed' AND ". $cisID . "=time.cisID  GROUP BY causes.organisation order by timeSum desc limit 1");
 
-
-        $data= $query->row_array();
+        $data= $query->row_array(); 
 
         return $data;
     }
@@ -75,7 +74,7 @@ class Statistics_model extends CI_Model {
 
         $department=$this->User_model->getDepartment($cisID);
 
-        $query = $this->db->query("SELECT users.cisID,departmentsName, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM Live_Outreach.time join users ON time.cisID=users.cisID join departments ON users.departmentID=departments.ID WHERE time.status='completed' AND departmentsName=\"" .$department."\" group by cisID,departmentsName ORDER BY timeSum desc");
+        $query = $this->db->query("SELECT users.cisID,departmentsName, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM Pnbsg97_Durham_Outreach_v1.1.time join users ON time.cisID=users.cisID join departments ON users.departmentID=departments.ID WHERE time.status='completed' AND departmentsName=\"" .$department."\" group by cisID,departmentsName ORDER BY timeSum desc");
 
         $data= $query->row_array();
 
