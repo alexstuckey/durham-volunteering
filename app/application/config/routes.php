@@ -85,7 +85,6 @@ $route['time/create']['POST'] = 'times/createFormSubmit';
 $route['time/delete']['POST'] = 'times/deleteFormSubmit';
 $route['time/manager_response']['POST'] = 'times/confirmDenyFormSubmit';
 
-$route['notifications/create']['POST'] = 'notifications/createNotificationSubmit';
 $route['notifications/delete']['POST'] = 'notifications/deleteNotificationSubmit';
 
 
