@@ -85,7 +85,7 @@ $route['time/create']['POST'] = 'times/createFormSubmit';
 $route['time/delete']['POST'] = 'times/deleteFormSubmit';
 $route['time/manager_response']['POST'] = 'times/confirmDenyFormSubmit';
 
-$route['statistics/sumTimeByCause']['GET'] = 'statistics_model/sumTimeByCause';
+$route['statistics/sumTimeByCause']['GET'] = 'statistics/sumTimeByCause';
 
 
 $route['api/causes']['GET'] = 'causes/listAll';
