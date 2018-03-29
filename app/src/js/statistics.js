@@ -1,6 +1,9 @@
 // statistics javascript
 
 $(document).ready(function() {
+
+    console.log(sumTimeByCause);
+
     // Personal milestone 1 options
     let progressBar1 = new ProgressBar.Line(document.getElementById('progressBar1'), {
         strokeWidth: 6,

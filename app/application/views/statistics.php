@@ -291,3 +291,7 @@
 
 </div>
 <!-- End Statistics Section -->
+
+<script type="text/javascript">
+    let sumTimeByCause = <?php echo $sumTimeByCause ?>;
+</script>

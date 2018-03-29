@@ -156,6 +156,9 @@ class Home extends CI_Controller {
         $data['page_title'] = 'Statistics - Staff Volunteering Programme';
         $this->load->view('header', $data);
 
+        $this->load->model('Statistics_model');
+        $data['sumTimeByCause'] = $this->Statistics_model->sumTimeByCause();
+
         /* place content body chunks within content_open and content_close */
         //$this->load->view('content_open', $data);
         //$this->load->view('leftside', $data);
