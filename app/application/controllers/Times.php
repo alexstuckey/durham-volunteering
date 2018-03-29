@@ -104,7 +104,7 @@ class Times extends CI_Controller {
             $cause = $this->Cause_model->getCauseByID($time['causeID']);
 
             // get cis id of manager of user
-            $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']),
+            $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
             $managerID = $manager['cisID'];
 
             // create the notification
