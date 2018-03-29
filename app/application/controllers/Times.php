@@ -36,6 +36,10 @@ class Times extends CI_Controller {
                 'pending'
             );
 
+            // TODO send notification to manager to respond to activity time
+            // TODO send email to manager to respond to activity time
+
+
             $this->session->set_flashdata('message', 'New time entered!');
             $this->Audit_model->insertLog('ALTER', 'New time entered!');
 
@@ -91,6 +95,10 @@ class Times extends CI_Controller {
             $this->load->model('Time_model');
 
             $this->Time_model->changeTimeStatus('shiftResponseSelect', $this->input->post('shiftResponseRadios'));
+
+            // TODO send notification to managee to let them know the response from their manager
+            // TODO send email to managee to let them know the response from their manager
+
 
             $this->session->set_flashdata('message', 'Response sent!');
             $this->Audit_model->insertLog('ALTER', 'Activity response sent!');
