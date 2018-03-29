@@ -123,6 +123,19 @@ class User_model extends CI_Model
         return $result;
     }
 
+    public function getDepartment($CISID)
+    {
+        $this->db->where('cisID', $CISID);
+
+        $this->db->join('departments', 'users.departmentID=departments.id');
+
+        $query = $this->db->get('users');
+
+        $result = $query->row_array();
+
+        return $result['departmentsName'];
+    }
+
     // Creates user, with a default onboarding status of 1
     public function createUser($CISID)
     {
