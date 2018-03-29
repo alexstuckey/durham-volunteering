@@ -25,7 +25,7 @@ class Statistics_model extends CI_Model {
 
     public function volunteeringTimePersonal($CISID)
     {
-        $query = $this->db->query("SELECT cisID, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM time WHERE cisID=" . $CISID ."AND status='completed' ");
+        $query = $this->db->query("SELECT cisID, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM time WHERE cisID=" . $CISID ." AND status='completed' ");
 
         $data= $query->result_array();
 
