@@ -15,11 +15,9 @@
         </div>
         <div class="card-block">
             <p class="card-text">Y<?php echo $notification['blurb']; ?></p>
-            <div class="btn-group">
-                <button type="button" class="btn btn-outline-warning dismiss">
-                    Dismiss
-                </button>
-            </div>
+            <form action="" method="POST">
+                <button type="submit" value="<?php echo $notification['notificationID']; ?>" class="btn btn-outline-warning dismiss">Dismiss</button>
+            </form>
         </div>
         <div class="card-footer">
             <small class="text-muted">Last updated: <?php echo $notification['time']; ?></small>
