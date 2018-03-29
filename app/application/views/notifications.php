@@ -20,7 +20,7 @@
             </form>
         </div>
         <div class="card-footer">
-            <small class="text-muted">Last updated: <?php echo $notification['time']; ?></small>
+            <small class="text-muted">Date: <?php echo $notification['time']; ?></small>
         </div>
     </div>
     <?php endforeach; ?>
