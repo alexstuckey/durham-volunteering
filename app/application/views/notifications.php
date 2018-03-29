@@ -14,9 +14,9 @@
             <h4><?php echo $notification['title']; ?></h4>
         </div>
         <div class="card-block">
-            <p class="card-text">Y<?php echo $notification['blurb']; ?></p>
-            <form action="" method="POST">
-                <button type="submit" value="<?php echo $notification['notificationID']; ?>" class="btn btn-outline-warning dismiss">Dismiss</button>
+            <p class="card-text"><?php echo $notification['blurb']; ?></p>
+            <form action="<?php echo site_url('/notifications/delete'); ?>" method="POST">
+                <button type="submit" value="<?php echo $notification['notificationID']; ?>" class="btn btn-outline-warning dismiss" name="notificationDismiss">Dismiss</button>
             </form>
         </div>
         <div class="card-footer">
