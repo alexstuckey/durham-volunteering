@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 
-    console.log(sumTimeByCause);
+    console.log(JSON.stringify(sumTimeByCause));
 
     // Personal milestone 1 options
     let progressBar1 = new ProgressBar.Line(document.getElementById('progressBar1'), {
