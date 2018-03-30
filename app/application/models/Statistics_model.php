@@ -9,6 +9,8 @@ class Statistics_model extends CI_Model {
         $this->load->database();
     }
 
+    //Returns an ORDERED array with each causes and it's total hours. Starts with the cause with the most hours.
+
     public function sumTimeByCause()
     {
 
@@ -18,6 +20,7 @@ class Statistics_model extends CI_Model {
 
     }
 
+    //Returns an ORDERED array with each department and it's total hours. Starts with the department with the most hours.
     public function volunteeringTimebyDepartment()
     {
 
@@ -27,6 +30,7 @@ class Statistics_model extends CI_Model {
 
     }
 
+    //Returns your personal count of hours as a string
     public function volunteeringTimePersonal($CISID)
 
     {
@@ -38,6 +42,7 @@ class Statistics_model extends CI_Model {
 
     }
 
+    //Returns the total number of hours volunteered across all users as a string
     public function totalHoursVolunteered()
     {
         $query = $this->db->query("SELECT SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM times WHERE status='confirmed' ");
@@ -46,6 +51,7 @@ class Statistics_model extends CI_Model {
         return (string) $data['timeSum'];
     }
 
+    //Returns a string of the number of volunteers
     public function totalVolunteers()
     {
         $query = $this->db->query("SELECT count(*) FROM users");
@@ -55,6 +61,7 @@ class Statistics_model extends CI_Model {
 
     }
 
+    //Returns a string of your favourite cause name
     public function getFavouriteCause($cisID)
     {
         $query = $this->db->query("SELECT cisID, organisation, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum  FROM times JOIN causes WHERE times.causeID=causes.causeID AND status='confirmed' AND ". $cisID . "=times.cisID  GROUP BY causes.organisation order by timeSum desc limit 1");
@@ -64,6 +71,7 @@ class Statistics_model extends CI_Model {
         return (string) $data['organisation'];
     }
 
+    //Returns an array(YOUR POSITION, TOTAL IN DEPARTMENT)
     public function positionWithinDepartment($cisID)
     {
 
@@ -75,7 +83,7 @@ class Statistics_model extends CI_Model {
 
         $data= $query->result_array();
 
-        $total = sizeof($data)+1;
+        $total = sizeof($data);
 
 
         $i = 1;
@@ -83,7 +91,7 @@ class Statistics_model extends CI_Model {
         foreach ($data as $arr)
         {
             if ($arr['cisID']==$cisID){
-                print("You are ". $i . " out of " . $total);
+                break;
             }
 
             $i+=1;
