@@ -98,6 +98,7 @@ class Times extends CI_Controller {
             $this->load->model('User_model');
             $this->load->model('Cause_model');
             $this->load->model('Notification_model');
+            $this->load->model('Time_model');
 
             // get time row of given time ID
             $time = $this->Time_model->getTimeByID($this->input->post('shiftCancelSelect'));
