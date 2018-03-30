@@ -54,6 +54,8 @@ class Time_model extends CI_Model {
         $this->db->where('timeID', $timeID);
         $this->db->delete('times');
     }
+    
+ 
 
 
     public function changeTimeStatus($timeID, $status)
@@ -77,6 +79,7 @@ class Time_model extends CI_Model {
 
         return $query->result_array();
     }
+
 
     // Returns an array of Time Rows to which the causeID is associated
     public function getTimeForCause($causeID)
@@ -110,7 +113,8 @@ class Time_model extends CI_Model {
         }
     }
 
-    public function getTeamChallenges() {
+    public function getTeamChallenges()
+    {
         $this->db->where('teamChallenge', True);
         $query = $this->db->get('times');
 
