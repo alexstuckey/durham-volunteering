@@ -17,7 +17,7 @@ $(document).ready(function() {
     //                                      volunteeringTimeByDepartment['timeSum']
     // personal volunteering time total:    volunteeringTimePersonal['timeSum']
     // total hours volunteered:             totalHoursVolunteered['timeSum']
-    // total number of volunteers:
+    // total number of volunteers:          totalVolunteers
     // favourite cause:                     getFavouriteCause['organisation']
     // position within department:          positionWithinDepartment['departmentsName']
 
@@ -115,7 +115,11 @@ $(document).ready(function() {
     });
     progressBar3.text.style.fontFamily = '"alternate_gothic_fs_no_3Rg", "Arial", sans-serif';
     progressBar3.text.style.fontSize = '2rem';
-    progressBar3.animate(100/120);  // this is the number it fills to
+    if (volunteeringTimePersonal['timeSum'] === '[]') {
+        progressBar3.animate(100/120);  // extracted value is null
+    } else {
+        progressBar3.animate(volunteeringTimePersonal['timeSum']/120);
+    }
 
 
     // Department Milestone 4 Options
