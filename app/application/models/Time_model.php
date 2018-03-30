@@ -18,8 +18,8 @@ class Time_model extends CI_Model {
         return $query->result_array();
     }
 
-// Inserts into 'time' table in the database.
-    public function createTime($CISID, $start, $end, $causeID, $comment, $status)
+    // Inserts into 'time' table in the database.
+    public function createTime($CISID, $start, $end, $causeID, $comment, $status, $teamChallenge = False)
     {
         $this->db->where('causeID', $causeID);
         $query = $this->db->get('causes');
@@ -32,7 +32,6 @@ class Time_model extends CI_Model {
             $causeExists = True;
         }
 
-
         if ($causeExists) {
             $data = array(
                 'cisID' => $CISID,
@@ -41,7 +40,7 @@ class Time_model extends CI_Model {
                 'causeID' => $causeID,
                 'status' => $status,
                 'comment' => $comment,
-                'teamChallenge' => False
+                'teamChallenge' => $teamChallenge
             );
 
             $this->db->insert('times', $data);
@@ -54,7 +53,6 @@ class Time_model extends CI_Model {
     {
         $this->db->where('timeID', $timeID);
         $this->db->delete('times');
-
     }
 
 
@@ -72,43 +70,87 @@ class Time_model extends CI_Model {
     // Returns an array of Time Rows to which the CisID is associated
     public function getTimeForCIS($CISID)
     {
-
-
         $this->db->where('cisID', $CISID);
+        $this->db->where('teamChallenge', False);
 
         $query = $this->db->get('times');
 
         return $query->result_array();
-
-
     }
 
     // Returns an array of Time Rows to which the causeID is associated
     public function getTimeForCause($causeID)
     {
-
-
         $this->db->where('causeID', $causeID);
 
         $query = $this->db->get('times');
 
         return $query->result_array();
-
     }
 
-    public function getTeamChallenges()
+    // Duplicate the original, and re-attach to the db
+    public function joinTeamChallenge($CISID, $timeID, $status = 'pending')
     {
+        $this->db->where('timeID', $timeID);
+        $query = $this->db->get('times');
+        $originalTime = $query->row_array();
 
+        if (!empty($originalTime)) {
+            $data = array(
+                'cisID' => $CISID,
+                'start' => $originalTime['start'],
+                'finish' => $originalTime['finish'],
+                'causeID' => $originalTime['causeID'],
+                'status' => $status,
+                'comment' => $originalTime['comment'],
+                'teamChallenge' => False
+            );
 
-        $this->db->where('teamChallenge', 1);
+            $this->db->insert('times', $data);
+        }
+    }
 
+    public function getTeamChallenges() {
+        $this->db->where('teamChallenge', True);
         $query = $this->db->get('times');
 
         return $query->result_array();
-
     }
 
 
+    //Returns an array of CisIDs on a TeamChallenge
+    public function getParticipantsOfTeamChallenge($timeID)
+    {
 
+        $this->db->where('timeID', $timeID);
+
+        $query = $this->db->get('times');
+
+        $searchQuery=$query->row_array();
+
+        unset($searchQuery['timeID']);
+        unset($searchQuery['cisID']);
+        unset($searchQuery['comment']);
+        unset($searchQuery['status']);
+        unset($searchQuery['teamChallenge']);
+
+        $this->db->like($searchQuery);
+
+        $results=$this->db->get('times');
+
+        $results=$results->result_array();
+
+
+        $cisArray=array();
+
+        foreach ($results as $value){
+
+            array_push($cisArray,$value['cisID']);
+
+        }
+
+        return $cisArray;
+
+    }
 
 }
