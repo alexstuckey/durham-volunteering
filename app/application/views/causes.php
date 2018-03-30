@@ -4,6 +4,13 @@
     <div id="cause_select">
         <h1>Causes</h1>
 
+        <?php if (isset($message)) {
+
+            echo '<p class="alert alert-info">'.$message.'</p>';
+        }?>
+
+        <?php echo validation_errors(); ?>
+
             <table class="table table-hover">
                 <thead class="thead-light">
                 <tr>
@@ -19,23 +26,23 @@
                 <tbody>
                     <?php foreach ($causes as $cause): ?>
                         <tr>
-                                <th scope="row">
-                                    <a href="<?php echo site_url('cause/' . $cause['causeID']); ?>">
-                                        <?php echo $cause['causeID']; ?>
-                                    </a>
-                                </th>
-                                <td><?php echo $cause['organisation']; ?></td>
-                                <td><?php echo $cause['name']; ?></td>
-                                <td><?php echo $cause['contactName']; ?></td>
-                                <td><?php echo $cause['contactEmail']; ?></td>
-                                <td><?php echo $cause['contactPhone']; ?></td>
-                                <td><?php echo $cause['notes']; ?></td>
+                            <th scope="row">
+                                <a href="<?php echo site_url('cause/' . $cause['causeID']); ?>">
+                                    <?php echo $cause['causeID']; ?>
+                                </a>
+                            </th>
+                            <td><?php echo $cause['organisation']; ?></td>
+                            <td><?php echo $cause['name']; ?></td>
+                            <td><?php echo $cause['contactName']; ?></td>
+                            <td><?php echo $cause['contactEmail']; ?></td>
+                            <td><?php echo $cause['contactPhone']; ?></td>
+                            <td><?php echo $cause['notes']; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
 
-            <button type="button" class="btn btn-primary">Add a cause</button>
+            <a href="<?php echo site_url('cause/add'); ?>" class="btn btn-primary">Add a cause</a>
     </div>
 
     <!-- End of causes div -->

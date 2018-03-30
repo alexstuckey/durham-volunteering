@@ -29,24 +29,28 @@ class Cause_model extends CI_Model {
     // 'notes' => 'notes',
     // );
     // Inserts into 'causes' table in the database.
-    public function createCause($data)
+    public function createCause($organisationName, $typeID, $contactName, $contactEmail, $contactPhone, $notes)
     {
-        $valid_flag = True;
-
         $typeIDExistsFlag = False;
 
-        $this->db->where('typeID', $data['typeID']);
-
+        $this->db->where('typeID', $typeID);
         $query = $this->db->get('causeType');
-
         $result = $query->result_array();
-
 
         if (sizeof($result) >= 1) {
             $typeIDExistsFlag = True;
         }
 
-        if ($valid_flag and $typeIDExistsFlag) {
+        if ($typeIDExistsFlag) {
+            $data = array(
+                'organisation' => $organisationName,
+                'typeID' => $typeID,
+                'contactName' => $contactName,
+                'contactEmail' => $contactEmail,
+                'contactPhone' => $contactPhone,
+                'notes' => $notes
+            );
+
             $this->db->insert('causes', $data);
             return True;
         }
@@ -77,6 +81,13 @@ class Cause_model extends CI_Model {
         $result = $query->result_array();
 
         return $result;
+    }
+
+    public function getCauseTypes()
+    {
+        $query = $this->db->get('causeType');
+
+        return $query->result_array();
     }
 
 }
