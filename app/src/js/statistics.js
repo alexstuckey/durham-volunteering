@@ -22,6 +22,8 @@ $(document).ready(function() {
     // favourite cause:                     getFavouriteCause['organisation']
     // position within department:          positionWithinDepartment['departmentsName']
 
+
+
     // Personal milestone 1 options
     let progressBar1 = new ProgressBar.Line(document.getElementById('progressBar1'), {
         strokeWidth: 6,
@@ -52,6 +54,7 @@ $(document).ready(function() {
         }
     });
     progressBar1.animate(80/100);  // this is the number it fills to
+
 
 
     // Personal Milestone 2 options
@@ -86,7 +89,8 @@ $(document).ready(function() {
     progressBar2.animate(38/100);  // this is the number it fills to
 
 
-    // Progress Circle total hours options
+
+    // Progress Circle personal total hours options
     let progressBar3 = new ProgressBar.Circle(document.getElementById('progressBar3'), {
         color: '#222',
         // This has to be the same size as the maximum width to
@@ -123,7 +127,8 @@ $(document).ready(function() {
     }
 
 
-    // Department Milestone 4 Options
+
+    // Department Milestone 1 Options
     let progressBar4 = new ProgressBar.Line(document.getElementById('progressBar4'), {
         strokeWidth: 6,
         easing: 'easeInOut',
@@ -153,4 +158,82 @@ $(document).ready(function() {
         }
     });
     progressBar4.animate(16/100);  // this is the number it fills to
+
+
+
+    // department proportion by hours chart
+    let ctx1 = document.getElementById("myDepartmentShareChart").getContext('2d');
+    let myDoughnutChart = new Chart(ctx1, {
+        type: 'doughnut',
+        data: {
+            labels: ["RNLI", "NSPCC", "MENCAP", "RSPB", "RSPCA", "Other"],
+            datasets: [{
+                data: [80, 60, 50, 35, 28, 16],
+                backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00", "FFB0FF"]
+            }]
+        },
+        options: {
+        }
+    });
+
+
+
+
+    // department top 3 by hours chart options
+    let ctx2 = document.getElementById("myDepartmentRaceChart").getContext('2d');
+    let myDepartmentRaceChart = new Chart(ctx2, {
+        type: 'horizontalBar',
+        data: {
+            labels: ["Accounting", "Catering", "Careers"],
+            datasets: [{
+                data: [60, 40, 20],
+                fill: false,
+                backgroundColor: ["rgba(255,133,27,0.2)", "rgba(57,204,204,0.2)", "rgba(0,31,63,0.2)"],
+                borderColor: ["rgb(255,133,27)", "rgb(57,204,204)", "rgb(0,31,63)"],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            "scales": {
+                "xAxes": [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            "legend": {
+                display: false
+            }
+        }
+    });
+
+
+
+    // University stats bar chart
+    let ctx3 = document.getElementById("uniStatsChart").getContext('2d');
+    let uniStatsChart = new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: ["2015", "2016", "2017"],
+            datasets: [{
+                data: [15, 20, 30],
+                fill: false,
+                backgroundColor: ["rgba(0,31,63,0.2)", "rgba(61,153,112,0.2)", "rgba(255,220,0,0.2)"],
+                borderColor: ["rgb(0,31,63)", "rgb(61,153,112)", "rgb(255,220,0)"],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            "scales": {
+                "xAxes": [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            "legend": {
+                display: false
+            }
+        }
+    });
 });
