@@ -44,10 +44,11 @@ class Times extends CI_Controller {
 
             $this->load->model('User_model');
             $this->load->model('Notification_model');
+            $this->load->model('Cause_model');
 
             $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
             $managerID = $manager['username'];
-            $cause = $this->Cause_model->getCauseByID($this->input->post('shiftApplicationCause'));
+            $cause = $this->Cause_model->getCauseByID('' . $this->input->post('shiftApplicationCause'));
 
             $this->Notification_model->createNotification(
                 $managerID,
