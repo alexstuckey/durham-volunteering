@@ -78,6 +78,13 @@ class Time_model extends CI_Model {
         return $query->result_array();
     }
 
+    public function deleteTime($timeID)
+    {
+
+        $this->db->where('timeID', $timeID);
+        $this->db->delete('time');
+    }
+
     // Returns an array of Time Rows to which the causeID is associated
     public function getTimeForCause($causeID)
     {
@@ -87,9 +94,6 @@ class Time_model extends CI_Model {
 
         return $query->result_array();
     }
-
-
-
 
     // Duplicate the original, and re-attach to the db
     public function joinTeamChallenge($CISID, $timeID, $status = 'pending')
@@ -114,20 +118,46 @@ class Time_model extends CI_Model {
     }
 
     public function getTeamChallenges()
-    {
         $this->db->where('teamChallenge', True);
-
         $query = $this->db->get('time');
 
         return $query->result_array();
     }
 
-    public function getAttendeesOfTeamChallenge($timeID)
+
+    //Returns an array of CisIDs on a TeamChallenge
+    public function getParticipantsOfTeamChallenge($timeID)
     {
-        
+
+        $this->db->where('timeID', $timeID);
+
+        $query = $this->db->get('time');
+
+        $searchQuery=$query->row_array();
+
+        unset($searchQuery['timeID']);
+        unset($searchQuery['cisID']);
+        unset($searchQuery['comment']);
+        unset($searchQuery['status']);
+        unset($searchQuery['teamChallenge']);
+
+        $this->db->like($searchQuery);
+
+        $results=$this->db->get('time');
+
+        $results=$results->result_array();
+
+
+        $cisArray=array();
+
+        foreach ($results as $value){
+
+            array_push($cisArray,$value['cisID']);
+
+        }
+
+        return $cisArray;
+
     }
-
-
-
 
 }
