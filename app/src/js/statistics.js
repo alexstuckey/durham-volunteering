@@ -120,7 +120,7 @@ $(document).ready(function() {
     });
     progressBar3.text.style.fontFamily = '"alternate_gothic_fs_no_3Rg", "Arial", sans-serif';
     progressBar3.text.style.fontSize = '2rem';
-    if (volunteeringTimePersonal['timeSum'] === '[]') {
+    if (volunteeringTimePersonal['timeSum'] === null || volunteeringTimePersonal['timeSum'] === 'null') {
         progressBar3.animate(100/120);  // extracted value is null
     } else {
         progressBar3.animate(volunteeringTimePersonal['timeSum']/120);
