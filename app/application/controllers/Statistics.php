@@ -17,13 +17,6 @@ class Statistics extends CI_Controller {
         $data=$this->Statistics_model->volunteeringTimePersonal($cisID);
     }
 
-    public function volunteeringTimeByDepartment()
-    {
-        $this->load->model('Statistics_model');
-
-        $data=$this->Statistics_model->volunteeringTimeByDepartment();
-    }
-
     public function totalHoursVolunteered()
     {
         $this->load->model('Statistics_model');
@@ -47,15 +40,6 @@ class Statistics extends CI_Controller {
         $data=$this->Statistics_model->positionWithinDepartment($cisID);
 
     }
-
-    public function totalVolunteers()
-    {
-        $this->load->model('Statistics_model');
-
-        $data=$this->Statistics_model->totalVolunteers();
-
-    }
-
 
 
 }

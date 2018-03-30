@@ -5,6 +5,9 @@ class Home extends CI_Controller {
 
 	public function homepage()
 	{
+        $this->load->model('Notification_model');
+        $data['notifications'] = $this->Notification_model->getUserNotifications($_SERVER['REMOTE_USER']);
+
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'home';
         $data['page_title'] = 'Home - Staff Volunteering Programme';
