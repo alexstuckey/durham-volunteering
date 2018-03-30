@@ -109,8 +109,9 @@ class Home extends CI_Controller {
         $this->load->model('Cause_model');
 
         $data['managees'] = $this->User_model->getManagees($_SERVER['REMOTE_USER']);
+        $data['manageesNominated'] = $this->User_model->getManageesNominated($_SERVER['REMOTE_USER']);
         foreach ($data['managees'] as $managee) {
-            $managee['times'] = $this->Time_model->getTimeForCIS($managee['username']);
+            $managee['times'] = $this->Time_model->getTimeForCIS($managee['cisID']);
         }
         
         $data['causes'] = $this->Cause_model->getAllCauses();

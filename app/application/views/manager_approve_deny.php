@@ -4,6 +4,31 @@
 
     <div class="card">
         <div class="card-header">
+            <h4>My managees</h4>
+        </div>
+        <div class="card-block">
+            <ul>
+            <?php if (count($managees) == 0): ?>
+                <li><i>You have not confirmed any users as managees.</i></li>
+            <?php endif;
+                  foreach ($managees as $managee): ?>
+                <li><?php echo $managee['firstName'] . ' ' . $managee['secondName']; ?></li>
+            <?php endforeach; ?>
+            </ul>
+
+            <?php if (count($manageesNominated) > 0): ?>
+                <h5>Nominated (waiting for your approval)</h5>
+                <ul>
+                <?php foreach ($manageesNominated as $managee): ?>
+                    <li><?php echo $managee['firstName'] . ' ' . $managee['secondName']; ?></li>
+                <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
             <h4>Approve Shift Requests</h4>
         </div>
         <div class="card-block">
