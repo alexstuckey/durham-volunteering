@@ -47,11 +47,12 @@ class Times extends CI_Controller {
 
             $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
             $managerID = $manager['username'];
+            $cause = $this->Cause_model->getCauseByID($this->input->post('shiftApplicationCause'));
 
             $this->Notification_model->createNotification(
                 $managerID,
                 'New activity application',
-                'User ' . $_SERVER['REMOTE_USER'] . ' has requested a shift at ' . $this->input->post('shiftApplicationCause') . ' from ' . $this->input->post('shiftApplicationDateTimeStart') . ' to ' . $this->input->post('shiftApplicationDateTimeEnd') . '. They have commented: "' . $this->input->post('shiftApplicationComment') . '".' ,
+                'User ' . $_SERVER['REMOTE_USER'] . ' has requested a shift at ' . $cause . ' from ' . $this->input->post('shiftApplicationDateTimeStart') . ' to ' . $this->input->post('shiftApplicationDateTimeEnd') . '. They have commented: "' . $this->input->post('shiftApplicationComment') . '".' ,
                 mdate($format)
             );
 
