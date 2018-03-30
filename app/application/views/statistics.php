@@ -200,7 +200,7 @@
                                 </div>
                                 <div class="card-block">
                                     <div class="singleStatBold">
-                                        <h1>RNLI</h1>
+                                        <h1><?php if ($getFavouriteCause != '[]') { echo getFavouriteCause['organisation'];} else {echo 'RNLI';} ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -263,7 +263,7 @@
                                 <div>
                                     <h5>Total Volunteers</h5>
                                     <div class="statHeading">
-                                        <h1>792</h1>
+                                        <h1><?php if ($totalVolunteers != '[]') { echo $totalVolunteers;} else {echo '792';} ?></h1>
                                     </div>
                                 </div>
 
@@ -271,7 +271,7 @@
                                 <div>
                                     <h5>Total combined hours</h5>
                                     <div class="statHeading">
-                                        <h1>27,041</h1>
+                                        <h1><?php if ($totalHoursVolunteered != '[]') { echo $totalHoursVolunteered['timeSum'];} else {echo '27,041';} ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -294,10 +294,20 @@
 
 <script type="text/javascript">
     let sumTimeByCause = <?php echo $sumTimeByCause ?>;
-    let volunteeringTimeByDepartment = <?php echo volunteeringTimeByDepartment ?>;
-    let volunteeringTimePersonal = <?php echo volunteeringTimePersonal ?>;
-    let totalHoursVolunteered = <?php echo totalHoursVolunteered ?>;
-    let totalVolunteers = <?php echo totalVolunteers ?>;
-    let getFavouriteCause = <?php echo getFavouriteCause ?>;
-    let positionWithinDepartment = <?php echo positionWithinDepartment ?>;
+    let volunteeringTimeByDepartment = <?php echo $volunteeringTimeByDepartment ?>;
+    let volunteeringTimePersonal = <?php echo $volunteeringTimePersonal ?>;
+    let totalHoursVolunteered = <?php echo $totalHoursVolunteered ?>;
+    let totalVolunteers = <?php echo $totalVolunteers ?>;
+    let getFavouriteCause = <?php echo $getFavouriteCause ?>;
+    let positionWithinDepartment = <?php echo $positionWithinDepartment ?>;
+
+    // total time by cause:                 sumTimeByCause['timeSum']
+    //                                      sumTimeByCause['organisation']
+    // volunteering time by department:     volunteeringTimeByDepartment['departmentsName']
+    //                                      volunteeringTimeByDepartment['timeSum']
+    // personal volunteering time total:    volunteeringTimePersonal['timeSum']
+    // total hours volunteered:             totalHoursVolunteered['timeSum']
+    // total number of volunteers:
+    // favourite cause:                     getFavouriteCause['organisation']
+    // position within department:          positionWithinDepartment['departmentsName']
 </script>
