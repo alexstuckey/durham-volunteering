@@ -5,10 +5,10 @@ $(document).ready(function() {
     // data variables extracted from statistics model after being fed to statistics view
     console.log("sum of time by cause: " + JSON.stringify(sumTimeByCause));
     console.log("total volunteering time by department: " + JSON.stringify(volunteeringTimeByDepartment));
-    console.log("total personal volunteering time: " + JSON.stringify(volunteeringTimePersonal));
-    console.log("total hours volunteered at university: " + JSON.stringify(totalHoursVolunteered));
-    console.log("total number of volunteers: " + JSON.stringify(totalVolunteers));
-    console.log("personal favourite cause: " + JSON.stringify(getFavouriteCause));
+    console.log("total personal volunteering time: " + volunteeringTimePersonal);
+    console.log("total hours volunteered at university: " + totalHoursVolunteered);
+    console.log("total number of volunteers: " + totalVolunteers);
+    console.log("personal favourite cause: " + getFavouriteCause);
     console.log("personal position within department: " + JSON.stringify(positionWithinDepartment));
 
 
@@ -16,10 +16,10 @@ $(document).ready(function() {
     //                                      sumTimeByCause['organisation']
     // volunteering time by department:     volunteeringTimeByDepartment['departmentsName']
     //                                      volunteeringTimeByDepartment['timeSum']
-    // personal volunteering time total:    volunteeringTimePersonal['timeSum']
-    // total hours volunteered:             totalHoursVolunteered['timeSum']
+    // personal volunteering time total:    volunteeringTimePersonal
+    // total hours volunteered:             totalHoursVolunteered
     // total number of volunteers:          totalVolunteers
-    // favourite cause:                     getFavouriteCause['organisation']
+    // favourite cause:                     getFavouriteCause
     // position within department:          positionWithinDepartment['departmentsName']
 
 
@@ -120,10 +120,10 @@ $(document).ready(function() {
     });
     progressBar3.text.style.fontFamily = '"alternate_gothic_fs_no_3Rg", "Arial", sans-serif';
     progressBar3.text.style.fontSize = '2rem';
-    if (volunteeringTimePersonal['timeSum'] === null || volunteeringTimePersonal['timeSum'] === 'null') {
+    if (volunteeringTimePersonal === '') {
         progressBar3.animate(100/120);  // extracted value is null
     } else {
-        progressBar3.animate(volunteeringTimePersonal['timeSum']/120);
+        progressBar3.animate(Number.parseInt(volunteeringTimePersonal)/120);
     }
 
 

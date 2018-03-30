@@ -202,7 +202,7 @@
                                 </div>
                                 <div class="card-block">
                                     <div class="singleStatBold">
-                                        <h1><?php if ($getFavouriteCause == 'null' || $getFavouriteCause == '{}' | $getFavouriteCause == '[]') { echo 'RNLI'; } else { echo $getFavouriteCause['organisation']; } ?></h1>
+                                        <h1><?php if ($getFavouriteCause == 'null' || $getFavouriteCause == '') { echo 'RNLI'; } else { echo $getFavouriteCause; } ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -266,7 +266,7 @@
                                 <div>
                                     <h5>Total Volunteers</h5>
                                     <div class="statHeading">
-                                        <h1><?php if ($totalVolunteers == '' || $totalVolunteers == 'null') { echo '792'; } else { echo $totalVolunteers['count(*)']; } ?></h1>
+                                        <h1><?php if ($totalVolunteers == '' || $totalVolunteers == 'null') { echo '792'; } else { echo $totalVolunteers; } ?></h1>
                                     </div>
                                 </div>
 
@@ -274,7 +274,7 @@
                                 <div>
                                     <h5>Total combined hours</h5>
                                     <div class="statHeading">
-                                        <h1><?php if ($totalHoursVolunteered == '' || $totalHoursVolunteered == 'null') { echo '27,041';} else { echo $totalHoursVolunteered['timeSum']; } ?></h1>
+                                        <h1><?php if ($totalHoursVolunteered == '' || $totalHoursVolunteered == 'null') { echo '27,041';} else { echo $totalHoursVolunteered; } ?></h1>
                                     </div>
                                 </div>
                             </div>
