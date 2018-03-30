@@ -25,7 +25,7 @@
 
                                         <div class="form-group">
                                             <label for="inputComment">Comment</label>
-                                            <textarea class="form-control" name="inputComment" id="inputComment" value="<?php echo set_value('inputComment'); ?>" rows="3"></textarea>
+                                            <textarea class="form-control" name="inputComment" id="inputComment" rows="3"><?php echo set_value('inputComment'); ?></textarea>
                                         </div>
 
                                         <button type="submit" class="btn btn-primary">Submit</button>

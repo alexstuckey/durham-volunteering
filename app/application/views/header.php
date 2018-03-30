@@ -2,12 +2,10 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="icon" type="image/png" href="<?php echo base_url('/static/images/favicon-32x32.png'); ?>" sizes="32x32">
+        <?php $this->load->helper('url'); ?>
         <title><?php if (isset($page_title)) { echo $page_title; } else { echo "No Title"; }; ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <?php $this->load->helper('url'); ?>
-        
+
         <!-- Popper JS -->
         <script src="<?php echo base_url('/static/js/popper.min.js'); ?>"></script>
         
@@ -20,6 +18,10 @@
 
         <!-- App JS -->
         <script src="<?php echo base_url('/static/js/homepage.js'); ?>"></script>
+        <?php if ($active == 'other'): ?>
+            <script src="<?php echo base_url('/static/js/statistics.js'); ?>"></script>
+        <?php endif; ?>
+
 
         <!-- Vendor CSS -->
         <link rel="stylesheet" href="<?php echo base_url('/static/css/bootstrap.css'); ?>">
@@ -28,6 +30,9 @@
 
         <!-- App CSS -->
         <link rel="stylesheet" href="<?php echo base_url('/static/css/homepage.css'); ?>" type="text/css">
+
+        <!-- Icon -->
+        <link rel="icon" type="image/png" href="<?php echo base_url('/static/images/favicon-32x32.png'); ?>" sizes="32x32">
 
     </head>
 
@@ -50,10 +55,13 @@
                                 <li class="nav-item<?php if ($active == "volunteering") { echo " active"; }; ?>">
                                     <a class="nav-link" href="<?php echo site_url('/my_volunteering'); ?>">My Volunteering</a>
                                 </li>
-                                <li class="nav-item<?php if ($active == "applciations") { echo " active"; }; ?>">
+                                <li class="nav-item<?php if ($active == "manager") { echo " active"; }; ?>">
                                     <a class="nav-link" href="<?php echo site_url('/manager'); ?>">Respond to Applications</a>
                                 </li>
-                                <li class="nav-item<?php if ($active == "other") { echo " active"; }; ?>">
+                                <li class="nav-item<?php if ($active == "causes") { echo " active"; }; ?>">
+                                    <a class="nav-link" href="<?php echo site_url('/causes'); ?>">Causes</a>
+                                </li>
+                                <li class="nav-item<?php if ($active == "statistics") { echo " active"; }; ?>">
                                     <a class="nav-link" href="<?php echo site_url('/statistics'); ?>">Statistics</a>
                                 </li>
                             <?php endif; ?>

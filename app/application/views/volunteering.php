@@ -59,21 +59,26 @@
             <h4>Cancel Activity</h4>
         </div>
         <div class="card-block">
-            <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
-            <form  method="POST" action="" id="shiftCancelForm">
+            <form  method="POST" action="<?php echo site_url('/time/delete'); ?>" id="shiftCancelForm">
+
                 <div class="form-group">
                     <label for="shiftCancelSelect">Select Shift</label>
                     <select class="form-control" id="shiftCancelSelect" name="shiftCancelSelect">
-                        <option>jdns89 @ 2pm tomorrow</option>
-                        <option>dhan35 @ 4pm Monday 29</option>
-                        <option>djsh99 @ 9am Tuesday 30</option>
+                        <?php foreach ($times as $entries): ?>
+                            <?php if ($entries['status'] == 'pending'): ?>
+                                <option value="<?php echo $entries['timeID']; ?>"><?php echo '' . $entries['start'] . ' to ' . $entries['finish'] . ' at ';?><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></option>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                     </select>
                 </div>
+
                 <div class="form-group">
                     <label for="shiftCancelComment">Comment (Optional)</label>
                     <textarea class="form-control" id="shiftCancelComment" rows="3" name="shiftCancelComment"></textarea>
                 </div>
+
                 <button type="submit" class="btn btn-outline-primary" id="shiftCancelButton">Submit</button>
+
             </form>
         </div>
     </div>

@@ -74,17 +74,18 @@ $route['admin/departments/edit']['POST'] = 'admin/departmentEdit';
 $route['admin/notification'] = 'admin/notification';
 $route['admin/emails'] = 'admin/emails';
 $route['admin/emails/edit']['POST'] = 'admin/emailsEdit';
+$route['admin/declaration']['GET'] = 'admin/declaration';
+$route['admin/declaration']['POST'] = 'admin/declarationEdit';
 $route['admin/settings'] = 'admin/settings';
 $route['admin/audit'] = 'admin/audit';
 
+$route['causes'] = 'causes/allCauses';
+$route['cause/add']['GET'] = 'causes/addPage';
+$route['cause/add']['POST'] = 'causes/addForm';
 $route['cause/(:num)']['GET'] = 'causes/causeByID/$1';
 
 $route['time/create']['POST'] = 'times/createFormSubmit';
+$route['time/delete']['POST'] = 'times/deleteFormSubmit';
+$route['time/manager_response']['POST'] = 'times/confirmDenyFormSubmit';
 
-$route['api/causes']['GET'] = 'causes/listAll';
-$route['api/causes']['POST'] = 'causes/create';
-$route['api/cause/(:num)']['GET'] = 'causes/get/';
-$route['api/times']['GET'] = 'times/list';
-$route['api/times']['POST'] = 'times/create';
-$route['api/time/(:num)']['GET'] = 'times/get';
-$route['api/user/(:any)'] = 'user/get';
+$route['notifications/delete']['POST'] = 'notifications/deleteNotificationSubmit';

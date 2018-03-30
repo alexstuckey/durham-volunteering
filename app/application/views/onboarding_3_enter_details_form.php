@@ -1,4 +1,10 @@
-
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#inputDepartment').select2({
+            theme: "bootstrap4"
+        });
+    });
+</script>
             <div class="container-fluid text-center" id="content">
                 <div class="row content">
                     <div class="col-sm-3 sidenav" id="leftSide">
@@ -40,21 +46,12 @@
 
                                         <div class="form-group">
                                             <label for="inputPersonalDeclaration">Personal Declaration</label>
-                                            <small id="personalDeclaration" class="form-text text-muted">
-                                                Whilst volunteering as part of the Durham University Staff Volunteering Scheme, I accept:
-                                                1. I am eligible to participate in the task e.g. not absent from work/signed off through sickness
-                                                2. My responsibility to actively understand the nature of both health and safety risks involved in the task
-                                                3. My duty to adopt suitable precautions in partnerships with the recipient organisation
-                                                4. I have disclosed any relevant medical information
-                                                5. I have checked with my own GP if in doubt about my health and fitness for the event
-                                                6. The purpose of my participation is for charitable purposes and I am not receiving payment of any form
-                                                7. I have the freedom to participate or withdraw (under supervision) at any stage without any criticism
-                                                8. Any expenses claimed are reasonable and associated with the volunteering done within hours when I would otherwise be working
-                                                9. I will inform staff volunteering if my volunteering circumstances change at any time.
-                                            </small>
+                                            <p id="personalDeclaration" class="form-text text-muted">
+<?php echo $declaration; ?>
+                                            </p>
                                             <label>I agree to the statement above and certify that all information given on this form is true and accurate.</label>
                                             <select class="form-control" name="inputPersonalDeclaration" id="inputPersonalDeclaration">
-                                                <option>Select an option</option>
+                                                <option value="" disabled selected>Select an option</option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
                                             </select>
@@ -62,14 +59,14 @@
 
                                         <div class="form-group">
                                             <label for="inputDataProtection">Data Protection</label>
-                                            <small id="dataProtection" class="form-text text-muted">
+                                            <p id="dataProtection" class="form-text text-muted">
                                                 The data submitted here will be treated as confidential and held securely by the Staff Volunteering team.
                                                 The data will be utilised only for the purposes of non personal statistical analysis and for the purposes of keeping you informed of volunteering activities.
                                                 We always strive to only collect data that is essential which will be held only for as long as is necessary.
                                                 Please confirm that you agree to your data being managed in this way.
-                                            </small>
+                                            </p>
                                             <select class="form-control" name="inputDataProtection" id="inputDataProtection">
-                                                <option>Select an option</option>
+                                                <option value="" disabled selected>Select an option</option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
                                             </select>
