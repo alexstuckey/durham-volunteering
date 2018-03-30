@@ -11,9 +11,8 @@ class Statistics_model extends CI_Model {
 
     public function sumTimeByCause()
     {
-
-
-    $query = $this->db->query("SELECT organisation, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum  FROM times JOIN causes WHERE times.causeID=causes.causeID AND status='completed' GROUP BY causes.organisation");
+        
+    $query = $this->db->query("SELECT organisation, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum  FROM times JOIN causes WHERE times.causeID=causes.causeID AND status='confirmed' GROUP BY causes.organisation ORDER BY timeSum DESC ");
 
     return $query->result_array();
 
@@ -22,7 +21,7 @@ class Statistics_model extends CI_Model {
     public function volunteeringTimebyDepartment()
     {
 
-    $query = $this->db->query("SELECT departmentsName, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM times join users ON times.cisID=users.cisID join departments ON users.departmentID=departments.ID WHERE status='completed' group by departmentsName");
+    $query = $this->db->query("SELECT departmentsName, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM times join users ON times.cisID=users.cisID join departments ON users.departmentID=departments.ID WHERE status='confirmed' group by departmentsName ORDER BY timeSum DESC");
 
 
     return $query->result_array();
@@ -78,10 +77,9 @@ class Statistics_model extends CI_Model {
 
         $department=$this->User_model->getDepartment($cisID);
 
-        $query = $this->db->query("SELECT users.cisID,departmentsName, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM times join users ON times.cisID=users.cisID join departments ON users.departmentID=departments.ID WHERE times.status='confirmed' AND departmentsName=\"" .$department."\" group by cisID,departmentsName ORDER BY timeSum desc");
+        $query = $this->db->query("SELECT users.cisID,departmentsName, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum FROM times join users ON times.cisID=users.cisID join departments ON users.departmentID=departments.ID WHERE times.status='confirmed' AND departmentsName=\"" .$department."\" group by cisID,departmentsName ORDER BY timeSum DESC");
 
         $data= $query->row_array();
-
 
         return $data;
     }
