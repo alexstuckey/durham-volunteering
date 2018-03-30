@@ -161,7 +161,7 @@
                                 </div>
                                 <div class="card-block">
                                     <div class="singleStatBold">
-                                        <h1><?php if ($getFavouriteCause != '[]') { echo getFavouriteCause['organisation'];} else {echo 'RNLI';} ?></h1>
+                                        <h1><?php if ($getFavouriteCause != '[]') { echo $getFavouriteCause['organisation'];} else {echo 'RNLI';} ?></h1>
                                     </div>
                                 </div>
                             </div>
