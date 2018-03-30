@@ -11,6 +11,7 @@ $(document).ready(function() {
     console.log(JSON.stringify("personal favourite cause: " + getFavouriteCause));
     console.log(JSON.stringify("personal position within department: " + positionWithinDepartment));
 
+
     // total time by cause:                 sumTimeByCause['timeSum']
     //                                      sumTimeByCause['organisation']
     // volunteering time by department:     volunteeringTimeByDepartment['departmentsName']
