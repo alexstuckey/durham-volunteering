@@ -58,7 +58,10 @@
                                 <li class="nav-item<?php if ($active == "manager") { echo " active"; }; ?>">
                                     <a class="nav-link" href="<?php echo site_url('/manager'); ?>">Respond to Applications</a>
                                 </li>
-                                <li class="nav-item<?php if ($active == "other") { echo " active"; }; ?>">
+                                <li class="nav-item<?php if ($active == "causes") { echo " active"; }; ?>">
+                                    <a class="nav-link" href="<?php echo site_url('/causes'); ?>">Causes</a>
+                                </li>
+                                <li class="nav-item<?php if ($active == "statistics") { echo " active"; }; ?>">
                                     <a class="nav-link" href="<?php echo site_url('/statistics'); ?>">Statistics</a>
                                 </li>
                             <?php endif; ?>
