@@ -92,7 +92,7 @@ class Time_model extends CI_Model {
 
 
     // Duplicate the original, and re-attach to the db
-    public function joinTeamChallenge($CISID, $timeID)
+    public function joinTeamChallenge($CISID, $timeID, $status = 'pending')
     {
         $this->db->where('timeID', $timeID);
         $query = $this->db->get('time');
