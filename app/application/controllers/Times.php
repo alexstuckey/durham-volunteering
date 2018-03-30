@@ -85,20 +85,15 @@ class Times extends CI_Controller {
             redirect(site_url('/my_volunteering/activities'));
         } else {
             $this->load->model('Time_model');
-
-            $this->Time_model->deleteTime($this->input->post('shiftCancelSelect'));
-
+            $this->load->model('User_model');
+            $this->load->model('Cause_model');
+            $this->load->model('Notification_model');
 
             // send notification to manager
             // need to make notification type a template
             // easier to edit/maintain
             $this->load->helper('date');
             $format = "%Y-%m-%d %h:%i %A";
-
-            $this->load->model('User_model');
-            $this->load->model('Cause_model');
-            $this->load->model('Notification_model');
-            $this->load->model('Time_model');
 
             // get time row of given time ID
             $time = $this->Time_model->getTimeByID($this->input->post('shiftCancelSelect'));
@@ -118,6 +113,8 @@ class Times extends CI_Controller {
                 mdate($format)
             );
 
+            // delete time row
+            $this->Time_model->deleteTime($this->input->post('shiftCancelSelect'));
 
             $this->session->set_flashdata('message', 'Time cancelled!');
             $this->Audit_model->insertLog('ALTER', 'Time cancelled!');
