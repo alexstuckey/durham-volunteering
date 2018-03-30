@@ -6,7 +6,7 @@ class Causes extends CI_Controller {
     public function allCauses()
     {
         $data['cis_username'] = 'xxxx99';
-        $data['active'] = 'volunteering';
+        $data['active'] = 'causes';
         $data['page_title'] = 'Causes';
 
         $this->load->model('Cause_model');
@@ -31,8 +31,8 @@ class Causes extends CI_Controller {
     public function addPage()
     {
         $data['cis_username'] = 'xxxx99';
-        $data['active'] = 'volunteering';
-        $data['page_title'] = 'Cause Add';
+        $data['active'] = 'causes';
+        $data['page_title'] = 'Causes: Add';
 
         $this->load->library('form_validation');
         $this->load->library('session');
@@ -92,7 +92,7 @@ class Causes extends CI_Controller {
     public function causeByID($causeID)
     {
         $data['cis_username'] = 'xxxx99';
-        $data['active'] = 'volunteering';
+        $data['active'] = 'causes';
 
         $this->load->model('Cause_model');
         $data['causes'] = $this->Cause_model->getAllCauses();
