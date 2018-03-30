@@ -274,7 +274,7 @@
                                 <div>
                                     <h5>Total combined hours</h5>
                                     <div class="statHeading">
-                                        <h1><?php if ($totalHoursVolunteered == '' || $totalHoursVolunteered !== 'null') { echo '27,041';} else { echo $totalHoursVolunteered['timeSum']; } ?></h1>
+                                        <h1><?php if ($totalHoursVolunteered == '' || $totalHoursVolunteered == 'null') { echo '27,041';} else { echo $totalHoursVolunteered['timeSum']; } ?></h1>
                                     </div>
                                 </div>
                             </div>
