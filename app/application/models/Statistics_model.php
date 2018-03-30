@@ -53,7 +53,7 @@ class Statistics_model extends CI_Model {
 
     public function getFavouriteCause($cisID)
     {
-        $query = $this->db->query("SELECT cisID, organisation, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum  FROM times JOIN causes WHERE times.causeID=causes.causeID AND status='confirmed' AND times.cisID=" . $cisID . "  GROUP BY causes.organisation order by timeSum desc limit 1");
+        $query = $this->db->query("SELECT cisID, organisation, SEC_TO_TIME( SUM( TIME_TO_SEC( TIMEDIFF(finish,start) ) ) ) AS timeSum  FROM times JOIN causes WHERE times.causeID=causes.causeID AND status='confirmed' AND times.cisID='" . $cisID . "'  GROUP BY causes.organisation order by timeSum desc limit 1");
 
         $data = $query->row_array();
 
