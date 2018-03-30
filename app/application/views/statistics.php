@@ -48,7 +48,34 @@
                                 <div>
                                     <h5>Top 3 Departments by Total Hours</h5>
                                     <canvas id="myDepartmentRaceChart" width="200" height="200">
-
+                                        <script>
+                                            // department top 3 by hours chart options
+                                            let myDepartmentRaceChart = new Chart(document.getElementById("myDepartmentRaceChart").getContext('2d'), {
+                                                type: 'horizontalBar',
+                                                data: {
+                                                    labels: ["Accounting", "Catering", "Careers"],
+                                                    datasets: [{
+                                                        data: [60, 40, 20],
+                                                        fill: false,
+                                                        backgroundColor: ["rgba(255,133,27,0.2)", "rgba(57,204,204,0.2)", "rgba(0,31,63,0.2)"],
+                                                        borderColor: ["rgb(255,133,27)", "rgb(57,204,204)", "rgb(0,31,63)"],
+                                                        borderWidth: 1
+                                                    }]
+                                                },
+                                                options: {
+                                                    "scales": {
+                                                        "xAxes": [{
+                                                            ticks: {
+                                                                beginAtZero: true
+                                                            }
+                                                        }]
+                                                    },
+                                                    "legend": {
+                                                        display: false
+                                                    }
+                                                }
+                                            });
+                                        </script>
                                     </canvas>
                                 </div>
                             </div>
@@ -175,7 +202,7 @@
                                 </div>
                                 <div class="card-block">
                                     <div class="singleStatBold">
-                                        <h1><?php if ($getFavouriteCause != '[]') { echo $getFavouriteCause['organisation'];} else {echo 'RNLI';} ?></h1>
+                                        <h1><?php if ($getFavouriteCause == 'null' || $getFavouriteCause == '{}' | $getFavouriteCause == '[]') { echo 'RNLI'; } else { echo $getFavouriteCause['organisation']; } ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +228,34 @@
                             <div class="col-sm-6">
                                 <h5>UK Top 3...</h5>
                                 <canvas id="uniStatsChart" width="200" height="200">
-
+                                    <script>
+                                        // University stats bar chart
+                                        let uniStatsChart = new Chart(document.getElementById("uniStatsChart").getContext('2d'), {
+                                            type: 'bar',
+                                            data: {
+                                                labels: ["2015", "2016", "2017"],
+                                                datasets: [{
+                                                    data: [15, 20, 30],
+                                                    fill: false,
+                                                    backgroundColor: ["rgba(0,31,63,0.2)", "rgba(61,153,112,0.2)", "rgba(255,220,0,0.2)"],
+                                                    borderColor: ["rgb(0,31,63)", "rgb(61,153,112)", "rgb(255,220,0)"],
+                                                    borderWidth: 1
+                                                }]
+                                            },
+                                            options: {
+                                                "scales": {
+                                                    "xAxes": [{
+                                                        ticks: {
+                                                            beginAtZero: true
+                                                        }
+                                                    }]
+                                                },
+                                                "legend": {
+                                                    display: false
+                                                }
+                                            }
+                                        });
+                                    </script>
                                 </canvas>
                             </div>
                             <!-- End of Column 1 -->
@@ -212,7 +266,7 @@
                                 <div>
                                     <h5>Total Volunteers</h5>
                                     <div class="statHeading">
-                                        <h1><?php if ($totalVolunteers != '[]') { echo $totalVolunteers;} else {echo '792';} ?></h1>
+                                        <h1><?php if ($totalVolunteers == '' || $totalVolunteers == 'null') { echo '792'; } else { echo $totalVolunteers['count(*)']; } ?></h1>
                                     </div>
                                 </div>
 
@@ -220,7 +274,7 @@
                                 <div>
                                     <h5>Total combined hours</h5>
                                     <div class="statHeading">
-                                        <h1><?php if ($totalHoursVolunteered != '[]') { echo $totalHoursVolunteered['timeSum'];} else {echo '27,041';} ?></h1>
+                                        <h1><?php if ($totalHoursVolunteered == '' || $totalHoursVolunteered !== 'null') { echo '27,041';} else { echo $totalHoursVolunteered['timeSum']; } ?></h1>
                                     </div>
                                 </div>
                             </div>
