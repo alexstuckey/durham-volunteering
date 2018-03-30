@@ -3,13 +3,13 @@
 $(document).ready(function() {
 
     // data variables extracted from statistics model after being fed to statistics view
-    console.log(JSON.stringify("sum of time by cause: " + sumTimeByCause));
-    console.log(JSON.stringify("total volunteering time by department: " + volunteeringTimeByDepartment));
-    console.log(JSON.stringify("total personal volunteering time: " + volunteeringTimePersonal));
-    console.log(JSON.stringify("total hours volunteered at university: " + totalHoursVolunteered));
-    console.log(JSON.stringify("total number of volunteers: " + totalVolunteers));
-    console.log(JSON.stringify("personal favourite cause: " + getFavouriteCause));
-    console.log(JSON.stringify("personal position within department: " + positionWithinDepartment));
+    console.log("sum of time by cause: " + JSON.stringify(sumTimeByCause));
+    console.log("total volunteering time by department: " + JSON.stringify(volunteeringTimeByDepartment));
+    console.log("total personal volunteering time: " + JSON.stringify(volunteeringTimePersonal));
+    console.log("total hours volunteered at university: " + JSON.stringify(totalHoursVolunteered));
+    console.log("total number of volunteers: " + JSON.stringify(totalVolunteers));
+    console.log("personal favourite cause: " + JSON.stringify(getFavouriteCause));
+    console.log("personal position within department: " + JSON.stringify(positionWithinDepartment));
 
 
     // total time by cause:                 sumTimeByCause['timeSum']
@@ -161,27 +161,11 @@ $(document).ready(function() {
 
 
 
-    // department proportion by hours chart
-    let ctx1 = document.getElementById("myDepartmentShareChart").getContext('2d');
-    let myDoughnutChart = new Chart(ctx1, {
-        type: 'doughnut',
-        data: {
-            labels: ["RNLI", "NSPCC", "MENCAP", "RSPB", "RSPCA", "Other"],
-            datasets: [{
-                data: [80, 60, 50, 35, 28, 16],
-                backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00", "FFB0FF"]
-            }]
-        },
-        options: {
-        }
-    });
-
 
 
 
     // department top 3 by hours chart options
-    let ctx2 = document.getElementById("myDepartmentRaceChart").getContext('2d');
-    let myDepartmentRaceChart = new Chart(ctx2, {
+    let myDepartmentRaceChart = new Chart(document.getElementById("myDepartmentRaceChart").getContext('2d'), {
         type: 'horizontalBar',
         data: {
             labels: ["Accounting", "Catering", "Careers"],
@@ -210,8 +194,7 @@ $(document).ready(function() {
 
 
     // University stats bar chart
-    let ctx3 = document.getElementById("uniStatsChart").getContext('2d');
-    let uniStatsChart = new Chart(ctx3, {
+    let uniStatsChart = new Chart(document.getElementById("uniStatsChart").getContext('2d'), {
         type: 'bar',
         data: {
             labels: ["2015", "2016", "2017"],

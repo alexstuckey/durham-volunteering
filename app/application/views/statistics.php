@@ -23,7 +23,21 @@
                                 <div>
                                     <h5>Volunteering time proportion by cause</h5>
                                     <canvas id="myDepartmentShareChart" width="400" height="400">
-
+                                        <script>
+                                            // department proportion by hours chart
+                                            let myDoughnutChart = new Chart(document.getElementById("myDepartmentShareChart"), {
+                                                type: 'doughnut',
+                                                data: {
+                                                    labels: ["RNLI", "NSPCC", "MENCAP", "RSPB", "RSPCA", "Other"],
+                                                    datasets: [{
+                                                        data: [80, 60, 50, 35, 28, 16],
+                                                        backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00", "FFB0FF"]
+                                                    }]
+                                                },
+                                                options: {
+                                                }
+                                            });
+                                        </script>
                                     </canvas>
                                 </div>
                             </div>
