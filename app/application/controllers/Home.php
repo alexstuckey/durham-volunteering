@@ -109,7 +109,10 @@ class Home extends CI_Controller {
         $this->load->model('Cause_model');
 
         $data['managees'] = $this->User_model->getManagees($_SERVER['REMOTE_USER']);
-        $data['times'] = $this->Time_model->getTimeForCIS($_SERVER['REMOTE_USER']);
+        foreach ($data['managees'] as $managee) {
+            $managee['times'] = $this->Time_model->getTimeForCIS($managee['username']);
+        }
+        
         $data['causes'] = $this->Cause_model->getAllCauses();
 
         /* place content body chunks within content_open and content_close */
