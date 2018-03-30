@@ -297,13 +297,13 @@
 
 <!-- Script to pass extracted variable data from controller to the javascript for this page -->
 <script type="text/javascript">
-    let sumTimeByCause = <?php echo $sumTimeByCause ?>;
-    let volunteeringTimeByDepartment = <?php echo $volunteeringTimeByDepartment ?>;
-    let volunteeringTimePersonal = <?php echo $volunteeringTimePersonal ?>;
-    let totalHoursVolunteered = <?php echo $totalHoursVolunteered ?>;
-    let totalVolunteers = <?php echo $totalVolunteers ?>;
-    let getFavouriteCause = <?php echo $getFavouriteCause ?>;
-    let positionWithinDepartment = <?php echo $positionWithinDepartment ?>;
+    let sumTimeByCause = JSON.parse(<?php echo $sumTimeByCause; ?>);
+    let volunteeringTimeByDepartment = JSON.parse(<?php echo $volunteeringTimeByDepartment; ?>);
+    let volunteeringTimePersonal = JSON.parse(<?php echo $volunteeringTimePersonal; ?>);
+    let totalHoursVolunteered = JSON.parse(<?php echo $totalHoursVolunteered; ?>);
+    let totalVolunteers = JSON.parse(<?php echo $totalVolunteers; ?>);
+    let getFavouriteCause = JSON.parse(<?php echo $getFavouriteCause; ?>);
+    let positionWithinDepartment = JSON.parse(<?php echo $positionWithinDepartment; ?>);
 
     // total time by cause:                 sumTimeByCause['timeSum']
     //                                      sumTimeByCause['organisation']
