@@ -80,6 +80,6 @@ class Statistics_model extends CI_Model {
             $i+=1;
         }
         $return = array($i,$total);
-        return $return;
+        return json_encode($return);
     }
 }
