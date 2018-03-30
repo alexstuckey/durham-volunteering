@@ -105,44 +105,6 @@ class Time_model extends CI_Model {
     }
 
 
-
-    public function joinTeamChallenge($timeID,$joiningCisID)
-
-    {
-        $this->db->where('timeID', $timeID);
-
-        $query = $this->db->get('time');
-
-        $result=$query->row_array();
-
-        $searchQuery=$result;
-
-        unset($searchQuery['timeID']);
-        unset($searchQuery['comment']);
-        unset($searchQuery['status']);
-        unset($searchQuery['teamChallenge']);
-
-        $searchQuery['cisID']=$joiningCisID;
-
-        $this->load->model('Time_model');
-
-        $this->db->like($searchQuery);
-
-        $found=$this->db->get('time');
-
-        if($found->num_rows())
-        {
-
-            return 0;
-        }
-
-        else{
-            $this->Time_model->createTime($joiningCisID, $result['start'], $result['finish'], $result['causeID'], $result['comment'], $result['status']);
-            return 1;
-        }
-
-    }
-
     //Returns an array of CisIDs on a TeamChallenge
     public function getParticipantsOfTeamChallenge($timeID)
     {
