@@ -213,20 +213,21 @@ class Onboarding extends CI_Controller {
 
 
             // Then email that manager
+            $this->load->model('Email_model');
+            $this->load->library('email');
             $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
             $volunteer = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
-            $volunteerFullname = $this->User_model->getFullnameByUsername($_SERVER['REMOTE_USER']);
 
-            $emailBody = 'email body';
-            $emailBody = str_replace('{manager_fullname}', $manager['fullname'], $emailBody);
-            $emailBody = str_replace('{user_fullname}', $volunteerFullname, $emailBody);
+            $email = $this->Email_model->getEmailByName('7_manager_nomination');
+            $emailBody = $email['emailContent'];
+            $emailBody = str_replace('<Manager Name>', $manager['fullname'], $emailBody);
+            $emailBody = str_replace('<Volunteer Name>', $volunteer['fullname'], $emailBody);
 
-            $this->load->library('email');
             $this->email->from($this->config->item('email_from'), 'Durham Volunteering App');
             $this->email->to($manager['email']);
             $this->email->cc($volunteer['email']);
 
-            $this->email->subject('Nomination: ' . $volunteerFullname . ' nominated you as a manager');
+            $this->email->subject('Nomination: ' . $volunteer['fullname'] . ' nominated you as a manager');
             $this->email->message($emailBody);
 
             $this->email->send();
