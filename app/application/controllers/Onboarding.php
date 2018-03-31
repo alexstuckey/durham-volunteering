@@ -212,42 +212,25 @@ class Onboarding extends CI_Controller {
 
 
 
-            // Then email that manager
+            // Prepare email data
             $this->load->model('Email_model');
-            $this->load->library('email');
             $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
             $volunteer = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
-            $email = $this->Email_model->getEmailByName('7_manager_nomination');
-            $emailBody = $email['emailContent'];
-            $emailBody = str_replace('<Manager Name>', $manager['fullname'], $emailBody);
-            $emailBody = str_replace('<Volunteer Name>', $volunteer['fullname'], $emailBody);
+            // Then email that manager
+            $substitutions = array(
+                '<Manager Name>' => $manager['fullname'],
+                '<Volunteer Name>' => $volunteer['fullname']
+            );
+            $subject = 'Nomination: ' . $volunteer['fullname'] . ' nominated you as a manager';
 
-            $this->email->from($this->config->item('email_from'), 'Durham Volunteering App');
-            $this->email->to($manager['email']);
-            $this->email->cc($volunteer['email']);
-
-            $this->email->subject('Nomination: ' . $volunteer['fullname'] . ' nominated you as a manager');
-            $this->email->message($emailBody);
-
-            $this->email->send();
-            $this->email->clear();
-
+            $this->Email_model->sendEmail('7_manager_nomination', $subject, $manager['email'], $substitutions);
 
             // Then email the volunteer
-            $email = $this->Email_model->getEmailByName('1_volunteer_welcome');
-            $emailBody = $email['emailContent'];
-
-            $this->email->from($this->config->item('email_from'), 'Durham Volunteering App');
-            $this->email->to($volunteer['email']);
-
-            $this->email->subject('Welcome to Durham Volunteering');
-            $this->email->message($emailBody);
-
-            $this->email->send();
-            $this->email->clear();
-
-
+            $substitutions = array();
+            $subject = 'Welcome to Durham Volunteering';
+            
+            $this->Email_model->sendEmail('1_volunteer_welcome', $subject, $volunteer['email'], $substitutions);
 
 
 
