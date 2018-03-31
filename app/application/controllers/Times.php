@@ -96,7 +96,7 @@ class Times extends CI_Controller {
             $format = "%Y-%m-%d %h:%i %A";
 
             // get time row of given time ID
-            $time = $this->Time_model->getTimeByID($this->input->post('shiftCancelSelect'));
+            $time = $this->Time_model->getTimeByID('' . $this->input->post('shiftCancelSelect'));
 
             // get cause by its ID
             $cause = $this->Cause_model->getCauseByID($time['causeID']);
