@@ -190,7 +190,7 @@ class Times extends CI_Controller {
             $this->Notification_model->createNotification(
                 $managee,
                 'Manager responded to activity application',
-                'Your manager has ' . $this->input->post('shiftResponseRadios') . ' your shift at ' . $cause . ' from ' . $time['start'] . ' to ' . $time['end'] . '.',
+                'Your manager has ' . $this->input->post('shiftResponseRadios') . ' your shift at ' . $cause . ' from ' . $time['start'] . ' to ' . $time['finish'] . '.',
                 mdate($format)
             );
 
@@ -198,6 +198,8 @@ class Times extends CI_Controller {
             // Send email to managee to let them know the response from their manager
             $volunteer = $this->User_model->getUserByCIS($time['cisID']);
             $manager = $this->User_model->getManager($time['cisID']);
+            
+            $this->load->model('Email_model');
             $substitutions = array(
                 '<Manager Name>' => $manager['fullname'],
                 '<Volunteer Name>' => $volunteer['fullname'],
