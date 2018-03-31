@@ -67,6 +67,7 @@ $route['my_volunteering'] = 'home/my_volunteering';
 $route['my_volunteering/activities'] = 'home/my_volunteering_activities';
 $route['manager'] = 'home/manager_approve_deny';
 $route['statistics'] = 'home/statistics';
+$route['team_challenge'] = 'home/team_challenge';
 
 $route['admin/departments'] = 'admin/departments';
 $route['admin/departments/add']['POST'] = 'admin/departmentAdd';

@@ -55,6 +55,9 @@
                                 <li class="nav-item<?php if ($active == "volunteering") { echo " active"; }; ?>">
                                     <a class="nav-link" href="<?php echo site_url('/my_volunteering'); ?>">My Volunteering</a>
                                 </li>
+                                <li class="nav-item<?php if ($active == "team_challenge") { echo " active"; }; ?>">
+                                    <a class="nav-link" href="<?php echo site_url('/team_challenge'); ?>">Team Challenge</a>
+                                </li>
                                 <li class="nav-item<?php if ($active == "manager") { echo " active"; }; ?>">
                                     <a class="nav-link" href="<?php echo site_url('/manager'); ?>">Respond to Applications</a>
                                 </li>
