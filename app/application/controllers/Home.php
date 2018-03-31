@@ -198,7 +198,7 @@ class Home extends CI_Controller {
         $this->load->model('Time_model');
         $this->load->model('Cause_model');
 
-        $data['teamChallenges'] = $this->Time_model->getTeamChallenges();
+        $data['teamChallenges'] = $this->Time_model->getOngoingTeamChallenges();
         $data['causes'] = $this->Cause_model->getAllCauses();
 
         /* place content body chunks within content_open and content_close */
