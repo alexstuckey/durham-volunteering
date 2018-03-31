@@ -64,7 +64,7 @@ class Times extends CI_Controller {
             
             $substitutions = array(
                 '<Manager Name>' => $manager['fullname'],
-                '<Volunteer Name>' => $volunteer['fullname']
+                '<Volunteer Name>' => $volunteer['fullname'],
                 '<Time Start>' => $this->input->post('shiftApplicationDateTimeStart'),
                 '<Time End>' => $this->input->post('shiftApplicationDateTimeEnd'),
                 '<Cause Organisation>' => $cause['organisation']
@@ -75,7 +75,7 @@ class Times extends CI_Controller {
             // Send email to manager to respond to activity time
             $substitutions = array(
                 '<Manager Name>' => $manager['fullname'],
-                '<Volunteer Name>' => $volunteer['fullname']
+                '<Volunteer Name>' => $volunteer['fullname'],
                 '<Time Start>' => $this->input->post('shiftApplicationDateTimeStart'),
                 '<Time End>' => $this->input->post('shiftApplicationDateTimeEnd'),
                 '<Cause Organisation>' => $cause['organisation']
@@ -196,8 +196,25 @@ class Times extends CI_Controller {
             );
 
 
-            // TODO send email to managee to let them know the response from their manager
+            // Send email to managee to let them know the response from their manager
+            $volunteer = $this->User_model->getUserByCIS($time['cisID']);
+            $manager = $this->User_model->getManager($time['cisID']);
+            $substitutions = array(
+                '<Manager Name>' => $manager['fullname'],
+                '<Volunteer Name>' => $volunteer['fullname'],
+                '<Time Start>' => $time['start'],
+                '<Time End>' => $time['finish'],
+                '<Cause Organisation>' => $cause['organisation']
+            );
 
+            if ($this->input->post('shiftResponseRadios') == 'confirmed') {
+                // Confirmed
+                $this->Email_model->sendEmail('5_volunteer_shift_approval', $volunteer['email'], $substitutions);
+
+            } else {
+                // Denied
+                $this->Email_model->sendEmail('6_volunteer_shift_denial', $volunteer['email'], $substitutions);
+            }
 
             $this->session->set_flashdata('message', 'Response sent!');
             $this->Audit_model->insertLog('ALTER', 'Activity response sent!');
