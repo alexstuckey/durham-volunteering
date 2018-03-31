@@ -109,7 +109,11 @@ class Home extends CI_Controller {
         $this->load->model('Cause_model');
 
         $data['managees'] = $this->User_model->getManagees($_SERVER['REMOTE_USER']);
-        $data['times'] = $this->Time_model->getTimeForCIS($_SERVER['REMOTE_USER']);
+        $data['manageesNominated'] = $this->User_model->getManageesNominated($_SERVER['REMOTE_USER']);
+        foreach ($data['managees'] as $key => $managee) {
+            $data['managees'][$key]['times'] = $this->Time_model->getTimeForCIS($managee['cisID']);
+        }
+        
         $data['causes'] = $this->Cause_model->getAllCauses();
 
         /* place content body chunks within content_open and content_close */
@@ -158,6 +162,15 @@ class Home extends CI_Controller {
         $data['active'] = 'other';
         $data['page_title'] = 'Statistics - Staff Volunteering Programme';
         $this->load->view('header', $data);
+
+        $this->load->model('Statistics_model');
+        $data['sumTimeByCause'] = $this->Statistics_model->sumTimeByCause();
+        $data['volunteeringTimeByDepartment'] = $this->Statistics_model->volunteeringTimebyDepartment();
+        $data['volunteeringTimePersonal'] = $this->Statistics_model->volunteeringTimePersonal($_SERVER['REMOTE_USER']);
+        $data['totalHoursVolunteered'] = $this->Statistics_model->totalHoursVolunteered();
+        $data['totalVolunteers'] = $this->Statistics_model->totalVolunteers();
+        $data['getFavouriteCause'] = $this->Statistics_model->getFavouriteCause($_SERVER['REMOTE_USER']);
+        $data['positionWithinDepartment'] = $this->Statistics_model->positionWithinDepartment($_SERVER['REMOTE_USER']);
 
         /* place content body chunks within content_open and content_close */
         //$this->load->view('content_open', $data);

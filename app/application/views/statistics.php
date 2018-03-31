@@ -22,22 +22,23 @@
                             <div class="col-sm-6">
                                 <div>
                                     <h5>Volunteering time proportion by cause</h5>
-                                    <canvas id="myDepartmentShareChart" width="400" height="400"></canvas>
-                                    <script>
-                                        let ctx1 = document.getElementById("myDepartmentShareChart").getContext('2d');
-                                        let myDoughnutChart = new Chart(ctx1, {
-                                            type: 'doughnut',
-                                            data: {
-                                                labels: ["RNLI", "NSPCC", "MENCAP", "RSPB", "RSPCA", "Other"],
-                                                datasets: [{
-                                                    data: [80, 60, 50, 35, 28, 16],
-                                                    backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00", "FFB0FF"]
-                                                }]
-                                            },
-                                            options: {
-                                            }
-                                        });
-                                    </script>
+                                    <canvas id="myDepartmentShareChart" width="400" height="400">
+                                        <script>
+                                            // department proportion by hours chart
+                                            let myDoughnutChart = new Chart(document.getElementById("myDepartmentShareChart"), {
+                                                type: 'doughnut',
+                                                data: {
+                                                    labels: ["RNLI", "NSPCC", "MENCAP", "RSPB", "RSPCA", "Other"],
+                                                    datasets: [{
+                                                        data: [80, 60, 50, 35, 28, 16],
+                                                        backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00", "FFB0FF"]
+                                                    }]
+                                                },
+                                                options: {
+                                                }
+                                            });
+                                        </script>
+                                    </canvas>
                                 </div>
                             </div>
                             <!-- End of Stat 1 -->
@@ -46,35 +47,36 @@
                             <div class="col-sm-6">
                                 <div>
                                     <h5>Top 3 Departments by Total Hours</h5>
-                                    <canvas id="myDepartmentRaceChart" width="200" height="200"></canvas>
-                                    <script>
-                                        let ctx2 = document.getElementById("myDepartmentRaceChart").getContext('2d');
-                                        let myDepartmentRaceChart = new Chart(ctx2, {
-                                            type: 'horizontalBar',
-                                            data: {
-                                                labels: ["Accounting", "Catering", "Careers"],
-                                                datasets: [{
-                                                    data: [60, 40, 20],
-                                                    fill: false,
-                                                    backgroundColor: ["rgba(255,133,27,0.2)", "rgba(57,204,204,0.2)", "rgba(0,31,63,0.2)"],
-                                                    borderColor: ["rgb(255,133,27)", "rgb(57,204,204)", "rgb(0,31,63)"],
-                                                    borderWidth: 1
-                                                }]
-                                            },
-                                            options: {
-                                                "scales": {
-                                                    "xAxes": [{
-                                                        ticks: {
-                                                            beginAtZero: true
-                                                        }
+                                    <canvas id="myDepartmentRaceChart" width="200" height="200">
+                                        <script>
+                                            // department top 3 by hours chart options
+                                            let myDepartmentRaceChart = new Chart(document.getElementById("myDepartmentRaceChart").getContext('2d'), {
+                                                type: 'horizontalBar',
+                                                data: {
+                                                    labels: ["Accounting", "Catering", "Careers"],
+                                                    datasets: [{
+                                                        data: [60, 40, 20],
+                                                        fill: false,
+                                                        backgroundColor: ["rgba(255,133,27,0.2)", "rgba(57,204,204,0.2)", "rgba(0,31,63,0.2)"],
+                                                        borderColor: ["rgb(255,133,27)", "rgb(57,204,204)", "rgb(0,31,63)"],
+                                                        borderWidth: 1
                                                     }]
                                                 },
-                                                "legend": {
-                                                    display: false
+                                                options: {
+                                                    "scales": {
+                                                        "xAxes": [{
+                                                            ticks: {
+                                                                beginAtZero: true
+                                                            }
+                                                        }]
+                                                    },
+                                                    "legend": {
+                                                        display: false
+                                                    }
                                                 }
-                                            }
-                                        });
-                                    </script>
+                                            });
+                                        </script>
+                                    </canvas>
                                 </div>
                             </div>
                         </div>
@@ -95,7 +97,7 @@
                                 <div class="card-block">
                                     <h5>Your department is in position:</h5>
                                     <div class="singleStatBold">
-                                        <h1>16/88</h1>
+                                        <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo $positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +111,7 @@
                                 <div class="card-block">
                                     <h5>Within your department, you are in position:</h5>
                                     <div class="singleStatBold">
-                                        <h1>4/23</h1>
+                                        <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo $positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +202,7 @@
                                 </div>
                                 <div class="card-block">
                                     <div class="singleStatBold">
-                                        <h1>RNLI</h1>
+                                        <h1><?php if ($getFavouriteCause == 'null' || $getFavouriteCause == '') { echo 'RNLI'; } else { echo $getFavouriteCause; } ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -225,35 +227,36 @@
                             <!-- Column 1 -->
                             <div class="col-sm-6">
                                 <h5>UK Top 3...</h5>
-                                <canvas id="uniStatsChart" width="200" height="200"></canvas>
-                                <script>
-                                    let ctx3 = document.getElementById("uniStatsChart").getContext('2d');
-                                    let uniStatsChart = new Chart(ctx3, {
-                                        type: 'bar',
-                                        data: {
-                                            labels: ["2015", "2016", "2017"],
-                                            datasets: [{
-                                                data: [15, 20, 30],
-                                                fill: false,
-                                                backgroundColor: ["rgba(0,31,63,0.2)", "rgba(61,153,112,0.2)", "rgba(255,220,0,0.2)"],
-                                                borderColor: ["rgb(0,31,63)", "rgb(61,153,112)", "rgb(255,220,0)"],
-                                                borderWidth: 1
-                                            }]
-                                        },
-                                        options: {
-                                            "scales": {
-                                                "xAxes": [{
-                                                    ticks: {
-                                                        beginAtZero: true
-                                                    }
+                                <canvas id="uniStatsChart" width="200" height="200">
+                                    <script>
+                                        // University stats bar chart
+                                        let uniStatsChart = new Chart(document.getElementById("uniStatsChart").getContext('2d'), {
+                                            type: 'bar',
+                                            data: {
+                                                labels: ["2015", "2016", "2017"],
+                                                datasets: [{
+                                                    data: [15, 20, 30],
+                                                    fill: false,
+                                                    backgroundColor: ["rgba(0,31,63,0.2)", "rgba(61,153,112,0.2)", "rgba(255,220,0,0.2)"],
+                                                    borderColor: ["rgb(0,31,63)", "rgb(61,153,112)", "rgb(255,220,0)"],
+                                                    borderWidth: 1
                                                 }]
                                             },
-                                            "legend": {
-                                                display: false
+                                            options: {
+                                                "scales": {
+                                                    "xAxes": [{
+                                                        ticks: {
+                                                            beginAtZero: true
+                                                        }
+                                                    }]
+                                                },
+                                                "legend": {
+                                                    display: false
+                                                }
                                             }
-                                        }
-                                    });
-                                </script>
+                                        });
+                                    </script>
+                                </canvas>
                             </div>
                             <!-- End of Column 1 -->
 
@@ -263,7 +266,7 @@
                                 <div>
                                     <h5>Total Volunteers</h5>
                                     <div class="statHeading">
-                                        <h1>792</h1>
+                                        <h1><?php if ($totalVolunteers == '' || $totalVolunteers == 'null') { echo '792'; } else { echo $totalVolunteers; } ?></h1>
                                     </div>
                                 </div>
 
@@ -271,7 +274,7 @@
                                 <div>
                                     <h5>Total combined hours</h5>
                                     <div class="statHeading">
-                                        <h1>27,041</h1>
+                                        <h1><?php if ($totalHoursVolunteered == '' || $totalHoursVolunteered == 'null') { echo '27,041';} else { echo $totalHoursVolunteered; } ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -291,3 +294,24 @@
 
 </div>
 <!-- End Statistics Section -->
+
+<!-- Script to pass extracted variable data from controller to the javascript for this page -->
+<script type="text/javascript">
+    let sumTimeByCause = JSON.parse('<?php echo $sumTimeByCause; ?>');
+    let volunteeringTimeByDepartment = JSON.parse('<?php echo $volunteeringTimeByDepartment; ?>');
+    let volunteeringTimePersonal = '<?php echo $volunteeringTimePersonal; ?>';
+    let totalHoursVolunteered = '<?php echo $totalHoursVolunteered; ?>';
+    let totalVolunteers = '<?php echo $totalVolunteers; ?>';
+    let getFavouriteCause = '<?php echo $getFavouriteCause; ?>';
+    let positionWithinDepartment = JSON.parse('<?php echo $positionWithinDepartment; ?>');
+
+    // total time by cause:                 sumTimeByCause['timeSum']
+    //                                      sumTimeByCause['organisation']
+    // volunteering time by department:     volunteeringTimeByDepartment['departmentsName']
+    //                                      volunteeringTimeByDepartment['timeSum']
+    // personal volunteering time total:    volunteeringTimePersonal['timeSum']
+    // total hours volunteered:             totalHoursVolunteered['timeSum']
+    // total number of volunteers:
+    // favourite cause:                     getFavouriteCause['organisation']
+    // position within department:          positionWithinDepartment['departmentsName']
+</script>

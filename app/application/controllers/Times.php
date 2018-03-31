@@ -44,11 +44,16 @@ class Times extends CI_Controller {
 
             $this->load->model('User_model');
             $this->load->model('Notification_model');
+            $this->load->model('Cause_model');
+
+            $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
+            $managerID = $manager['username'];
+            $cause = $this->Cause_model->getCauseByID('' . $this->input->post('shiftApplicationCause'));
 
             $this->Notification_model->createNotification(
-                $this->User_model->getManager($_SERVER['REMOTE_USER']),
+                $managerID,
                 'New activity application',
-                'User ' . $_SERVER['REMOTE_USER'] . ' has requested a shift at ' . $this->input->post('shiftApplicationCause') . ' from ' . $this->input->post('shiftApplicationDateTimeStart') . ' to ' . $this->input->post('shiftApplicationDateTimeEnd') . '. They have commented: "' . $this->input->post('shiftApplicationComment') . '".' ,
+                'User ' . $_SERVER['REMOTE_USER'] . ' has requested a shift at ' . $cause . ' from ' . $this->input->post('shiftApplicationDateTimeStart') . ' to ' . $this->input->post('shiftApplicationDateTimeEnd') . '. They have commented: "' . $this->input->post('shiftApplicationComment') . '".' ,
                 mdate($format)
             );
 
@@ -80,9 +85,9 @@ class Times extends CI_Controller {
             redirect(site_url('/my_volunteering/activities'));
         } else {
             $this->load->model('Time_model');
-
-            $this->Time_model->deleteTime($this->input->post('shiftCancelSelect'));
-
+            $this->load->model('User_model');
+            $this->load->model('Cause_model');
+            $this->load->model('Notification_model');
 
             // send notification to manager
             // need to make notification type a template
@@ -90,26 +95,35 @@ class Times extends CI_Controller {
             $this->load->helper('date');
             $format = "%Y-%m-%d %h:%i %A";
 
-            $this->load->model('User_model');
-            $this->load->model('Cause_model');
-            $this->load->model('Notification_model');
+            // get time row of given time ID
+            $time = $this->Time_model->getTimeByID('' . $this->input->post('shiftCancelSelect'));
 
-            $time = $this->Time_model->getTimeByID($this->input->post('shiftCancelSelect'));
-            $cause = $this->Cause_model->getCauseByID($time['causeID']);
+            print_r($time[0]);
+            $causeID = $time[0]['causeID'];
 
-                $this->Notification_model->createNotification(
-                $this->User_model->getManager($_SERVER['REMOTE_USER']),
+            // get cause by its ID
+            $cause = $this->Cause_model->getCauseByID($causeID);
+
+            // get cis id of manager of user
+            $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
+            $managerID = $manager['username'];
+
+            // create the notification
+            $this->Notification_model->createNotification(
+                $managerID,
                 'Activity cancelled',
-                'User ' . $_SERVER['REMOTE_USER'] . ' has cancelled a shift at ' . $cause . ' from ' . $time['start'] . ' to ' . $time['end'] . '.',
+                'User ' . $_SERVER['REMOTE_USER'] . ' has cancelled a shift at ' . $cause . ' from ' . $time[0]['start'] . ' to ' . $time[0]['finish'] . '.',
                 mdate($format)
             );
 
+            // delete time row
+            $this->Time_model->deleteTime($this->input->post('shiftCancelSelect'));
 
             $this->session->set_flashdata('message', 'Time cancelled!');
             $this->Audit_model->insertLog('ALTER', 'Time cancelled!');
 
             $this->load->helper('url');
-            redirect(site_url('/my_volunteering'));
+            //redirect(site_url('/my_volunteering'));
         }
     }
 

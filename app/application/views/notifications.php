@@ -15,9 +15,12 @@
         </div>
         <div class="card-block">
             <p class="card-text"><?php echo $notification['blurb']; ?></p>
-            <form action="<?php echo site_url('/notifications/delete'); ?>" method="POST">
-                <button type="submit" value="<?php echo $notification['notificationID']; ?>" class="btn btn-outline-warning dismiss" name="notificationDismiss">Dismiss</button>
+
+            <form method="POST" action="<?php echo site_url('/notifications/delete'); ?>" >
+                <input type="hidden" value="<?php echo $notification['notificationID']; ?>" name="notificationDismiss" id="notificationDismiss">
+                <button type="submit" class="btn btn-outline-warning dismiss">Dismiss</button>
             </form>
+
         </div>
         <div class="card-footer">
             <small class="text-muted">Date: <?php echo $notification['time']; ?></small>

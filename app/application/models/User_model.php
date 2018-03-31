@@ -109,14 +109,22 @@ class User_model extends CI_Model
         return $result['managerStatus'];
     }
 
-    // Returns an array of CisIDs of whom the $CISID is the manager.
     public function getManagees($CISID)
     {
-        $this->db->where('managersCisID', $CISID);
+        $this->db->where('manager', $CISID);
+        $this->db->where('managerStatus', 'confirmed');
+        $query = $this->db->get('users');
 
-        $this->db->join('users', 'users.cisID=management.cisID');
+        $result = $query->result_array();
 
-        $query = $this->db->get('management');
+        return $result;
+    }
+
+    public function getManageesNominated($CISID)
+    {
+        $this->db->where('manager', $CISID);
+        $this->db->where('managerStatus', 'nominated');
+        $query = $this->db->get('users');
 
         $result = $query->result_array();
 

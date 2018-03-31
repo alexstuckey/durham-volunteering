@@ -1,6 +1,29 @@
 // statistics javascript
 
 $(document).ready(function() {
+
+    // data variables extracted from statistics model after being fed to statistics view
+    console.log("sum of time by cause: " + JSON.stringify(sumTimeByCause));
+    console.log("total volunteering time by department: " + JSON.stringify(volunteeringTimeByDepartment));
+    console.log("total personal volunteering time: " + volunteeringTimePersonal);
+    console.log("total hours volunteered at university: " + totalHoursVolunteered);
+    console.log("total number of volunteers: " + totalVolunteers);
+    console.log("personal favourite cause: " + getFavouriteCause);
+    console.log("personal position within department: " + JSON.stringify(positionWithinDepartment));
+
+
+    // total time by cause:                 sumTimeByCause['timeSum']
+    //                                      sumTimeByCause['organisation']
+    // volunteering time by department:     volunteeringTimeByDepartment['departmentsName']
+    //                                      volunteeringTimeByDepartment['timeSum']
+    // personal volunteering time total:    volunteeringTimePersonal
+    // total hours volunteered:             totalHoursVolunteered
+    // total number of volunteers:          totalVolunteers
+    // favourite cause:                     getFavouriteCause
+    // position within department:          positionWithinDepartment['departmentsName']
+
+
+
     // Personal milestone 1 options
     let progressBar1 = new ProgressBar.Line(document.getElementById('progressBar1'), {
         strokeWidth: 6,
@@ -31,6 +54,7 @@ $(document).ready(function() {
         }
     });
     progressBar1.animate(80/100);  // this is the number it fills to
+
 
 
     // Personal Milestone 2 options
@@ -65,7 +89,8 @@ $(document).ready(function() {
     progressBar2.animate(38/100);  // this is the number it fills to
 
 
-    // Progress Circle total hours options
+
+    // Progress Circle personal total hours options
     let progressBar3 = new ProgressBar.Circle(document.getElementById('progressBar3'), {
         color: '#222',
         // This has to be the same size as the maximum width to
@@ -95,10 +120,15 @@ $(document).ready(function() {
     });
     progressBar3.text.style.fontFamily = '"alternate_gothic_fs_no_3Rg", "Arial", sans-serif';
     progressBar3.text.style.fontSize = '2rem';
-    progressBar3.animate(100/120);  // this is the number it fills to
+    if (volunteeringTimePersonal === '') {
+        progressBar3.animate(100/120);  // extracted value is null
+    } else {
+        progressBar3.animate(Number.parseInt(volunteeringTimePersonal)/120);
+    }
 
 
-    // Department Milestone 4 Options
+
+    // Department Milestone 1 Options
     let progressBar4 = new ProgressBar.Line(document.getElementById('progressBar4'), {
         strokeWidth: 6,
         easing: 'easeInOut',
@@ -128,4 +158,6 @@ $(document).ready(function() {
         }
     });
     progressBar4.animate(16/100);  // this is the number it fills to
+
+
 });

@@ -7,7 +7,7 @@ class Statistics extends CI_Controller {
     {
         $this->load->model('Statistics_model');
 
-        $data=$this->Statistics_model->sumTimeByCause();
+        print(json_encode($this->Statistics_model->sumTimeByCause()));
     }
 
     public function volunteeringTimePersonal($cisID)

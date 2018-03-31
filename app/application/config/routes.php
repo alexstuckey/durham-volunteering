@@ -84,8 +84,8 @@ $route['cause/add']['GET'] = 'causes/addPage';
 $route['cause/add']['POST'] = 'causes/addForm';
 $route['cause/(:num)']['GET'] = 'causes/causeByID/$1';
 
+$route['notifications/delete']['POST'] = 'notification/deleteNotificationSubmit';
+
 $route['time/create']['POST'] = 'times/createFormSubmit';
 $route['time/delete']['POST'] = 'times/deleteFormSubmit';
 $route['time/manager_response']['POST'] = 'times/confirmDenyFormSubmit';
-
-$route['notifications/delete']['POST'] = 'notifications/deleteNotificationSubmit';

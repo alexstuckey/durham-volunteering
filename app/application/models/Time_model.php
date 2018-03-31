@@ -13,7 +13,7 @@ class Time_model extends CI_Model {
     {
         $this->db->where('timeID', $timeID);
 
-        $query = $this->db->get('time');
+        $query = $this->db->get('times');
 
         return $query->result_array();
     }
@@ -43,7 +43,7 @@ class Time_model extends CI_Model {
                 'teamChallenge' => $teamChallenge
             );
 
-            $this->db->insert('time', $data);
+            $this->db->insert('times', $data);
         }
 
     }
@@ -52,7 +52,7 @@ class Time_model extends CI_Model {
     public function deleteTime($timeID)
     {
         $this->db->where('timeID', $timeID);
-        $this->db->delete('time');
+        $this->db->delete('times');
     }
     
  
@@ -75,7 +75,7 @@ class Time_model extends CI_Model {
         $this->db->where('cisID', $CISID);
         $this->db->where('teamChallenge', False);
 
-        $query = $this->db->get('time');
+        $query = $this->db->get('times');
 
         return $query->result_array();
     }
@@ -86,7 +86,7 @@ class Time_model extends CI_Model {
     {
         $this->db->where('causeID', $causeID);
 
-        $query = $this->db->get('time');
+        $query = $this->db->get('times');
 
         return $query->result_array();
     }
@@ -95,7 +95,7 @@ class Time_model extends CI_Model {
     public function joinTeamChallenge($CISID, $timeID, $status = 'pending')
     {
         $this->db->where('timeID', $timeID);
-        $query = $this->db->get('time');
+        $query = $this->db->get('times');
         $originalTime = $query->row_array();
 
         if (!empty($originalTime)) {
@@ -109,13 +109,14 @@ class Time_model extends CI_Model {
                 'teamChallenge' => False
             );
 
-            $this->db->insert('time', $data);
+            $this->db->insert('times', $data);
         }
     }
 
     public function getTeamChallenges()
+    {
         $this->db->where('teamChallenge', True);
-        $query = $this->db->get('time');
+        $query = $this->db->get('times');
 
         return $query->result_array();
     }
@@ -127,7 +128,7 @@ class Time_model extends CI_Model {
 
         $this->db->where('timeID', $timeID);
 
-        $query = $this->db->get('time');
+        $query = $this->db->get('times');
 
         $searchQuery=$query->row_array();
 
@@ -139,7 +140,7 @@ class Time_model extends CI_Model {
 
         $this->db->like($searchQuery);
 
-        $results=$this->db->get('time');
+        $results=$this->db->get('times');
 
         $results=$results->result_array();
 
