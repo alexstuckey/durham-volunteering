@@ -52,7 +52,20 @@ class Time_model extends CI_Model {
     public function deleteTime($timeID)
     {
         $this->db->where('timeID', $timeID);
-        $this->db->delete('times');
+        $result=$this->db->get('times');
+
+        $check = $result->result_array();
+
+        if (sizeof($check) >= 1)
+        {
+            $this->deleteTeamChallenge($timeID);
+        }
+
+        else {
+
+            $this->db->where('timeID', $timeID);
+            $this->db->delete('times');
+        }
     }
     
  
@@ -70,12 +83,17 @@ class Time_model extends CI_Model {
     }
 
     // Returns an array of Time Rows to which the CisID is associated
-    public function getTimeForCIS($CISID)
+    public function getPastEvents($CISID)
     {
-        $this->db->where('cisID', $CISID);
-        $this->db->where('teamChallenge', False);
+        $query = $this->db->query("SELECT *,TIMEDIFF(finish,now()) FROM times WHERE cisID=" .$CISID. " AND TIMEDIFF(finish,now())<0 ORDER BY TIMEDIFF(finish,now()) DESC LIMIT 10");
 
-        $query = $this->db->get('times');
+
+        return $query->result_array();
+    }
+
+    public function getUpcomingEvents($CISID)
+    {
+        $query = $this->db->query("SELECT *,TIMEDIFF(finish,now()) FROM times WHERE cisID=" .$CISID. " AND TIMEDIFF(finish,now())>0 ORDER BY TIMEDIFF(finish,now()) ASC LIMIT 10");
 
         return $query->result_array();
     }
@@ -85,6 +103,7 @@ class Time_model extends CI_Model {
     public function getTimeForCause($causeID)
     {
         $this->db->where('causeID', $causeID);
+        $this->db->order_by("finish", "desc");
 
         $query = $this->db->get('times');
 
@@ -125,7 +144,6 @@ class Time_model extends CI_Model {
     //Returns an array of CisIDs on a TeamChallenge
     public function getParticipantsOfTeamChallenge($timeID)
     {
-
         $this->db->where('timeID', $timeID);
 
         $query = $this->db->get('times');
@@ -148,19 +166,35 @@ class Time_model extends CI_Model {
         $cisArray=array();
 
         foreach ($results as $value){
-
             array_push($cisArray,$value['cisID']);
-
         }
-
         return $cisArray;
-
     }
 
     public function deleteTeamChallenge($timeID)
     {
-        
+        $this->db->where('timeID', $timeID);
+
+        $query = $this->db->get('times');
+
+        $searchQuery=$query->row_array();
+
+        unset($searchQuery['timeID']);
+        unset($searchQuery['cisID']);
+        unset($searchQuery['comment']);
+        unset($searchQuery['status']);
+        unset($searchQuery['teamChallenge']);
+
+        $this->db->like($searchQuery);
+
+        $results=$this->db->get('times');
+
+        $results=$results->result_array();
+
+        foreach ($results as $arr){
+
+            $this->db->where('timeID', $arr['timeID']);
+            $this->db->delete('times');
+        }
     }
-
-
 }
