@@ -40,7 +40,8 @@ class Home extends CI_Controller {
         $data['active'] = 'volunteering';
         $data['page_title'] = 'My Volunteering - Staff Volunteering Programme';
 
-        $data['times'] = $this->Time_model->getTimeForCIS($_SERVER['REMOTE_USER']);
+        $data['upcoming_times'] = $this->Time_model->getUpcomingEvents($_SERVER['REMOTE_USER']);
+        $data['previous_times'] = $this->Time_model->getPastEvents($_SERVER['REMOTE_USER']);
         $data['causes'] = $this->Cause_model->getAllCauses();
 
         $this->load->view('header', $data);
@@ -74,7 +75,7 @@ class Home extends CI_Controller {
         $this->load->model('Time_model');
         $this->load->model('Cause_model');
 
-        $data['times'] = $this->Time_model->getTimeForCIS($_SERVER['REMOTE_USER']);
+        $data['upcoming_times'] = $this->Time_model->getUpcomingEvents($_SERVER['REMOTE_USER']);
         $data['causes'] = $this->Cause_model->getAllCauses();
 
         /* place content body chunks within content_open and content_close */
@@ -197,7 +198,7 @@ class Home extends CI_Controller {
         $this->load->model('Time_model');
         $this->load->model('Cause_model');
 
-        $data['times'] = $this->Time_model->getTimeForCIS($_SERVER['REMOTE_USER']);
+        $data['teamChallenges'] = $this->Time_model->getTeamChallenges();
         $data['causes'] = $this->Cause_model->getAllCauses();
 
         /* place content body chunks within content_open and content_close */

@@ -64,7 +64,7 @@
                 <div class="form-group">
                     <label for="shiftCancelSelect">Select Shift</label>
                     <select class="form-control" id="shiftCancelSelect" name="shiftCancelSelect">
-                        <?php foreach ($times as $entries): ?>
+                        <?php foreach ($upcoming_times as $entries): ?>
                             <?php if ($entries['status'] == 'pending'): ?>
                                 <option value="<?php echo $entries['timeID']; ?>"><?php echo '' . $entries['start'] . ' to ' . $entries['finish'] . ' at ';?><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></option>
                             <?php endif; ?>
