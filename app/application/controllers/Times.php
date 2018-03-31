@@ -112,7 +112,7 @@ class Times extends CI_Controller {
             $this->Notification_model->createNotification(
                 $managerID,
                 'Activity cancelled',
-                'User ' . $_SERVER['REMOTE_USER'] . ' has cancelled a shift at ' . $cause . ' from ' . $time[0]['start'] . ' to ' . $time[0]['end'] . '.',
+                'User ' . $_SERVER['REMOTE_USER'] . ' has cancelled a shift at ' . $cause . ' from ' . $time[0]['start'] . ' to ' . $time[0]['finish'] . '.',
                 mdate($format)
             );
 
