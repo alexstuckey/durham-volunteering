@@ -231,6 +231,23 @@ class Onboarding extends CI_Controller {
             $this->email->message($emailBody);
 
             $this->email->send();
+            $this->email->clear();
+
+
+            // Then email the volunteer
+            $email = $this->Email_model->getEmailByName('1_volunteer_welcome');
+            $emailBody = $email['emailContent'];
+
+            $this->email->from($this->config->item('email_from'), 'Durham Volunteering App');
+            $this->email->to($volunteer['email']);
+
+            $this->email->subject('Welcome to Durham Volunteering');
+            $this->email->message($emailBody);
+
+            $this->email->send();
+            $this->email->clear();
+
+
 
 
 
