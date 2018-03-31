@@ -160,6 +160,7 @@ class Onboarding extends CI_Controller {
 
     public function email_check($str)
     {
+        $str = str_replace('dur.ac.uk', 'durham.ac.uk', $str);
         $this->load->model('User_model');
         $account = $this->User_model->getUserByEmail($str);
         if (empty($account)) {
