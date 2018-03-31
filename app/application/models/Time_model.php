@@ -83,7 +83,7 @@ class Time_model extends CI_Model {
     // Returns an array of past events for a user
     public function getPastEvents($CISID)
     {
-        $query = $this->db->query("SELECT *,TIMEDIFF(finish,now()) FROM times WHERE cisID=" .$CISID. " AND TIMEDIFF(finish,now())<0 ORDER BY TIMEDIFF(finish,now()) DESC LIMIT 10");
+        $query = $this->db->query("SELECT *,TIMEDIFF(finish,now()) FROM times WHERE cisID='" .$CISID. "' AND TIMEDIFF(finish,now())<0 ORDER BY TIMEDIFF(finish,now()) DESC LIMIT 10");
 
 
         return $query->result_array();
@@ -92,7 +92,7 @@ class Time_model extends CI_Model {
     //Returns a list of future events for a user
     public function getUpcomingEvents($CISID)
     {
-        $query = $this->db->query("SELECT *,TIMEDIFF(finish,now()) FROM times WHERE cisID=" .$CISID. " AND TIMEDIFF(finish,now())>0 ORDER BY TIMEDIFF(finish,now()) ASC LIMIT 10");
+        $query = $this->db->query("SELECT *,TIMEDIFF(finish,now()) FROM times WHERE cisID='" .$CISID. "' AND TIMEDIFF(finish,now())>0 ORDER BY TIMEDIFF(finish,now()) ASC LIMIT 10");
 
         return $query->result_array();
     }
