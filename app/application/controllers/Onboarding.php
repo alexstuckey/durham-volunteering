@@ -222,15 +222,13 @@ class Onboarding extends CI_Controller {
                 '<Manager Name>' => $manager['fullname'],
                 '<Volunteer Name>' => $volunteer['fullname']
             );
-            $subject = 'Nomination: ' . $volunteer['fullname'] . ' nominated you as a manager';
 
-            $this->Email_model->sendEmail('7_manager_nomination', $subject, $manager['email'], $substitutions);
+            $this->Email_model->sendEmail('7_manager_nomination', $manager['email'], $substitutions);
 
             // Then email the volunteer
             $substitutions = array();
-            $subject = 'Welcome to Durham Volunteering';
             
-            $this->Email_model->sendEmail('1_volunteer_welcome', $subject, $volunteer['email'], $substitutions);
+            $this->Email_model->sendEmail('1_volunteer_welcome', $volunteer['email'], $substitutions);
 
 
 
