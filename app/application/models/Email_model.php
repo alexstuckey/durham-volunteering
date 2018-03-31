@@ -50,7 +50,12 @@ class Email_model extends CI_Model {
         *
         * <Manager Name>
         * <Volunteer Name>
-        *
+        * <Time Start>
+        * <Time End>
+        * <Cause Organisation>
+        * 
+        * 
+        * 
         */
         foreach ($substitutions as $find => $replace) {
             $emailBody = str_replace($find, $replace, $emailBody);
