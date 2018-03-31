@@ -43,6 +43,14 @@ class Email_model extends CI_Model {
         $email = $this->Email_model->getEmailByName($emailName);
         $emailBody = $email['emailContent'];
 
+        /*
+        * Standard Substitutions
+        * ----------------------
+        *
+        * <Manager Name>
+        * <Volunteer Name>
+        *
+        */
         foreach ($substitutions as $find => $replace) {
             $emailBody = str_replace($find, $replace, $emailBody);
         }
