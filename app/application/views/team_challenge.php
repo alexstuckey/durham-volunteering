@@ -26,7 +26,7 @@
                         <!-- previous activities using if statement if start time is in past -->
                         <?php foreach ($teamChallenges as $entries): ?>
                             <?php if ($entries['teamChallenge'] == '1'): ?>
-                                <tr class="table-warning">
+                                <tr class="table">
                                     <th scope="row"><?php echo $entries['timeID']; ?></th>
                                     <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></td>
                                     <td><?php echo $entries['start']; ?></td>
@@ -34,7 +34,7 @@
                                     <td><?php echo $entries['comment']; ?></td>
                                     <td>
                                         <form method="post" action="" id="joinChallengeForm">
-                                            <button type="submit" value="<?php echo $entries['timeID']; ?>" class="btn btn-outline-primary" id="joinChallengeButton">Submit</button>
+                                            <button type="submit" value="<?php echo $entries['timeID']; ?>" class="btn btn-outline-primary" id="joinChallengeButton">Join</button>
                                         </form>
                                     </td>
                                 </tr>
