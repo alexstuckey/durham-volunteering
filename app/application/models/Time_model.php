@@ -132,12 +132,13 @@ class Time_model extends CI_Model {
     }
 
     //Returns a list of TeamChallenges
-    public function getTeamChallenges()
+    public function getOngoingTeamChallenges()
     {
-        $this->db->where('teamChallenge', True);
-        $query = $this->db->get('times');
+
+        $query = $this->db->query("SELECT *,TIMEDIFF(finish,now()) from times where teamChallenge=True AND TIMEDIFF(finish,now())>0 ORDER BY TIMEDIFF(finish,now()) ASC ;");
 
         return $query->result_array();
+
     }
 
 

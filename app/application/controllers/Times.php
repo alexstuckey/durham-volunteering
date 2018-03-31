@@ -203,7 +203,11 @@ class Times extends CI_Controller {
         $data=$this->Time_model->getUpcomingEvents($CISID);
     }
 
+    public function getOnGoingTeamChallenges()
+    {
+        $this->load->model('Time_model');
 
+        $data=$this->Time_model->getOngoingTeamChallenges();
 
-
+    }
 }
