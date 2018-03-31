@@ -67,8 +67,6 @@ class Time_model extends CI_Model {
             $this->db->delete('times');
         }
     }
-    
- 
 
 
     public function changeTimeStatus($timeID, $status)
@@ -82,7 +80,7 @@ class Time_model extends CI_Model {
         $this->db->update('disabled', $data);
     }
 
-    // Returns an array of Time Rows to which the CisID is associated
+    // Returns an array of past events for a user
     public function getPastEvents($CISID)
     {
         $query = $this->db->query("SELECT *,TIMEDIFF(finish,now()) FROM times WHERE cisID=" .$CISID. " AND TIMEDIFF(finish,now())<0 ORDER BY TIMEDIFF(finish,now()) DESC LIMIT 10");
@@ -91,6 +89,7 @@ class Time_model extends CI_Model {
         return $query->result_array();
     }
 
+    //Returns a list of future events for a user
     public function getUpcomingEvents($CISID)
     {
         $query = $this->db->query("SELECT *,TIMEDIFF(finish,now()) FROM times WHERE cisID=" .$CISID. " AND TIMEDIFF(finish,now())>0 ORDER BY TIMEDIFF(finish,now()) ASC LIMIT 10");
@@ -132,6 +131,7 @@ class Time_model extends CI_Model {
         }
     }
 
+    //Returns a list of TeamChallenges
     public function getTeamChallenges()
     {
         $this->db->where('teamChallenge', True);

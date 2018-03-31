@@ -182,6 +182,28 @@ class Times extends CI_Controller {
         }
     }
 
+    public function deleteTime($timeID)
+    {
+        $this->load->model('Time_model');
+
+        $data=$this->Time_model->deleteTime($timeID);
+    }
+
+    public function getPastEvents($CISID)
+    {
+        $this->load->model('Time_model');
+
+        $data=$this->Time_model->getPastEvents($CISID);
+    }
+
+    public function getUpcomingEvents($CISID)
+    {
+        $this->load->model('Time_model');
+
+        $data=$this->Time_model->getUpcomingEvents($CISID);
+    }
+
+
 
 
 }
