@@ -98,8 +98,8 @@ class Times extends CI_Controller {
             // get time row of given time ID
             $time = $this->Time_model->getTimeByID('' . $this->input->post('shiftCancelSelect'));
 
-            print_r($time[4]);
-            $causeID = $time['causeID'];
+            print_r($time[0]);
+            $causeID = $time[0]['causeID'];
 
             // get cause by its ID
             $cause = $this->Cause_model->getCauseByID($causeID);
@@ -112,7 +112,7 @@ class Times extends CI_Controller {
             $this->Notification_model->createNotification(
                 $managerID,
                 'Activity cancelled',
-                'User ' . $_SERVER['REMOTE_USER'] . ' has cancelled a shift at ' . $cause . ' from ' . $time['start'] . ' to ' . $time['end'] . '.',
+                'User ' . $_SERVER['REMOTE_USER'] . ' has cancelled a shift at ' . $cause . ' from ' . $time[0]['start'] . ' to ' . $time[0]['end'] . '.',
                 mdate($format)
             );
 
