@@ -222,7 +222,7 @@ class Onboarding extends CI_Controller {
             $emailBody = str_replace('{user_fullname}', $volunteerFullname, $emailBody);
 
             $this->load->library('email');
-            $this->email->from('app@email.ac.uk', 'Durham Volunteering App');
+            $this->email->from($this->config->item('email_from'), 'Durham Volunteering App');
             $this->email->to($manager['email']);
             $this->email->cc($volunteer['email']);
 
