@@ -98,6 +98,8 @@ class Times extends CI_Controller {
             // get time row of given time ID
             $time = $this->Time_model->getTimeByID('' . $this->input->post('shiftCancelSelect'));
 
+            print_r($time);
+
             // get cause by its ID
             $cause = $this->Cause_model->getCauseByID($time['causeID']);
 
@@ -120,7 +122,7 @@ class Times extends CI_Controller {
             $this->Audit_model->insertLog('ALTER', 'Time cancelled!');
 
             $this->load->helper('url');
-            redirect(site_url('/my_volunteering'));
+            //redirect(site_url('/my_volunteering'));
         }
     }
 
