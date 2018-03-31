@@ -15,7 +15,8 @@ class Notification extends CI_Controller {
 
         //$this->Audit_model->insertLog('DELETE', 'Notification deleted.');
 
-
+        $this->load->helper('url');
+        redirect(site_url('/home'));
 
     }
 }
