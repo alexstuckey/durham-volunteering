@@ -16,7 +16,8 @@
         <div class="card-block">
             <p class="card-text"><?php echo $notification['blurb']; ?></p>
             <form method="POST" action="<?php echo site_url('/notifications/delete'); ?>" >
-                <input name="notificationDismiss" type="submit" value="<?php echo $notification['notificationID']; ?>" class="btn btn-outline-warning dismiss" />Dismiss
+                <input type="text" type="hidden" value="<?php echo $notification['notificationID']; ?>" class="form-control" name="notificationDismiss">
+                <button type="submit" class="btn btn-outline-warning dismiss">Dismiss</button>
             </form>
         </div>
         <div class="card-footer">
