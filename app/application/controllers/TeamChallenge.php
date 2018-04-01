@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Team_Challenge extends CI_Controller
+class TeamChallenge extends CI_Controller
 {
     public function joinTeamChallengeFormSubmit()
     {
@@ -46,7 +46,7 @@ class Team_Challenge extends CI_Controller
                 mdate($format)
             );
 
-            // Send email to managee to let them know the response from their manager
+            // Send email to manager and managee
             $volunteer = $this->User_model->getUserByCIS($time['cisID']);
             $manager = $this->User_model->getManager($time['cisID']);
 
