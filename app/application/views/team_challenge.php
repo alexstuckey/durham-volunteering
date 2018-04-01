@@ -16,9 +16,11 @@
             <div class="card-header">
                 <h5>Ongoing Team Challenges</h5>
             </div>
+            <div class="card-block">
+                <p class="card-text">Joining a Team Challenge will add it to your pending activities - your manager must confirm before you are added to the team challenge. If you change your mind before your manager responds, you can leave the challenge by cancelling the shift in the 'My Volunteering' tab.</p>
+            </div>
             <div class="activityTable">
                 <div class="card-block">
-                    <p class="card-text">Joining a Team Challenge will add it to your pending activities - your manager must confirm before you are added to the team challenge. If you change your mind before your manager responds, you can leave the challenge by cancelling the shift in the 'My Volunteering' tab.</p>
                     <table class="table">
                         <thead>
                         <tr>
