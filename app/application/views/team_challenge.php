@@ -18,7 +18,7 @@
             </div>
             <div class="activityTable">
                 <div class="card-block">
-                    <p>Joining a Team Challenge will add it to your pending activities - your manager must confirm before you added to the team challenge. If you change your mind before your manager responds, you can leave the challenge by cancelling the shift in the 'My Volunteering' tab.</p>
+                    <p class="card-text">Joining a Team Challenge will add it to your pending activities - your manager must confirm before you added to the team challenge. If you change your mind before your manager responds, you can leave the challenge by cancelling the shift in the 'My Volunteering' tab.</p>
                     <table class="table">
                         <thead>
                         <tr>
