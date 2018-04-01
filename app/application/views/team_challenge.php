@@ -18,12 +18,11 @@
                             <th scope="col">Cause</th>
                             <th scope="col">Start Time</th>
                             <th scope="col">End Time</th>
-                            <th scope="col">Comment</th>
+                            <th scope="col">Description</th>
                             <th scope="col">Join</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <!-- previous activities using if statement if start time is in past -->
 
 
                         <?php foreach ($teamChallenges as $entries): ?>
@@ -36,10 +35,16 @@
                                     <td><?php echo $entries['finish']; ?></td>
                                     <td><?php echo $entries['comment']; ?></td>
                                     <?php if (isset($teamChallengeParticipants[$_SERVER['REMOTE_USER']])): ?>
-                                        <td>Participant</td>
+                                        <?php if ($entries['status'] == 'pending'): ?>
+                                            <td>Pending</td>
+                                        <?php elseif ($entries['status'] == 'confirmed'): ?>
+                                            <td>Participant</td>
+                                        <?php elseif ($entries['status'] == 'denied'): ?>
+                                            <td>Rejected</td>
+                                        <?php endif; ?>
                                     <?php else: ?>
                                         <td>
-                                            <form method="post" action="" id="joinChallengeForm">
+                                            <form method="post" action="<?php echo site_url('/team_challenge/join'); ?>" id="joinChallengeForm">
                                                 <button name="joinChallengeButton" type="submit" value="<?php echo $entries['timeID']; ?>" class="btn btn-outline-primary" id="joinChallengeButton">Join</button>
                                             </form>
                                         </td>

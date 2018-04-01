@@ -87,6 +87,8 @@ $route['cause/(:num)']['GET'] = 'causes/causeByID/$1';
 
 $route['notifications/delete']['POST'] = 'notification/deleteNotificationSubmit';
 
+$route['team_challenge/join']['POST'] = 'team_challenge/joinTeamChallengeFormSubmit';
+
 $route['time/create']['POST'] = 'times/createFormSubmit';
 $route['time/delete']['POST'] = 'times/deleteFormSubmit';
 $route['time/manager_response']['POST'] = 'times/confirmDenyFormSubmit';
