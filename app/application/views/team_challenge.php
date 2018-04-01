@@ -27,14 +27,13 @@
 
                         <?php foreach ($teamChallenges as $entries): ?>
                             <?php if ($entries['teamChallenge'] == '1'): ?>
-                                <?php $data['teamChallengeParticipants'] = $this->Time_model->getParticipantsOfTeamChallenge($entries['timeID']); ?>
                                 <tr class="table">
                                     <th scope="row"><?php echo $entries['timeID']; ?></th>
                                     <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></td>
                                     <td><?php echo $entries['start']; ?></td>
                                     <td><?php echo $entries['finish']; ?></td>
                                     <td><?php echo $entries['comment']; ?></td>
-                                    <?php if (in_array($_SERVER['REMOTE_USER'], $teamChallengeParticipants)): ?>
+                                    <?php if (in_array($_SERVER['REMOTE_USER'], $this->Time_model->getParticipantsOfTeamChallenge($entries['timeID']))): ?>
                                         <td>Participant</td>
                                     <?php else: ?>
                                         <td>
