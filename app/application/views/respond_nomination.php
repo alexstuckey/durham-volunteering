@@ -4,7 +4,11 @@
 
             <div class="text-center">
                 <h1 class="onboardh1">Nominations</h1>
+                <?php if (!empty($manageesNominated)): ?>
                 <h6>The following users have nominated you as their manager.</h6>
+                <?php else: ?>
+                <h6>No nominations waiting.</h6>
+                <?php endif; ?>
                 <br>
                 
                 <?php foreach ($manageesNominated as $managee): ?>
