@@ -26,7 +26,7 @@
 
 
                         <?php foreach ($teamChallenges as $entries): ?>
-                            <?php if ($entries['teamChallenge'] == '1'): ?>
+                            <?php if ($entries['teamChallenge'] == '1' && $entries['status'] == 'confirmed'): ?>
                                 <tr class="table">
                                     <th scope="row"><?php echo $entries['timeID']; ?></th>
                                     <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></td>
