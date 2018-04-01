@@ -71,4 +71,89 @@ class TeamChallenge extends CI_Controller
 
         }
     }
+
+
+    public function createTeamChallengeFormSubmit()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('teamChallengeApplicationDateTimeStart', 'Team Challenge Start Time', 'trim|required');
+        $this->form_validation->set_rules('teamChallengeApplicationDateTimeEnd', 'Team Challenge End Time', 'trim|required');
+        $this->form_validation->set_rules('teamChallengeApplicationCause', 'Team Challenge Cause', 'trim|required');
+        $this->form_validation->set_rules('teamChallengeApplicationComment', 'Team Challenge Comment', 'trim|required');
+        $this->form_validation->set_error_delimiters('<p class="alert alert-danger"><strong>Error: </strong>', '</p>');
+
+        $this->load->library('session');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+
+            $this->load->helper('url');
+            redirect(site_url('/team_challenge'));
+        } else {
+            $this->load->model('Time_model');
+            $this->Time_model->createTime(
+                $_SERVER['REMOTE_USER'],
+                $this->input->post('teamChallengeApplicationDateTimeStart'),
+                $this->input->post('teamChallengeApplicationDateTimeEnd'),
+                $this->input->post('teamChallengeApplicationCause'),
+                $this->input->post('teamChallengeApplicationComment'),
+                'pending',
+                1
+            );
+
+            // send notification to manager
+            $this->load->helper('date');
+            $format = "%Y-%m-%d %h:%i %A";
+
+            $this->load->model('User_model');
+            $this->load->model('Notification_model');
+            $this->load->model('Cause_model');
+
+            $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
+            $volunteer = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
+            $managerCIS = $manager['username'];
+            $cause = $this->Cause_model->getCauseByID('' . $this->input->post('teamChallengeApplicationCause'));
+            $start = $this->input->post('teamChallengeApplicationDateTimeStart');
+            $finish = $this->input->post('teamChallengeApplicationDateTimeEnd');
+            $comment = $this->input->post('teamChallengeApplicationComment');
+
+            $this->Notification_model->createNotification(
+                $managerCIS,
+                'New Team Challenge application',
+                $volunteer['fullname'] . ' has requested a Team Challenge at ' . $cause . ' from ' . $start . ' to ' . $finish . 'with description: "' . $comment . '".' ,
+                mdate($format)
+            );
+
+            // Send email to volunteer recording their submission
+            $this->load->model('Email_model');
+
+            $substitutions = array(
+                '<Manager Name>' => $manager['fullname'],
+                '<Volunteer Name>' => $volunteer['fullname'],
+                '<Time Start>' => $this->input->post('teamChallengeApplicationDateTimeStart'),
+                '<Time End>' => $this->input->post('teamChallengeApplicationDateTimeEnd'),
+                '<Cause Organisation>' => $cause['organisation']
+            );
+
+            $this->Email_model->sendEmail('3_volunteer_shift_request', $volunteer['email'], $substitutions);
+
+            // Send email to manager to respond to activity time
+            $substitutions = array(
+                '<Manager Name>' => $manager['fullname'],
+                '<Volunteer Name>' => $volunteer['fullname'],
+                '<Time Start>' => $this->input->post('teamChallengeApplicationDateTimeStart'),
+                '<Time End>' => $this->input->post('teamChallengeApplicationDateTimeEnd'),
+                '<Cause Organisation>' => $cause['organisation']
+            );
+
+            $this->Email_model->sendEmail('8_manager_shift_request', $manager['email'], $substitutions);
+
+
+            $this->session->set_flashdata('message', 'New Team Challenge request entered!');
+            $this->Audit_model->insertLog('ALTER', 'New Team Challenge entered!');
+
+            $this->load->helper('url');
+            redirect(site_url('/team_challenge'));
+
+        }
+    }
 }

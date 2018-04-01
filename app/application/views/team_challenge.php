@@ -2,6 +2,13 @@
 <div id="teamChallenge">
     <h1>Team Challenge</h1>
 
+    <!-- validation -->
+    <?php if (isset($message)) {
+        echo '<p class="alert alert-info">'.$message.'</p>';
+    } elseif (isset($error)) {
+        // Equivalent to validation_errors(), but kept across a redirect
+        echo $error;
+    }?>
 
     <!-- View all Team Challenges -->
     <div>
@@ -52,6 +59,48 @@
         </div>
     </div>
     <!-- End of view all Team Challenges -->
+
+
+    <!-- Create new team challenge -->
+    <div class="card">
+        <div class="card-header">
+            <h4>New Team Challenge</h4>
+        </div>
+        <div class="card-block">
+
+            <form method="post" action="<?php echo site_url('/team_challenge/create'); ?>" id="teamChallengeApplicationForm">
+
+                <div class="form-group">
+                    <label for="teamChallengeApplicationDateTimeStart">Start Date and time</label>
+                    <input class="form-control" type="datetime-local" value="<?php echo $date; ?>" id="teamChallengeApplicationDateTimeStart" name="teamChallengeApplicationDateTimeStart" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="teamChallengeApplicationDateTimeEnd">End Date and time</label>
+                    <input class="form-control" type="datetime-local" value="<?php echo $date; ?>" id="teamChallengeApplicationDateTimeEnd" name="teamChallengeApplicationDateTimeEnd" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="teamChallengeApplicationCause">Cause</label>
+                    <select class="form-control" name="teamChallengeApplicationCause" id="teamChallengeApplicationCause">
+                        <?php foreach ($causes as $cause): ?>
+                            <option value="<?php echo $cause['causeID']; ?>"><?php echo $cause['organisation'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="teamChallengeApplicationComment">Description</label>
+                    <textarea class="form-control" id="teamChallengeApplicationComment" rows="3" name="teamChallengeApplicationComment"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-outline-primary" id="shiftApplicationButton">Submit</button>
+
+            </form>
+        </div>
+    </div>
+    <!-- End of Create new team challenge -->
+
 
 
 </div>
