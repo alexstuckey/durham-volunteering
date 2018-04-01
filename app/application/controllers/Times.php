@@ -190,7 +190,7 @@ class Times extends CI_Controller {
             $this->Notification_model->createNotification(
                 $managee,
                 'Manager responded to activity application',
-                'Your manager has ' . $this->input->post('shiftResponseRadios') . ' your shift at ' . $cause . ' from ' . $time['start'] . ' to ' . $time['finish'] . '.',
+                'Your manager has ' . $this->input->post('shiftResponseRadios') . ' your shift at ' . $cause['organisation'] . ' from ' . $time['start'] . ' to ' . $time['finish'] . '.',
                 mdate($format)
             );
 
@@ -225,6 +225,32 @@ class Times extends CI_Controller {
         }
     }
 
+    public function deleteTime($timeID)
+    {
+        $this->load->model('Time_model');
 
+        $data=$this->Time_model->deleteTime($timeID);
+    }
 
+    public function getPastEvents($CISID)
+    {
+        $this->load->model('Time_model');
+
+        $data=$this->Time_model->getPastEvents($CISID);
+    }
+
+    public function getUpcomingEvents($CISID)
+    {
+        $this->load->model('Time_model');
+
+        $data=$this->Time_model->getUpcomingEvents($CISID);
+    }
+
+    public function getOnGoingTeamChallenges()
+    {
+        $this->load->model('Time_model');
+
+        $data=$this->Time_model->getOngoingTeamChallenges();
+
+    }
 }

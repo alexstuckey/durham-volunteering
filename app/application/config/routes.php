@@ -67,6 +67,7 @@ $route['my_volunteering'] = 'home/my_volunteering';
 $route['my_volunteering/activities'] = 'home/my_volunteering_activities';
 $route['manager'] = 'home/manager_approve_deny';
 $route['statistics'] = 'home/statistics';
+$route['team_challenge'] = 'home/team_challenge';
 
 $route['admin/departments'] = 'admin/departments';
 $route['admin/departments/add']['POST'] = 'admin/departmentAdd';
@@ -85,6 +86,10 @@ $route['cause/add']['POST'] = 'causes/addForm';
 $route['cause/(:num)']['GET'] = 'causes/causeByID/$1';
 
 $route['notifications/delete']['POST'] = 'notification/deleteNotificationSubmit';
+
+$route['team_challenge/join']['POST'] = 'TeamChallenge/joinTeamChallengeFormSubmit';
+$route['team_challenge/create']['POST'] = 'TeamChallenge/createTeamChallengeFormSubmit';
+
 
 $route['time/create']['POST'] = 'times/createFormSubmit';
 $route['time/delete']['POST'] = 'times/deleteFormSubmit';

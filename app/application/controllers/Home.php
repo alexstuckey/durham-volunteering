@@ -40,7 +40,8 @@ class Home extends CI_Controller {
         $data['active'] = 'volunteering';
         $data['page_title'] = 'My Volunteering - Staff Volunteering Programme';
 
-        $data['times'] = $this->Time_model->getTimeForCIS($_SERVER['REMOTE_USER']);
+        $data['upcoming_times'] = $this->Time_model->getUpcomingEvents($_SERVER['REMOTE_USER']);
+        $data['previous_times'] = $this->Time_model->getPastEvents($_SERVER['REMOTE_USER']);
         $data['causes'] = $this->Cause_model->getAllCauses();
 
         $this->load->view('header', $data);
@@ -74,8 +75,12 @@ class Home extends CI_Controller {
         $this->load->model('Time_model');
         $this->load->model('Cause_model');
 
-        $data['times'] = $this->Time_model->getTimeForCIS($_SERVER['REMOTE_USER']);
+        $data['upcoming_times'] = $this->Time_model->getUpcomingEvents($_SERVER['REMOTE_USER']);
         $data['causes'] = $this->Cause_model->getAllCauses();
+
+        $this->load->helper('date');
+        $format = "%Y-%m-%dT%H:%i";
+        $data['date'] = mdate($format);
 
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
@@ -183,6 +188,43 @@ class Home extends CI_Controller {
 
         //$this->load->view('rightside', $data);
         //$this->load->view('content_close', $data);
+
+        $this->load->view('footer', $data);
+    }
+
+    public function team_challenge()
+    {
+        $data['cis_username'] = 'xxxx99';
+        $data['active'] = 'team_challenge';
+        $data['page_title'] = 'Team Challenge - Staff Volunteering Programme';
+        $this->load->view('header', $data);
+
+        $this->load->model('Time_model');
+        $this->load->model('Cause_model');
+
+        $data['teamChallenges'] = $this->Time_model->getOngoingTeamChallenges();
+        $data['causes'] = $this->Cause_model->getAllCauses();
+
+        $this->load->helper('date');
+        $format = "%Y-%m-%dT%H:%i";
+        $data['date'] = mdate($format);
+
+        /* place content body chunks within content_open and content_close */
+        $this->load->view('content_open', $data);
+        $this->load->view('leftside', $data);
+
+        $this->load->library('form_validation');
+        $this->load->library('session');
+        $data['message'] = $this->session->flashdata('message');
+        $data['error'] = $this->session->flashdata('error');
+
+        /* place central column html form chunks within centre_column_open and center_column_close */
+        $this->load->view('center_column_open', $data);
+        $this->load->view('team_challenge', $data);
+        $this->load->view('center_column_close', $data);
+
+        $this->load->view('rightside', $data);
+        $this->load->view('content_close', $data);
 
         $this->load->view('footer', $data);
     }

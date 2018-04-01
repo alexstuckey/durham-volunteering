@@ -26,12 +26,12 @@
 
                 <div class="form-group">
                     <label for="shiftApplicationDateTimeStart">Start Date and time</label>
-                    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="shiftApplicationDateTimeStart" name="shiftApplicationDateTimeStart"required>
+                    <input class="form-control" type="datetime-local" value="<?php echo $date; ?>" id="shiftApplicationDateTimeStart" name="shiftApplicationDateTimeStart"required>
                 </div>
 
                 <div class="form-group">
                     <label for="shiftApplicationDateTimeEnd">End Date and time</label>
-                    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="shiftApplicationDateTimeEnd" name="shiftApplicationDateTimeEnd"required>
+                    <input class="form-control" type="datetime-local" value="<?php echo $date; ?>" id="shiftApplicationDateTimeEnd" name="shiftApplicationDateTimeEnd"required>
                 </div>
 
                 <div class="form-group">
@@ -64,7 +64,7 @@
                 <div class="form-group">
                     <label for="shiftCancelSelect">Select Shift</label>
                     <select class="form-control" id="shiftCancelSelect" name="shiftCancelSelect">
-                        <?php foreach ($times as $entries): ?>
+                        <?php foreach ($upcoming_times as $entries): ?>
                             <?php if ($entries['status'] == 'pending'): ?>
                                 <option value="<?php echo $entries['timeID']; ?>"><?php echo '' . $entries['start'] . ' to ' . $entries['finish'] . ' at ';?><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></option>
                             <?php endif; ?>
