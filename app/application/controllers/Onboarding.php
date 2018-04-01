@@ -160,6 +160,7 @@ class Onboarding extends CI_Controller {
 
     public function email_check($str)
     {
+        $str = str_replace('dur.ac.uk', 'durham.ac.uk', $str);
         $this->load->model('User_model');
         $account = $this->User_model->getUserByEmail($str);
         if (empty($account)) {
@@ -211,24 +212,23 @@ class Onboarding extends CI_Controller {
 
 
 
-            // Then email that manager
+            // Prepare email data
+            $this->load->model('Email_model');
             $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
             $volunteer = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
-            $volunteerFullname = $this->User_model->getFullnameByUsername($_SERVER['REMOTE_USER']);
 
-            $emailBody = 'email body';
-            $emailBody = str_replace('{manager_fullname}', $manager['fullname'], $emailBody);
-            $emailBody = str_replace('{user_fullname}', $volunteerFullname, $emailBody);
+            // Then email that manager
+            $substitutions = array(
+                '<Manager Name>' => $manager['fullname'],
+                '<Volunteer Name>' => $volunteer['fullname']
+            );
 
-            $this->load->library('email');
-            $this->email->from('app@email.ac.uk', 'Durham Volunteering App');
-            $this->email->to($manager['email']);
-            $this->email->cc($volunteer['email']);
+            $this->Email_model->sendEmail('7_manager_nomination', $manager['email'], $substitutions);
 
-            $this->email->subject('Nomination: ' . $volunteerFullname . ' nominated you as a manager');
-            $this->email->message($emailBody);
-
-            $this->email->send();
+            // Then email the volunteer
+            $substitutions = array();
+            
+            $this->Email_model->sendEmail('1_volunteer_welcome', $volunteer['email'], $substitutions);
 
 
 

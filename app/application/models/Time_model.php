@@ -15,7 +15,7 @@ class Time_model extends CI_Model {
 
         $query = $this->db->get('times');
 
-        return $query->result_array();
+        return $query->row_array();
     }
 
     // Inserts into 'time' table in the database.
@@ -77,7 +77,7 @@ class Time_model extends CI_Model {
             'status' => $status
         );
 
-        $this->db->update('disabled', $data);
+        $this->db->update('times', $data);
     }
 
     // Returns an array of past events for a user

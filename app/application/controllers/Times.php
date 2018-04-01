@@ -47,18 +47,43 @@ class Times extends CI_Controller {
             $this->load->model('Cause_model');
 
             $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
-            $managerID = $manager['username'];
+            $volunteer = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
+            $managerCIS = $manager['username'];
             $cause = $this->Cause_model->getCauseByID('' . $this->input->post('shiftApplicationCause'));
 
             $this->Notification_model->createNotification(
-                $managerID,
+                $managerCIS,
                 'New activity application',
-                'User ' . $_SERVER['REMOTE_USER'] . ' has requested a shift at ' . $cause . ' from ' . $this->input->post('shiftApplicationDateTimeStart') . ' to ' . $this->input->post('shiftApplicationDateTimeEnd') . '. They have commented: "' . $this->input->post('shiftApplicationComment') . '".' ,
+                $volunteer['fullname'] . ' has requested a shift at ' . $cause . ' from ' . $this->input->post('shiftApplicationDateTimeStart') . ' to ' . $this->input->post('shiftApplicationDateTimeEnd') . '. They have commented: "' . $this->input->post('shiftApplicationComment') . '".' ,
                 mdate($format)
             );
 
 
-            // TODO send email to manager to respond to activity time
+            // Send email to volunteer recording their submission
+            $this->load->model('Email_model');
+            
+            $substitutions = array(
+                '<Manager Name>' => $manager['fullname'],
+                '<Volunteer Name>' => $volunteer['fullname'],
+                '<Time Start>' => $this->input->post('shiftApplicationDateTimeStart'),
+                '<Time End>' => $this->input->post('shiftApplicationDateTimeEnd'),
+                '<Cause Organisation>' => $cause['organisation']
+            );
+
+            $this->Email_model->sendEmail('3_volunteer_shift_request', $volunteer['email'], $substitutions);
+
+            // Send email to manager to respond to activity time
+            $substitutions = array(
+                '<Manager Name>' => $manager['fullname'],
+                '<Volunteer Name>' => $volunteer['fullname'],
+                '<Time Start>' => $this->input->post('shiftApplicationDateTimeStart'),
+                '<Time End>' => $this->input->post('shiftApplicationDateTimeEnd'),
+                '<Cause Organisation>' => $cause['organisation']
+            );
+
+            $this->Email_model->sendEmail('8_manager_shift_request', $manager['email'], $substitutions);
+
+
 
 
             $this->session->set_flashdata('message', 'New time entered!');
@@ -98,8 +123,7 @@ class Times extends CI_Controller {
             // get time row of given time ID
             $time = $this->Time_model->getTimeByID('' . $this->input->post('shiftCancelSelect'));
 
-            print_r($time[0]);
-            $causeID = $time[0]['causeID'];
+            $causeID = $time['causeID'];
 
             // get cause by its ID
             $cause = $this->Cause_model->getCauseByID($causeID);
@@ -112,7 +136,7 @@ class Times extends CI_Controller {
             $this->Notification_model->createNotification(
                 $managerID,
                 'Activity cancelled',
-                'User ' . $_SERVER['REMOTE_USER'] . ' has cancelled a shift at ' . $cause . ' from ' . $time[0]['start'] . ' to ' . $time[0]['finish'] . '.',
+                'User ' . $_SERVER['REMOTE_USER'] . ' has cancelled a shift at ' . $cause . ' from ' . $time['start'] . ' to ' . $time['finish'] . '.',
                 mdate($format)
             );
 
@@ -166,13 +190,32 @@ class Times extends CI_Controller {
             $this->Notification_model->createNotification(
                 $managee,
                 'Manager responded to activity application',
-                'Your manager has ' . $this->input->post('shiftResponseRadios') . ' your shift at ' . $cause . ' from ' . $time['start'] . ' to ' . $time['end'] . '.',
+                'Your manager has ' . $this->input->post('shiftResponseRadios') . ' your shift at ' . $cause . ' from ' . $time['start'] . ' to ' . $time['finish'] . '.',
                 mdate($format)
             );
 
 
-            // TODO send email to managee to let them know the response from their manager
+            // Send email to managee to let them know the response from their manager
+            $volunteer = $this->User_model->getUserByCIS($time['cisID']);
+            $manager = $this->User_model->getManager($time['cisID']);
+            
+            $this->load->model('Email_model');
+            $substitutions = array(
+                '<Manager Name>' => $manager['fullname'],
+                '<Volunteer Name>' => $volunteer['fullname'],
+                '<Time Start>' => $time['start'],
+                '<Time End>' => $time['finish'],
+                '<Cause Organisation>' => $cause['organisation']
+            );
 
+            if ($this->input->post('shiftResponseRadios') == 'confirmed') {
+                // Confirmed
+                $this->Email_model->sendEmail('5_volunteer_shift_approval', $volunteer['email'], $substitutions);
+
+            } else {
+                // Denied
+                $this->Email_model->sendEmail('6_volunteer_shift_denial', $volunteer['email'], $substitutions);
+            }
 
             $this->session->set_flashdata('message', 'Response sent!');
             $this->Audit_model->insertLog('ALTER', 'Activity response sent!');
