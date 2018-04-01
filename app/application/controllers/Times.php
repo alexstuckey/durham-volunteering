@@ -190,7 +190,7 @@ class Times extends CI_Controller {
             $this->Notification_model->createNotification(
                 $managee,
                 'Manager responded to activity application',
-                'Your manager has ' . $this->input->post('shiftResponseRadios') . ' your shift at ' . $cause . ' from ' . $time['start'] . ' to ' . $time['finish'] . '.',
+                'Your manager has ' . $this->input->post('shiftResponseRadios') . ' your shift at ' . $cause['organisation'] . ' from ' . $time['start'] . ' to ' . $time['finish'] . '.',
                 mdate($format)
             );
 
