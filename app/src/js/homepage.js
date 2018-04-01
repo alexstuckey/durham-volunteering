@@ -9,7 +9,7 @@ $(document).ready(function() {
     }));
 
     // select2
-    $('#shiftApplicationCause, #viewCause, #shiftResponseSelect, #inputDepartment, #shiftCancelSelect').select2({
+    $('#shiftApplicationCause, #viewCause, #shiftResponseSelect, #inputDepartment, #shiftCancelSelect, #teamChallengeApplicationCause').select2({
         theme: "bootstrap4"
     });
 });
