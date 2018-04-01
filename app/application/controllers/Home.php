@@ -200,6 +200,8 @@ class Home extends CI_Controller {
 
         $data['teamChallenges'] = $this->Time_model->getOngoingTeamChallenges();
         $data['causes'] = $this->Cause_model->getAllCauses();
+
+        $this->load->helper('date');
         $format = "%Y-%m-%dT%h:%i";
         $data['date'] = mdate($format);
 
