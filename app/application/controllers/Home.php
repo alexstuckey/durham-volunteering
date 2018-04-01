@@ -78,6 +78,10 @@ class Home extends CI_Controller {
         $data['upcoming_times'] = $this->Time_model->getUpcomingEvents($_SERVER['REMOTE_USER']);
         $data['causes'] = $this->Cause_model->getAllCauses();
 
+        $this->load->helper('date');
+        $format = "%Y-%m-%dT%H:%i";
+        $data['date'] = mdate($format);
+
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
         $this->load->view('leftside', $data);
@@ -202,7 +206,7 @@ class Home extends CI_Controller {
         $data['causes'] = $this->Cause_model->getAllCauses();
 
         $this->load->helper('date');
-        $format = "%Y-%m-%dT%h:%i";
+        $format = "%Y-%m-%dT%H:%i";
         $data['date'] = mdate($format);
 
         /* place content body chunks within content_open and content_close */
