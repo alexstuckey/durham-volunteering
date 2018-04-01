@@ -64,7 +64,7 @@
     <!-- Create new team challenge -->
     <div class="card">
         <div class="card-header">
-            <h4>New Team Challenge</h4>
+            <h5>New Team Challenge</h5>
         </div>
         <div class="card-block">
 
