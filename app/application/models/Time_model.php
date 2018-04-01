@@ -52,20 +52,7 @@ class Time_model extends CI_Model {
     public function deleteTime($timeID)
     {
         $this->db->where('timeID', $timeID);
-        $result=$this->db->get('times');
-
-        $check = $result->result_array();
-
-        if (sizeof($check) >= 1)
-        {
-            $this->deleteTeamChallenge($timeID);
-        }
-
-        else {
-
-            $this->db->where('timeID', $timeID);
-            $this->db->delete('times');
-        }
+        $this->db->delete('times');
     }
 
 

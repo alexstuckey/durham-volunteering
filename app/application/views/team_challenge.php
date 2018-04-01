@@ -34,14 +34,8 @@
                                     <td><?php echo $entries['start']; ?></td>
                                     <td><?php echo $entries['finish']; ?></td>
                                     <td><?php echo $entries['comment']; ?></td>
-                                    <?php if (isset($teamChallengeParticipants[$_SERVER['REMOTE_USER']])): ?>
-                                        <?php if ($entries['status'] == 'pending'): ?>
-                                            <td>Pending</td>
-                                        <?php elseif ($entries['status'] == 'confirmed'): ?>
-                                            <td>Participant</td>
-                                        <?php elseif ($entries['status'] == 'denied'): ?>
-                                            <td>Rejected</td>
-                                        <?php endif; ?>
+                                    <?php if (in_array($_SERVER['REMOTE_USER'], $teamChallengeParticipants)): ?>
+                                        <td>Participant</td>
                                     <?php else: ?>
                                         <td>
                                             <form method="post" action="<?php echo site_url('/team_challenge/join'); ?>" id="joinChallengeForm">
