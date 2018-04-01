@@ -24,19 +24,26 @@
                         </thead>
                         <tbody>
                         <!-- previous activities using if statement if start time is in past -->
+
+
                         <?php foreach ($teamChallenges as $entries): ?>
                             <?php if ($entries['teamChallenge'] == '1'): ?>
+                                <?php $data['teamChallengeParticipants'] = $this->Time_model->getParticipantsOfTeamChallenge($entries['timeID']); ?>
                                 <tr class="table">
                                     <th scope="row"><?php echo $entries['timeID']; ?></th>
                                     <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></td>
                                     <td><?php echo $entries['start']; ?></td>
                                     <td><?php echo $entries['finish']; ?></td>
                                     <td><?php echo $entries['comment']; ?></td>
-                                    <td>
-                                        <form method="post" action="" id="joinChallengeForm">
-                                            <button type="submit" value="<?php echo $entries['timeID']; ?>" class="btn btn-outline-primary" id="joinChallengeButton">Join</button>
-                                        </form>
-                                    </td>
+                                    <?php if (isset($teamChallengeParticipants[$_SERVER['REMOTE_USER']])): ?>
+                                        <td>Participant</td>
+                                    <?php else: ?>
+                                        <td>
+                                            <form method="post" action="" id="joinChallengeForm">
+                                                <button name="joinChallengeButton" type="submit" value="<?php echo $entries['timeID']; ?>" class="btn btn-outline-primary" id="joinChallengeButton">Join</button>
+                                            </form>
+                                        </td>
+                                    <?php endif; ?>
                                 </tr>
                             <?php endif; ?>
                         <?php endforeach; ?>
