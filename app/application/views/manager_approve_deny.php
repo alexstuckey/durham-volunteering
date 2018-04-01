@@ -68,7 +68,7 @@
                     <label for="shiftResponseComment">Comment (Optional)</label>
                     <textarea class="form-control" id="shiftResponseComment" rows="3" name="shiftResponseComment"></textarea>
                 </div>
-                <button type="button" class="btn btn-outline-primary" id="shiftResponseButton">Submit</button>
+                <button type="submit" class="btn btn-outline-primary" id="shiftResponseButton">Submit</button>
             </form>
         </div>
     </div>

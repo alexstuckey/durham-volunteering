@@ -36,5 +36,41 @@ class Email_model extends CI_Model {
         return $query->row_array();
     }
 
+    public function sendEmail($emailName, $to, $substitutions)
+    {
+        $this->load->library('email');
+
+        $email = $this->Email_model->getEmailByName($emailName);
+        $emailBody = $email['emailContent'];
+        $emailSubject = $email['emailSubject'];
+
+        /*
+        * Standard Substitutions
+        * ----------------------
+        *
+        * <Manager Name>
+        * <Volunteer Name>
+        * <Time Start>
+        * <Time End>
+        * <Cause Organisation>
+        * 
+        * 
+        * 
+        */
+        foreach ($substitutions as $find => $replace) {
+            $emailBody = str_replace($find, $replace, $emailBody);
+            $emailSubject = str_replace($find, $replace, $emailSubject);
+        }
+
+        $this->email->from($this->config->item('email_from'), 'Durham Volunteering App');
+        $this->email->to($to);
+
+        $this->email->subject($emailSubject);
+        $this->email->message($emailBody);
+
+        $this->email->send();
+        $this->email->clear();
+    }
+
 
 }
