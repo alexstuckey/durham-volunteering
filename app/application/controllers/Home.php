@@ -183,7 +183,9 @@ class Home extends CI_Controller {
 
         /* place central column html form chunks within centre_column_open and center_column_close */
         //$this->load->view('center_column_open', $data);
+        $this->load->view('content_open', $data);
         $this->load->view('statistics', $data);
+        $this->load->view('content_close', $data);
         //$this->load->view('center_column_close', $data);
 
         //$this->load->view('rightside', $data);
