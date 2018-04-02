@@ -70,67 +70,52 @@
                 <!-- End of Stat 2 -->
             </div>
         </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>Department Leaderboard</h4>
+            </div>
+            <div class="card-block">
+                <h5>Your department is in position:</h5>
+                <div class="singleStatBold">
+                    <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo $positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>Volunteering within Department</h4>
+            </div>
+            <div class="card-block">
+                    <h5>Within your department, you are in position:</h5>
+                    <div class="singleStatBold">
+                        <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo $positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1>
+                    </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>Department Milestones</h4>
+            </div>
+            <div class="card-block">
+                <!-- Department Milestone 1 -->
+                <div id="milestone1">
+                    <h5>Milestone 1</h5>
+                    <div id="progressBar4">
+
+                    </div>
+                </div>
+                <!-- End of Department Milestone 1 -->
+            </div>
+        </div>
     </div>
     <!-- End of Row 1 -->
 
-    <!-- Row 2 -->
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="card-deck">
 
-                <!-- Department Leaderboard card -->
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Department Leaderboard</h4>
-                    </div>
-                    <div class="card-block">
-                        <h5>Your department is in position:</h5>
-                        <div class="singleStatBold">
-                            <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo $positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Department Leaderboard card -->
-
-                <!-- Position within Department card -->
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Volunteering within Department</h4>
-                    </div>
-                    <div class="card-block">
-                        <h5>Within your department, you are in position:</h5>
-                        <div class="singleStatBold">
-                            <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo $positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Position within Department card -->
-
-            </div>
-        </div>
-    </div>
-    <!-- End of Row 2 -->
-
-    <!-- Row 3 -->
-    <div class="card">
-        <div class="card-header">
-            <h4>Department Milestones</h4>
-        </div>
-        <div class="card-block">
-            <!-- Department Milestone 1 -->
-            <div id="milestone1">
-                <h5>Milestone 1</h5>
-                <div id="progressBar4">
-
-                </div>
-            </div>
-            <!-- End of Department Milestone 1 -->
-        </div>
-    </div>
-    <!-- End of Row 3 -->
     </div>
     <!-- End of Department Stats Div -->
-</div>
 
 <!-- ScrollSpy set up in HEADER.PHP File -->
 <!-- Central content column containing forms -->
@@ -209,11 +194,19 @@
 <div class="col-sm-4 sidenav" id="rightSide">
     <!-- University Stats div -->
     <div id="uniStats">
+        <h1>Department</h1>
+
         <div class="card">
             <div class="card-header">
-                <h4>University</h4>
+                <h4>Total Hours</h4>
             </div>
             <div class="card-block">
+                <div class="statHeading">
+                    <h1><?php if ($totalHoursVolunteered == '' || $totalHoursVolunteered == 'null') { echo '27,041';} else { echo $totalHoursVolunteered; } ?></h1>
+                </div>
+
+
+
                 <div class="row">
                     <!-- Column 1 -->
                     <div class="col-sm-6">
@@ -261,13 +254,7 @@
                             </div>
                         </div>
 
-                        <!-- Stat 2 -->
-                        <div>
-                            <h5>Total combined hours</h5>
-                            <div class="statHeading">
-                                <h1><?php if ($totalHoursVolunteered == '' || $totalHoursVolunteered == 'null') { echo '27,041';} else { echo $totalHoursVolunteered; } ?></h1>
-                            </div>
-                        </div>
+
                     </div>
                     <!-- End of Column 2 -->
 
