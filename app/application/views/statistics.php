@@ -6,7 +6,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h4>Volunteering time proportion by cause</h4>
+            <h5>Volunteering time proportion by cause</h5>
         </div>
         <div class="card-block">
                 <!-- Stat 1 -->
@@ -33,7 +33,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h4>Top 3 Departments by Total Hours</h4>
+                <h5>Top 3 Departments by Total Hours</h5>
             </div>
             <div class="card-block">
                 <!-- Stat 2 -->
@@ -73,7 +73,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h4>Department Leaderboard</h4>
+                <h5>Department Leaderboard</h5>
             </div>
             <div class="card-block">
                 <h5>Your department is in position:</h5>
@@ -85,7 +85,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h4>Volunteering within Department</h4>
+                <h5>Volunteering within Department</h5>
             </div>
             <div class="card-block">
                     <h5>Within your department, you are in position:</h5>
@@ -97,7 +97,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h4>Department Milestones</h4>
+                <h5>Department Milestones</h5>
             </div>
             <div class="card-block">
                 <!-- Department Milestone 1 -->
@@ -128,7 +128,7 @@
         <!-- Milestones Card -->
         <div class="card">
             <div class="card-header">
-                <h4>Personal Milestones</h4>
+                <h5>Personal Milestones</h5>
             </div>
             <div class="card-block">
 
@@ -160,7 +160,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h4>Total Hours</h4>
+                            <h5>Total Hours</h5>
                         </div>
                         <div class="card-block">
                             <div id="progressBar3">
@@ -171,7 +171,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h4>Favourite cause</h4>
+                            <h5>Favourite cause</h5>
                         </div>
                         <div class="card-block">
                             <div class="singleStatBold">
@@ -194,11 +194,11 @@
 <div class="col-sm-4 sidenav" id="rightSide">
     <!-- University Stats div -->
     <div id="uniStats">
-        <h1>Department</h1>
+        <h1>University</h1>
 
         <div class="card">
             <div class="card-header">
-                <h4>Total Hours</h4>
+                <h5>Total Hours</h5>
             </div>
             <div class="card-block">
                 <div class="statHeading">
@@ -209,7 +209,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h4>Total Volunteers</h4>
+                <h5>Total Volunteers</h5>
             </div>
             <div class="card-block">
                 <div class="statHeading">
@@ -220,7 +220,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h4>UK Top 3...</h4>
+                <h5>UK Top 3...</h5>
             </div>
             <div class="card-block">
                 <canvas id="uniStatsChart" width="200" height="200">
