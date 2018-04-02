@@ -1,5 +1,5 @@
 <!-- Left Sidebar in Content Block -->
-<div class="col-sm-4 sidenav" id="leftSide">
+<div class="col-sm-4 sidenav text-left" id="leftSide">
     <!-- Department Stats div-->
     <div id="departmentStats">
         <h1>Department</h1>
@@ -179,14 +179,14 @@
                         </div>
                     </div>
 
-                
+
 
     </div>
     <!-- End of Personal Stats Div -->
 </div>
 
 <!-- Right hand sidebar containing charts and extra info -->
-<div class="col-sm-4 sidenav" id="rightSide">
+<div class="col-sm-4 sidenav text-left" id="rightSide">
     <!-- University Stats div -->
     <div id="uniStats">
         <h1>University</h1>
