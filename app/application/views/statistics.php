@@ -22,7 +22,7 @@
             </div>
             <div class="card-block">
                 <h5>Within your department, you are in position:</h5>
-                <div class="singleStatBold">
+                <div class="singleStatBold text-center">
                     <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo $positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1>
                 </div>
             </div>
@@ -196,7 +196,7 @@
                 <h5>Total Hours</h5>
             </div>
             <div class="card-block">
-                <div class="statHeading">
+                <div class="statHeading text-center">
                     <h1><?php if ($totalHoursVolunteered == '' || $totalHoursVolunteered == 'null') { echo '27,041';} else { echo $totalHoursVolunteered; } ?></h1>
                 </div>
             </div>
@@ -207,7 +207,7 @@
                 <h5>Total Volunteers</h5>
             </div>
             <div class="card-block">
-                <div class="statHeading">
+                <div class="statHeading text-center">
                     <h1><?php if ($totalVolunteers == '' || $totalVolunteers == 'null') { echo '792'; } else { echo $totalVolunteers; } ?></h1>
                 </div>
             </div>
