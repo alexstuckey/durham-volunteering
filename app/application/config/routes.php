@@ -94,3 +94,8 @@ $route['team_challenge/create']['POST'] = 'TeamChallenge/createTeamChallengeForm
 $route['time/create']['POST'] = 'times/createFormSubmit';
 $route['time/delete']['POST'] = 'times/deleteFormSubmit';
 $route['time/manager_response']['POST'] = 'times/confirmDenyFormSubmit';
+
+$route['respond/nomination/confirm/(:any)'] = 'respond/nominationReceive/confirm/$1';
+$route['respond/nomination/deny/(:any)'] = 'respond/nominationReceive/deny/$1';
+$route['respond/nomination'] = 'respond/nomination';
+
