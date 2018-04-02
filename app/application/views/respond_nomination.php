@@ -3,7 +3,14 @@
         <div class="col-md-6" id="centre">
 
             <div class="text-center">
+
                 <h1 class="onboardh1">Nominations</h1>
+                <?php if (isset($message)) {
+                    echo '<p class="alert alert-success">'.$message.'</p><br>';
+                } elseif (isset($error)) {
+                    echo '<p class="alert alert-danger">'.$error.'</p><br>';
+                }?>
+
                 <?php if (!empty($manageesNominated)): ?>
                 <h6>The following users have nominated you as their manager.</h6>
                 <?php else: ?>
