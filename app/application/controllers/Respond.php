@@ -26,6 +26,7 @@ class Respond extends CI_Controller {
     public function nominationReceive($verb, $volunteerCisID)
     {
         $this->load->library('session');
+        $this->load->helper('url');
         $this->load->model('User_model');
         $this->load->model('Email_model');
         
@@ -53,7 +54,11 @@ class Respond extends CI_Controller {
             $this->User_model->setManager($volunteerCisID, $manager['email'], $newStatus);
 
             // Send email to volunteer
-            $substitutions = array();
+            $substitutions = array(
+                '<Manager Name>' => $manager['fullname'],
+                '<Volunteer Name>' => $volunteer['fullname'],
+                '<Onboard Link>' => site_url('/onboard/wait_nominate_manager')
+            );
             $this->Email_model->sendEmail('9_volunteer_manager_success', $volunteer['email'], $substitutions);
 
             // SUCCESS
@@ -63,7 +68,7 @@ class Respond extends CI_Controller {
         } else {
             // FAIL
             $substitutions = array();
-            $this->Email_model->sendEmail('9_volunteer_manager_success', $volunteer['email'], $substitutions);
+            $this->Email_model->sendEmail('10_volunteer_manager_failure', $volunteer['email'], $substitutions);
 
             // Set failure message
             $this->session->set_flashdata('error', 'Your response to that nomination was invalid.');
@@ -71,7 +76,6 @@ class Respond extends CI_Controller {
         }
 
         // Redirect to nomination page, with either a success or failure message.
-        $this->load->helper('url');
         redirect('/respond/nomination');
 
     }

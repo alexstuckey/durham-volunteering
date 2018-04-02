@@ -214,13 +214,15 @@ class Onboarding extends CI_Controller {
 
             // Prepare email data
             $this->load->model('Email_model');
+            $this->load->helper('url');
             $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
             $volunteer = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
             // Then email that manager
             $substitutions = array(
                 '<Manager Name>' => $manager['fullname'],
-                '<Volunteer Name>' => $volunteer['fullname']
+                '<Volunteer Name>' => $volunteer['fullname'],
+                '<Respond Link>' => site_url('/respond/nomination/')
             );
 
             $this->Email_model->sendEmail('7_manager_nomination', $manager['email'], $substitutions);
@@ -244,17 +246,9 @@ class Onboarding extends CI_Controller {
         $data['manager'] = $this->User_model->getManager($_SERVER['REMOTE_USER']);
 
         $data['active'] = 'wait_nominate_manager';
-        $data['hide_links'] = TRUE;
-        $data['page_title'] = 'Onboarding - Staff Volunteering Programme';
-
-        $this->load->view('header', $data);
-        $this->load->view('onboarding_steps', $data);
-        $this->load->view('footer', $data);
-    }
-
-    public function success_nominate_manager()
-    {
-        $data['active'] = 'get_started';
+        if ($this->User_model->getManagerStatus($_SERVER['REMOTE_USER']) == 'confirmed') {
+            $data['active'] = 'get_started';
+        }
         $data['hide_links'] = TRUE;
         $data['page_title'] = 'Onboarding - Staff Volunteering Programme';
 

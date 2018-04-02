@@ -54,6 +54,7 @@ class Email_model extends CI_Model {
         * <Time End>
         * <Cause Organisation>
         * <Respond Link>
+        * <Onboard Link>
         * 
         */
         foreach ($substitutions as $find => $replace) {
