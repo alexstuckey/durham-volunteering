@@ -8,40 +8,37 @@ class CIS_model extends CI_Model
         
     }
 
-
-    public function get_user_details_by_email($userEmail)
+    // Generalises email and username, by running both from one
+    // Allows for additional work to be done without clogging up code
+    private function get_user_general($field, $value)
     {
         $dbDurhamNative = $this->load->database('durhamNative', TRUE);
 
         $dbDurhamNative->select('*');
         $dbDurhamNative->from('UserDetails');
-        $dbDurhamNative->where('email', $userEmail);
+
+        $dbDurhamNative->where($field, $value);
 
         $query = $dbDurhamNative->get();
 
-        $data = $query->row_array();
+        $user = $query->row_array();
 
-        list($firstnamesplit)=explode(',', $data['firstnames']);
-        $data['fullname'] = ucwords(strtolower($firstnamesplit . ' ' . $data['surname']));
+        if (!empty($user)) {
+            list($firstnamesplit)=explode(',', $user['firstnames']);
+            $user['fullname'] = ucwords(strtolower($firstnamesplit . ' ' . $user['surname']));
+        }
 
-        return $data;
+        return $user;
+    }
+
+
+    public function get_user_details_by_email($userEmail)
+    {
+        return $this->get_user_general('email', $userEmail);
     }
 
     public function get_user_details_by_cisID($cisID)
     {
-        $dbDurhamNative = $this->load->database('durhamNative', TRUE);
-
-        $dbDurhamNative->select('*');
-        $dbDurhamNative->from('UserDetails');
-        $dbDurhamNative->where('username', $cisID);
-
-        $query = $dbDurhamNative->get();
-
-        $data = $query->row_array();
-
-        list($firstnamesplit)=explode(',', $data['firstnames']);
-        $data['fullname'] = ucwords(strtolower($firstnamesplit . ' ' . $data['surname']));
-
-        return $data;
+        return $this->get_user_general('username', $cisID);
     }
 }
