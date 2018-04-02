@@ -31,7 +31,7 @@
                                                     labels: ["RNLI", "NSPCC", "MENCAP", "RSPB", "RSPCA", "Other"],
                                                     datasets: [{
                                                         data: [80, 60, 50, 35, 28, 16],
-                                                        backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00", "FFB0FF"]
+                                                        backgroundColor: ["#7EA74F", "#A22B6A", "#23A6AE", "#1F5974", "#06A679", "EC932B"]
                                                     }]
                                                 },
                                                 options: {
@@ -57,8 +57,8 @@
                                                     datasets: [{
                                                         data: [60, 40, 20],
                                                         fill: false,
-                                                        backgroundColor: ["rgba(255,133,27,0.2)", "rgba(57,204,204,0.2)", "rgba(0,31,63,0.2)"],
-                                                        borderColor: ["rgb(255,133,27)", "rgb(57,204,204)", "rgb(0,31,63)"],
+                                                        backgroundColor: ["rgba(126, 167, 79,0.2)", "rgba(162, 43, 106,0.2)", "rgba(35, 166, 174,0.2)"],
+                                                        borderColor: ["rgb(126, 167, 79)", "rgb(162, 43, 106)", "rgb(35, 166, 174)"],
                                                         borderWidth: 1
                                                     }]
                                                 },
@@ -237,8 +237,8 @@
                                                 datasets: [{
                                                     data: [15, 20, 30],
                                                     fill: false,
-                                                    backgroundColor: ["rgba(0,31,63,0.2)", "rgba(61,153,112,0.2)", "rgba(255,220,0,0.2)"],
-                                                    borderColor: ["rgb(0,31,63)", "rgb(61,153,112)", "rgb(255,220,0)"],
+                                                    backgroundColor: ["rgba(6, 166, 121,0.2)", "rgba(236, 147, 43,0.2)", "rgba(104, 39, 92,0.2)"],
+                                                    borderColor: ["rgb(6, 166, 121)", "rgb(236, 147, 43)", "rgb(104, 39, 92)"],
                                                     borderWidth: 1
                                                 }]
                                             },
