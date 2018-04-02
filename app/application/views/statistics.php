@@ -4,6 +4,46 @@
     <div id="departmentStats">
         <h1>Department</h1>
 
+        <div class="card">
+            <div class="card-header">
+                <h5>Department Leaderboard</h5>
+            </div>
+            <div class="card-block">
+                <h5>Your department is in position:</h5>
+                <div class="singleStatBold">
+                    <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo $positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h5>Volunteering within Department</h5>
+            </div>
+            <div class="card-block">
+                <h5>Within your department, you are in position:</h5>
+                <div class="singleStatBold">
+                    <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo $positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h5>Department Milestones</h5>
+            </div>
+            <div class="card-block">
+                <!-- Department Milestone 1 -->
+                <div id="milestone1">
+                    <h5>Milestone 1</h5>
+                    <div id="progressBar4">
+
+                    </div>
+                </div>
+                <!-- End of Department Milestone 1 -->
+            </div>
+        </div>
+
     <div class="card">
         <div class="card-header">
             <h5>Volunteering time proportion by cause</h5>
@@ -71,45 +111,7 @@
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-header">
-                <h5>Department Leaderboard</h5>
-            </div>
-            <div class="card-block">
-                <h5>Your department is in position:</h5>
-                <div class="singleStatBold">
-                    <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo $positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1>
-                </div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="card-header">
-                <h5>Volunteering within Department</h5>
-            </div>
-            <div class="card-block">
-                    <h5>Within your department, you are in position:</h5>
-                    <div class="singleStatBold">
-                        <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo $positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1>
-                    </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h5>Department Milestones</h5>
-            </div>
-            <div class="card-block">
-                <!-- Department Milestone 1 -->
-                <div id="milestone1">
-                    <h5>Milestone 1</h5>
-                    <div id="progressBar4">
-
-                    </div>
-                </div>
-                <!-- End of Department Milestone 1 -->
-            </div>
-        </div>
     </div>
     <!-- End of Row 1 -->
 
@@ -153,10 +155,7 @@
         </div>
         <!-- End of Milestones Card -->
 
-        <!-- Numbers Row -->
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card-deck">
+
 
                     <div class="card">
                         <div class="card-header">
@@ -180,11 +179,7 @@
                         </div>
                     </div>
 
-                </div>
-            </div>
-
-        </div>
-        <!-- End of Numbers Row -->
+                
 
     </div>
     <!-- End of Personal Stats Div -->
