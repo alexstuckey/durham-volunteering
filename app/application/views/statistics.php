@@ -1,17 +1,15 @@
 <!-- Left Sidebar in Content Block -->
 <div class="col-sm-4 sidenav" id="leftSide">
-    <!-- Row 1 -->
+    <!-- Department Stats div-->
+    <div id="departmentStats">
+        <h1>Department</h1>
+
     <div class="card">
         <div class="card-header">
-            <h4>Department</h4>
+            <h4>Volunteering time proportion by cause</h4>
         </div>
         <div class="card-block">
-
-            <div class="row">
                 <!-- Stat 1 -->
-                <div class="col-sm-6">
-                    <div>
-                        <h5>Volunteering time proportion by cause</h5>
                         <canvas id="myDepartmentShareChart" width="400" height="400">
                             <script>
                                 // department proportion by hours chart
@@ -29,46 +27,47 @@
                                 });
                             </script>
                         </canvas>
-                    </div>
-                </div>
                 <!-- End of Stat 1 -->
+        </div>
+    </div>
 
+        <div class="card">
+            <div class="card-header">
+                <h4>Top 3 Departments by Total Hours</h4>
+            </div>
+            <div class="card-block">
                 <!-- Stat 2 -->
-                <div class="col-sm-6">
-                    <div>
-                        <h5>Top 3 Departments by Total Hours</h5>
-                        <canvas id="myDepartmentRaceChart" width="200" height="200">
-                            <script>
-                                // department top 3 by hours chart options
-                                let myDepartmentRaceChart = new Chart(document.getElementById("myDepartmentRaceChart").getContext('2d'), {
-                                    type: 'horizontalBar',
-                                    data: {
-                                        labels: ["Accounting", "Catering", "Careers"],
-                                        datasets: [{
-                                            data: [60, 40, 20],
-                                            fill: false,
-                                            backgroundColor: ["rgba(126, 167, 79,0.2)", "rgba(162, 43, 106,0.2)", "rgba(35, 166, 174,0.2)"],
-                                            borderColor: ["rgb(126, 167, 79)", "rgb(162, 43, 106)", "rgb(35, 166, 174)"],
-                                            borderWidth: 1
-                                        }]
-                                    },
-                                    options: {
-                                        "scales": {
-                                            "xAxes": [{
-                                                ticks: {
-                                                    beginAtZero: true
-                                                }
-                                            }]
-                                        },
-                                        "legend": {
-                                            display: false
+                <canvas id="myDepartmentRaceChart" width="200" height="200">
+                    <script>
+                        // department top 3 by hours chart options
+                        let myDepartmentRaceChart = new Chart(document.getElementById("myDepartmentRaceChart").getContext('2d'), {
+                            type: 'horizontalBar',
+                            data: {
+                                labels: ["Accounting", "Catering", "Careers"],
+                                datasets: [{
+                                    data: [60, 40, 20],
+                                    fill: false,
+                                    backgroundColor: ["rgba(126, 167, 79,0.2)", "rgba(162, 43, 106,0.2)", "rgba(35, 166, 174,0.2)"],
+                                    borderColor: ["rgb(126, 167, 79)", "rgb(162, 43, 106)", "rgb(35, 166, 174)"],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                "scales": {
+                                    "xAxes": [{
+                                        ticks: {
+                                            beginAtZero: true
                                         }
-                                    }
-                                });
-                            </script>
-                        </canvas>
-                    </div>
-                </div>
+                                    }]
+                                },
+                                "legend": {
+                                    display: false
+                                }
+                            }
+                        });
+                    </script>
+                </canvas>
+                <!-- End of Stat 2 -->
             </div>
         </div>
     </div>
@@ -129,6 +128,8 @@
         </div>
     </div>
     <!-- End of Row 3 -->
+    </div>
+    <!-- End of Department Stats Div -->
 </div>
 
 <!-- ScrollSpy set up in HEADER.PHP File -->
@@ -201,7 +202,7 @@
         <!-- End of Numbers Row -->
 
     </div>
-    <!-- End of Notifications Div -->
+    <!-- End of Personal Stats Div -->
 </div>
 
 <!-- Right hand sidebar containing charts and extra info -->
