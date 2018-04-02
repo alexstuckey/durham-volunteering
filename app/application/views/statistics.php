@@ -204,63 +204,61 @@
                 <div class="statHeading">
                     <h1><?php if ($totalHoursVolunteered == '' || $totalHoursVolunteered == 'null') { echo '27,041';} else { echo $totalHoursVolunteered; } ?></h1>
                 </div>
+            </div>
+        </div>
 
-
-
-                <div class="row">
-                    <!-- Column 1 -->
-                    <div class="col-sm-6">
-                        <h5>UK Top 3...</h5>
-                        <canvas id="uniStatsChart" width="200" height="200">
-                            <script>
-                                // University stats bar chart
-                                let uniStatsChart = new Chart(document.getElementById("uniStatsChart").getContext('2d'), {
-                                    type: 'bar',
-                                    data: {
-                                        labels: ["2015", "2016", "2017"],
-                                        datasets: [{
-                                            data: [15, 20, 30],
-                                            fill: false,
-                                            backgroundColor: ["rgba(6, 166, 121,0.2)", "rgba(236, 147, 43,0.2)", "rgba(104, 39, 92,0.2)"],
-                                            borderColor: ["rgb(6, 166, 121)", "rgb(236, 147, 43)", "rgb(104, 39, 92)"],
-                                            borderWidth: 1
-                                        }]
-                                    },
-                                    options: {
-                                        "scales": {
-                                            "xAxes": [{
-                                                ticks: {
-                                                    beginAtZero: true
-                                                }
-                                            }]
-                                        },
-                                        "legend": {
-                                            display: false
-                                        }
-                                    }
-                                });
-                            </script>
-                        </canvas>
-                    </div>
-                    <!-- End of Column 1 -->
-
-                    <!-- Column 2 -->
-                    <div class="col-sm-6">
-                        <!-- Stat 1 -->
-                        <div>
-                            <h5>Total Volunteers</h5>
-                            <div class="statHeading">
-                                <h1><?php if ($totalVolunteers == '' || $totalVolunteers == 'null') { echo '792'; } else { echo $totalVolunteers; } ?></h1>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <!-- End of Column 2 -->
-
+        <div class="card">
+            <div class="card-header">
+                <h4>Total Volunteers</h4>
+            </div>
+            <div class="card-block">
+                <div class="statHeading">
+                    <h1><?php if ($totalVolunteers == '' || $totalVolunteers == 'null') { echo '792'; } else { echo $totalVolunteers; } ?></h1>
                 </div>
             </div>
         </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>UK Top 3...</h4>
+            </div>
+            <div class="card-block">
+                <canvas id="uniStatsChart" width="200" height="200">
+                    <script>
+                        // University stats bar chart
+                        let uniStatsChart = new Chart(document.getElementById("uniStatsChart").getContext('2d'), {
+                            type: 'bar',
+                            data: {
+                                labels: ["2015", "2016", "2017"],
+                                datasets: [{
+                                    data: [15, 20, 30],
+                                    fill: false,
+                                    backgroundColor: ["rgba(6, 166, 121,0.2)", "rgba(236, 147, 43,0.2)", "rgba(104, 39, 92,0.2)"],
+                                    borderColor: ["rgb(6, 166, 121)", "rgb(236, 147, 43)", "rgb(104, 39, 92)"],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                "scales": {
+                                    "xAxes": [{
+                                        ticks: {
+                                            beginAtZero: true
+                                        }
+                                    }]
+                                },
+                                "legend": {
+                                    display: false
+                                }
+                            }
+                        });
+                    </script>
+                </canvas>
+            </div>
+        </div>
+
+
+
+
     </div>
     <!-- End of University Stats div -->
 </div>
