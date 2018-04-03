@@ -3,8 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
 
-	public function homepage()
-	{
+    public function homepage()
+    {
         $this->load->model('Notification_model');
         $data['notifications'] = $this->Notification_model->getUserNotifications($_SERVER['REMOTE_USER']);
 
