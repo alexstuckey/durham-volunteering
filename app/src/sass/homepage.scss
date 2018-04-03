@@ -32,6 +32,7 @@ samp,
 .btn-outline-primary {
     background-color: white;
     border-color: #470544;
+    color: #470544;
 }
 
 .btn-primary {
@@ -42,6 +43,7 @@ samp,
 .btn-primary:hover, .btn-outline-primary:hover {
     background-color: #470544;
     border-color: #470544;
+    color: white;
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
