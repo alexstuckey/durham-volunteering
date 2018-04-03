@@ -212,3 +212,8 @@ footer {
     }
 }
 
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: rgba(104, 39, 92, 0.2);
+    border-color: rgba(104, 39, 92, 0.2); }
