@@ -2,8 +2,8 @@
 
 
             <div class="container-fluid text-center" id="content">
-                <div class="row content">
-                    <div class="col-sm-3 sidenav" id="leftSide" style="min-height:100%;">
+                <div class="row content" style="min-height:100%;border: 1px solid green;">
+                    <div class="col-sm-3 sidenav" id="leftSide">
                     </div>
 
                     <div data-spy="scroll" data-target=".navbar" data-offset="70" class="col-sm-6 text-left" id="centre">
