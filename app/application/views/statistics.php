@@ -1,9 +1,11 @@
-<!-- Left Sidebar in Content Block -->
-<div class="col-sm-4 sidenav text-left" id="leftSide">
+<!-- Department Stats Column -->
+<div class="col-sm-4 sidenav text-left">
+
     <!-- Department Stats div-->
     <div id="departmentStats">
         <h1>Department</h1>
 
+        <!-- Department Position within all departments -->
         <div class="card">
             <div class="card-header">
                 <h5>Department Leaderboard</h5>
@@ -15,7 +17,9 @@
                 </div>
             </div>
         </div>
+        <!--  End of Department Position within all departments -->
 
+        <!-- Personal Position within own department -->
         <div class="card">
             <div class="card-header">
                 <h5>Volunteering within Department</h5>
@@ -27,7 +31,9 @@
                 </div>
             </div>
         </div>
+        <!-- End of Personal Position within own department -->
 
+        <!-- Department milestones -->
         <div class="card">
             <div class="card-header">
                 <h5>Department Milestones</h5>
@@ -43,40 +49,41 @@
                 <!-- End of Department Milestone 1 -->
             </div>
         </div>
+        <!-- End of department milestones
 
-    <div class="card">
-        <div class="card-header">
-            <h5>Volunteering time proportion by cause</h5>
+        <!-- Proportion Volunteering time by cause -->
+        <div class="card">
+            <div class="card-header">
+                <h5>Volunteering time proportion by cause</h5>
+            </div>
+            <div class="card-block">
+                <canvas id="myDepartmentShareChart" width="400" height="400">
+                    <script>
+                        // department proportion by hours chart
+                        let myDoughnutChart = new Chart(document.getElementById("myDepartmentShareChart"), {
+                            type: 'doughnut',
+                            data: {
+                                labels: ["RNLI", "NSPCC", "MENCAP", "RSPB", "RSPCA", "Other"],
+                                datasets: [{
+                                    data: [80, 60, 50, 35, 28, 16],
+                                    backgroundColor: ["#7EA74F", "#A22B6A", "#23A6AE", "#1F5974", "#06A679", "EC932B"]
+                                }]
+                            },
+                            options: {
+                            }
+                        });
+                    </script>
+                </canvas>
+            </div>
         </div>
-        <div class="card-block">
-                <!-- Stat 1 -->
-                        <canvas id="myDepartmentShareChart" width="400" height="400">
-                            <script>
-                                // department proportion by hours chart
-                                let myDoughnutChart = new Chart(document.getElementById("myDepartmentShareChart"), {
-                                    type: 'doughnut',
-                                    data: {
-                                        labels: ["RNLI", "NSPCC", "MENCAP", "RSPB", "RSPCA", "Other"],
-                                        datasets: [{
-                                            data: [80, 60, 50, 35, 28, 16],
-                                            backgroundColor: ["#7EA74F", "#A22B6A", "#23A6AE", "#1F5974", "#06A679", "EC932B"]
-                                        }]
-                                    },
-                                    options: {
-                                    }
-                                });
-                            </script>
-                        </canvas>
-                <!-- End of Stat 1 -->
-        </div>
-    </div>
+        <!-- End of Proportion Volunteering time by cause -->
 
+        <!-- Top 3 departments -->
         <div class="card">
             <div class="card-header">
                 <h5>Top 3 Departments by Total Hours</h5>
             </div>
             <div class="card-block">
-                <!-- Stat 2 -->
                 <canvas id="myDepartmentRaceChart" width="200" height="200">
                     <script>
                         // department top 3 by hours chart options
@@ -107,20 +114,18 @@
                         });
                     </script>
                 </canvas>
-                <!-- End of Stat 2 -->
             </div>
         </div>
-
-
-    </div>
-    <!-- End of Row 1 -->
-
+        <!-- End of top 3 departments -->
 
     </div>
     <!-- End of Department Stats Div -->
 
-<!-- ScrollSpy set up in HEADER.PHP File -->
-<!-- Central content column containing forms -->
+</div>
+<!-- End of Department Stats Column -->
+
+
+<!-- Personal Stats Column -->
 <div class="col-sm-4 text-left" id="centre">
 
     <!-- Personal Stats div-->
@@ -155,42 +160,47 @@
         </div>
         <!-- End of Milestones Card -->
 
+        <!-- Personal Total Hours card -->
+        <div class="card">
+            <div class="card-header">
+                <h5>Total Hours</h5>
+            </div>
+            <div class="card-block">
+                <div id="progressBar3">
 
+                </div>
+            </div>
+        </div>
+        <!-- End of Personal Total Hours card -->
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h5>Total Hours</h5>
-                        </div>
-                        <div class="card-block">
-                            <div id="progressBar3">
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h5>Favourite cause</h5>
-                        </div>
-                        <div class="card-block">
-                            <div class="singleStatBold">
-                                <h1><?php if ($getFavouriteCause == 'null' || $getFavouriteCause == '') { echo 'RNLI'; } else { echo $getFavouriteCause; } ?></h1>
-                            </div>
-                        </div>
-                    </div>
-
-
+        <!-- Personal favourite cause card -->
+        <div class="card">
+            <div class="card-header">
+                <h5>Favourite cause</h5>
+            </div>
+            <div class="card-block">
+                <div class="singleStatBold">
+                    <h1><?php if ($getFavouriteCause == 'null' || $getFavouriteCause == '') { echo 'RNLI'; } else { echo $getFavouriteCause; } ?></h1>
+                </div>
+            </div>
+        </div>
+        <!-- End of Personal favourite cause card -->
 
     </div>
     <!-- End of Personal Stats Div -->
-</div>
 
-<!-- Right hand sidebar containing charts and extra info -->
+</div>
+<!-- End of Personal Stats Column -->
+
+
+<!-- University stats column -->
 <div class="col-sm-4 sidenav text-left" id="rightSide">
+
     <!-- University Stats div -->
     <div id="uniStats">
         <h1>University</h1>
 
+        <!-- Total Hours card -->
         <div class="card">
             <div class="card-header">
                 <h5>Total Hours</h5>
@@ -201,7 +211,9 @@
                 </div>
             </div>
         </div>
+        <!-- End of Total Hours card -->
 
+        <!-- Total Volunteers card -->
         <div class="card">
             <div class="card-header">
                 <h5>Total Volunteers</h5>
@@ -212,7 +224,9 @@
                 </div>
             </div>
         </div>
+        <!-- End of Volunteers card -->
 
+        <!-- UK top 3 card -->
         <div class="card">
             <div class="card-header">
                 <h5>UK Top 3...</h5>
@@ -250,13 +264,13 @@
                 </canvas>
             </div>
         </div>
-
-
-
+        <!-- End of UK top 3 card -->
 
     </div>
     <!-- End of University Stats div -->
+
 </div>
+<!-- End of uni stats column
 
 
 <!-- Script to pass extracted variable data from controller to the javascript for this page -->
