@@ -11,7 +11,7 @@
 
         <?php echo validation_errors(); ?>
 
-            <table class="table table-hover">
+            <table class="table table-hover table-responsive">
                 <thead class="thead-light">
                 <tr>
                     <th scope="col">#</th>

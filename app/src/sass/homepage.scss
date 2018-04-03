@@ -29,14 +29,21 @@ samp,
     }
 }
 
+.btn-outline-primary {
+    background-color: white;
+    border-color: #470544;
+    color: #470544;
+}
+
 .btn-primary {
     background-color: #470544;
     border-color: #470544;
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .btn-outline-primary:hover {
     background-color: #470544;
     border-color: #470544;
+    color: white;
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
@@ -92,17 +99,6 @@ samp,
 
 h1, h2 {
     font-family: "alternate_gothic_fs_no_3Rg", "Arial", sans-serif;
-}
-
-.statHeading h1{
-    font-size: 6rem;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-.singleStatBold h1 {
-    font-size: 6rem;
-    margin:0px auto;
 }
 
 h4 {
@@ -186,21 +182,28 @@ footer {
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .sidenav {
         height: auto;
-        padding: 15px;
     }
 
     .row.content {
         height:auto;
     }
-
 }
 
 @media screen and (max-width: 1023px) {
     #notifications, #volunteering, #otherSection, #managerShiftResponse {
-        padding-top:70px;
         min-height: 80%;
     }
 }
+
+.list-group-item.active {
+    z-index: 2;
+    color: #470544;
+    background-color: rgba(104, 39, 92, 0.2);
+    border-color: rgba(104, 39, 92, 0.2); }
+
+.badge-primary {
+    color: #fff;
+    background-color: #470544; }

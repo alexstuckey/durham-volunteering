@@ -13,7 +13,7 @@
                     labels: ["Accounting", "Catering", "Careers", "Estates", "Porters"],
                     datasets: [{
                         data: [10, 20, 30, 15, 25],
-                        backgroundColor: ["#FF851B", "#39CCCC", "#001f3f", "#3D9970", "#FFDC00"]
+                        backgroundColor: ["#7EA74F", "#A22B6A", "#23A6AE", "#1F5974", "#06A679"]
                     }]
                 },
                 options: {
@@ -35,8 +35,8 @@
                     datasets: [{
                         data: [10, 20, 30, 15, 25],
                         fill: false,
-                        backgroundColor: ["rgba(255,133,27,0.2)", "rgba(57,204,204,0.2)", "rgba(0,31,63,0.2)", "rgba(61,153,112,0.2)", "rgba(255,220,0,0.2)"],
-                        borderColor: ["rgb(255,133,27)", "rgb(57,204,204)", "rgb(0,31,63)", "rgb(61,153,112)", "rgb(255,220,0)"],
+                        backgroundColor: ["rgba(126, 167, 79, 0.2)", "rgba(162, 43, 106, 0.2)", "rgba(35, 166, 174, 0.2)", "rgba(31, 89, 116, 0.2)", "rgba(6, 166, 121, 0.2)"],
+                        borderColor: ["rgb(126, 167, 79)", "rgb(162, 43, 106)", "rgb(35, 166, 174)", "rgb(31, 89, 116)", "rgb(6, 166, 121)"],
                         borderWidth: 1
                     }]
                 },

@@ -25,7 +25,7 @@
             </div>
             <div class="activityTable">
                 <div class="card-block">
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -66,7 +66,7 @@
             </div>
             <div class="activityTable">
                 <div class="card-block">
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -108,7 +108,7 @@
             </div>
             <div class="activityTable">
                 <div class="card-block">
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -149,7 +149,7 @@
             </div>
             <div class="activityTable">
                 <div class="card-block">
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th scope="col">#</th>

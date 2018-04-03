@@ -14,7 +14,7 @@
 
                         <!-- Volunteering Div -->
                         <div id="volunteering">
-                            <h1 class="onboardh1">Enter Your Details</h1>
+                            <h1>Enter Your Details</h1>
 
                             <?php echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>'); ?>
 
