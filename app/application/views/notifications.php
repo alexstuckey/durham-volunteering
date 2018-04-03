@@ -30,4 +30,3 @@
 
 </div>
 <!-- End of Notifications Div -->
-

@@ -1,15 +1,11 @@
 <!-- Statistics Section -->
 <div id="statistics">
-
     <!-- Row -->
     <div class="row" >
-
         <!-- Left Column -->
         <div class="col-sm-6" id="left">
-
             <!-- Department Stats div -->
             <div id="departmentStats">
-
                 <!-- Row 1 -->
                 <div class="card">
                     <div class="card-header">
@@ -285,13 +281,10 @@
                 </div>
             </div>
             <!-- End of University Stats div -->
-
         </div>
         <!-- End of Right Column -->
-
     </div>
     <!-- End of Row -->
-
 </div>
 <!-- End Statistics Section -->
 

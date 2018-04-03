@@ -1,5 +1,3 @@
-
-
             <div class="container-fluid text-center" id="content">
                 <div class="row content">
                     <div class="col-sm-3 sidenav" id="leftSide">
@@ -41,4 +39,3 @@
                     </div>
                 </div>
             </div>
-
