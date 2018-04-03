@@ -3,7 +3,7 @@
 
             <div class="container-fluid text-center" id="content">
                 <div class="row content">
-                    <div class="col-sm-3 sidenav" id="leftSide">
+                    <div class="col-sm-3 sidenav" id="leftSide" style="min-height:100%;">
                     </div>
 
                     <div data-spy="scroll" data-target=".navbar" data-offset="70" class="col-sm-6 text-left" id="centre">
