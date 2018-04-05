@@ -1,6 +1,13 @@
 <!-- Cause Div -->
 <div id="single_cause">
 
+    <!-- Link back to Causes List -->
+    <div class="card">
+        <div class="card-block">
+            <a class="nav-link" href="<?php echo site_url('/causes'); ?>">&#8592; Back to Causes list</a>
+        </div>
+    </div>
+
     <div class="card">
         <div class="card-header">
             <h4><?php echo $cause['organisation']; ?></h4>

@@ -10,6 +10,7 @@ class Times extends CI_Controller {
 
     public function createFormSubmit()
     {
+        $this->load->helper('url');
         $this->load->library('form_validation');
         $this->form_validation->set_rules('shiftApplicationDateTimeStart', 'Shift Start Time', 'trim|required');
         $this->form_validation->set_rules('shiftApplicationDateTimeEnd', 'Shift End Time', 'trim|required');
@@ -21,7 +22,6 @@ class Times extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('error', validation_errors());
 
-            $this->load->helper('url');
             redirect(site_url('/my_volunteering/activities'));
         } else {
 
@@ -78,7 +78,8 @@ class Times extends CI_Controller {
                 '<Volunteer Name>' => $volunteer['fullname'],
                 '<Time Start>' => $this->input->post('shiftApplicationDateTimeStart'),
                 '<Time End>' => $this->input->post('shiftApplicationDateTimeEnd'),
-                '<Cause Organisation>' => $cause['organisation']
+                '<Cause Organisation>' => $cause['organisation'],
+                '<Respond Link>' => site_url('/manager')
             );
 
             $this->Email_model->sendEmail('8_manager_shift_request', $manager['email'], $substitutions);
@@ -89,7 +90,6 @@ class Times extends CI_Controller {
             $this->session->set_flashdata('message', 'New time entered!');
             $this->Audit_model->insertLog('ALTER', 'New time entered!');
 
-            $this->load->helper('url');
             redirect(site_url('/my_volunteering'));
         }
     }

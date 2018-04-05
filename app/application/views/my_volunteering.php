@@ -5,7 +5,7 @@
     <!-- Link to add/cancel Activities -->
     <div class="card">
         <div class="card-block">
-            <a class="nav-link" href="<?php echo site_url('/my_volunteering/activities'); ?>">Add/ Cancel Activity</a>
+            <a class="nav-link" href="<?php echo site_url('/my_volunteering/activities'); ?>">Add / Cancel Activity</a>
         </div>
     </div>
 
