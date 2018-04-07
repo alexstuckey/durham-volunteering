@@ -43,6 +43,27 @@ class Home extends CI_Controller {
         $data['upcoming_times'] = $this->Time_model->getUpcomingEvents($_SERVER['REMOTE_USER']);
         $data['previous_times'] = $this->Time_model->getPastEvents($_SERVER['REMOTE_USER']);
         $data['causes'] = $this->Cause_model->getAllCauses();
+        $data['number_of_times'] = array(
+            'pending' => 0,
+            'upcoming_confirmed' => 0,
+            'previous_confirmed' => 0,
+            'denied' => 0
+        );
+        foreach ($data['upcoming_times'] as $time) {
+            if ($time['status'] == 'pending') {
+                $data['number_of_times']['pending'] += 1;
+            } elseif ($time['status'] == 'confirmed') {
+                $data['number_of_times']['upcoming_confirmed'] += 1;
+            } elseif ($time['status'] == 'denied') {
+                $data['number_of_times']['denied'] += 1;
+            }
+        }
+
+        foreach ($data['previous_times'] as $time) {
+            if ($time['status'] == 'confirmed') {
+                $data['number_of_times']['previous_confirmed'] += 1;
+            }
+        }
 
         $this->load->view('header', $data);
 
