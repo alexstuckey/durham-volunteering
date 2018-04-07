@@ -38,15 +38,15 @@
                         </thead>
                         <tbody>
                         <!-- previous activities using if statement if start time is in past -->
-                        <?php foreach ($upcoming_times as $entries): ?>
-                            <?php if ($entries['status'] == 'pending'): ?>
+                        <?php foreach ($upcoming_times as $time): ?>
+                            <?php if ($time['status'] == 'pending'): ?>
                                 <tr class="table-warning">
-                                    <th scope="row"><?php echo $entries['timeID']; ?></th>
-                                    <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></td>
-                                    <td><?php echo $entries['start']; ?></td>
-                                    <td><?php echo $entries['finish']; ?></td>
-                                    <td><?php echo $entries['comment']; ?></td>
-                                    <td><?php echo $entries['teamChallenge']; ?></td>
+                                    <th scope="row"><?php echo $time['timeID']; ?></th>
+                                    <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $time['causeID']) echo $cause['organisation']; };?></td>
+                                    <td><?php echo $time['start']; ?></td>
+                                    <td><?php echo $time['finish']; ?></td>
+                                    <td><?php echo $time['comment']; ?></td>
+                                    <td><?php echo $time['teamChallenge']; ?></td>
                                 </tr>
                             <?php endif; ?>
                         <?php endforeach; ?>
@@ -80,15 +80,15 @@
                         <tbody>
                             <!-- upcoming activities using if statement if start time is in future -->
                             <!-- replace cause id with organisation relating to that cause id -->
-                            <?php foreach ($upcoming_times as $entries): ?>
-                                <?php if ($entries['status'] == 'confirmed'): ?>
+                            <?php foreach ($upcoming_times as $time): ?>
+                                <?php if ($time['status'] == 'confirmed'): ?>
                                     <tr>
-                                        <th scope="row"><?php echo $entries['timeID']; ?></th>
-                                        <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></td>
-                                        <td><?php echo $entries['start']; ?></td>
-                                        <td><?php echo $entries['finish']; ?></td>
-                                        <td><?php echo $entries['comment']; ?></td>
-                                        <td><?php echo $entries['teamChallenge']; ?></td>
+                                        <th scope="row"><?php echo $time['timeID']; ?></th>
+                                        <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $time['causeID']) echo $cause['organisation']; };?></td>
+                                        <td><?php echo $time['start']; ?></td>
+                                        <td><?php echo $time['finish']; ?></td>
+                                        <td><?php echo $time['comment']; ?></td>
+                                        <td><?php echo $time['teamChallenge']; ?></td>
                                     </tr>
                                 <?php endif; ?>
                             <?php endforeach; ?>
@@ -121,15 +121,15 @@
                         </thead>
                         <tbody>
                             <!-- previous activities using if statement if start time is in past -->
-                            <?php foreach ($previous_times as $entries): ?>
-                                <?php if ($entries['status'] == 'confirmed'): ?>
+                            <?php foreach ($previous_times as $time): ?>
+                                <?php if ($time['status'] == 'confirmed'): ?>
                                     <tr>
-                                        <th scope="row"><?php echo $entries['timeID']; ?></th>
-                                        <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></td>
-                                        <td><?php echo $entries['start']; ?></td>
-                                        <td><?php echo $entries['finish']; ?></td>
-                                        <td><?php echo $entries['comment']; ?></td>
-                                        <td><?php echo $entries['teamChallenge']; ?></td>
+                                        <th scope="row"><?php echo $time['timeID']; ?></th>
+                                        <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $time['causeID']) echo $cause['organisation']; };?></td>
+                                        <td><?php echo $time['start']; ?></td>
+                                        <td><?php echo $time['finish']; ?></td>
+                                        <td><?php echo $time['comment']; ?></td>
+                                        <td><?php echo $time['teamChallenge']; ?></td>
                                     </tr>
                                 <?php endif; ?>
                             <?php endforeach; ?>
@@ -162,15 +162,15 @@
                         </thead>
                         <tbody>
                         <!-- denied activities using if statement - status is 'denied' -->
-                        <?php foreach ($upcoming_times as $entries): ?>
-                            <?php if ($entries['status'] == 'denied'): ?>
+                        <?php foreach ($upcoming_times as $time): ?>
+                            <?php if ($time['status'] == 'denied'): ?>
                                 <tr class="table-danger">
-                                    <th scope="row"><?php echo $entries['timeID']; ?></th>
-                                    <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></td>
-                                    <td><?php echo $entries['start']; ?></td>
-                                    <td><?php echo $entries['finish']; ?></td>
-                                    <td><?php echo $entries['comment']; ?></td>
-                                    <td><?php echo $entries['teamChallenge']; ?></td>
+                                    <th scope="row"><?php echo $time['timeID']; ?></th>
+                                    <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $time['causeID']) echo $cause['organisation']; };?></td>
+                                    <td><?php echo $time['start']; ?></td>
+                                    <td><?php echo $time['finish']; ?></td>
+                                    <td><?php echo $time['comment']; ?></td>
+                                    <td><?php echo $time['teamChallenge']; ?></td>
                                 </tr>
                             <?php endif; ?>
                         <?php endforeach; ?>
