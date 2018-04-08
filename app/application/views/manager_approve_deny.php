@@ -2,6 +2,12 @@
 <div id="managerShiftResponse">
     <h1>Respond to Applications</h1>
 
+    <?php if (isset($message)) {
+        echo '<p class="alert alert-success">'.$message.'</p><br>';
+    } elseif (isset($error)) {
+        echo '<p class="alert alert-danger">'.$error.'</p><br>';
+    }?>
+
     <div class="card">
         <div class="card-header">
             <h4>My managees</h4>
