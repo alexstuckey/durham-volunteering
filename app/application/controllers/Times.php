@@ -170,7 +170,7 @@ class Times extends CI_Controller {
         } else {
             $this->load->model('Time_model');
 
-            $this->Time_model->changeTimeStatus('shiftResponseSelect', $this->input->post('shiftResponseRadios'));
+            $this->Time_model->changeTimeStatus($this->input->post('shiftResponseSelect'), $this->input->post('shiftResponseRadios'));
 
 
             // send notification to managee to let them know the response from their manager
