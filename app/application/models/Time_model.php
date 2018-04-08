@@ -18,6 +18,15 @@ class Time_model extends CI_Model {
         return $query->row_array();
     }
 
+    // Returns an array of Time Rows to which the CisID is associated
+    public function getTimesForCIS($CISID)
+    {
+        $this->db->where('cisID', $CISID);
+        $this->db->where('teamChallenge', False);
+        $query = $this->db->get('times');
+        return $query->result_array();
+    }
+
     // Inserts into 'time' table in the database.
     public function createTime($CISID, $start, $end, $causeID, $comment, $status, $teamChallenge = False)
     {
