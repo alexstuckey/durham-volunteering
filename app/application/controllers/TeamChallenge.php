@@ -34,7 +34,7 @@ class TeamChallenge extends CI_Controller
 
             $manager = $this->User_model->getManager($_SERVER['REMOTE_USER']);
             $volunteer = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
-            $time = $this->Time_model->getTimeByID($this->input->post('joinChallengeButton'));
+            $time = $this->Time_model->getTimeByTimeID($this->input->post('joinChallengeButton'));
             $managerCIS = $manager['username'];
             $causeID = $time['causeID'];
             $cause = $this->Cause_model->getCauseByID($causeID);

@@ -9,7 +9,7 @@ class Time_model extends CI_Model {
     }
 
     //Returns a time row when the argument givens matches the timeID.
-    public function getTimeByID($timeID)
+    public function getTimeByTimeID($timeID)
     {
         $this->db->where('timeID', $timeID);
 
