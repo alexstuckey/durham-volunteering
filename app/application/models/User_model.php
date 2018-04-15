@@ -13,11 +13,11 @@ class User_model extends CI_Model
 
     public function getAllUsersCISID()
     {
-        $query = $this->db->get('users');
 
-        $result = $query->row_array();
+        $query = $this->db->query("SELECT cisID FROM users");
 
-        return $result['cisID'];
+
+        return $query->result_array();
     }
 
 
