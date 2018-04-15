@@ -79,6 +79,8 @@ $route['admin/declaration']['GET'] = 'admin/declaration';
 $route['admin/declaration']['POST'] = 'admin/declarationEdit';
 $route['admin/settings'] = 'admin/settings';
 $route['admin/audit'] = 'admin/audit';
+$route['admin/broadcast'] = 'admin/broadcastNotificationFormSubmit';
+
 
 $route['causes'] = 'causes/allCauses';
 $route['cause/add']['GET'] = 'causes/addPage';

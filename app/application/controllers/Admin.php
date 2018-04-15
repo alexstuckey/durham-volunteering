@@ -316,4 +316,45 @@ class Admin extends CI_Controller
         $this->load->view('content_close', $data);
         $this->load->view('footer', $data);
     }
+
+    public function broadcastNotificationFormSubmit()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('broadcastNotification', 'Notification body', 'required');
+
+        $this->form_validation->set_error_delimiters('<p class="alert alert-danger"><strong>Error: </strong>', '</p>');
+
+        $this->load->library('session');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+
+            $this->load->helper('url');
+            redirect(site_url('/admin/notification'));
+        } else {
+
+            $this->load->helper('date');
+            $format = "%Y-%m-%d %h:%i %A";
+
+            $this->load->model('User_model');
+            $this->load->model('Notification_model');
+
+            $users = $this->User_model->getAllUsersCISID();
+
+            foreach ($users as $user){
+                $this->Notification_model->createNotification(
+                    $user,
+                    'Broadcast Notification',
+                    $this->input->post('broadcastNotification'),
+                    mdate($format)
+                );
+            }
+
+            $this->session->set_flashdata('message', 'Notification broadcast!');
+            $this->Audit_model->insertLog('BROADCAST', 'Notification broadcast!');
+
+            $this->load->helper('url');
+            redirect(site_url('/admin/notification'));
+
+        }
+    }
 }
