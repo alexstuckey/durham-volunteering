@@ -147,7 +147,7 @@ class Times extends CI_Controller {
             $this->Audit_model->insertLog('ALTER', 'Time cancelled!');
 
             $this->load->helper('url');
-            //redirect(site_url('/my_volunteering'));
+            redirect(site_url('/my_volunteering'));
         }
     }
 
