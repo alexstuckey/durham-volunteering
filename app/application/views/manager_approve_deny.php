@@ -47,8 +47,11 @@
                                 <option value="<?php echo $entries['timeID']; ?>">
                                     <?php echo $entries['cisID'] . ': ' . $entries['start'] . ' to ' . $entries['finish'] . ' at ';?>
                                     <?php foreach ($causes as $cause) {
-                                        if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation'];
+                                        if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation'] . '.';
                                     };?>
+                                    <?php if ($entries['teamChallenge'] === 1): ?>
+                                        <?php echo 'TEAM CHALLENGE.'; ?>
+                                    <?php endif ?>
                                     </option>
                             <?php endforeach; ?>
                         <?php endforeach; ?>
