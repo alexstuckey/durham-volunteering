@@ -342,7 +342,7 @@ class Admin extends CI_Controller
 
             foreach ($users as $user){
                 $this->Notification_model->createNotification(
-                    $user,
+                    $user['cisID'],
                     'Broadcast Notification',
                     $this->input->post('broadcastNotification'),
                     mdate($format)
