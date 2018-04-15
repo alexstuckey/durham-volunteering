@@ -49,7 +49,7 @@
                                     <?php foreach ($causes as $cause) {
                                         if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation'] . '.';
                                     };?>
-                                    <?php if ($entries['teamChallenge'] === 1): ?>
+                                    <?php if ($entries['teamChallenge'] === '1'): ?>
                                         <?php echo 'TEAM CHALLENGE.'; ?>
                                     <?php endif ?>
                                     </option>
