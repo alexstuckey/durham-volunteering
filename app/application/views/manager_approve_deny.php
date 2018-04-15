@@ -58,7 +58,7 @@
 
                 <div class="form-check">
                     <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="shiftResponseRadios" id="shiftResponseRadio1" value="confirmed" checked>
+                        <input class="form-check-input" type="radio" name="shiftResponseRadios" id="shiftResponseRadio1" value="confirmed">
                         Permit
                     </label>
                 </div>
