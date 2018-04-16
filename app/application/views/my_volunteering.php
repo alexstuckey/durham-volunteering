@@ -28,7 +28,7 @@
                     <?php if ($number_of_times['pending'] == 0): ?>
                         There are no pending activities.
                     <?php else: ?>
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -36,7 +36,7 @@
                             <th scope="col">Start Time</th>
                             <th scope="col">End Time</th>
                             <th scope="col">Comment</th>
-                            <th scope="col">Team Challenge</th>
+                            <th scope="col">Type</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -49,7 +49,7 @@
                                     <td><?php echo $time['start']; ?></td>
                                     <td><?php echo $time['finish']; ?></td>
                                     <td><?php echo $time['comment']; ?></td>
-                                    <td><?php echo $time['teamChallenge']; ?></td>
+                                    <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
                                 </tr>
                             <?php endif; ?>
                         <?php endforeach; ?>
@@ -73,7 +73,7 @@
                     <?php if ($number_of_times['upcoming_confirmed'] == 0): ?>
                         There are no upcoming activities.
                     <?php else: ?>
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -81,7 +81,7 @@
                             <th scope="col">Start Time</th>
                             <th scope="col">End Time</th>
                             <th scope="col">Comment</th>
-                            <th scope="col">Team Challenge</th>
+                            <th scope="col">Type</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -95,7 +95,7 @@
                                         <td><?php echo $time['start']; ?></td>
                                         <td><?php echo $time['finish']; ?></td>
                                         <td><?php echo $time['comment']; ?></td>
-                                        <td><?php echo $time['teamChallenge']; ?></td>
+                                        <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
                                     </tr>
                                 <?php endif; ?>
                             <?php endforeach; ?>
@@ -119,7 +119,7 @@
                     <?php if ($number_of_times['previous_confirmed'] == 0): ?>
                         There are no previous activities.
                     <?php else: ?>
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -127,7 +127,7 @@
                             <th scope="col">Start Time</th>
                             <th scope="col">End Time</th>
                             <th scope="col">Comment</th>
-                            <th scope="col">Team Challenge</th>
+                            <th scope="col">Type</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -140,7 +140,7 @@
                                         <td><?php echo $time['start']; ?></td>
                                         <td><?php echo $time['finish']; ?></td>
                                         <td><?php echo $time['comment']; ?></td>
-                                        <td><?php echo $time['teamChallenge']; ?></td>
+                                        <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
                                     </tr>
                                 <?php endif; ?>
                             <?php endforeach; ?>
@@ -164,7 +164,7 @@
                     <?php if ($number_of_times['denied'] == 0): ?>
                         There are no denied activities.
                     <?php else: ?>
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -172,7 +172,7 @@
                             <th scope="col">Start Time</th>
                             <th scope="col">End Time</th>
                             <th scope="col">Comment</th>
-                            <th scope="col">Team Challenge</th>
+                            <th scope="col">Type</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -185,7 +185,7 @@
                                     <td><?php echo $time['start']; ?></td>
                                     <td><?php echo $time['finish']; ?></td>
                                     <td><?php echo $time['comment']; ?></td>
-                                    <td><?php echo $time['teamChallenge']; ?></td>
+                                    <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
                                 </tr>
                             <?php endif; ?>
                         <?php endforeach; ?>

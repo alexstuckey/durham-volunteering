@@ -22,7 +22,7 @@ class Time_model extends CI_Model {
     public function getTimesForCIS($CISID)
     {
         $this->db->where('cisID', $CISID);
-        $this->db->where('teamChallenge', False);
+        //$this->db->where('teamChallenge', False);
         $query = $this->db->get('times');
         return $query->result_array();
     }
@@ -31,7 +31,7 @@ class Time_model extends CI_Model {
     public function getTimesPendingForCIS($CISID)
     {
         $this->db->where('cisID', $CISID);
-        $this->db->where('teamChallenge', False);
+        //$this->db->where('teamChallenge', False);
         $this->db->where('status', 'pending');
         $query = $this->db->get('times');
         return $query->result_array();

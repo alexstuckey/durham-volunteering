@@ -11,6 +11,15 @@ class User_model extends CI_Model
         $this->load->database();
     }
 
+    public function getAllUsersCISID()
+    {
+
+        $query = $this->db->query("SELECT cisID FROM users");
+
+
+        return $query->result_array();
+    }
+
 
     // Returns the CIS user details
     public function getUserByCIS($cisID)
