@@ -29,6 +29,7 @@
                     <li><?php echo $managee['firstName'] . ' ' . $managee['secondName']; ?></li>
                 <?php endforeach; ?>
                 </ul>
+                <a class="btn btn-primary" href="<?php echo site_url('/respond/nomination'); ?>">Go to approvals</a>
             <?php endif; ?>
         </div>
     </div>
