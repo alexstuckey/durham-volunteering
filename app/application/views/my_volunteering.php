@@ -28,7 +28,7 @@
                     <?php if ($number_of_times['pending'] == 0): ?>
                         There are no pending activities.
                     <?php else: ?>
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -73,7 +73,7 @@
                     <?php if ($number_of_times['upcoming_confirmed'] == 0): ?>
                         There are no upcoming activities.
                     <?php else: ?>
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -119,7 +119,7 @@
                     <?php if ($number_of_times['previous_confirmed'] == 0): ?>
                         There are no previous activities.
                     <?php else: ?>
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -164,7 +164,7 @@
                     <?php if ($number_of_times['denied'] == 0): ?>
                         There are no denied activities.
                     <?php else: ?>
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th scope="col">#</th>

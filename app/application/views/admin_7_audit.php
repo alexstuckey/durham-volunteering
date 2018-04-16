@@ -3,7 +3,7 @@
     <div id="audit">
         <h1>Audit trails</h1>
 
-        <table class="table table-sm table-hover">
+        <table class="table  table-responsive table-sm table-hover">
           <thead>
             <tr>
               <th scope="col">#</th>
