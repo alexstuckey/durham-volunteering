@@ -228,7 +228,9 @@ class Onboarding extends CI_Controller {
             $this->Email_model->sendEmail('7_manager_nomination', $manager['email'], $substitutions);
 
             // Then email the volunteer
-            $substitutions = array();
+            $substitutions = array(
+                '<Home Link>' => site_url('/home')
+            );
             
             $this->Email_model->sendEmail('1_volunteer_welcome', $volunteer['email'], $substitutions);
 
