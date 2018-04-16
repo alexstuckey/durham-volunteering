@@ -36,7 +36,7 @@
                             <th scope="col">Start Time</th>
                             <th scope="col">End Time</th>
                             <th scope="col">Comment</th>
-                            <th scope="col">Team Challenge</th>
+                            <th scope="col">Type</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -49,7 +49,7 @@
                                     <td><?php echo $time['start']; ?></td>
                                     <td><?php echo $time['finish']; ?></td>
                                     <td><?php echo $time['comment']; ?></td>
-                                    <td><?php echo $time['teamChallenge']; ?></td>
+                                    <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
                                 </tr>
                             <?php endif; ?>
                         <?php endforeach; ?>
@@ -81,7 +81,7 @@
                             <th scope="col">Start Time</th>
                             <th scope="col">End Time</th>
                             <th scope="col">Comment</th>
-                            <th scope="col">Team Challenge</th>
+                            <th scope="col">Type</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -95,7 +95,7 @@
                                         <td><?php echo $time['start']; ?></td>
                                         <td><?php echo $time['finish']; ?></td>
                                         <td><?php echo $time['comment']; ?></td>
-                                        <td><?php echo $time['teamChallenge']; ?></td>
+                                        <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
                                     </tr>
                                 <?php endif; ?>
                             <?php endforeach; ?>
@@ -127,7 +127,7 @@
                             <th scope="col">Start Time</th>
                             <th scope="col">End Time</th>
                             <th scope="col">Comment</th>
-                            <th scope="col">Team Challenge</th>
+                            <th scope="col">Type</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -140,7 +140,7 @@
                                         <td><?php echo $time['start']; ?></td>
                                         <td><?php echo $time['finish']; ?></td>
                                         <td><?php echo $time['comment']; ?></td>
-                                        <td><?php echo $time['teamChallenge']; ?></td>
+                                        <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
                                     </tr>
                                 <?php endif; ?>
                             <?php endforeach; ?>
@@ -172,7 +172,7 @@
                             <th scope="col">Start Time</th>
                             <th scope="col">End Time</th>
                             <th scope="col">Comment</th>
-                            <th scope="col">Team Challenge</th>
+                            <th scope="col">Type</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -185,7 +185,7 @@
                                     <td><?php echo $time['start']; ?></td>
                                     <td><?php echo $time['finish']; ?></td>
                                     <td><?php echo $time['comment']; ?></td>
-                                    <td><?php echo $time['teamChallenge']; ?></td>
+                                    <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
                                 </tr>
                             <?php endif; ?>
                         <?php endforeach; ?>
