@@ -59,17 +59,20 @@ class Respond extends CI_Controller {
                 '<Volunteer Name>' => $volunteer['fullname'],
                 '<Onboard Link>' => site_url('/onboard/wait_nominate_manager')
             );
-            $this->Email_model->sendEmail('9_volunteer_manager_success', $volunteer['email'], $substitutions);
 
+            if ($verb == 'confirm') {
+                // SUCCESS
+                $this->Email_model->sendEmail('9_volunteer_manager_success', $volunteer['email'], $substitutions);
+            } else if ($verb == 'deny') {
+                // FAIL
+                $this->Email_model->sendEmail('10_volunteer_manager_failure', $volunteer['email'], $substitutions);
+            }
+            
             // SUCCESS
             // Set success message
-            $this->session->set_flashdata('message', 'You have approved this appointment!');
+            $this->session->set_flashdata('message', 'You have ' . $newStatus . ' this appointment!');
 
         } else {
-            // FAIL
-            $substitutions = array();
-            $this->Email_model->sendEmail('10_volunteer_manager_failure', $volunteer['email'], $substitutions);
-
             // Set failure message
             $this->session->set_flashdata('error', 'Your response to that nomination was invalid.');
 
