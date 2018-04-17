@@ -8,12 +8,27 @@ class Times extends CI_Controller {
         $this->load->view('welcome_message');
     }
 
+    function is_date_valid($shiftApplicationDateTimeEnd, $shiftApplicationDateTimeStart) {
+
+        if ($shiftApplicationDateTimeStart <  $shiftApplicationDateTimeEnd) {
+
+            $interval = date_diff(date_create($shiftApplicationDateTimeStart), date_create($shiftApplicationDateTimeEnd));
+            $minutes = $interval->format('%h') * 60 . $interval->format('%i');
+
+            if (30 <= $minutes) {
+                return TRUE;
+            }
+        }
+        $this->form_validation->set_message('is_date_valid', 'The Shift must be at least 30 minutes long.');
+        return FALSE;
+    }
+
     public function createFormSubmit()
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->form_validation->set_rules('shiftApplicationDateTimeStart', 'Shift Start Time', 'trim|required');
-        $this->form_validation->set_rules('shiftApplicationDateTimeEnd', 'Shift End Time', 'trim|required');
+        $this->form_validation->set_rules('shiftApplicationDateTimeEnd', 'Shift End Time', 'trim|required|callback_is_date_valid['.$this->input->post('shiftApplicationDateTimeStart').']');
         $this->form_validation->set_rules('shiftApplicationCause', 'Shift Cause', 'trim|required');
         $this->form_validation->set_rules('shiftApplicationComment', 'Shift Comment', 'trim');
         $this->form_validation->set_error_delimiters('<p class="alert alert-danger"><strong>Error: </strong>', '</p>');
