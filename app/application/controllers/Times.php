@@ -9,15 +9,18 @@ class Times extends CI_Controller {
     }
 
     function is_date_valid($shiftApplicationDateTimeEnd, $shiftApplicationDateTimeStart) {
-        $interval = date_diff(date_create($shiftApplicationDateTimeStart), date_create($shiftApplicationDateTimeEnd));
-        $minutes = $interval->format('%h') * 60 . $interval->format('%i');
 
-        if (30 <= $minutes) {
-            return TRUE;
-        } else {
-            $this->form_validation->set_message('is_date_valid', 'The Shift must be at least 30 minutes long.');
-            return FALSE;
+        if ($shiftApplicationDateTimeStart <  $shiftApplicationDateTimeEnd) {
+
+            $interval = date_diff(date_create($shiftApplicationDateTimeStart), date_create($shiftApplicationDateTimeEnd));
+            $minutes = $interval->format('%h') * 60 . $interval->format('%i');
+
+            if (30 <= $minutes) {
+                return TRUE;
+            }
         }
+        $this->form_validation->set_message('is_date_valid', 'The Shift must be at least 30 minutes long.');
+        return FALSE;
     }
 
     public function createFormSubmit()
