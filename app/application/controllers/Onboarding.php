@@ -263,6 +263,8 @@ class Onboarding extends CI_Controller {
         $data['active'] = 'wait_nominate_manager';
         if ($this->User_model->getManagerStatus($_SERVER['REMOTE_USER']) == 'confirmed') {
             $data['active'] = 'get_started';
+        } else if ($this->User_model->getManagerStatus($_SERVER['REMOTE_USER']) == 'denied') {
+            $data['active'] = 'nominate_manager';
         }
         $data['hide_links'] = TRUE;
         $data['page_title'] = 'Onboarding - Staff Volunteering Programme';

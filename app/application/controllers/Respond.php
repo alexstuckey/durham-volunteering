@@ -57,7 +57,7 @@ class Respond extends CI_Controller {
             $substitutions = array(
                 '<Manager Name>' => $manager['fullname'],
                 '<Volunteer Name>' => $volunteer['fullname'],
-                '<Onboard Link>' => site_url('/onboard/wait_nominate_manager')
+                '<Onboard Link>' => site_url('/onboard/steps_details')
             );
             $this->Email_model->sendEmail('9_volunteer_manager_success', $volunteer['email'], $substitutions);
 
