@@ -178,7 +178,18 @@ class User_model extends CI_Model
             'onBoarding' => $newStatus,
         );
         $this->db->update('users', $data);
+    }
 
+    // Returns the onboarding status for a particular user
+    public function getOnboardingStatus($CISID)
+    {
+        $this->db->where('cisID', $CISID);
+
+        $query = $this->db->get('users');
+
+        $result = $query->row_array();
+
+        return $result['onBoarding'];
     }
 
     public function doesUserExist($username)
