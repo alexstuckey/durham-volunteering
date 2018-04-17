@@ -3,7 +3,7 @@
                 <p>Thank you for signing up to Durham University's Volunteering Project. With this account you can organize and track your volunteering activities.</p>
                 <?php if ($active == "wait_nominate_manager"): ?>
                 <br>
-                <p>Currently waiting for your nominating manager, <?php echo $manager['email']; ?>, to comfirm his status.</p>
+                <p>Currently waiting for confirmation of your nominating manager, <?php echo $manager['email']; ?>.</p>
                 <?php endif; ?>
             </div>
             <div class="container">
