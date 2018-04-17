@@ -54,22 +54,17 @@ class User_model extends CI_Model
     // Checks if the value in the isAdmin field = 1, if so returns 1. If not, returns 0.
     public function isAdmin($CISID)
     {
-
-
         $query = $this->db->get_where('admins', array('cisID' => $CISID));
 
         $result = $query->result_array();
 
-        $isAdmin = $result[0]['isAdmin'];
-
-
-        if ($isAdmin == "1") {
-
-            return 1;
-        } else {
-
-            return 0;
+        if (isset($result[0])) {
+            $isAdmin = $result[0]['isAdmin'];
+            if ($isAdmin == "1") {
+                return 1;
+            }
         }
+        return 0;
     }
 
 

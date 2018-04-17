@@ -5,6 +5,14 @@ class Home extends CI_Controller {
 
     public function homepage()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        }
+
         $this->load->model('Notification_model');
         $data['notifications'] = $this->Notification_model->getUserNotifications($_SERVER['REMOTE_USER']);
 
@@ -32,6 +40,14 @@ class Home extends CI_Controller {
 
     public function my_volunteering()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        }
+
         // load time model
         $this->load->model('Time_model');
         $this->load->model('Cause_model');
@@ -88,6 +104,22 @@ class Home extends CI_Controller {
 
     public function my_volunteering_activities()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        }
+
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        }
+
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'volunteering';
         $data['page_title'] = 'Activities - Staff Volunteering Programme';
@@ -125,6 +157,14 @@ class Home extends CI_Controller {
 
     public function manager_approve_deny()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        }
+
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'manager';
         $data['page_title'] = 'Respond to Applications - Staff Volunteering Programme';
@@ -166,6 +206,14 @@ class Home extends CI_Controller {
 
     public function single_cause()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        }
+
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'manager';
         $data['page_title'] = 'Causes - Staff Volunteering Programme';
@@ -191,6 +239,14 @@ class Home extends CI_Controller {
 
     public function statistics()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        }
+
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'other';
         $data['page_title'] = 'Statistics - Staff Volunteering Programme';
@@ -222,6 +278,14 @@ class Home extends CI_Controller {
 
     public function team_challenge()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        }
+
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'team_challenge';
         $data['page_title'] = 'Team Challenge - Staff Volunteering Programme';

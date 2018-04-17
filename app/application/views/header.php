@@ -70,9 +70,11 @@
                             <?php endif; ?>
                         </ul>
                         <ul class="navbar-nav">
-                            <li class="nav-item<?php if ($active == "admin") { echo " active"; }; ?>">
-                                <a class="nav-link" href="<?php echo site_url('/admin/departments'); ?>">Admin</a>
-                            </li>
+                            <?php if (!empty($is_admin) && ($is_admin == TRUE)): ?>
+                                <li class="nav-item<?php if ($active == "admin") { echo " active"; }; ?>">
+                                    <a class="nav-link" href="<?php echo site_url('/admin/departments'); ?>">Admin</a>
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </nav>

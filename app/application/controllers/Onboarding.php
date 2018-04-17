@@ -6,9 +6,13 @@ class Onboarding extends CI_Controller {
     public function welcome()
     {
         $this->load->model('User_model');
-        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
-            // First access by user, normally redirect, but already there.
-            // redirect
+
+        if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        }
+
+        if ($this->User_model->doesUserExist($_SERVER['REMOTE_USER']) && !$this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            echo site_url('/home');
         }
 
         $this->Audit_model->insertLog('ACCESS', 'Accessing Welcome Page');
@@ -31,7 +35,6 @@ class Onboarding extends CI_Controller {
     {
         $this->load->model('User_model');
         if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
-            // First access by user, normally redirect, but already there.
             $this->Audit_model->insertLog('ACCESS DENIED', 'Onboarding: Accessing Page Denied');
             $this->Audit_model->insertLog('REDIRECT', 'Onboarding: Redirect to Welcome Page');
 
@@ -59,7 +62,6 @@ class Onboarding extends CI_Controller {
     {
         $this->load->model('User_model');
         if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
-            // First access by user, normally redirect, but already there.
             $this->load->helper('url');
             redirect('/onboard/welcome');
         }
@@ -90,7 +92,6 @@ class Onboarding extends CI_Controller {
     {
         $this->load->model('User_model');
         if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
-            // First access by user, normally redirect, but already there.
             $this->load->helper('url');
             redirect('/onboard/welcome');
         }
@@ -136,7 +137,6 @@ class Onboarding extends CI_Controller {
     {
         $this->load->model('User_model');
         if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
-            // First access by user, normally redirect, but already there.
             $this->load->helper('url');
             redirect('/onboard/welcome');
         }
@@ -182,7 +182,6 @@ class Onboarding extends CI_Controller {
     {
         $this->load->model('User_model');
         if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
-            // First access by user, normally redirect, but already there.
             $this->load->helper('url');
             redirect('/onboard/welcome');
         }

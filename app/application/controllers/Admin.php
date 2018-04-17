@@ -6,6 +6,17 @@ class Admin extends CI_Controller
 
     public function index()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        } else {
+            $this->load->helper('url');
+            redirect('/home');
+        }
+
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'settings';
@@ -40,6 +51,17 @@ class Admin extends CI_Controller
 
     public function departments()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        } else {
+            $this->load->helper('url');
+            redirect('/home');
+        }
+
         $this->Audit_model->insertLog('ACCESS', 'Accessing admin: departments');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
@@ -118,6 +140,17 @@ class Admin extends CI_Controller
 
     public function notification()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        } else {
+            $this->load->helper('url');
+            redirect('/home');
+        }
+
         $this->Audit_model->insertLog('ACCESS', 'Accessing admin: notification');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
@@ -137,6 +170,17 @@ class Admin extends CI_Controller
 
     public function emails()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        } else {
+            $this->load->helper('url');
+            redirect('/home');
+        }
+
         $this->Audit_model->insertLog('ACCESS', 'Accessing admin: email templates');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
@@ -189,11 +233,22 @@ class Admin extends CI_Controller
 
     public function declaration()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        } else {
+            $this->load->helper('url');
+            redirect('/home');
+        }
+
         $this->Audit_model->insertLog('ACCESS', 'Accessing admin: departments');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
         $data['active_admin'] = 'declaration';
-        $data['page_title'] = 'Admin: declaration';
+        $data['page_title'] = 'Admin: Personal Declaration - Staff Volunteering Programme';
 
         $this->load->library('form_validation');
         $this->load->library('session');
@@ -240,6 +295,17 @@ class Admin extends CI_Controller
 
     public function settings()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        } else {
+            $this->load->helper('url');
+            redirect('/home');
+        }
+
         $this->Audit_model->insertLog('ACCESS', 'Accessing admin: settings');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
@@ -259,6 +325,17 @@ class Admin extends CI_Controller
 
     public function audit()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        } else {
+            $this->load->helper('url');
+            redirect('/home');
+        }
+
         $this->Audit_model->insertLog('ACCESS', 'Accessing admin: audit');
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'admin';
@@ -279,7 +356,6 @@ class Admin extends CI_Controller
     }
 
     public function turnResultsIntoAssociative($results)
-
     {
         $field_data=array();
 
@@ -297,6 +373,17 @@ class Admin extends CI_Controller
 
     public function disableEnable()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        } else {
+            $this->load->helper('url');
+            redirect('/home');
+        }
+
         $this->load->model('Admin_model');
         $websiteEnabled = $this->input->post('websiteEnabled');
         $this->Admin_model->updateWebsiteStatus($websiteEnabled);
