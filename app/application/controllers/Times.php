@@ -9,10 +9,10 @@ class Times extends CI_Controller {
     }
 
     function is_date_valid($shiftApplicationDateTimeEnd, $shiftApplicationDateTimeStart) {
-        if ($shiftApplicationDateTimeStart < $shiftApplicationDateTimeEnd) {
+        if (1800 <= $shiftApplicationDateTimeEnd->getTimestamp() - $shiftApplicationDateTimeStart->getTimestamp()) {
             return TRUE;
         } else {
-            $this->form_validation->set_message('is_date_valid', 'The Start Date must be before the End Date.');
+            $this->form_validation->set_message('is_date_valid', 'The Shift must be at least 30 minutes long.');
             return FALSE;
         }
     }
