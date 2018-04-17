@@ -5,6 +5,14 @@ class Causes extends CI_Controller {
 
     public function allCauses()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        }
+
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'causes';
         $data['page_title'] = 'Causes';
@@ -30,6 +38,14 @@ class Causes extends CI_Controller {
 
     public function addPage()
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        }
+
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'causes';
         $data['page_title'] = 'Causes: Add';
@@ -55,6 +71,7 @@ class Causes extends CI_Controller {
 
     public function addForm()
     {
+
         $this->load->library('form_validation');
         $this->form_validation->set_rules('inputOrganisationName', 'Organisation Name', 'trim|required|max_length[255]');
         $this->form_validation->set_rules('inputType', 'Organisation Type', 'required');
@@ -91,6 +108,14 @@ class Causes extends CI_Controller {
 
     public function causeByID($causeID)
     {
+        $this->load->model('User_model');
+        if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
+            $this->load->helper('url');
+            redirect('/onboard/welcome');
+        } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
+            $data['is_admin'] = TRUE;
+        }
+
         $data['cis_username'] = 'xxxx99';
         $data['active'] = 'causes';
 
