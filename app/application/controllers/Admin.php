@@ -13,6 +13,7 @@ class Admin extends CI_Controller
         } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
             $data['is_admin'] = TRUE;
         } else {
+            $this->load->helper('url');
             redirect('/home');
         }
 
@@ -57,6 +58,7 @@ class Admin extends CI_Controller
         } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
             $data['is_admin'] = TRUE;
         } else {
+            $this->load->helper('url');
             redirect('/home');
         }
 
@@ -145,6 +147,7 @@ class Admin extends CI_Controller
         } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
             $data['is_admin'] = TRUE;
         } else {
+            $this->load->helper('url');
             redirect('/home');
         }
 
@@ -174,6 +177,7 @@ class Admin extends CI_Controller
         } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
             $data['is_admin'] = TRUE;
         } else {
+            $this->load->helper('url');
             redirect('/home');
         }
 
@@ -236,6 +240,7 @@ class Admin extends CI_Controller
         } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
             $data['is_admin'] = TRUE;
         } else {
+            $this->load->helper('url');
             redirect('/home');
         }
 
@@ -297,6 +302,7 @@ class Admin extends CI_Controller
         } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
             $data['is_admin'] = TRUE;
         } else {
+            $this->load->helper('url');
             redirect('/home');
         }
 
@@ -326,6 +332,7 @@ class Admin extends CI_Controller
         } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
             $data['is_admin'] = TRUE;
         } else {
+            $this->load->helper('url');
             redirect('/home');
         }
 
@@ -373,6 +380,7 @@ class Admin extends CI_Controller
         } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
             $data['is_admin'] = TRUE;
         } else {
+            $this->load->helper('url');
             redirect('/home');
         }
 
