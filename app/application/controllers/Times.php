@@ -79,7 +79,8 @@ class Times extends CI_Controller {
                 '<Time Start>' => $this->input->post('shiftApplicationDateTimeStart'),
                 '<Time End>' => $this->input->post('shiftApplicationDateTimeEnd'),
                 '<Cause Organisation>' => $cause['organisation'],
-                '<Respond Link>' => site_url('/manager')
+                '<Respond Link>' => site_url('/manager'),
+                '<Comment>' => $this->input->post('shiftApplicationComment')
             );
 
             $this->Email_model->sendEmail('8_manager_shift_request', $manager['email'], $substitutions);
@@ -205,7 +206,8 @@ class Times extends CI_Controller {
                 '<Volunteer Name>' => $volunteer['fullname'],
                 '<Time Start>' => $time['start'],
                 '<Time End>' => $time['finish'],
-                '<Cause Organisation>' => $cause['organisation']
+                '<Cause Organisation>' => $cause['organisation'],
+                '<Comment>' => $this->input->post('shiftResponseComment')
             );
 
             if ($this->input->post('shiftResponseRadios') == 'confirmed') {
