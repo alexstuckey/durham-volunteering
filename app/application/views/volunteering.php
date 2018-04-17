@@ -25,12 +25,12 @@
             <form method="post" action="<?php echo site_url('/time/create'); ?>" id="shiftApplicationForm">
 
                 <div class="form-group">
-                    <label for="shiftApplicationDateTimeStart">Start Date and time</label>
+                    <label for="shiftApplicationDateTimeStart">Start Date and Time</label>
                     <input class="form-control" type="datetime-local" value="<?php echo $date; ?>" id="shiftApplicationDateTimeStart" name="shiftApplicationDateTimeStart"required>
                 </div>
 
                 <div class="form-group">
-                    <label for="shiftApplicationDateTimeEnd">End Date and time</label>
+                    <label for="shiftApplicationDateTimeEnd">End Date and Time</label>
                     <input class="form-control" type="datetime-local" value="<?php echo $date; ?>" id="shiftApplicationDateTimeEnd" name="shiftApplicationDateTimeEnd"required>
                 </div>
 
