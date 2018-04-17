@@ -9,6 +9,8 @@ class Times extends CI_Controller {
     }
 
     function is_date_valid($shiftApplicationDateTimeEnd, $shiftApplicationDateTimeStart) {
+        $this->form_validation->set_message('The %s Start Date must be before the End Date."');
+        return FALSE;
         if ($shiftApplicationDateTimeStart < $shiftApplicationDateTimeEnd) {
             return TRUE;
         } else {
