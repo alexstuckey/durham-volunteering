@@ -78,6 +78,7 @@ $route['admin/emails/edit']['POST'] = 'admin/emailsEdit';
 $route['admin/declaration']['GET'] = 'admin/declaration';
 $route['admin/declaration']['POST'] = 'admin/declarationEdit';
 $route['admin/settings'] = 'admin/settings';
+$route['admin/settings/addAdmin']['POST'] = 'admin/settingsAddAdmin';
 $route['admin/audit'] = 'admin/audit';
 $route['admin/broadcast'] = 'admin/broadcastNotificationFormSubmit';
 
