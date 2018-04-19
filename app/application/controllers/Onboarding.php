@@ -6,10 +6,12 @@ class Onboarding extends CI_Controller {
     public function welcome()
     {
         $this->load->model('User_model');
+        $this->load->helper('url');
 
         if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
             $data['is_admin'] = TRUE;
         }
+
 
         if ($this->User_model->doesUserExist($_SERVER['REMOTE_USER']) && !$this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
             echo site_url('/home');
