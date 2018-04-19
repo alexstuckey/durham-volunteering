@@ -87,7 +87,7 @@
     <div>
         <div class="card">
             <div class="card-header">
-                <h5>Upcoming Activities</h5>
+                <h5>Upcoming Managee Activities</h5>
             </div>
             <div class="activityTable">
                 <div class="card-block">
