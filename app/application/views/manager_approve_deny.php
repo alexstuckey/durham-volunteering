@@ -82,6 +82,51 @@
             </form>
         </div>
     </div>
+
+    <!-- View Upcoming Activities for managees-->
+    <div>
+        <div class="card">
+            <div class="card-header">
+                <h5>Upcoming Activities</h5>
+            </div>
+            <div class="activityTable">
+                <div class="card-block">
+                    <table class="table table-responsive">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">CIS ID</th>
+                            <th scope="col">Cause</th>
+                            <th scope="col">Start Time</th>
+                            <th scope="col">End Time</th>
+                            <th scope="col">Comment</th>
+                            <th scope="col">Type</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- upcoming activities using if statement if start time is in future -->
+                        <!-- replace cause id with organisation relating to that cause id -->
+                        <?php foreach ($managees as $managee): ?>
+                            <?php foreach ($managee['timesUpcoming'] as $entries): ?>
+                                <tr>
+                                    <th scope="row"><?php echo $entries['timeID']; ?></th>
+                                    <td><?php echo $entries['cisID']; ?></td></td>
+                                    <td><?php foreach ($causes as $cause) { if ($cause['causeID'] == $entries['causeID']) echo $cause['organisation']; };?></td>
+                                    <td><?php echo $entries['start']; ?></td>
+                                    <td><?php echo $entries['finish']; ?></td>
+                                    <td><?php echo $entries['comment']; ?></td>
+                                    <td><?php if ($entries['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 <!-- End of Manager can Approve/Deny Shifts Div -->
 
