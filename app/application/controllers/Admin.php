@@ -311,6 +311,9 @@ class Admin extends CI_Controller
         $data['active'] = 'admin';
         $data['active_admin'] = 'settings';
         $data['page_title'] = 'Admin: Settings - Staff Volunteering Programme';
+
+        $data['admins'] = $this->User_model->getAdmins();
+
         $this->load->view('header', $data);
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);

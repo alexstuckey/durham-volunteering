@@ -5,20 +5,37 @@
         <h1>Settings</h1>
         <div class="card">
             <div class="card-block">
-                <form action="admin_4_settings.php" method="post">
-                    <h4>Email Settings</h4>
+                    <h4>Admin users</h4>
                     <br>
                     <form class="form-inline">
-                        <div class="form-group">
-                            <p class="form-control-static"><b>Admin CIS usernames</b></p>
-                            <input style="width:100px; margin-right:10px;" type="text" class="form-control alignleft" id="inputPassword2" value="abcd11">
-                            <button type="submit" class="btn btn-secondary">Rename</button>
-                        </div>
-                        <div class="form-group">
-                            <input style="width:100px; margin-right:10px;" type="text" class="form-control alignleft" id="inputPassword2" value="abcd11">
-                            <button type="submit" class="btn btn-secondary">Rename</button>
-                        </div>
-                    </form>
+                        <table class="table table-responsive">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Username</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <?php
+                            $count = 1;
+                            foreach ($admins as $admin): ?>
+                            <tr>
+                              <th scope="row"><?php echo $count; $count++; ?></th>
+                              <td><?php echo $admin['cisID'] ?></td>
+                            </tr>
+                            <?php endforeach; ?>
+                          </tbody>
+                        </table>
+                        <form action="<?php echo site_url('/admin/settings/addAdmin'); ?>" method="post">
+                            <div class="form-row align-items-center">
+                                <div class="col-auto">
+                                    <input type="text" class="form-control mb-2" id="adminUsernameAdd" placeholder="Username">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary mb-2">Add new</button>
+                                </div>
+                            </div>
+                        </form>
                     <br>
                     <h4>Edit Footer</h4>
                     <br>
