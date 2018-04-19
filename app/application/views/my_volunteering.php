@@ -112,7 +112,7 @@
     <div>
         <div class="card">
             <div class="card-header">
-                <h5>Previous Activities</h5>
+                <h5>Previous 10 Activities</h5>
             </div>
             <div class="activityTable">
                 <div class="card-block">
