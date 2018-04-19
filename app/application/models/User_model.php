@@ -67,6 +67,30 @@ class User_model extends CI_Model
         return 0;
     }
 
+    public function addAdmin($CISID)
+    {
+        if (!$this->isAdmin($CISID)) {
+            $user = $this->getUserByCIS($CISID);
+            if (!empty($user)) {
+                $data = array(
+                    'isAdmin' => 1,
+                    'cisID' => $CISID
+                );
+
+                $this->db->insert('admins', $data);
+                return True;
+            }
+        }
+        return False;
+    }
+
+    public function getAdmins()
+    {
+        $query = $this->db->get('admins');
+
+        return $query->result_array();
+    }
+
 
     // Queries the database with SQL query where the argument $CISID = managersCisID database column.
     // An array of CisID user names is returned - if the size of this array is greater or equal to 1

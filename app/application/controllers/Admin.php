@@ -296,13 +296,12 @@ class Admin extends CI_Controller
     public function settings()
     {
         $this->load->model('User_model');
+        $this->load->helper('url');
         if (!$this->User_model->doesUserExist($_SERVER['REMOTE_USER'])) {
-            $this->load->helper('url');
             redirect('/onboard/welcome');
         } else if ($this->User_model->isAdmin($_SERVER['REMOTE_USER'])) {
             $data['is_admin'] = TRUE;
         } else {
-            $this->load->helper('url');
             redirect('/home');
         }
 
@@ -311,6 +310,14 @@ class Admin extends CI_Controller
         $data['active'] = 'admin';
         $data['active_admin'] = 'settings';
         $data['page_title'] = 'Admin: Settings - Staff Volunteering Programme';
+
+        $data['admins'] = $this->User_model->getAdmins();
+
+        $this->load->library('form_validation');
+        $this->load->library('session');
+        $data['message'] = $this->session->flashdata('message');
+        $data['error'] = $this->session->flashdata('error');
+
         $this->load->view('header', $data);
         /* place content body chunks within content_open and content_close */
         $this->load->view('content_open', $data);
@@ -321,6 +328,32 @@ class Admin extends CI_Controller
         $this->load->view('content_close', $data);
         $this->load->view('footer', $data);
 
+    }
+
+    public function settingsAddAdmin()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('adminUsernameAdd', 'Admin username', 'trim|required');
+        $this->form_validation->set_error_delimiters('<p class="alert alert-danger"><strong>Error: </strong>', '</p>');
+
+        $this->load->library('session');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+
+            $this->settings();
+        } else {
+            $this->load->model('User_model');
+
+            if ($this->User_model->addAdmin($this->input->post('adminUsernameAdd'))) {
+                $this->session->set_flashdata('message', 'Admin added!');
+                $this->Audit_model->insertLog('ALTER', 'Admin ' . $this->input->post('adminUsernameAdd') . ' added.');
+            } else {
+                $this->session->set_flashdata('error', 'Admin adding failed!');
+            }
+
+            $this->settings();
+
+        }
     }
 
     public function audit()
