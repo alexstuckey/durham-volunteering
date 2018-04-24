@@ -1,5 +1,11 @@
 <!-- Statistics Section -->
 <div id="statistics">
+
+    <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Data shown in this page is currently static, but will be generated dynamically as entries are added to the database.</strong>
+    </div>
+
     <!-- Row -->
     <div class="row" >
         <!-- Left Column -->
