@@ -15,12 +15,12 @@
             <h5>Get Involved with Causes</h5>
         </div>
         <div class="list-group">
-            <a href="#" class="list-group-item">RSPB</a>
-            <a href="#" class="list-group-item">Barnardo's</a>
-            <a href="#" class="list-group-item">Mencap</a>
-            <a href="#" class="list-group-item">Oxfam</a>
-            <a href="#" class="list-group-item">Samaritans</a>
-            <a href="#" class="list-group-item">WaterAid</a>
+            <a href="<?php echo site_url('/cause/2'); ?>" class="list-group-item">DASH</a>
+            <a href="<?php echo site_url('/cause/1'); ?>" class="list-group-item">Durham University Mental Health</a>
+            <a href="<?php echo site_url('/cause/11'); ?>" class="list-group-item">Willowburn Hospice</a>
+            <a href="<?php echo site_url('/cause/6'); ?>" class="list-group-item">Durham Wildlife Trust</a>
+            <a href="<?php echo site_url('/cause/10'); ?>" class="list-group-item">Changing Lives</a>
+            <a href="<?php echo site_url('/cause/13'); ?>" class="list-group-item">The Dog's Trust</a>
         </div>
     </div>
 </div>
