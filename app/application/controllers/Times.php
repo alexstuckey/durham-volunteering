@@ -69,7 +69,7 @@ class Times extends CI_Controller {
             $this->Notification_model->createNotification(
                 $managerCIS,
                 'New activity application',
-                $volunteer['fullname'] . ' has requested a shift at ' . $cause . ' from ' . $this->input->post('shiftApplicationDateTimeStart') . ' to ' . $this->input->post('shiftApplicationDateTimeEnd') . '. They have commented: "' . $this->input->post('shiftApplicationComment') . '".' ,
+                $volunteer['fullname'] . ' requested a volunteering request at ' . $cause . ' from ' . $this->input->post('shiftApplicationDateTimeStart') . ' to ' . $this->input->post('shiftApplicationDateTimeEnd') . '. They have commented: "' . $this->input->post('shiftApplicationComment') . '".' ,
                 mdate($format)
             );
 
@@ -152,7 +152,7 @@ class Times extends CI_Controller {
             $this->Notification_model->createNotification(
                 $managerID,
                 'Activity cancelled',
-                'User ' . $_SERVER['REMOTE_USER'] . ' has cancelled a shift at ' . $cause . ' from ' . $time['start'] . ' to ' . $time['finish'] . '.',
+                'User ' . $_SERVER['REMOTE_USER'] . ' has cancelled a volunteering request at ' . $cause . ' from ' . $time['start'] . ' to ' . $time['finish'] . '.',
                 mdate($format)
             );
 

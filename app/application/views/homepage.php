@@ -45,7 +45,7 @@
 
                 <div class="card" id="notification1">
                     <div class="card-header">
-                        <h4>Shift Approved</h4>
+                        <h4>Volunteering Request Approved</h4>
                     </div>
                     <div class="card-block">
                         <p class="card-text">Your Manager approved your shift at Barnardo's on 23rd Feb, 3-6pm.</p>
@@ -65,7 +65,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h4>Shift awaiting approval</h4>
+                        <h4>Volunteering Request awaiting approval</h4>
                     </div>
                     <div class="card-block">
                         <p class="card-text">Shift application at Mencap on 28th Feb 12-2pm is awaiting approval from your Manager.</p>
@@ -139,7 +139,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h4>New Shift</h4>
+                        <h4>New Volunteering Request</h4>
                     </div>
                     <div class="card-block">
                         <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
@@ -173,7 +173,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h4>Cancel Shift</h4>
+                        <h4>Cancel Volunteering Request</h4>
                     </div>
                     <div class="card-block">
                         <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->
@@ -211,7 +211,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h4>Approve Shift Requests</h4>
+                        <h4>Approve Volunteering Requests</h4>
                     </div>
                     <div class="card-block">
                         <!-- TODO>> ADD ACTION ROUTE FOR POST REQUEST -->

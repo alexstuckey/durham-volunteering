@@ -36,7 +36,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h4>Approve Shift Requests</h4>
+            <h4>Approve Volunteering Requests</h4>
         </div>
         <div class="card-block">
             <form method="POST" action="<?php echo site_url('/time/manager_response'); ?>" id="shiftResponseForm">
