@@ -49,7 +49,7 @@
                                     <td><?php echo $time['start']; ?></td>
                                     <td><?php echo $time['finish']; ?></td>
                                     <td><?php echo $time['comment']; ?></td>
-                                    <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
+                                    <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Individual';}; ?></td>
                                 </tr>
                             <?php endif; ?>
                         <?php endforeach; ?>
@@ -95,7 +95,7 @@
                                         <td><?php echo $time['start']; ?></td>
                                         <td><?php echo $time['finish']; ?></td>
                                         <td><?php echo $time['comment']; ?></td>
-                                        <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
+                                        <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Individual';}; ?></td>
                                     </tr>
                                 <?php endif; ?>
                             <?php endforeach; ?>
@@ -140,7 +140,7 @@
                                         <td><?php echo $time['start']; ?></td>
                                         <td><?php echo $time['finish']; ?></td>
                                         <td><?php echo $time['comment']; ?></td>
-                                        <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
+                                        <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Individual';}; ?></td>
                                     </tr>
                                 <?php endif; ?>
                             <?php endforeach; ?>
@@ -185,7 +185,7 @@
                                     <td><?php echo $time['start']; ?></td>
                                     <td><?php echo $time['finish']; ?></td>
                                     <td><?php echo $time['comment']; ?></td>
-                                    <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
+                                    <td><?php if ($time['teamChallenge'] == '1') {echo 'Team';} else {echo 'Individual';}; ?></td>
                                 </tr>
                             <?php endif; ?>
                         <?php endforeach; ?>

@@ -115,7 +115,7 @@
                                     <td><?php echo $entries['start']; ?></td>
                                     <td><?php echo $entries['finish']; ?></td>
                                     <td><?php echo $entries['comment']; ?></td>
-                                    <td><?php if ($entries['teamChallenge'] == '1') {echo 'Team';} else {echo 'Solo';}; ?></td>
+                                    <td><?php if ($entries['teamChallenge'] == '1') {echo 'Team';} else {echo 'Individual';}; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php endforeach; ?>
