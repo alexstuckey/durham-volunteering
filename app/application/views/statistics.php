@@ -1,5 +1,11 @@
 <!-- Statistics Section -->
 <div id="statistics">
+
+    <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Data shown in this page is currently static, but will be generated dynamically as entries are added to the database.</strong>
+    </div>
+
     <!-- Row -->
     <div class="row" >
         <!-- Left Column -->
@@ -93,7 +99,7 @@
                                 <div class="card-block">
                                     <h5>Your department is in position:</h5>
                                     <div class="singleStatBold">
-                                        <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo $positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1>
+                                        <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo '4/23'; } ?></h1> <!--$positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1> -->
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +113,7 @@
                                 <div class="card-block">
                                     <h5>Within your department, you are in position:</h5>
                                     <div class="singleStatBold">
-                                        <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '4/23'; } else { echo $positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1>
+                                        <h1><?php if ($positionWithinDepartment == 'null' || $positionWithinDepartment == '') { echo '7/18'; } else { echo '7/18'; } ?></h1> <!--$positionWithinDepartment[0] . '/' . $positionWithinDepartment[1]; } ?></h1> -->
                                     </div>
                                 </div>
                             </div>
