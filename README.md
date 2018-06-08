@@ -10,6 +10,11 @@
 <h5 align="center">Staff metrics, user engement, and chairty relationships</h5>
 
 <p align="center">
+A group project at Durham University, Department of Computer Science<br>
+by <a href="https://github.com/williamejelias">Will Elias</a>, <a href="https://github.com/JDiggers">Jonathan Digweed</a>, <a href="https://github.com/jackcbdobson">Jack Dobson</a>, <a href="https://github.com/AninaAntonie">Anina Koehler</a>, <a href="https://github.com/alexstuckey">Alex Stuckey</a>
+</p>
+
+<p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="https://github.com/alexstuckey/durham-volunteering/files/2086204/team_8_userguide.pdf">User Guide</a> •
   <a href="#structure">Structure</a> •
