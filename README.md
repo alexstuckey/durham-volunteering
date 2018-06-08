@@ -7,7 +7,7 @@
 </h1>
 
 <h3 align="center">An app to request and log volunteering hours</h3>
-<h5 align="center">Staff metrics, user engement, and chairty relationships</h5>
+<h5 align="center">Staff metrics, user engagement, and chairty relationships</h5>
 
 <p align="center">
 A group project at Durham University, Department of Computer Science<br>
