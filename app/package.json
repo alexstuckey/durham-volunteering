@@ -18,14 +18,14 @@
   "homepage": "https://github.com/alexstuckey/durham-volunteering",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.2.0",
+    "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.4"
   },
   "dependencies": {
-    "bootstrap": "^4.1.0",
+    "bootstrap": "^4.1.1",
     "chart.js": "^2.7.2",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.1",
+    "popper.js": "^1.14.3",
     "progressbar.js": "^1.0.1",
     "select2": "^4.0.6-rc.1",
     "select2-bootstrap4-theme": "^1.0.0"
