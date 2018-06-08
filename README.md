@@ -1,8 +1,39 @@
+<h1 align="center">
+  <br>
+  <img alt="Durham Volunteering Programme" title="Durham Volunteering Programme" src="../master/app/src/images/volunteering-programme-logo.svg">
+  <br>
+  Durham Volunteering
+  <br>
+</h1>
+
+<h3 align="center">An app to request and log volunteering hours</h3>
+<h5 align="center">Staff metrics, user engement, and chairty relationships</h5>
+
 <p align="center">
-    <img alt="Durham Volunteering Programme" title="Durham Volunteering Programme" src="../master/app/src/images/volunteering-programme-logo.svg">
+  <a href="#key-features">Key Features</a> •
+  <a href="https://github.com/alexstuckey/durham-volunteering/files/2086204/team_8_userguide.pdf">User Guide</a> •
+  <a href="#structure">Structure</a> •
+  <a href="#-getting-started">Getting Started</a>
 </p>
 
-# Durham Volunteering
+## Key Features
+
+* **Activity mangement**
+  * Create causes
+  * View list of volunteering activities
+  * View detail of volunteer time
+  * Create new time request
+  * Approve time request
+* **Interactivity**
+  * Event notifications
+  * Email notifications
+  * Access from desktop web
+  * Access from mobile web
+* **History**
+  * Statistics
+  * Audit trail
+
+
 
 ## Structure
 The app is built on Codeigniter PHP MVC.
