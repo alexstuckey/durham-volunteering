@@ -1,3 +1,7 @@
+<p align="center">
+    <img alt="Durham Volunteering Programme" title="Durham Volunteering Programme" src="../master/app/src/images/volunteering-programme-logo.svg">
+</p>
+
 # Durham Volunteering
 
 ## Structure
