@@ -16,6 +16,12 @@
   <a href="#-getting-started">Getting Started</a>
 </p>
 
+![screenshot](https://user-images.githubusercontent.com/238649/41183047-6e436280-6b70-11e8-831c-6b2dc49b49ca.png)
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/238649/41183049-6e7d36fe-6b70-11e8-86b8-91c424de9c37.png" width="49%"/> <img src="https://user-images.githubusercontent.com/238649/41183048-6e5fea40-6b70-11e8-95d0-4a08919ba481.png" width="49%"/> 
+</p>
+
 ## Key Features
 
 * **Activity mangement**
@@ -32,7 +38,6 @@
 * **History**
   * Statistics
   * Audit trail
-
 
 
 ## Structure
