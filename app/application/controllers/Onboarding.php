@@ -46,18 +46,33 @@ class Onboarding extends CI_Controller {
 
         $data['user'] = $this->User_model->getUserByCIS($_SERVER['REMOTE_USER']);
 
-        $data['active'] = 'enter_details';
-        $data['hide_links'] = TRUE;
-        $data['page_title'] = 'Onboarding - Staff Volunteering Programme';
+        $onBoardingStatus = $this->User_model->getOnboardingStatus($_SERVER['REMOTE_USER']);
 
-        $this->load->view('header', $data);
-        $this->load->view('onboarding_steps', $data);
-        $this->load->view('footer', $data);
+        if ($onBoardingStatus == 3 || $onBoardingStatus == 4) {
+            $data['active'] = 'nominate_manager';
+            $data['hide_links'] = TRUE;
+            $data['page_title'] = 'Onboarding - Staff Volunteering Programme';
+
+            $this->load->view('header', $data);
+            $this->load->view('onboarding_steps', $data);
+            $this->load->view('footer', $data);
+        } else if ($onBoardingStatus == 5 || $onBoardingStatus == 6) {
+            $this->wait_nominate_manager();
+        } else {
+            $data['active'] = 'enter_details';
+            $data['hide_links'] = TRUE;
+            $data['page_title'] = 'Onboarding - Staff Volunteering Programme';
+
+            $this->load->view('header', $data);
+            $this->load->view('onboarding_steps', $data);
+            $this->load->view('footer', $data);
 
 
-        $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 2);
+            $this->User_model->setOnboardingStatus($_SERVER['REMOTE_USER'], 2);
 
-        $this->Audit_model->insertLog('ALTER', 'Onboarding: status updated');
+            $this->Audit_model->insertLog('ALTER', 'Onboarding: status updated');
+        }
+
     }
 
     public function enter_details_form()
@@ -252,6 +267,8 @@ class Onboarding extends CI_Controller {
         $data['active'] = 'wait_nominate_manager';
         if ($this->User_model->getManagerStatus($_SERVER['REMOTE_USER']) == 'confirmed') {
             $data['active'] = 'get_started';
+        } else if ($this->User_model->getManagerStatus($_SERVER['REMOTE_USER']) == 'denied') {
+            $data['active'] = 'nominate_manager';
         }
         $data['hide_links'] = TRUE;
         $data['page_title'] = 'Onboarding - Staff Volunteering Programme';

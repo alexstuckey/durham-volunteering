@@ -64,7 +64,7 @@ class Respond extends CI_Controller {
             $substitutions = array(
                 '<Manager Name>' => $manager['fullname'],
                 '<Volunteer Name>' => $volunteer['fullname'],
-                '<Onboard Link>' => site_url('/onboard/wait_nominate_manager')
+                '<Onboard Link>' => site_url('/onboard/steps_details')
             );
 
             if ($verb == 'confirm') {
